@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_titles",
+  "info": {
+    "name": "title",
+    "icon": "leaf"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionTitle_en": {
+      "type": "string"
+    }
+  }
+}

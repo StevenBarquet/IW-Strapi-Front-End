@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_home_aboutuses",
+  "info": {
+    "name": "aboutUs",
+    "icon": "apple-alt"
+  },
+  "options": {},
+  "attributes": {
+    "legend": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.legend",
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title",
+      "required": true
+    },
+    "introductoryText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.introductory-text"
+    },
+    "actionButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.action-button",
+      "required": true
+    }
+  }
+}

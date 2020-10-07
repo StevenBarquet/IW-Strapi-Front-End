@@ -1,0 +1,58 @@
+.wrapperCompanySlider {
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.brandSlider {
+	width: 100%;
+	height: 200px;
+	position: relative;
+	background: white;
+	display: flex;
+	overflow: hidden;
+}
+
+.logoSlider {
+	height: 200px;
+	display: flex;
+	align-items: center;
+	animation: slideshow 80s linear infinite;
+}
+
+.logoSlider svg {
+	height: auto;
+	max-width: auto;
+	padding: 0 25px 0 25px;
+}
+
+@keyframes slideshow {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+.brandSlider::before, .brandSlider::after {
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	content: "";
+	background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+	z-index: 2;
+}
+
+.brandSlider::before {
+	left: 0;
+	top: 0;
+}
+
+.brandSlider::after {
+	right: 0;
+	top: 0;
+	transform: rotateZ(180deg);
+}

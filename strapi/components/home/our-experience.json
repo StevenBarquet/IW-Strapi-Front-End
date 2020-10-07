@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_home_our_experiences",
+  "info": {
+    "name": "ourExperience",
+    "icon": "bed"
+  },
+  "options": {},
+  "attributes": {
+    "underlinedTitle": {
+      "type": "string"
+    },
+    "underlinedTitle_en": {
+      "type": "string"
+    },
+    "introductoryText": {
+      "type": "richtext"
+    },
+    "introductoryText_en": {
+      "type": "richtext"
+    },
+    "businessListTitle": {
+      "type": "string"
+    },
+    "businessListTitle_en": {
+      "type": "string"
+    },
+    "businessListItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.business-list-items"
+    },
+    "actionButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.action-button"
+    }
+  }
+}

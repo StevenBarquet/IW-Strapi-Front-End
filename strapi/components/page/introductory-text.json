@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_introductory_texts",
+  "info": {
+    "name": "introductoryText",
+    "icon": "box-open"
+  },
+  "options": {},
+  "attributes": {
+    "introductoryText": {
+      "type": "richtext"
+    },
+    "introductoryText_en": {
+      "type": "richtext"
+    }
+  }
+}

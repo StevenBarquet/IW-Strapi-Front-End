@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_subtitles",
+  "info": {
+    "name": "subtitle",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "sectionSubTitle": {
+      "type": "string"
+    },
+    "sectionSubTitle_en": {
+      "type": "string"
+    }
+  }
+}

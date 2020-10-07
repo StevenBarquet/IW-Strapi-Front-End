@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_legends",
+  "info": {
+    "name": "legend",
+    "icon": "h-square"
+  },
+  "options": {},
+  "attributes": {
+    "sectionLegendTitle": {
+      "type": "string"
+    },
+    "sectionLegendTitle_en": {
+      "type": "string"
+    }
+  }
+}

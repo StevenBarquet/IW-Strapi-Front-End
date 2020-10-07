@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_page_carousel_with_captions",
+  "info": {
+    "name": "carousel-with-caption",
+    "icon": "play-circle"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "caption": {
+      "type": "richtext"
+    },
+    "caption_en": {
+      "type": "richtext"
+    }
+  }
+}

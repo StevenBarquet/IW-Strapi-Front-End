@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_page_card_info_with_icons",
+  "info": {
+    "name": "infoArea-With-Icon",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "sectionIcon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "title_en": {
+      "type": "string"
+    },
+    "descriptionTexts": {
+      "type": "richtext"
+    },
+    "descriptionTexts_en": {
+      "type": "richtext"
+    }
+  }
+}

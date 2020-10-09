@@ -12,6 +12,9 @@ const infoStyle = {
     maxWidth: "360px",
     margin: "0 auto",
     padding: "70px 0 30px",
+    "@media (max-width: 736px)": {
+      padding: "93px 0 30px",
+    },
   },
   iconWrapper: {
     float: "left",

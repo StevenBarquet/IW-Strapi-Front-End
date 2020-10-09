@@ -46,6 +46,7 @@
     "@zeit/next-sass": "^1.0.1",
     "animate.css": "^4.1.0",
     "classnames": "^2.2.6",
+    "formik": "^2.2.0",
     "graphql": "^15.3.0",
     "moment": "^2.27.0",
     "next": "latest",
@@ -64,7 +65,8 @@
     "react-image-gallery": "^1.0.7",
     "react-slick": "^0.26.1",
     "react-swipeable-views": "^0.13.9",
-    "webpack": "^4.43.0"
+    "webpack": "^4.43.0",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

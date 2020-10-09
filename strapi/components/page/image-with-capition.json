@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_page_image_with_capitions",
+  "info": {
+    "name": "Image-With-Capition",
+    "icon": "portrait"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "title": {
+      "type": "richtext"
+    },
+    "title_en": {
+      "type": "richtext"
+    }
+  }
+}

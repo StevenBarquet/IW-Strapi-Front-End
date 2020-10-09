@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "robots",
+  "info": {
+    "name": "robot"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.image-with-capition"
+    },
+    "funtioning": {
+      "type": "component",
+      "repeatable": false,
+      "component": "robot.funtioning"
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": false,
+      "component": "robot.benefits"
+    },
+    "form": {
+      "type": "component",
+      "repeatable": false,
+      "component": "robot.form"
+    },
+    "plansForYou": {
+      "type": "component",
+      "repeatable": false,
+      "component": "robot.plans-for-you"
+    }
+  }
+}

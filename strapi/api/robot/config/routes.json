@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/robot",
+      "handler": "robot.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/robot",
+      "handler": "robot.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/robot",
+      "handler": "robot.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

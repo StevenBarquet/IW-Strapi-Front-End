@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_page_card_plans_for_yous",
+  "info": {
+    "name": "card-PlansForYou",
+    "icon": "folder-plus"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionTitle_en": {
+      "type": "string"
+    },
+    "sectionSubTitle": {
+      "type": "string"
+    },
+    "sectionSubTitle_en": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "description_en": {
+      "type": "richtext"
+    }
+  }
+}

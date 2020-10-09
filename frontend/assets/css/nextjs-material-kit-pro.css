@@ -1565,7 +1565,7 @@ button.slick-arrow.slick-next {
   font-size: 0;
   line-height: 0;
   position: absolute;
-  top: 50%;
+  top: 43% !important;
   display: block;
   height: 100%;
   padding: 0;
@@ -1576,9 +1576,10 @@ button.slick-arrow.slick-next {
   color: transparent;
   outline: none;
   background: transparent;
-  width: 15%;
+  width: 0% !important;
   z-index: 2;
-  opacity: 0.5; }
+  opacity: 0.5;
+}
 
 .slick-prev {
   left: 0; }

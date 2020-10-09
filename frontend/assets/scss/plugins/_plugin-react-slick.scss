@@ -28,7 +28,17 @@
     }
 
     .slick-dots {
-      bottom: 4rem;
+      bottom: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slick-caption {
+      display: block !important;
+    }
+
+    .slick-dots {
+      bottom: .500rem;
     }
   }
 
@@ -166,7 +176,7 @@ button.slick-arrow.slick-next {
   font-size: 0;
   line-height: 0;
   position: absolute;
-  top: 50%;
+  top: 43%;
   display: block;
   // width: 20px;
   height: 100%;
@@ -178,7 +188,7 @@ button.slick-arrow.slick-next {
   color: transparent;
   outline: none;
   background: transparent;
-  width: 15%;
+  width: 0%;
   z-index: 2;
   opacity: 0.5;
 }

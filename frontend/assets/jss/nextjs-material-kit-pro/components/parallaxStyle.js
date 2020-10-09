@@ -134,6 +134,11 @@ const parallaxStyle = {
     height: "65vh",
     minHeight: "65vh",
     maxHeight: "650px",
+    "@media (max-width: 830px)": {
+      height: "0vh",
+      minHeight: "24vh",
+      maxHeight: "20px",
+    },
   },
 };
 

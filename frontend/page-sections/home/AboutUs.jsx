@@ -10,14 +10,21 @@ import Button from "~/components/CustomButtons/Button";
 import RenderHTML from "~/components/HTML/RenderHTML";
 import SectionTitle from "~/components-sections/SectionTitle";
 
+// context
+import { useSettings } from "~/context/Settings";
+
 // gql
 import { HOME_ABOUT_US_QUERY } from "~/gql/queries/home";
 
+// jss styles
 import homeStyle from "~/assets/jss/homeStyle";
 
 const useStyles = makeStyles(homeStyle);
 
 const SectionAboutUs = () => {
+  const {
+    defaultSettings: { languaje },
+  } = useSettings();
   const { loading, error, data } = useQuery(HOME_ABOUT_US_QUERY);
   const classes = useStyles();
 
@@ -46,12 +53,12 @@ const SectionAboutUs = () => {
     <div id="section-about" className={classes.section}>
       <GridContainer justify="center">
         <SectionTitle
-          legend={aboutUs.legend.sectionLegendTitle}
-          title={aboutUs.title.sectionTitle}
+          legend={aboutUs.legend[`sectionLegendTitle${languaje}`]}
+          title={aboutUs.title[`sectionTitle${languaje}`]}
         >
           <>
             <RenderHTML
-              html={aboutUs.introductoryText.introductoryText}
+              html={aboutUs.introductoryText[`introductoryText${languaje}`]}
               className={classes.textCenter}
             />
             <Button
@@ -60,7 +67,7 @@ const SectionAboutUs = () => {
               link
               round
             >
-              {aboutUs.actionButton.label}
+              {aboutUs.actionButton[`label${languaje}`]}
             </Button>
           </>
         </SectionTitle>

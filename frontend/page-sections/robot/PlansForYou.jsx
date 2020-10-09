@@ -38,6 +38,10 @@ const PlansForYou = () => {
     );
   }
 
+  if (!data.robot.plansForYou) {
+    return <h1>¡Revisar CMS!</h1>;
+  }
+
   const {
     robot: { plansForYou },
   } = data;

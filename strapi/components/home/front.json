@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_home_fronts",
+  "info": {
+    "name": "front",
+    "icon": "democrat"
+  },
+  "options": {},
+  "attributes": {
+    "frontCardTitle": {
+      "type": "string"
+    },
+    "frontCardTitle_en": {
+      "type": "string"
+    },
+    "brandImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "partnerType": {
+      "type": "string"
+    },
+    "partnerType_en": {
+      "type": "string"
+    },
+    "allianceTime": {
+      "type": "string"
+    },
+    "allianceTime_en": {
+      "type": "string"
+    }
+  }
+}

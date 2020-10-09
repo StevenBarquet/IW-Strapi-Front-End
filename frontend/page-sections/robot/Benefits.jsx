@@ -78,6 +78,10 @@ const Benefits = () => {
     );
   }
 
+  if (!data.robot.benefits) {
+    return <h1>¡Revisar CMS!</h1>;
+  }
+
   const {
     robot: { benefits },
   } = data;

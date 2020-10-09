@@ -15,7 +15,7 @@ import withLayout from "~/layouts/main";
 import { initialValues, schema } from "~/page-sections/robot/formConfig";
 
 // styles
-import homeSectionStyles from "~/assets/jss/homeSectionStyles";
+import robotStyles from "~/assets/jss/robotStyles";
 
 // sections
 const Header = dynamic(import("~/page-sections/robot/Header"));
@@ -24,7 +24,7 @@ const Benefits = dynamic(import("~/page-sections/robot/Benefits"));
 const Form = dynamic(import("~/page-sections/robot/Form"));
 const PlansForYou = dynamic(import("~/page-sections/robot/PlansForYou"));
 
-const useStyles = makeStyles(homeSectionStyles);
+const useStyles = makeStyles(robotStyles);
 
 const RobotPage = () => {
   const classes = useStyles();

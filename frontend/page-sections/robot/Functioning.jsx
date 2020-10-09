@@ -42,6 +42,10 @@ const Functioning = () => {
     return <h1>Loading</h1>;
   }
 
+  if (!data.robot.funtioning) {
+    return <h1>¡Revisar CMS!</h1>;
+  }
+
   if (error) {
     return (
       <h1>

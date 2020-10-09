@@ -1,4 +1,5 @@
 // Dependencies
+import dynamic from "next/dynamic";
 import { useQuery } from "@apollo/client";
 
 // @material-ui/core components
@@ -7,14 +8,19 @@ import { makeStyles } from "@material-ui/core/styles";
 // core-components
 import SectionTitle from "~/components-sections/SectionTitle";
 import GridContainer from "~/components/Grid/GridContainer";
-import RotatingCard from "~/components-sections/RotatingCard";
 
 // gql
 import { HOME_BUSINESS_PARTNERS } from "~/gql/queries/home";
 
-import homeSectionStyles from "~/assets/jss/homeSectionStyles";
+// jss styles
+import homeStyle from "~/assets/jss/homeStyle";
 
-const useStyles = makeStyles(homeSectionStyles);
+// components
+const SectionBusinessPartnersCards = dynamic(
+  import("~/page-sections/home/BusinessPartnersCards")
+);
+
+const useStyles = makeStyles(homeStyle);
 
 const BusinessPartners = () => {
   const { loading, error, data } = useQuery(HOME_BUSINESS_PARTNERS);
@@ -41,11 +47,6 @@ const BusinessPartners = () => {
     home: { businessPartners },
   } = data;
 
-  // const BusinessPartnersCards = () =>
-  //   businessPartnersCards.map((businessCard) => (
-  //     <RotatingCard key={businessCard._id} cardContent={businessCard} />
-  //   ));
-
   return (
     <div id="section-partners" className={classes.section}>
       <GridContainer justify="center">
@@ -55,8 +56,7 @@ const BusinessPartners = () => {
           title={businessPartners.title.sectionTitle}
           subTitle={businessPartners.subTitle.sectionSubTitle}
         >
-          {/* <BusinessPartnersCards /> */}
-          <div />
+          <SectionBusinessPartnersCards />
         </SectionTitle>
       </GridContainer>
     </div>

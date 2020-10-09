@@ -42,6 +42,10 @@ const Form = ({ values, errors, handleChange }) => {
     );
   }
 
+  if (!data.robot.form) {
+    return <h1>¡Revisar CMS!</h1>;
+  }
+
   const {
     robot: { form },
   } = data;

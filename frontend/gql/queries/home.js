@@ -69,7 +69,7 @@ const HOME_OUR_EXPERIENCE_QUERY = gql`
 `;
 
 const HOME_BUSINESS_PARTNERS = gql`
-  query businessPartners {
+  query BusinessPartners {
     home {
       businessPartners {
         sectionIcon {
@@ -93,9 +93,73 @@ const HOME_BUSINESS_PARTNERS = gql`
   }
 `;
 
+const HOME_BUSINESS_PARTNERS_CARDS = gql`
+  query BusinessPartnersCards {
+    home {
+      businessPartnersCards {
+        id
+        front {
+          frontCardTitle
+          frontCardTitle_en
+          brandImage {
+            url
+            alternativeText
+          }
+          partnerType
+          partnerType_en
+          allianceTime
+          allianceTime_en
+        }
+        back {
+          backCardTitle
+          backCardTitle_en
+          backCardListItems {
+            id
+            materialIcon
+            description
+            description_en
+          }
+        }
+      }
+    }
+  }
+`;
+
+const HOME_THEY_TRUST = gql`
+  query TheyTrust {
+    home {
+      theyTrust {
+        sectionIcon {
+          url
+          alternativeText
+        }
+        legend {
+          sectionLegendTitle
+          sectionLegendTitle_en
+        }
+        title {
+          sectionTitle
+          sectionTitle_en
+        }
+        subTitle {
+          sectionSubTitle
+          sectionSubTitle_en
+        }
+        brandSlider {
+          id
+          url
+          alternativeText
+        }
+      }
+    }
+  }
+`;
+
 export {
   HOME_HEADER_QUERY,
   HOME_ABOUT_US_QUERY,
   HOME_OUR_EXPERIENCE_QUERY,
   HOME_BUSINESS_PARTNERS,
+  HOME_BUSINESS_PARTNERS_CARDS,
+  HOME_THEY_TRUST,
 };

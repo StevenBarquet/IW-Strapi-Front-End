@@ -37,6 +37,10 @@ const Header = () => {
     );
   }
 
+  if (!data.robot.header) {
+    return <h1>¡Revisar CMS!</h1>;
+  }
+
   const {
     robot: { header },
   } = data;

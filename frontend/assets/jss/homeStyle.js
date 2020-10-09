@@ -1,4 +1,6 @@
 import {
+  main,
+  mainRaised,
   section,
   floatRight,
   textCenter,
@@ -6,6 +8,8 @@ import {
 } from "~/assets/jss/nextjs-material-kit-pro";
 
 const homeStyle = (theme) => ({
+  main,
+  mainRaised,
   section,
   sectionWithBackgroundColor,
   floatRight,

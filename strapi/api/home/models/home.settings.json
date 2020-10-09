@@ -30,6 +30,16 @@
       "type": "component",
       "repeatable": false,
       "component": "home.business-partners"
+    },
+    "businessPartnersCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.business-card"
+    },
+    "theyTrust": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.they-trust"
     }
   }
 }

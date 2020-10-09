@@ -1,3 +1,4 @@
+// Dependencies
 import Link from "next/link";
 
 // nodejs library that concatenates classes
@@ -19,10 +20,10 @@ import Drawer from "@material-ui/core/Drawer";
 import Menu from "@material-ui/icons/Menu";
 import Close from "@material-ui/icons/Close";
 
-// core components
-import styles from "~/assets/jss/nextjs-material-kit-pro/components/headerStyle";
+// jss styles
+import headerStyle from "~/assets/jss/nextjs-material-kit-pro/components/headerStyle";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(headerStyle);
 
 const Header = (props) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -122,7 +123,7 @@ const Header = (props) => {
   );
 }
 
-Header.defaultProp = {
+Header.defaultProps = {
   color: "white",
 };
 

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_home_business_cards",
+  "info": {
+    "name": "businessCard",
+    "icon": "bowling-ball"
+  },
+  "options": {},
+  "attributes": {
+    "front": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.front"
+    },
+    "back": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.back"
+    }
+  }
+}

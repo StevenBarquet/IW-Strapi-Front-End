@@ -10,8 +10,8 @@ import { makeStyles } from "@material-ui/core/styles";
 // layout
 import withLayout from "~/layouts/main";
 
-// styles
-import homeSectionStyles from "~/assets/jss/homeSectionStyles";
+// jss styles
+import homeStyle from "~/assets/jss/homeStyle";
 
 // sections
 const Header = dynamic(import("~/page-sections/home/Header"));
@@ -20,9 +20,9 @@ const SectionExperience = dynamic(import("~/page-sections/home/Experience"));
 const SectionBusinessPartners = dynamic(
   import("~/page-sections/home/BusinessPartners")
 );
-// const SectionTheyTrust = dynamic(import("~/page-sections/home/TheyTrust"));
+const SectionTheyTrust = dynamic(import("~/page-sections/home/TheyTrust"));
 
-const useStyles = makeStyles(homeSectionStyles);
+const useStyles = makeStyles(homeStyle);
 
 const HomePage = () => {
   const classes = useStyles();
@@ -34,7 +34,7 @@ const HomePage = () => {
         <SectionAboutUs />
         <SectionExperience />
         <SectionBusinessPartners />
-        {/* <SectionTheyTrust sectionTheyTrust={sectionTheyTrust} /> */}
+        <SectionTheyTrust />
       </main>
     </>
   );

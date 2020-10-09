@@ -5,14 +5,16 @@ import Router from "next/router";
 import { ApolloProvider } from "@apollo/client";
 import PropTypes from "prop-types";
 
-// Apollo
+// apollo
 import { useApollo } from "~/libs/apollo";
 
-// Loader component
+// loader component
 import PageChange from "~/components/PageChange/PageChange";
 
+// context
+import { SettingsProvider } from "~/context/Settings";
+
 // Styles
-// eslint-disable-next-line import/no-unresolved
 import "~/assets/scss/nextjs-material-kit-pro.scss?v=1.1.0";
 import "animate.css/animate.min.css";
 
@@ -38,23 +40,23 @@ const App = ({ Component, pageProps }) => {
   const apolloClient = useApollo(pageProps.initialApolloState);
 
   React.useEffect(() => {
-    const comment = document.createComment(`                                                                                                                                                                                                                                                                                                                                           
-      IIIIIIIIII                         tttt                                              WWWWWWWW                           WWWWWWWW                                                      
-      I::::::::I                      ttt:::t                                              W::::::W                           W::::::W                                                      
-      I::::::::I                      t:::::t                                              W::::::W                           W::::::W                                                      
-      II::::::II                      t:::::t                                              W::::::W                           W::::::W                                                      
-        I::::Innnn  nnnnnnnn    ttttttt:::::ttttttt        eeeeeeeeeeee    rrrrr   rrrrrrrrrW:::::W           WWWWW           W:::::Waaaaaaaaaaaaa  rrrrr   rrrrrrrrr       eeeeeeeeeeee    
-        I::::In:::nn::::::::nn  t:::::::::::::::::t      ee::::::::::::ee  r::::rrr:::::::::rW:::::W         W:::::W         W:::::W a::::::::::::a r::::rrr:::::::::r    ee::::::::::::ee  
+    const comment = document.createComment(`
+      IIIIIIIIII                         tttt                                              WWWWWWWW                           WWWWWWWW
+      I::::::::I                      ttt:::t                                              W::::::W                           W::::::W
+      I::::::::I                      t:::::t                                              W::::::W                           W::::::W
+      II::::::II                      t:::::t                                              W::::::W                           W::::::W
+        I::::Innnn  nnnnnnnn    ttttttt:::::ttttttt        eeeeeeeeeeee    rrrrr   rrrrrrrrrW:::::W           WWWWW           W:::::Waaaaaaaaaaaaa  rrrrr   rrrrrrrrr       eeeeeeeeeeee
+        I::::In:::nn::::::::nn  t:::::::::::::::::t      ee::::::::::::ee  r::::rrr:::::::::rW:::::W         W:::::W         W:::::W a::::::::::::a r::::rrr:::::::::r    ee::::::::::::ee
         I::::In::::::::::::::nn t:::::::::::::::::t     e::::::eeeee:::::eer:::::::::::::::::rW:::::W       W:::::::W       W:::::W  aaaaaaaaa:::::ar:::::::::::::::::r  e::::::eeeee:::::ee
         I::::Inn:::::::::::::::ntttttt:::::::tttttt    e::::::e     e:::::err::::::rrrrr::::::rW:::::W     W:::::::::W     W:::::W            a::::arr::::::rrrrr::::::re::::::e     e:::::e
         I::::I  n:::::nnnn:::::n      t:::::t          e:::::::eeeee::::::e r:::::r     r:::::r W:::::W   W:::::W:::::W   W:::::W      aaaaaaa:::::a r:::::r     r:::::re:::::::eeeee::::::e
-        I::::I  n::::n    n::::n      t:::::t          e:::::::::::::::::e  r:::::r     rrrrrrr  W:::::W W:::::W W:::::W W:::::W     aa::::::::::::a r:::::r     rrrrrrre:::::::::::::::::e 
-        I::::I  n::::n    n::::n      t:::::t          e::::::eeeeeeeeeee   r:::::r               W:::::W:::::W   W:::::W:::::W     a::::aaaa::::::a r:::::r            e::::::eeeeeeeeeee  
-        I::::I  n::::n    n::::n      t:::::t    tttttte:::::::e            r:::::r                W:::::::::W     W:::::::::W     a::::a    a:::::a r:::::r            e:::::::e           
-      II::::::IIn::::n    n::::n      t::::::tttt:::::te::::::::e           r:::::r                 W:::::::W       W:::::::W      a::::a    a:::::a r:::::r            e::::::::e          
-      I::::::::In::::n    n::::n      tt::::::::::::::t e::::::::eeeeeeee   r:::::r                  W:::::W         W:::::W       a:::::aaaa::::::a r:::::r             e::::::::eeeeeeee  
-      I::::::::In::::n    n::::n        tt:::::::::::tt  ee:::::::::::::e   r:::::r                   W:::W           W:::W         a::::::::::aa:::ar:::::r              ee:::::::::::::e  
-      IIIIIIIIIInnnnnn    nnnnnn          ttttttttttt      eeeeeeeeeeeeee   rrrrrrr                    WWW             WWW           aaaaaaaaaa  aaaarrrrrrr                eeeeeeeeeeeeee  
+        I::::I  n::::n    n::::n      t:::::t          e:::::::::::::::::e  r:::::r     rrrrrrr  W:::::W W:::::W W:::::W W:::::W     aa::::::::::::a r:::::r     rrrrrrre:::::::::::::::::e
+        I::::I  n::::n    n::::n      t:::::t          e::::::eeeeeeeeeee   r:::::r               W:::::W:::::W   W:::::W:::::W     a::::aaaa::::::a r:::::r            e::::::eeeeeeeeeee
+        I::::I  n::::n    n::::n      t:::::t    tttttte:::::::e            r:::::r                W:::::::::W     W:::::::::W     a::::a    a:::::a r:::::r            e:::::::e
+      II::::::IIn::::n    n::::n      t::::::tttt:::::te::::::::e           r:::::r                 W:::::::W       W:::::::W      a::::a    a:::::a r:::::r            e::::::::e
+      I::::::::In::::n    n::::n      tt::::::::::::::t e::::::::eeeeeeee   r:::::r                  W:::::W         W:::::W       a:::::aaaa::::::a r:::::r             e::::::::eeeeeeee
+      I::::::::In::::n    n::::n        tt:::::::::::tt  ee:::::::::::::e   r:::::r                   W:::W           W:::W         a::::::::::aa:::ar:::::r              ee:::::::::::::e
+      IIIIIIIIIInnnnnn    nnnnnn          ttttttttttt      eeeeeeeeeeeeee   rrrrrrr                    WWW             WWW           aaaaaaaaaa  aaaarrrrrrr                eeeeeeeeeeeeee
 
       ¡Apasionados por la tecnología!
     `);
@@ -70,12 +72,14 @@ const App = ({ Component, pageProps }) => {
         />
         <title>InterWare de México - Soluciones tecnológicas</title>
       </Head>
-      <Component {...pageProps} />
+      <SettingsProvider>
+        <Component {...pageProps} />
+      </SettingsProvider>
     </ApolloProvider>
   );
 };
 
-export async function getStaticProps({ Component, ctx }) {
+export async function getInitialProps({ Component, ctx }) {
   let pageProps = {};
 
   if (Component.getInitialProps) {

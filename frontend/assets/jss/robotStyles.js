@@ -1,4 +1,6 @@
 import {
+  main,
+  mainRaised,
   section,
   subTitle,
   textCenter,
@@ -13,6 +15,8 @@ import {
 
 const robotStyle = () => ({
   section,
+  main,
+  mainRaised,
   centerImage,
   sectionWithBackgroundColor,
   textCenter,

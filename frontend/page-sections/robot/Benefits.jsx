@@ -9,6 +9,9 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 import TrendingUpIcon from "@material-ui/icons/TrendingUp";
 
+// context
+import { useSettings } from "~/context/Settings";
+
 // core-components
 import GridContainer from "~/components/Grid/GridContainer";
 import GridItem from "~/components/Grid/GridItem";
@@ -28,6 +31,10 @@ const {
 const useStyles = makeStyles(robotStyles);
 
 const Benefits = () => {
+  const {
+    defaultSettings: { language },
+  } = useSettings();
+
   const { loading, error, data } = useQuery(ROBOT_BENEFITS_QUERY);
   const classes = useStyles();
 
@@ -91,8 +98,8 @@ const Benefits = () => {
       <GridContainer justify="center">
         <SectionTitle
           icon={benefits.sectionIcon}
-          legend={benefits.legend.sectionLegendTitle}
-          title={benefits.title.sectionTitle}
+          legend={benefits.legend[`sectionLegendTitle${language}`]}
+          title={benefits.title[`sectionTitle${language}`]}
         >
           <GridContainer
             className={`${classes.mt8rem} ${classes.listaInfoArea}`}
@@ -114,8 +121,10 @@ const Benefits = () => {
                   <InfoArea
                     vertical
                     icon={TrendingUpIcon}
-                    title={item.title}
-                    description={<RenderHTML html={item.descriptionTexts} />}
+                    title={item[`title${language}`]}
+                    description={
+                      <RenderHTML html={item[`descriptionTexts${language}`]} />
+                    }
                     iconColor="warning"
                   />
                 </GridItem>
@@ -142,10 +151,12 @@ const Benefits = () => {
                       <InfoArea
                         vertical
                         icon={TrendingUpIcon}
-                        title={item.title}
-                        description={
-                          <RenderHTML html={item.descriptionTexts} />
-                        }
+                        title={item[`title${language}`]}
+                        description={(
+                          <RenderHTML
+                            html={item[`descriptionTexts${language}`]}
+                          />
+                        )}
                         iconColor="warning"
                       />
                     </GridItem>

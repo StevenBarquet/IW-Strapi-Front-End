@@ -19,9 +19,15 @@ import { ROBOT_PLANSFORYOU_QUERY } from "~/gql/queries/robot";
 
 import robotStyles from "~/assets/jss/robotStyles";
 
+// context
+import { useSettings } from "~/context/Settings";
+
 const useStyles = makeStyles(robotStyles);
 
 const PlansForYou = () => {
+  const {
+    defaultSettings: { language },
+  } = useSettings();
   const { loading, error, data } = useQuery(ROBOT_PLANSFORYOU_QUERY);
   const classes = useStyles();
 
@@ -51,8 +57,8 @@ const PlansForYou = () => {
       <GridContainer justify="center">
         <SectionTitle
           icon={plansForYou.sectionIcon}
-          legend={plansForYou.legend.sectionLegendTitle}
-          title={plansForYou.title.sectionTitle}
+          legend={plansForYou.legend[`sectionLegendTitle${language}`]}
+          title={plansForYou.title[`sectionTitle${language}`]}
         >
           <GridContainer className={classes.margimTop7rem}>
             {plansForYou.cardsPlans.map((item, index) => {
@@ -63,17 +69,17 @@ const PlansForYou = () => {
                     <CardHeader className={classes.cardPosition} image plain>
                       <div className={classes.backgroundContainer}>
                         <p className={classes.textBackground}>
-                          {item.sectionTitle}
+                          {item[`sectionTitle${language}`]}
                         </p>
                       </div>
                     </CardHeader>
                     <CardBody pricing plain>
                       <h1 className={classes.cardTitle}>
-                        {item.sectionSubTitle}
+                        {item[`sectionSubTitle${language}`]}
                       </h1>
                       <RenderHTML
                         className={classes.textDescription6rem}
-                        html={item.description}
+                        html={item[`description${language}`]}
                       />
                     </CardBody>
                   </Card>
@@ -84,7 +90,7 @@ const PlansForYou = () => {
           <br />
           <GridContainer justify="center">
             <Button color="behance" round>
-              {plansForYou.actionButton.label}
+              {plansForYou.actionButton[`label${language}`]}
             </Button>
           </GridContainer>
         </SectionTitle>

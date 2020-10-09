@@ -7,6 +7,9 @@ import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
+// context
+import { useSettings } from "~/context/Settings";
+
 // core-components
 import GridContainer from "~/components/Grid/GridContainer";
 import GridItem from "~/components/Grid/GridItem";
@@ -26,6 +29,9 @@ const {
 } = getConfig();
 
 const Form = ({ values, errors, handleChange }) => {
+  const {
+    defaultSettings: { language },
+  } = useSettings();
   const { loading, error, data } = useQuery(ROBOT_FORM_QUERY);
   const classes = useStyles();
 
@@ -62,11 +68,15 @@ const Form = ({ values, errors, handleChange }) => {
             alt={form.sectionIcon.alternativeText}
             className={classes.centerImage}
           />
-          <h1 className={classes.title}>{form.title.sectionTitle}</h1>
-          <h2 className={classes.subtitle}>{form.subtitle.sectionSubTitle}</h2>
+          <h1 className={classes.title}>
+            {form.title[`sectionTitle${language}`]}
+          </h1>
+          <h2 className={classes.subtitle}>
+            {form.subtitle[`sectionSubTitle${language}`]}
+          </h2>
           <RenderHTML
             className={classes.descriptionText}
-            html={form.introductoryText.introductoryText}
+            html={form.introductoryText[`introductoryText${language}`]}
           />
           <GridContainer justify="center">
             <GridItem item xs={12} sm={4} md={4} lg={5}>
@@ -74,13 +84,13 @@ const Form = ({ values, errors, handleChange }) => {
                 id="nombre"
                 name="nombre"
                 value={values.nombre}
-                labelText="Nombre"
+                labelText={language === "_en" ? "Name" : "Nombre"}
                 handleChange={handleChange}
                 errors={errors && !!errors.nombre}
                 inputProps={{
                   name: "nombre",
                   maxLength: 18,
-                  placeholder: "Nombre",
+                  placeholder: language === "_en" ? "Name" : "Nombre",
                 }}
                 formControlProps={{
                   fullWidth: true,
@@ -90,13 +100,13 @@ const Form = ({ values, errors, handleChange }) => {
                 id="empresa"
                 name="empresa"
                 value={values.empresa}
-                labelText="Empresa"
+                labelText={language === "_en" ? "Company" : "Empresa"}
                 handleChange={handleChange}
                 errors={errors && !!errors.empresa}
                 inputProps={{
                   name: "empresa",
                   maxLength: 18,
-                  placeholder: "Empresa",
+                  placeholder: language === "_en" ? "Company" : "Empresa",
                 }}
                 formControlProps={{
                   fullWidth: true,
@@ -108,13 +118,14 @@ const Form = ({ values, errors, handleChange }) => {
                 id="email"
                 name="email"
                 value={values.email}
-                labelText="Correo Electronico"
+                labelText={language === "_en" ? "Email" : "Eorreo electrónico"}
                 handleChange={handleChange}
                 errors={errors && !!errors.email}
                 inputProps={{
                   name: "email",
                   maxLength: 18,
-                  placeholder: "Correo Electronico",
+                  placeholder:
+                    language === "_en" ? "Email" : "Correo electrónico",
                 }}
                 formControlProps={{
                   fullWidth: true,
@@ -124,13 +135,20 @@ const Form = ({ values, errors, handleChange }) => {
                 id="automatizacion"
                 name="automatizacion"
                 value={values.automatizacion}
-                labelText="Necesidades de Automatización:"
+                labelText={
+                  language === "_en"
+                    ? "Automation Needs"
+                    : "Necesidades de Automatización"
+                }
                 handleChange={handleChange}
                 errors={errors && !!errors.automatizacion}
                 inputProps={{
                   name: "automatizacion",
                   maxLength: 18,
-                  placeholder: "Necesidades de Automatización:",
+                  placeholder:
+                    language === "_en"
+                      ? "Automation Needs"
+                      : "Necesidades de Automatización",
                 }}
                 formControlProps={{
                   fullWidth: true,
@@ -145,7 +163,7 @@ const Form = ({ values, errors, handleChange }) => {
               round
               color="behance"
             >
-              {form.actionButton.label}
+              {form.actionButton[`label${language}`]}
             </Button>
           </GridContainer>
         </GridItem>

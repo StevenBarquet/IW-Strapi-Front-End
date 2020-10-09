@@ -151,6 +151,9 @@ const robotStyle = () => ({
       marginTop: "1.400rem !important",
     },
   },
+  featuresSection: {
+    margin: "50px 0px",
+  },
   cardTitle: {
     ...cardTitle,
     fontSize: "1.500rem",

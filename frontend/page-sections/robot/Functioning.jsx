@@ -6,6 +6,9 @@ import Carousel from "react-slick";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
+// context
+import { useSettings } from "~/context/Settings";
+
 // core components
 import GridContainer from "~/components/Grid/GridContainer";
 import GridItem from "~/components/Grid/GridItem";
@@ -23,6 +26,10 @@ const {
 const useStyles = makeStyles(robotStyles);
 
 const Functioning = () => {
+  const {
+    defaultSettings: { language },
+  } = useSettings();
+
   const { loading, error, data } = useQuery(ROBOT_FUNTIONING_QUERY);
   const classes = useStyles();
 
@@ -62,7 +69,10 @@ const Functioning = () => {
   return (
     <div id="section-funtioning" className={classes.section}>
       <div className={classes.captionContainerText}>
-        <RenderHTML html={header.title} className={classes.textOverlay} />
+        <RenderHTML
+          html={header[`title${language}`]}
+          className={classes.textOverlay}
+        />
       </div>
       <Carousel {...sliderSettings}>
         {funtioning.header.images.map((image) => (
@@ -77,12 +87,14 @@ const Functioning = () => {
       </Carousel>
       <GridContainer justify="center">
         <GridItem xs={12} sm={10} md={9}>
-          <h2 className={classes.title}>{funtioning.title.sectionTitle}</h2>
+          <h2 className={classes.title}>
+            {funtioning.title[`sectionTitle${language}`]}
+          </h2>
           <RenderHTML
-            html={funtioning.introductoryText.introductoryText}
+            html={funtioning.introductoryText[`introductoryText${language}`]}
             className={classes.introductoryText}
           />
-          <div className={classes.sectionSpace} />
+          <div className={classes.featuresSection} />
         </GridItem>
         <GridItem xs={12} sm={10} md={9}>
           <div className={classes.iframeContainer}>

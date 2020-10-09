@@ -44,7 +44,7 @@ const PlansForYou = () => {
     );
   }
 
-  if (!data.robot.plansForYou) {
+  if (!data.robot) {
     return <h1>¡Revisar CMS!</h1>;
   }
 
@@ -60,39 +60,41 @@ const PlansForYou = () => {
           legend={plansForYou.legend[`sectionLegendTitle${language}`]}
           title={plansForYou.title[`sectionTitle${language}`]}
         >
-          <GridContainer className={classes.margimTop7rem}>
-            {plansForYou.cardsPlans.map((item, index) => {
-              return (
-                <GridItem xs={12} sm={12} md={6} lg={4} key={item.id}>
-                  {index !== 1 && <br />}
-                  <Card pricing className={classes.margimTop4rem}>
-                    <CardHeader className={classes.cardPosition} image plain>
-                      <div className={classes.backgroundContainer}>
-                        <p className={classes.textBackground}>
-                          {item[`sectionTitle${language}`]}
-                        </p>
-                      </div>
-                    </CardHeader>
-                    <CardBody pricing plain>
-                      <h1 className={classes.cardTitle}>
-                        {item[`sectionSubTitle${language}`]}
-                      </h1>
-                      <RenderHTML
-                        className={classes.textDescription6rem}
-                        html={item[`description${language}`]}
-                      />
-                    </CardBody>
-                  </Card>
-                </GridItem>
-              );
-            })}
-          </GridContainer>
-          <br />
-          <GridContainer justify="center">
-            <Button color="behance" round>
-              {plansForYou.actionButton[`label${language}`]}
-            </Button>
-          </GridContainer>
+          <>
+            <GridContainer className={classes.margimTop7rem}>
+              {plansForYou.cardsPlans.map((item, index) => {
+                return (
+                  <GridItem xs={12} sm={12} md={6} lg={4} key={item.id}>
+                    {index !== 1 && <br />}
+                    <Card pricing className={classes.margimTop4rem}>
+                      <CardHeader className={classes.cardPosition} image plain>
+                        <div className={classes.backgroundContainer}>
+                          <p className={classes.textBackground}>
+                            {item[`sectionTitle${language}`]}
+                          </p>
+                        </div>
+                      </CardHeader>
+                      <CardBody pricing plain>
+                        <h1 className={classes.cardTitle}>
+                          {item[`sectionSubTitle${language}`]}
+                        </h1>
+                        <RenderHTML
+                          className={classes.textDescription6rem}
+                          html={item[`description${language}`]}
+                        />
+                      </CardBody>
+                    </Card>
+                  </GridItem>
+                );
+              })}
+            </GridContainer>
+            <br />
+            <GridContainer justify="center">
+              <Button color="behance" round>
+                {plansForYou.actionButton[`label${language}`]}
+              </Button>
+            </GridContainer>
+          </>
         </SectionTitle>
       </GridContainer>
     </div>

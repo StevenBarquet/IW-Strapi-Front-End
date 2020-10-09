@@ -24,11 +24,11 @@ const {
 const useStyles = makeStyles(robotStyles);
 
 const Header = () => {
-  const { loading, error, data } = useQuery(ROBOT_HEADER_QUERY);
-  const classes = useStyles();
   const {
     defaultSettings: { language },
   } = useSettings();
+  const { loading, error, data } = useQuery(ROBOT_HEADER_QUERY);
+  const classes = useStyles();
 
   if (loading) {
     return <h1>Loading</h1>;
@@ -43,7 +43,7 @@ const Header = () => {
     );
   }
 
-  if (!data.robot.header) {
+  if (!data.robot) {
     return <h1>¡Revisar CMS!</h1>;
   }
 

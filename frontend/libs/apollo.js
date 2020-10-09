@@ -133,6 +133,9 @@ function createApolloClient(initialState = {}) {
           home: {
             merge: true,
           },
+          robot: {
+            merge: true,
+          },
         },
       },
     },

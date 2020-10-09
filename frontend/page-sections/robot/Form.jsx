@@ -48,7 +48,7 @@ const Form = ({ values, errors, handleChange }) => {
     );
   }
 
-  if (!data.robot.form) {
+  if (!data.robot) {
     return <h1>¡Revisar CMS!</h1>;
   }
 

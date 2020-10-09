@@ -49,7 +49,7 @@ const Functioning = () => {
     return <h1>Loading</h1>;
   }
 
-  if (!data.robot.funtioning) {
+  if (!data.robot) {
     return <h1>¡Revisar CMS!</h1>;
   }
 

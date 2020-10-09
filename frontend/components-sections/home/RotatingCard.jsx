@@ -14,17 +14,17 @@ import Card from "~/components/Card/Card";
 import CardBody from "~/components/Card/CardBody";
 import CardFooter from "~/components/Card/CardFooter";
 import Button from "~/components/CustomButtons/Button";
-import RenderHTML from "~/components/HTML/RenderHTML";
 
-import rotatingCardStyles from "~/assets/jss/homeSectionStyles/components-section/rotatingCardStyles";
+// jss styles
+import rotatingCardStyle from "~/assets/jss/components/rotatingCardStyle";
 
 const {
   publicRuntimeConfig: { apiUrl },
 } = getConfig();
 
-const useStyles = makeStyles(rotatingCardStyles);
+const useStyles = makeStyles(rotatingCardStyle);
 
-const PartnerCard = ({ cardContent: { cardFront, cardBack } }) => {
+const PartnerCard = ({ card: { front, back } }) => {
   const [activeRotate, setActiveRotate] = React.useState("");
   const classes = useStyles();
 
@@ -67,10 +67,10 @@ const PartnerCard = ({ cardContent: { cardFront, cardBack } }) => {
   });
 
   const CardBackList = () =>
-    cardBack.brandList.map((listItem) => (
-      <div key={listItem._id}>
-        <Icon>{listItem.listItemIcon}</Icon>
-        <RenderHTML html={listItem.listIconDescription} />
+    back.backCardListItems.map((backCardListItem) => (
+      <div key={backCardListItem.id}>
+        <Icon>{backCardListItem.materialIcon}</Icon>
+        <p>{backCardListItem.description}</p>
       </div>
     ));
 
@@ -82,15 +82,15 @@ const PartnerCard = ({ cardContent: { cardFront, cardBack } }) => {
         <Card className={classes.cardRotate}>
           <div className={classes.front}>
             <CardBody className={classes.cardBodyRotate}>
-              <legend className={classes.title}>{cardFront.cardTitle}</legend>
+              <legend className={classes.title}>{front.frontCardTitle}</legend>
               <img
-                src={`${apiUrl}${cardFront.brandLogo.url}`}
+                src={`${apiUrl}${front.brandImage.url}`}
                 alt="Partner Card"
                 style={{ maxWidth: "100%", display: "block", margin: "auto" }}
               />
               <div className={classes.cardBodyContent}>
-                <span>{cardFront.brandClient}</span>
-                <p>{cardFront.brandDescription}</p>
+                <span>{front.partnerType}</span>
+                <p>{front.allianceTime}</p>
               </div>
             </CardBody>
             <CardFooter>
@@ -108,7 +108,7 @@ const PartnerCard = ({ cardContent: { cardFront, cardBack } }) => {
           <div className={classes.back}>
             <CardBody className={classes.cardBodyRotate}>
               <div className={classes.backContainer}>
-                <h3>{cardBack.cardTitle}</h3>
+                <h3>{back.backCardTitle}</h3>
                 <div className={classes.backSolutionsList}>
                   <CardBackList />
                 </div>
@@ -119,9 +119,11 @@ const PartnerCard = ({ cardContent: { cardFront, cardBack } }) => {
                 <Button
                   color="primary"
                   round
+                  justIcon
+                  className={classes.floatRight}
                   onClick={() => setActiveRotate("")}
                 >
-                  {cardBack.cardActioner}
+                  <Icon>replay</Icon>
                 </Button>
               </div>
             </CardFooter>
@@ -133,37 +135,31 @@ const PartnerCard = ({ cardContent: { cardFront, cardBack } }) => {
 };
 
 PartnerCard.defaultProps = {
-  cardContent: {
-    cardFront: {
-      cardTitle: "",
-      brandClient: "",
-      brandDescription: "",
-    },
-    cardBack: {
-      cardTitle: "",
-      brandList: [],
-      cardActioner: "",
-    },
+  card: {
+    front: {},
+    back: {},
   },
 };
 
 PartnerCard.propTypes = {
-  cardContent: PropTypes.shape({
-    cardFront: PropTypes.shape({
-      cardTitle: PropTypes.string,
-      brandClient: PropTypes.string,
-      brandDescription: PropTypes.string,
+  card: PropTypes.shape({
+    front: PropTypes.shape({
+      frontCardTitle: PropTypes.string,
+      brandImage: PropTypes.shape({
+        url: PropTypes.string,
+      }),
+      partnerType: PropTypes.string,
+      allianceTime: PropTypes.string,
     }),
-    cardBack: PropTypes.shape({
-      cardTitle: PropTypes.string,
-      brandList: PropTypes.arrayOf(
+    back: PropTypes.shape({
+      backCardTitle: PropTypes.string,
+      backCardListItems: PropTypes.arrayOf(
         PropTypes.shape({
-          _id: PropTypes.string,
-          listItemIcon: PropTypes.string,
-          listIconDescription: PropTypes.string,
+          id: PropTypes.string,
+          materialIcon: PropTypes.string,
+          description: PropTypes.string,
         })
       ),
-      cardActioner: PropTypes.string,
     }),
   }),
 };

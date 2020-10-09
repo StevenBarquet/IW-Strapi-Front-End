@@ -5,16 +5,23 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+import Icon from "@material-ui/core/Icon";
 
 // core components
 // import Dropdown from "~/components/Dropdown/Dropdown";
 import Button from "~/components/CustomButtons/Button";
 
-import styles from "~/assets/jss/nextjs-material-kit-pro/components/headerLinksStyle";
+// context
+import { useSettings } from "~/context/Settings";
 
-const useStyles = makeStyles(styles);
+// jss styles
+import headerLinksStyle from "~/assets/jss/nextjs-material-kit-pro/components/headerLinksStyle";
+
+const useStyles = makeStyles(headerLinksStyle);
 
 const HeaderLinks = () => {
+  const { defaultSettings, changeSettings } = useSettings();
+
   const classes = useStyles();
   return (
     <List className={`${classes.list} ${classes.mlAuto}`}>
@@ -87,6 +94,28 @@ const HeaderLinks = () => {
         >
           Contacto
         </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <div>
+          <Button
+            onClick={() => changeSettings({ languaje: "" })}
+            round
+            justIcon
+            disabled={!defaultSettings.languaje}
+            color="transparent"
+          >
+            <Icon>flag</Icon>
+          </Button>
+          <Button
+            onClick={() => changeSettings({ languaje: "_en" })}
+            round
+            justIcon
+            disabled={defaultSettings.languaje === "_en"}
+            color="transparent"
+          >
+            <Icon>emoji_flags</Icon>
+          </Button>
+        </div>
       </ListItem>
     </List>
   );

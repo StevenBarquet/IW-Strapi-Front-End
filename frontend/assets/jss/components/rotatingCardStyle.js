@@ -99,14 +99,12 @@ const partnersSection = {
       overflow: "hidden",
       paddingBottom: "6px",
       maxWidth: 350,
-      "& div": {
-        paddingLeft: "16px",
-        "& > p": {
-          color: "#fff",
-        },
+      paddingLeft: "16px",
+      "& span": {
+        marginRight: "16px",
+        color: "#fff",
       },
-      "& svg": {
-        paddingRight: "5px",
+      "& > p": {
         color: "#fff",
       },
     },

@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_home_they_trusts",
+  "info": {
+    "name": "theyTrust",
+    "icon": "cross"
+  },
+  "options": {},
+  "attributes": {
+    "sectionIcon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "legend": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.legend"
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "subTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.subtitle"
+    },
+    "brandSlider": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

@@ -6,12 +6,18 @@ import Carousel from "react-slick";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
+import { initializeApollo } from "~/libs/apollo";
+
+// context
+import { useSettings } from "~/context/Settings";
+
 // components
 import RenderHTML from "~/components/HTML/RenderHTML";
 
 // gql
 import { HOME_HEADER_QUERY } from "~/gql/queries/home";
 
+// jss styles
 import homeStyle from "~/assets/jss/homeStyle";
 
 const {
@@ -21,6 +27,10 @@ const {
 const useStyles = makeStyles(homeStyle);
 
 const Header = () => {
+  const {
+    defaultSettings: { languaje },
+  } = useSettings();
+
   const { loading, error, data } = useQuery(HOME_HEADER_QUERY);
   const classes = useStyles();
 
@@ -61,7 +71,7 @@ const Header = () => {
     <header id="header" className={classes.carouselContainer}>
       <Carousel {...sliderSettings}>
         {header.images.map((image) => (
-          <div key={image._id}>
+          <div key={image.id}>
             <img
               src={`${apiUrl}${image.url}`}
               alt={image.alternativeText}
@@ -71,10 +81,27 @@ const Header = () => {
         ))}
       </Carousel>
       <div className={classes.captionContainer}>
-        <RenderHTML html={header.caption} className={classes.textOverlay} />
+        <RenderHTML
+          html={header[`caption${languaje}`]}
+          className={classes.textOverlay}
+        />
       </div>
     </header>
   );
 };
+
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: HOME_HEADER_QUERY,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+}
 
 export default Header;

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_home_backs",
+  "info": {
+    "name": "back",
+    "icon": "door-open"
+  },
+  "options": {},
+  "attributes": {
+    "backCardTitle": {
+      "type": "string"
+    },
+    "backCardTitle_en": {
+      "type": "string"
+    },
+    "backCardListItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.back-card-list-items"
+    }
+  }
+}

@@ -10,7 +10,6 @@ import HeaderLinks from "~/components/Header/HeaderLinks";
 import Footer from "~/components/Footer/Footer";
 import GridContainer from "~/components/Grid/GridContainer";
 import GridItem from "~/components/Grid/GridItem";
-import Button from "~/components/CustomButtons/Button";
 
 import Logo from "~/assets/img/logo.svg";
 

@@ -15,7 +15,17 @@ function createApolloClient() {
       uri: `${apiUrl}/graphql`, // Server URL (must be absolute)
       credentials: "same-origin", // Additional fetch() options like `credentials` or `headers`
     }),
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache({
+      typePolicies: {
+        Query: {
+          fields: {
+            home: {
+              merge: true,
+            },
+          },
+        },
+      },
+    }),
   });
 }
 

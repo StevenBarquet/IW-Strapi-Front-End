@@ -1,6 +1,6 @@
 // Dependencies
 import getConfig from "next/config";
-import PropTypes from "prop-types";
+import { useQuery } from "@apollo/client";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -9,24 +9,50 @@ import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "~/components/Grid/GridContainer";
 import SectionTitle from "~/components-sections/SectionTitle";
 
-import homeSectionStyles from "~/assets/jss/homeSectionStyles";
+// jss styles
+import homeStyle from "~/assets/jss/homeStyle";
+
+// gql
+import { HOME_THEY_TRUST } from "~/gql/queries/home";
 
 const {
   publicRuntimeConfig: { apiUrl },
 } = getConfig();
 
-const useStyles = makeStyles(homeSectionStyles);
+const useStyles = makeStyles(homeStyle);
 
-const TheyTrust = ({ sectionTheyTrust: { header, brandSlider } }) => {
+const TheyTrust = () => {
+  const { loading, error, data } = useQuery(HOME_THEY_TRUST);
   const classes = useStyles();
 
+  if (loading) {
+    return <h1>Loading</h1>;
+  }
+
+  if (error) {
+    return (
+      <h1>
+        Error:
+        {JSON.stringify(error)}
+      </h1>
+    );
+  }
+
+  if (!data.home) {
+    return <h1>¡Revisar CMS!</h1>;
+  }
+
+  const {
+    home: { theyTrust },
+  } = data;
+
   const LogoSlider = () =>
-    brandSlider.map((svgLogo) => {
+    theyTrust.brandSlider.map((brandImage) => {
       return (
         <img
-          key={svgLogo._id}
-          src={`${apiUrl}${svgLogo.sliderImage.url}`}
-          alt={svgLogo.alt}
+          key={brandImage.id}
+          src={`${apiUrl}${brandImage.url}`}
+          alt={brandImage.alternativeText}
         />
       );
     });
@@ -35,10 +61,10 @@ const TheyTrust = ({ sectionTheyTrust: { header, brandSlider } }) => {
     <div id="section-they-trust" className={classes.section}>
       <GridContainer justify="center">
         <SectionTitle
-          icon={{ url: header.titleIcon.url, alt: "They trust section" }}
-          title={header.title}
-          subTitle={header.subTitle}
-          introduction={header.introduction}
+          icon={theyTrust.sectionIcon}
+          legend={theyTrust.legend.sectionLegendTitle}
+          title={theyTrust.title.sectionTitle}
+          subTitle={theyTrust.subTitle.sectionSubTitle}
         >
           <div className="wrapperCompanySlider">
             <div className="brandSlider">
@@ -54,42 +80,6 @@ const TheyTrust = ({ sectionTheyTrust: { header, brandSlider } }) => {
       </GridContainer>
     </div>
   );
-};
-
-TheyTrust.defaultProps = {
-  sectionTheyTrust: {
-    header: {
-      titleIcon: {
-        url: "",
-      },
-      title: "",
-      subTitle: "",
-      introduction: "",
-    },
-    brandSlider: [],
-  },
-};
-
-TheyTrust.propTypes = {
-  sectionTheyTrust: PropTypes.shape({
-    header: PropTypes.shape({
-      titleIcon: PropTypes.shape({
-        url: PropTypes.string,
-      }),
-      title: PropTypes.string,
-      subTitle: PropTypes.string,
-      introduction: PropTypes.string,
-    }),
-    brandSlider: PropTypes.arrayOf(
-      PropTypes.shape({
-        _id: PropTypes.string,
-        alt: PropTypes.string,
-        sliderImage: PropTypes.shape({
-          url: PropTypes.string,
-        }),
-      })
-    ),
-  }),
 };
 
 export default TheyTrust;

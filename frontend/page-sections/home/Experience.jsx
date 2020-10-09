@@ -12,14 +12,21 @@ import GridItem from "~/components/Grid/GridItem";
 import RenderHTML from "~/components/HTML/RenderHTML";
 import Button from "~/components/CustomButtons/Button";
 
+// context
+import { useSettings } from "~/context/Settings";
+
 // gql
 import { HOME_OUR_EXPERIENCE_QUERY } from "~/gql/queries/home";
 
+// jss styles
 import homeStyle from "~/assets/jss/homeStyle";
 
 const useStyles = makeStyles(homeStyle);
 
 const Experience = () => {
+  const {
+    defaultSettings: { languaje },
+  } = useSettings();
   const { loading, error, data } = useQuery(HOME_OUR_EXPERIENCE_QUERY);
   const classes = useStyles();
 
@@ -50,7 +57,7 @@ const Experience = () => {
         <div>
           <Icon>{listItem.materialIcon}</Icon>
           <Link href={listItem.path}>
-            <a>{listItem.description}</a>
+            <a>{listItem[`description${languaje}`]}</a>
           </Link>
         </div>
       </li>
@@ -65,11 +72,11 @@ const Experience = () => {
       >
         <GridItem item xs={10} sm={8} md={4} lg={5}>
           <div className={classes.underlinedTitleContainer}>
-            <h1>{ourExperience.underlinedTitle}</h1>
+            <h1>{ourExperience[`underlinedTitle${languaje}`]}</h1>
             <hr className={classes.divider} />
           </div>
           <RenderHTML
-            html={ourExperience.introductoryText}
+            html={ourExperience[`introductoryText${languaje}`]}
             className={classes.experienceDescription}
           />
         </GridItem>
@@ -77,7 +84,7 @@ const Experience = () => {
           <div className={classes.businessListContainer}>
             <div>
               <span className={classes.businessLinesTitle}>
-                {ourExperience.businessListTitle}
+                {ourExperience[`businessListTitle${languaje}`]}
               </span>
               <ul className={classes.businessFeed}>
                 <BusinessLinesList />
@@ -90,7 +97,7 @@ const Experience = () => {
             link
             round
           >
-            {ourExperience.actionButton.label}
+            {ourExperience.actionButton[`label${languaje}`]}
           </Button>
         </GridItem>
       </GridContainer>

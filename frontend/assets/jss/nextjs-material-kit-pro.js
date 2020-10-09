@@ -193,6 +193,7 @@ const legend = {
   color: valenciaColor,
   textTransform: "uppercase",
   textAlign: "center",
+  marginTop: "16px",
 };
 
 const title = {
@@ -200,7 +201,7 @@ const title = {
   textAlign: "center",
   fontWeight: "700",
   marginTop: "16px",
-  marginBottom: "25px",
+  marginBottom: "16px",
   minHeight: "32px",
   fontFamily: `"Raleway", "Times New Roman", serif`,
 };

@@ -12,6 +12,9 @@ import { makeStyles } from "@material-ui/core/styles";
 // layout
 import withLayout from "~/layouts/main";
 
+// apollo
+import { withApollo } from "~/libs/apollo";
+
 // gql
 import { ARTICLES_QUERY } from "~/gql/queries/blog";
 
@@ -114,4 +117,4 @@ const BlogPage = () => {
   );
 };
 
-export default withLayout(BlogPage);
+export default withApollo(withLayout(BlogPage));

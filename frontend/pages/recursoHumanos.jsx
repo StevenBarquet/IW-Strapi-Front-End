@@ -8,6 +8,10 @@ import withLayout from "~/layouts/main";
 // core components
 import Parallax from "~/components/Parallax/Parallax";
 
+// apollo
+import { withApollo } from "~/libs/apollo";
+
+// jss styles
 import recursoHPage from "~/assets/jss/recursoHPageStyle/recursoHPageStyle";
 
 // sections
@@ -47,4 +51,4 @@ const RecursoHPage = () => {
   );
 };
 
-export default withLayout(RecursoHPage);
+export default withApollo(withLayout(RecursoHPage));

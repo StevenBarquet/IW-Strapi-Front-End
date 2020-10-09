@@ -23,26 +23,26 @@ const useStyles = makeStyles(homeStyle);
 
 const SectionAboutUs = () => {
   const {
-    defaultSettings: { languaje },
+    defaultSettings: { language },
   } = useSettings();
   const { loading, error, data } = useQuery(HOME_ABOUT_US_QUERY);
   const classes = useStyles();
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return null;
   }
 
   if (error) {
     return (
-      <h1>
+      <span>
         Error:
         {JSON.stringify(error)}
-      </h1>
+      </span>
     );
   }
 
   if (!data.home) {
-    return <h1>¡Revisar CMS!</h1>;
+    return <span>¡Revisar CMS!</span>;
   }
 
   const {
@@ -53,12 +53,12 @@ const SectionAboutUs = () => {
     <div id="section-about" className={classes.section}>
       <GridContainer justify="center">
         <SectionTitle
-          legend={aboutUs.legend[`sectionLegendTitle${languaje}`]}
-          title={aboutUs.title[`sectionTitle${languaje}`]}
+          legend={aboutUs.legend[`sectionLegendTitle${language}`]}
+          title={aboutUs.title[`sectionTitle${language}`]}
         >
           <>
             <RenderHTML
-              html={aboutUs.introductoryText[`introductoryText${languaje}`]}
+              html={aboutUs.introductoryText[`introductoryText${language}`]}
               className={classes.textCenter}
             />
             <Button
@@ -67,7 +67,7 @@ const SectionAboutUs = () => {
               link
               round
             >
-              {aboutUs.actionButton[`label${languaje}`]}
+              {aboutUs.actionButton[`label${language}`]}
             </Button>
           </>
         </SectionTitle>

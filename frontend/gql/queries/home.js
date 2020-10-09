@@ -10,6 +10,16 @@ const HOME_HEADER_QUERY = gql`
           url
           alternativeText
         }
+        tablet_images {
+          id
+          url
+          alternativeText
+        }
+        phone_images {
+          id
+          url
+          alternativeText
+        }
         caption
         caption_en
       }
@@ -109,6 +119,8 @@ const HOME_BUSINESS_PARTNERS_CARDS = gql`
           partnerType_en
           allianceTime
           allianceTime_en
+          buttonLabel
+          buttonLabel_en
         }
         back {
           backCardTitle

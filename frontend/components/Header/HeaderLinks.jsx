@@ -98,19 +98,19 @@ const HeaderLinks = () => {
       <ListItem className={classes.listItem}>
         <div>
           <Button
-            onClick={() => changeSettings({ languaje: "" })}
+            onClick={() => changeSettings({ language: "" })}
             round
             justIcon
-            disabled={!defaultSettings.languaje}
+            disabled={!defaultSettings.language}
             color="transparent"
           >
             <Icon>flag</Icon>
           </Button>
           <Button
-            onClick={() => changeSettings({ languaje: "_en" })}
+            onClick={() => changeSettings({ language: "_en" })}
             round
             justIcon
-            disabled={defaultSettings.languaje === "_en"}
+            disabled={defaultSettings.language === "_en"}
             color="transparent"
           >
             <Icon>emoji_flags</Icon>

@@ -4,8 +4,6 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { useQuery } from "@apollo/client";
 
-// layout
-
 // @material-ui/icons
 import { makeStyles } from "@material-ui/core/styles";
 import withLayout from "~/layouts/main";
@@ -16,10 +14,13 @@ import Parallax from "~/components/Parallax/Parallax";
 import GridContainer from "~/components/Grid/GridContainer";
 import GridItem from "~/components/Grid/GridItem";
 
-import robotPageStyles from "~/assets/jss/robotPageStyles/robotPageStyles";
+// apollo
+import { withApollo } from "~/libs/apollo";
 
 // gql
 import { IWROBOT_QUERY } from "~/gql/queries/iwrobot";
+
+import robotPageStyles from "~/assets/jss/robotPageStyles/robotPageStyles";
 
 // sections
 const SectionPricing = dynamic(import("~/page-sections/robot/SectionPricing"));
@@ -118,4 +119,4 @@ const IWRobot = () => {
   );
 };
 
-export default withLayout(IWRobot);
+export default withApollo(withLayout(IWRobot));

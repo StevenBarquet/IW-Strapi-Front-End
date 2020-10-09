@@ -14,9 +14,6 @@ import Badge from "~/components/Badge/Badge";
 import CustomInput from "~/components/CustomInput/CustomInput";
 import Button from "~/components/CustomButtons/Button";
 
-// Apollo
-import { initializeApollo } from "~/libs/apollo";
-
 // gql
 import { TAGS_QUERY } from "~/gql/queries/blog";
 
@@ -126,20 +123,6 @@ const SectionTags = ({ BannerOne, BannerTwo }) => {
     </div>
   );
 };
-
-export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: TAGS_QUERY,
-  });
-
-  return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-    },
-  };
-}
 
 SectionTags.propTypes = {
   BannerOne: PropTypes.string.isRequired,

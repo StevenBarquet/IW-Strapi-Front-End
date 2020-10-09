@@ -20,9 +20,6 @@ import Pagination from "~/components/Pagination/Pagination";
 import cardBlog3 from "~/assets/img/blog5.jpg";
 import cardBlog4 from "~/assets/img/blog6.jpg";
 
-// Apollo
-import { initializeApollo } from "~/libs/apollo";
-
 // gql
 import { CATEGORIES_QUERY } from "~/gql/queries/blog";
 
@@ -257,19 +254,5 @@ SectionPills.propTypes = {
   setPageArticle: PropTypes.func.isRequired,
   articleCategory: PropTypes.func.isRequired,
 };
-
-export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: CATEGORIES_QUERY,
-  });
-
-  return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-    },
-  };
-}
 
 export default SectionPills;

@@ -45,8 +45,8 @@ const SectionTitle = ({ legend, title, subTitle, icon, children }) => {
   return (
     <GridItem xs={10} sm={8} md={8} lg={10}>
       {icon && <Icon />}
-      <legend className={classes.legend}>{legend}</legend>
-      <h1 className={classes.title}>{title}</h1>
+      {legend && <legend className={classes.legend}>{legend}</legend>}
+      {title && <h1 className={classes.title}>{title}</h1>}
       {subTitle && <h2 className={classes.subTitle}>{subTitle}</h2>}
       {children}
     </GridItem>

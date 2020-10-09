@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "~/components/Grid/GridContainer";
 import GridItem from "~/components/Grid/GridItem";
 import Button from "~/components/CustomButtons/Button";
-import RotatingCard from "~/components-sections/RotatingCard";
+import RotatingCard from "~/components-sections/home/RotatingCard";
 
 import imgRH from "~/assets/img/rh.png";
 import bannerCarrucel from "~/assets/img/bannerCarrucel.png";

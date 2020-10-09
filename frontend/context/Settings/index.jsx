@@ -1,7 +1,14 @@
 const SettingsContext = React.createContext();
 
 export const SettingsProvider = ({ children }) => {
-  const [defaultSettings, setSettings] = React.useState({ languaje: "" });
+  const [defaultSettings, setSettings] = React.useState({ language: "" });
+
+  React.useEffect(() => {
+    const [browserSetting] = navigator.language.split("-");
+    if (browserSetting === "en") {
+      setSettings({ ...defaultSettings, language: "_en" });
+    }
+  }, []);
 
   const changeSettings = (updatedSettings) => {
     setSettings({ ...defaultSettings, ...updatedSettings });

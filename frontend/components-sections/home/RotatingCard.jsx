@@ -15,6 +15,9 @@ import CardBody from "~/components/Card/CardBody";
 import CardFooter from "~/components/Card/CardFooter";
 import Button from "~/components/CustomButtons/Button";
 
+// context
+import { useSettings } from "~/context/Settings";
+
 // jss styles
 import rotatingCardStyle from "~/assets/jss/components/rotatingCardStyle";
 
@@ -25,6 +28,9 @@ const {
 const useStyles = makeStyles(rotatingCardStyle);
 
 const PartnerCard = ({ card: { front, back } }) => {
+  const {
+    defaultSettings: { language },
+  } = useSettings();
   const [activeRotate, setActiveRotate] = React.useState("");
   const classes = useStyles();
 
@@ -70,7 +76,7 @@ const PartnerCard = ({ card: { front, back } }) => {
     back.backCardListItems.map((backCardListItem) => (
       <div key={backCardListItem.id}>
         <Icon>{backCardListItem.materialIcon}</Icon>
-        <p>{backCardListItem.description}</p>
+        <p>{backCardListItem[`description${language}`]}</p>
       </div>
     ));
 
@@ -82,15 +88,17 @@ const PartnerCard = ({ card: { front, back } }) => {
         <Card className={classes.cardRotate}>
           <div className={classes.front}>
             <CardBody className={classes.cardBodyRotate}>
-              <legend className={classes.title}>{front.frontCardTitle}</legend>
+              <legend className={classes.title}>
+                {front[`frontCardTitle${language}`]}
+              </legend>
               <img
                 src={`${apiUrl}${front.brandImage.url}`}
                 alt="Partner Card"
                 style={{ maxWidth: "100%", display: "block", margin: "auto" }}
               />
               <div className={classes.cardBodyContent}>
-                <span>{front.partnerType}</span>
-                <p>{front.allianceTime}</p>
+                <span>{front[`partnerType${language}`]}</span>
+                <p>{front[`allianceTime${language}`]}</p>
               </div>
             </CardBody>
             <CardFooter>
@@ -100,7 +108,7 @@ const PartnerCard = ({ card: { front, back } }) => {
                   className={classes.floatRight}
                   onClick={() => setActiveRotate(classes.activateRotate)}
                 >
-                  más...
+                  {front[`buttonLabel${language}`]}
                 </Button>
               </div>
             </CardFooter>
@@ -108,7 +116,7 @@ const PartnerCard = ({ card: { front, back } }) => {
           <div className={classes.back}>
             <CardBody className={classes.cardBodyRotate}>
               <div className={classes.backContainer}>
-                <h3>{back.backCardTitle}</h3>
+                <h3>{back[`backCardTitle${language}`]}</h3>
                 <div className={classes.backSolutionsList}>
                   <CardBackList />
                 </div>

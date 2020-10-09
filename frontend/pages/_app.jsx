@@ -2,11 +2,7 @@
 import ReactDOM from "react-dom";
 import Head from "next/head";
 import Router from "next/router";
-import { ApolloProvider } from "@apollo/client";
 import PropTypes from "prop-types";
-
-// apollo
-import { useApollo } from "~/libs/apollo";
 
 // loader component
 import PageChange from "~/components/PageChange/PageChange";
@@ -37,8 +33,6 @@ Router.events.on("routeChangeError", () => {
 });
 
 const App = ({ Component, pageProps }) => {
-  const apolloClient = useApollo(pageProps.initialApolloState);
-
   React.useEffect(() => {
     const comment = document.createComment(`
       IIIIIIIIII                         tttt                                              WWWWWWWW                           WWWWWWWW
@@ -64,7 +58,7 @@ const App = ({ Component, pageProps }) => {
   }, []);
 
   return (
-    <ApolloProvider client={apolloClient}>
+    <>
       <Head>
         <meta
           name="viewport"
@@ -75,7 +69,7 @@ const App = ({ Component, pageProps }) => {
       <SettingsProvider>
         <Component {...pageProps} />
       </SettingsProvider>
-    </ApolloProvider>
+    </>
   );
 };
 

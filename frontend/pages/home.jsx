@@ -7,6 +7,9 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
+// apollo
+import { withApollo } from "~/libs/apollo";
+
 // layout
 import withLayout from "~/layouts/main";
 
@@ -40,4 +43,4 @@ const HomePage = () => {
   );
 };
 
-export default withLayout(HomePage);
+export default withApollo(withLayout(HomePage));

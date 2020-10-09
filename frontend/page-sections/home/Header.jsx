@@ -6,8 +6,6 @@ import Carousel from "react-slick";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-import { initializeApollo } from "~/libs/apollo";
-
 // context
 import { useSettings } from "~/context/Settings";
 
@@ -28,7 +26,7 @@ const useStyles = makeStyles(homeStyle);
 
 const Header = () => {
   const {
-    defaultSettings: { languaje },
+    defaultSettings: { language },
   } = useSettings();
 
   const { loading, error, data } = useQuery(HOME_HEADER_QUERY);
@@ -47,20 +45,20 @@ const Header = () => {
   };
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return null;
   }
 
   if (error) {
     return (
-      <h1>
+      <span>
         Error:
         {JSON.stringify(error)}
-      </h1>
+      </span>
     );
   }
 
   if (!data.home) {
-    return <h1>¡Revisar CMS!</h1>;
+    return <span>¡Revisar CMS!</span>;
   }
 
   const {
@@ -82,26 +80,12 @@ const Header = () => {
       </Carousel>
       <div className={classes.captionContainer}>
         <RenderHTML
-          html={header[`caption${languaje}`]}
+          html={header[`caption${language}`]}
           className={classes.textOverlay}
         />
       </div>
     </header>
   );
 };
-
-export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: HOME_HEADER_QUERY,
-  });
-
-  return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-    },
-  };
-}
 
 export default Header;

@@ -25,26 +25,26 @@ const useStyles = makeStyles(homeStyle);
 
 const Experience = () => {
   const {
-    defaultSettings: { languaje },
+    defaultSettings: { language },
   } = useSettings();
   const { loading, error, data } = useQuery(HOME_OUR_EXPERIENCE_QUERY);
   const classes = useStyles();
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return null;
   }
 
   if (error) {
     return (
-      <h1>
+      <span>
         Error:
         {JSON.stringify(error)}
-      </h1>
+      </span>
     );
   }
 
   if (!data.home) {
-    return <h1>¡Revisar CMS!</h1>;
+    return <span>¡Revisar CMS!</span>;
   }
 
   const {
@@ -57,7 +57,7 @@ const Experience = () => {
         <div>
           <Icon>{listItem.materialIcon}</Icon>
           <Link href={listItem.path}>
-            <a>{listItem[`description${languaje}`]}</a>
+            <a>{listItem[`description${language}`]}</a>
           </Link>
         </div>
       </li>
@@ -72,11 +72,11 @@ const Experience = () => {
       >
         <GridItem item xs={10} sm={8} md={4} lg={5}>
           <div className={classes.underlinedTitleContainer}>
-            <h1>{ourExperience[`underlinedTitle${languaje}`]}</h1>
+            <h1>{ourExperience[`underlinedTitle${language}`]}</h1>
             <hr className={classes.divider} />
           </div>
           <RenderHTML
-            html={ourExperience[`introductoryText${languaje}`]}
+            html={ourExperience[`introductoryText${language}`]}
             className={classes.experienceDescription}
           />
         </GridItem>
@@ -84,7 +84,7 @@ const Experience = () => {
           <div className={classes.businessListContainer}>
             <div>
               <span className={classes.businessLinesTitle}>
-                {ourExperience[`businessListTitle${languaje}`]}
+                {ourExperience[`businessListTitle${language}`]}
               </span>
               <ul className={classes.businessFeed}>
                 <BusinessLinesList />
@@ -97,7 +97,7 @@ const Experience = () => {
             link
             round
           >
-            {ourExperience.actionButton[`label${languaje}`]}
+            {ourExperience.actionButton[`label${language}`]}
           </Button>
         </GridItem>
       </GridContainer>

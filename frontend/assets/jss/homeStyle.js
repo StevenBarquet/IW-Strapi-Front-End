@@ -82,7 +82,6 @@ const homeStyle = (theme) => ({
     listStyleType: "none",
     "& li": {
       paddingBottom: "10px",
-      float: "left",
       "& div": {
         display: "flex",
         "& span": {

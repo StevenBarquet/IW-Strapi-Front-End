@@ -32,6 +32,12 @@
     },
     "allianceTime_en": {
       "type": "string"
+    },
+    "buttonLabel": {
+      "type": "string"
+    },
+    "buttonLabel_en": {
+      "type": "string"
     }
   }
 }

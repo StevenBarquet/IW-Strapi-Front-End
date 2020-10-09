@@ -11,8 +11,10 @@ import Footer from "~/components/Footer/Footer";
 import GridContainer from "~/components/Grid/GridContainer";
 import GridItem from "~/components/Grid/GridItem";
 
+// images
 import Logo from "~/assets/img/logo.svg";
 
+// jss styles
 import styles from "~/assets/jss/nextjs-material-kit-pro/pages/componentsSections/footerStyle";
 
 const useStyles = makeStyles(styles);

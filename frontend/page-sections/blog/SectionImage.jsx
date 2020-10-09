@@ -13,9 +13,6 @@ import CardAvatar from "~/components/Card/CardAvatar";
 import CardBody from "~/components/Card/CardBody";
 import CardFooter from "~/components/Card/CardFooter";
 
-// Apollo
-import { initializeApollo } from "~/libs/apollo";
-
 // gql
 import { TEAMS_QUERY } from "~/gql/queries/blog";
 
@@ -134,19 +131,5 @@ const SectionTeams = () => {
     </div>
   );
 };
-
-export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: TEAMS_QUERY,
-  });
-
-  return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-    },
-  };
-}
 
 export default SectionTeams;

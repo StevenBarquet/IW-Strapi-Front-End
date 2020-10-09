@@ -8,6 +8,8 @@ const withImages = require("next-images");
 const withSass = require("@zeit/next-sass");
 const withCSS = require("@zeit/next-css");
 
+const path = require("path");
+
 const nextConfig = {
   publicRuntimeConfig: {
     apiUrl: process.env.API_URL,
@@ -33,6 +35,9 @@ const mainConfig = {
     );
 
     config.optimization.minimizer.push(new OptimizeCSSAssetsPlugin({}));
+
+    // eslint-disable-next-line no-param-reassign
+    config.resolve.alias["~"] = path.join(__dirname, "./");
 
     return config;
   },

@@ -9,11 +9,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "~/components/Grid/GridContainer";
 import SectionTitle from "~/components-sections/SectionTitle";
 
-// jss styles
-import homeStyle from "~/assets/jss/homeStyle";
+// context
+import { useSettings } from "~/context/Settings";
 
 // gql
 import { HOME_THEY_TRUST } from "~/gql/queries/home";
+
+// jss styles
+import homeStyle from "~/assets/jss/homeStyle";
 
 const {
   publicRuntimeConfig: { apiUrl },
@@ -22,24 +25,27 @@ const {
 const useStyles = makeStyles(homeStyle);
 
 const TheyTrust = () => {
+  const {
+    defaultSettings: { language },
+  } = useSettings();
   const { loading, error, data } = useQuery(HOME_THEY_TRUST);
   const classes = useStyles();
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return null;
   }
 
   if (error) {
     return (
-      <h1>
+      <span>
         Error:
         {JSON.stringify(error)}
-      </h1>
+      </span>
     );
   }
 
   if (!data.home) {
-    return <h1>¡Revisar CMS!</h1>;
+    return <span>¡Revisar CMS!</span>;
   }
 
   const {
@@ -62,9 +68,9 @@ const TheyTrust = () => {
       <GridContainer justify="center">
         <SectionTitle
           icon={theyTrust.sectionIcon}
-          legend={theyTrust.legend.sectionLegendTitle}
-          title={theyTrust.title.sectionTitle}
-          subTitle={theyTrust.subTitle.sectionSubTitle}
+          legend={theyTrust.legend[`sectionLegendTitle${language}`]}
+          title={theyTrust.title[`sectionTitle${language}`]}
+          subTitle={theyTrust.subTitle[`sectionSubTitle${language}`]}
         >
           <div className="wrapperCompanySlider">
             <div className="brandSlider">

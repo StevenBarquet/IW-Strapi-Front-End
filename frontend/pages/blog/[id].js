@@ -22,10 +22,13 @@ import GridContainer from "~/components/Grid/GridContainer";
 import GridItem from "~/components/Grid/GridItem";
 import Button from "~/components/CustomButtons/Button";
 
+// apollo
+import { withApollo } from "~/libs/apollo";
+
 // gql
 import { ARTICLES_QUERY } from "~/gql/queries/blog";
 
-import blogPostPageStyle from "~/assets/jss/blogPostsPageStyle/blogPostPageStyle.js";
+import blogPostPageStyle from "~/assets/jss/blogPostsPageStyle/blogPostPageStyle";
 
 // sections
 const SectionText = dynamic(import("~/page-sections/blog/SectionText"));
@@ -106,4 +109,4 @@ const BlogPostPage = () => {
   );
 };
 
-export default withLayout(BlogPostPage);
+export default withApollo(withLayout(BlogPostPage));

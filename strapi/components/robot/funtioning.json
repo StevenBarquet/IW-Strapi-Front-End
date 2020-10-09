@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_robot_funtionings",
+  "info": {
+    "name": "funtioning",
+    "icon": "chalkboard"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.carousel-with-caption"
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "urlYoutube": {
+      "type": "string"
+    },
+    "introductoryText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.introductory-text"
+    }
+  }
+}

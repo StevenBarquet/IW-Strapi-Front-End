@@ -211,10 +211,11 @@ const subTitle = {
   textAlign: "center",
   fontWeight: "400",
   marginTop: "16px",
-  marginBottom: "25px",
+  marginBottom: "15px",
   minHeight: "32px",
   fontFamily: `"Raleway", "Times New Roman", serif`,
 };
+
 
 const cardTitle = {
   "&, & a": {

@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_robot_benefits",
+  "info": {
+    "name": "benefits",
+    "icon": "file-contract"
+  },
+  "options": {},
+  "attributes": {
+    "sectionIcon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "legend": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.legend"
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "InfoArea": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.card-info-with-icon"
+    }
+  }
+}

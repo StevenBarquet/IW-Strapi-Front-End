@@ -21,7 +21,12 @@ const {
 
 const sectionTitleStyle = {
   legend,
-  title,
+  title: {
+    ...title,
+    "@media (max-width: 830px)": {
+      fontSize: "2.500rem",
+    },
+  },
   subTitle,
   centerImage,
 };

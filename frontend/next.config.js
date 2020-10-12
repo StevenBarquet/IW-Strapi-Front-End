@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
 
+const withOffline = require("next-offline");
 const withPlugins = require("next-compose-plugins");
 const withImages = require("next-images");
 const withSass = require("@zeit/next-sass");
@@ -12,7 +12,6 @@ const path = require("path");
 const nextConfig = {
   publicRuntimeConfig: {
     apiUrl: process.env.API_URL,
-    apiContenerizedUrl: process.env.API_CONTENERIZED_URL,
   },
 };
 
@@ -29,34 +28,6 @@ const mainConfig = {
       return config;
     }
 
-    const oldEntry = config.entry;
-    // eslint-disable-next-line no-param-reassign
-    config.entry = () =>
-      oldEntry().then((entry) => {
-        entry["main.js"].push(path.resolve("./utils/offline"));
-        return entry;
-      });
-
-    config.plugins.push(
-      new SWPrecacheWebpackPlugin({
-        cacheId: "web-interware",
-        filepath: path.resolve("./public/sw.js"),
-        staticFileGlobs: ["public/**/*"],
-        minify: true,
-        staticFileGlobsIgnorePatterns: [/\.next\//],
-        runtimeCaching: [
-          {
-            handler: "fastest",
-            urlPattern: /[.](png|jpg|css)/,
-          },
-          {
-            handler: "networkFirst",
-            urlPattern: /^http.*/,
-          },
-        ],
-      })
-    );
-
     // eslint-disable-next-line no-param-reassign
     config.resolve.alias["~"] = path.join(__dirname, "./");
 
@@ -72,4 +43,41 @@ const mainConfig = {
   },
 };
 
-module.exports = withPlugins([withSass, withImages, withCSS], mainConfig);
+module.exports = withPlugins(
+  [
+    withSass,
+    withImages,
+    withCSS,
+    [
+      withOffline,
+      {
+        workboxOpts: {
+          swDest: process.env.NEXT_EXPORT
+            ? "service-worker.js"
+            : "static/service-worker.js",
+          runtimeCaching: [
+            {
+              urlPattern: /^https?.*/,
+              handler: "NetworkFirst",
+              options: {
+                cacheName: "offlineCache",
+                expiration: {
+                  maxEntries: 200,
+                },
+              },
+            },
+          ],
+        },
+        async rewrites() {
+          return [
+            {
+              source: "/service-worker.js",
+              destination: "/_next/static/service-worker.js",
+            },
+          ];
+        },
+      },
+    ],
+  ],
+  mainConfig
+);

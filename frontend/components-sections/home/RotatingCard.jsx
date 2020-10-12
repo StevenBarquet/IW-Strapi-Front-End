@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/core components
 import Icon from "@material-ui/core/Icon";
+import IconButton from "@material-ui/core/IconButton";
 
 // core-components
 import GridItem from "~/components/Grid/GridItem";
@@ -124,15 +125,14 @@ const PartnerCard = ({ card: { front, back } }) => {
             </CardBody>
             <CardFooter>
               <div className={classes.backFooterContainer}>
-                <Button
-                  color="primary"
-                  round
-                  justIcon
+                <IconButton
+                  color="inherit"
+                  aria-label={`rotating card ${front.frontCardTitle}`}
                   className={classes.floatRight}
                   onClick={() => setActiveRotate("")}
                 >
                   <Icon>replay</Icon>
-                </Button>
+                </IconButton>
               </div>
             </CardFooter>
           </div>

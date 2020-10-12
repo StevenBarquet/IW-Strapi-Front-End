@@ -46,12 +46,14 @@
     "@zeit/next-sass": "^1.0.1",
     "animate.css": "^4.1.0",
     "classnames": "^2.2.6",
+    "express": "^4.17.1",
     "formik": "^2.2.0",
     "graphql": "^15.3.0",
     "moment": "^2.27.0",
     "next": "latest",
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.4.0",
+    "next-offline": "^5.0.2",
     "node-sass": "^4.14.1",
     "nouislider": "^14.6.0",
     "path": "^0.12.7",
@@ -83,7 +85,6 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "prettier": "^2.0.5",
-    "sw-precache-webpack-plugin": "^1.0.0"
+    "prettier": "^2.0.5"
   }
 }

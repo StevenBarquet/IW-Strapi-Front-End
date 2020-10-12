@@ -1,22 +1,20 @@
-const { createServer } = require("http");
-const path = require("path");
+const express = require("express");
 const next = require("next");
 
+const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== "production";
-const app = next({ dir: ".", dev });
+const app = next({ dev });
 const handle = app.getRequestHandler();
-const PORT = process.env.PORT || 3000;
 
 app.prepare().then(() => {
-  const server = createServer((req, res) => {
-    if (req.url === "/sw.js") {
-      app.serveStatic(req, res, path.resolve("./public/sw.js"));
-    } else {
-      handle(req, res);
-    }
+  const server = express();
+
+  server.all("*", (req, res) => {
+    return handle(req, res);
   });
-  server.listen(PORT, (err) => {
+
+  server.listen(port, (err) => {
     if (err) throw err;
-    console.log(`> App running on port ${PORT}`);
+    console.log(`> Ready on http://localhost:${port}`);
   });
 });

@@ -15,7 +15,7 @@ import GridItem from "~/components/Grid/GridItem";
 import Logo from "~/assets/img/logo.svg";
 
 // jss styles
-import styles from "~/assets/jss/nextjs-material-kit-pro/pages/componentsSections/footerStyle";
+import styles from "~/assets/jss/footerStyle";
 
 const useStyles = makeStyles(styles);
 
@@ -49,9 +49,9 @@ const withLayout = (Page) => {
           )}
         >
           <div className={classes.footer}>
-            <GridContainer>
+            <GridContainer justify="center">
               <GridItem xs={12} sm={3} md={3} lg={3}>
-                <h5>Nuestros servicios</h5>
+                <span>Nuestros servicios</span>
                 <ul className={classes.linksVertical}>
                   <li>
                     <a href="#tiscareno">Consultoría</a>
@@ -80,7 +80,7 @@ const withLayout = (Page) => {
                 </ul>
               </GridItem>
               <GridItem xs={12} sm={3} md={3} lg={3}>
-                <h5>Links de interés</h5>
+                <span>Links de interés</span>
                 <ul className={classes.linksVertical}>
                   <li>
                     <a href="#tiscareno">InterWare Blog</a>
@@ -91,7 +91,7 @@ const withLayout = (Page) => {
                 </ul>
               </GridItem>
               <GridItem xs={12} sm={3} md={3} lg={3}>
-                <h5>Contáctanos</h5>
+                <span>Contáctanos</span>
                 <p>
                   Oficinas CDMX
                   <small>
@@ -102,7 +102,7 @@ const withLayout = (Page) => {
                 <span>contacto@interware.com.mx</span>
               </GridItem>
               <GridItem xs={12} sm={3} md={3} lg={3}>
-                <h5>Síguenos en:</h5>
+                <span>Síguenos en:</span>
                 <ul className={classes.socialButtons}>
                   <li>
                     <span className="fa-stack" style={{ verticalAlign: "top" }}>

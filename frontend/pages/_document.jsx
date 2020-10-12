@@ -73,10 +73,6 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
-          <script
-            src="https://kit.fontawesome.com/ccaa22cd11.js"
-            crossOrigin="anonymous"
-          />
 
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:url" content="https://www.interware.com.mx" />
@@ -115,16 +111,7 @@ class MyDocument extends Document {
             src="https://static.addtoany.com/menu/page.js"
             lang="es_Es"
           />
-          {/* script del compartir Facabook */}
-          <div id="fb-root" />
-          <script
-            async
-            defer
-            // Crossorigin="anonymous"
-            src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0"
-            nonce="ZgkIPHX5"
-          />
-          {/* script del comentarios Facabook */}
+          {/* script del comentarios Facebook */}
           <div id="fb-root" />
           <script
             async

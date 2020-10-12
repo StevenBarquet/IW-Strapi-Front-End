@@ -10,8 +10,11 @@ import PageChange from "~/components/PageChange/PageChange";
 // context
 import { SettingsProvider } from "~/context/Settings";
 
+// lazysizes
+import "~/assets/js/lazysizes.min";
+
 // Styles
-import "~/assets/scss/nextjs-material-kit-pro.scss?v=1.1.0";
+import "~/assets/scss/nextjs-material-kit-pro.scss";
 import "animate.css/animate.min.css";
 
 Router.events.on("routeChangeStart", (url) => {
@@ -62,7 +65,7 @@ const App = ({ Component, pageProps }) => {
       <Head>
         <meta
           name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+          content="minimum-scale=1, initial-scale=1, maximum-scale=5, width=device-width, shrink-to-fit=no, viewport-fit=cover"
         />
         <title>InterWare de México - Soluciones tecnológicas</title>
       </Head>

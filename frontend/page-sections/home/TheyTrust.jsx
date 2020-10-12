@@ -59,6 +59,7 @@ const TheyTrust = () => {
           key={brandImage.id}
           src={`${apiUrl}${brandImage.url}`}
           alt={brandImage.alternativeText}
+          className="lazyload"
         />
       );
     });

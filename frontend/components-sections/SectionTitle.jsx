@@ -1,6 +1,7 @@
 // Dependencies
 import getConfig from "next/config";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -42,7 +43,7 @@ const SectionTitle = ({ legend, title, subTitle, icon, children }) => {
       <img
         src={`${apiUrl}${icon.url}`}
         alt={icon.alternativeText}
-        className={classes.centerImage}
+        className={classNames(classes.centerImage, "lazyload")}
       />
     );
   };

@@ -87,7 +87,7 @@ const homeStyle = (theme) => ({
         "& span": {
           marginRight: "16px",
           fontSize: "1.5rem",
-          color: "#3DB49E",
+          color: "#2e7b69",
         },
         "& a": {
           fontSize: "1.125rem",

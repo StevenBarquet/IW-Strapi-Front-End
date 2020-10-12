@@ -67,7 +67,7 @@ const whiteColor = "#FFF";
 const blackColor = "#000";
 const pinterestColor = "#cc2127";
 const behanceColor = "#474D56";
-const orangeColor = "#F09F54";
+const orangeColor = "#B95900";
 const dribbbleColor = "#ea4c89";
 
 const valenciaColor = "#D9373E";

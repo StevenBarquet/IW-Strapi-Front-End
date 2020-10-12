@@ -21,7 +21,7 @@ const InfoArea = (props) => {
   return (
     <div className={infoAreaClasses}>
       <div className={classes.descriptionWrapper}>
-        <h4 className={classes.title}>{title}</h4>
+        <p className={classes.title}>{title}</p>
         <div className={classes.description}>{description}</div>
       </div>
     </div>

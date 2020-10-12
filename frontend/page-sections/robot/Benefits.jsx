@@ -106,7 +106,7 @@ const Benefits = () => {
           <img
             className={classes.imgFeature}
             src={`${apiUrl}${item.sectionIcon.url}`}
-            alt={item.alternativeText}
+            alt={item.sectionIcon.alternativeText}
           />
           <InfoArea
             vertical

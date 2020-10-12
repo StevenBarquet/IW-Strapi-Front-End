@@ -87,7 +87,7 @@ const robotStyle = () => ({
       fontWeight: "700",
       clear: "both",
       display: "block",
-      color: "#ABABAB",
+      color: "#7B7575",
     },
   },
   iframeContainer: {
@@ -139,7 +139,7 @@ const robotStyle = () => ({
   },
   subtitle: {
     ...subTitle,
-    color: "#F09F54 !important",
+    color: "#9B4C03 !important",
     marginBottom: "0px !important",
     "@media (max-width: 736px)": {
       fontSize: "1rem",
@@ -170,7 +170,7 @@ const robotStyle = () => ({
   cardTitle: {
     ...cardTitle,
     fontSize: "1.500rem",
-    color: "#F09F54 !important",
+    color: `${orangeColor}!important`,
   },
   cardPosition: {
     position: "relative",
@@ -185,7 +185,7 @@ const robotStyle = () => ({
     right: "-2px",
   },
   textBackground: {
-    color: "#FFFF",
+    color: "#111",
     fontWeight: "bold",
     fontSize: "2rem",
   },

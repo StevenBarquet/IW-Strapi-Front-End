@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_links",
+  "info": {
+    "name": "link",
+    "icon": "bars"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "label_en": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_page_dropdowns",
+  "info": {
+    "name": "dropdown",
+    "icon": "arrow-alt-circle-down"
+  },
+  "options": {},
+  "attributes": {
+    "topLabel": {
+      "type": "string"
+    },
+    "topLabel_en": {
+      "type": "string"
+    },
+    "nestedLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.link"
+    }
+  }
+}

@@ -42,20 +42,21 @@ const infoStyle = {
     fontSize: "2.25rem",
   },
   descriptionWrapper: {
-    color: grayColor[0],
+    color: "#3D3D3D",
     overflow: "hidden",
   },
   title: {
     ...title,
     margin: "1.75rem 0 0.875rem !important",
     minHeight: "unset",
+    fontSize: "1.3rem",
   },
   description: {
-    color: grayColor[0],
+    color: "#3D3D3D",
     overflow: "hidden",
     marginTop: "0px",
     "& p": {
-      color: grayColor[0],
+      color: "#3D3D3D",
       fontSize: "14px",
     },
   },

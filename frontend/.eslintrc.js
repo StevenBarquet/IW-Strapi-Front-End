@@ -56,6 +56,7 @@ module.exports = {
     React: "writable",
     window: "writable",
     document: "writable",
+    navigator: "writable",
     APP_CONFIG: true,
     APP_CONSTANTS: true,
   },

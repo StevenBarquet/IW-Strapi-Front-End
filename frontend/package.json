@@ -14,9 +14,9 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next",
+    "dev": "node server",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server",
     "deploy": "next build && next start",
     "export": "next export",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && rm -rf .next/ && npm install && npm run dev",
@@ -52,7 +52,6 @@
     "next": "latest",
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.4.0",
-    "next-pwa": "^3.1.1",
     "node-sass": "^4.14.1",
     "nouislider": "^14.6.0",
     "path": "^0.12.7",
@@ -84,6 +83,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "sw-precache-webpack-plugin": "^1.0.0"
   }
 }

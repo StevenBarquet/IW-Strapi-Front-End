@@ -21,7 +21,7 @@ import DateTime from "~/components/DateTime/DateTime";
 
 import sectionTextStyle from "~/assets/jss/blogPostsPageStyle/sectionTextStyle.js";
 
-const SectionPricing = dynamic(import("~/page-sections/robot/SectionPricing"));
+// const SectionPricing = dynamic(import("~/page-sections/robot/SectionPricing"));
 
 const useStyles = makeStyles(sectionTextStyle);
 
@@ -96,7 +96,7 @@ const Depuracion = () => {
             }}
           />
         </GridItem>
-        <SectionPricing />
+        {/* <SectionPricing /> */}
         <div className={classes.iframeContainer}>
           <iframe
             height="250"

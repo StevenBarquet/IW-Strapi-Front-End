@@ -1,7 +1,6 @@
 const webpack = require("webpack");
-const withPWA = require("next-pwa");
-// const runtimeCaching = require("next-pwa/cache");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
 
 const withPlugins = require("next-compose-plugins");
 const withImages = require("next-images");
@@ -19,14 +18,47 @@ const nextConfig = {
 
 const mainConfig = {
   ...nextConfig,
-  webpack: (config, { dev }) => {
-    if (dev) {
-      // eslint-disable-next-line no-param-reassign
-      config.watchOptions = {
-        poll: 1000,
-        aggregateTimeout: 300,
-      };
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      return config;
     }
+
+    const isProduction = config.mode === "production";
+
+    if (!isProduction) {
+      return config;
+    }
+
+    const oldEntry = config.entry;
+    // eslint-disable-next-line no-param-reassign
+    config.entry = () =>
+      oldEntry().then((entry) => {
+        entry["main.js"].push(path.resolve("./utils/offline"));
+        return entry;
+      });
+
+    config.plugins.push(
+      new SWPrecacheWebpackPlugin({
+        cacheId: "web-interware",
+        filepath: path.resolve("./public/sw.js"),
+        staticFileGlobs: ["public/**/*"],
+        minify: true,
+        staticFileGlobsIgnorePatterns: [/\.next\//],
+        runtimeCaching: [
+          {
+            handler: "fastest",
+            urlPattern: /[.](png|jpg|css)/,
+          },
+          {
+            handler: "networkFirst",
+            urlPattern: /^http.*/,
+          },
+        ],
+      })
+    );
+
+    // eslint-disable-next-line no-param-reassign
+    config.resolve.alias["~"] = path.join(__dirname, "./");
 
     config.plugins.push(
       new webpack.optimize.LimitChunkCountPlugin({
@@ -36,24 +68,8 @@ const mainConfig = {
 
     config.optimization.minimizer.push(new OptimizeCSSAssetsPlugin({}));
 
-    // eslint-disable-next-line no-param-reassign
-    config.resolve.alias["~"] = path.join(__dirname, "./");
-
     return config;
   },
 };
 
-module.exports = withPlugins(
-  // [
-  //   withPWA,
-  //   {
-  //     ...mainConfig,
-  //     pwa: {
-  //       dest: "public",
-  //       runtimeCaching,
-  //     },
-  //   },
-  // ],
-  [withSass, withImages, withCSS],
-  mainConfig
-);
+module.exports = withPlugins([withSass, withImages, withCSS], mainConfig);

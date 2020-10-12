@@ -12,6 +12,7 @@ import {
   centerImage,
   sectionWithBackgroundColor,
 } from "~/assets/jss/nextjs-material-kit-pro";
+import { grey } from "@material-ui/core/colors";
 
 const robotStyle = () => ({
   section,
@@ -32,7 +33,7 @@ const robotStyle = () => ({
     },
     left: "18%",
     transform: "translate(-25%, -50%)",
-    top: "63%",
+    top: "53%",
     position: "absolute",
     zIndex: "1",
   },
@@ -56,6 +57,9 @@ const robotStyle = () => ({
           fontSize: "2rem",
         },
       },
+      "& p": {
+        fontSize: "2rem",
+      },
     },
     "@media (max-width: 1024px)": {
       width: "300px",
@@ -64,6 +68,9 @@ const robotStyle = () => ({
         "& span": {
           fontSize: "2rem",
         },
+      },
+      "& p": {
+        fontSize: "3rem",
       },
     },
     color: orangeColor,
@@ -75,6 +82,13 @@ const robotStyle = () => ({
         clear: "both",
         display: "block",
       },
+    },
+    "& p": {
+      fontSize: "3rem",
+      fontWeight: "700",
+      clear: "both",
+      display: "block",
+      color: "#ABABAB",
     },
   },
   iframeContainer: {

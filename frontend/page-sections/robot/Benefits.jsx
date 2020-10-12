@@ -93,6 +93,35 @@ const Benefits = () => {
     robot: { benefits },
   } = data;
 
+  const renderComponent = () => {
+    return benefits.InfoArea.map((item) => {
+      return (
+        <GridItem
+          xs={12}
+          sm={10}
+          md={4}
+          key={item.id}
+          className={classes.cardFeatures}
+        >
+          <img
+            className={classes.imgFeature}
+            src={`${apiUrl}${item.sectionIcon.url}`}
+            alt={item.alternativeText}
+          />
+          <InfoArea
+            vertical
+            icon={TrendingUpIcon}
+            title={item[`title${language}`]}
+            description={
+              <RenderHTML html={item[`descriptionTexts${language}`]} />
+            }
+            iconColor="warning"
+          />
+        </GridItem>
+      );
+    });
+  };
+
   return (
     <div id="section-benefits" className={classes.section}>
       <GridContainer justify="center">
@@ -105,67 +134,11 @@ const Benefits = () => {
             <GridContainer
               className={`${classes.mt8rem} ${classes.listaInfoArea}`}
             >
-              {benefits.InfoArea.map((item) => {
-                return (
-                  <GridItem
-                    xs={12}
-                    sm={10}
-                    md={4}
-                    key={item.id}
-                    className={classes.cardFeatures}
-                  >
-                    <img
-                      className={classes.imgFeature}
-                      src={`${apiUrl}${item.sectionIcon.url}`}
-                      alt={item.alternativeText}
-                    />
-                    <InfoArea
-                      vertical
-                      icon={TrendingUpIcon}
-                      title={item[`title${language}`]}
-                      description={(
-                        <RenderHTML
-                          html={item[`descriptionTexts${language}`]}
-                        />
-                      )}
-                      iconColor="warning"
-                    />
-                  </GridItem>
-                );
-              })}
+              {renderComponent()}
             </GridContainer>
             <GridContainer className={classes.carousel}>
               <GridItem xs={12} sm={12} md={9}>
-                <Carousel {...sliderSettings}>
-                  {benefits.InfoArea.map((item) => {
-                    return (
-                      <GridItem
-                        xs={12}
-                        sm={10}
-                        md={4}
-                        key={item.id}
-                        className={classes.cardFeatures}
-                      >
-                        <img
-                          className={classes.imgFeature}
-                          src={`${apiUrl}${item.sectionIcon.url}`}
-                          alt={item.alternativeText}
-                        />
-                        <InfoArea
-                          vertical
-                          icon={TrendingUpIcon}
-                          title={item[`title${language}`]}
-                          description={(
-                            <RenderHTML
-                              html={item[`descriptionTexts${language}`]}
-                            />
-                          )}
-                          iconColor="warning"
-                        />
-                      </GridItem>
-                    );
-                  })}
-                </Carousel>
+                <Carousel {...sliderSettings}>{renderComponent()}</Carousel>
               </GridItem>
             </GridContainer>
           </>

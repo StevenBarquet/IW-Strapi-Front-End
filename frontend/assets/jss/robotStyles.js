@@ -12,7 +12,6 @@ import {
   centerImage,
   sectionWithBackgroundColor,
 } from "~/assets/jss/nextjs-material-kit-pro";
-import { grey } from "@material-ui/core/colors";
 
 const robotStyle = () => ({
   section,
@@ -49,18 +48,6 @@ const robotStyle = () => ({
     display: "none",
   },
   textOverlay: {
-    "@media (max-width: 736px)": {
-      width: "300px",
-      "& h1": {
-        fontSize: "1.6rem",
-        "& span": {
-          fontSize: "2rem",
-        },
-      },
-      "& p": {
-        fontSize: "2rem",
-      },
-    },
     "@media (max-width: 1024px)": {
       width: "300px",
       "& h1": {
@@ -71,6 +58,18 @@ const robotStyle = () => ({
       },
       "& p": {
         fontSize: "3rem",
+      },
+    },
+    "@media (max-width: 736px)": {
+      width: "300px",
+      "& h1": {
+        fontSize: "1.6rem",
+        "& span": {
+          fontSize: "2rem",
+        },
+      },
+      "& p": {
+        fontSize: "2rem",
       },
     },
     color: orangeColor,
@@ -108,15 +107,15 @@ const robotStyle = () => ({
     },
   },
   imgFeature: {
-    "@media (max-width: 736px)": {
-      width: "37%",
-      top: "-36px",
-      left: "96px",
-    },
     "@media (max-width: 1024px)": {
       width: "37%",
       top: "-34px",
       left: "68px",
+    },
+    "@media (max-width: 736px)": {
+      width: "37%",
+      top: "-36px",
+      left: "96px",
     },
     width: "20%",
     position: "absolute",
@@ -205,6 +204,12 @@ const robotStyle = () => ({
   listaInfoArea: {
     "@media (max-width: 1024px)": {
       display: "none",
+    },
+  },
+  autoMargin: {
+    "@media (max-width: 1024px)": {
+      marginLeft: "auto",
+      marginRight: "auto",
     },
   },
 });

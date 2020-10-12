@@ -79,81 +79,91 @@ const Form = ({ values, errors, handleChange }) => {
             html={form.introductoryText[`introductoryText${language}`]}
           />
           <GridContainer justify="center">
-            <GridItem item xs={12} sm={4} md={4} lg={5}>
-              <TextInputField
-                id="nombre"
-                name="nombre"
-                value={values.nombre}
-                labelText={language === "_en" ? "Name" : "Nombre"}
-                handleChange={handleChange}
-                errors={errors && !!errors.nombre}
-                inputProps={{
-                  name: "nombre",
-                  maxLength: 18,
-                  placeholder: language === "_en" ? "Name" : "Nombre",
-                }}
-                formControlProps={{
-                  fullWidth: true,
-                }}
-              />
-              <TextInputField
-                id="empresa"
-                name="empresa"
-                value={values.empresa}
-                labelText={language === "_en" ? "Company" : "Empresa"}
-                handleChange={handleChange}
-                errors={errors && !!errors.empresa}
-                inputProps={{
-                  name: "empresa",
-                  maxLength: 18,
-                  placeholder: language === "_en" ? "Company" : "Empresa",
-                }}
-                formControlProps={{
-                  fullWidth: true,
-                }}
-              />
-            </GridItem>
-            <GridItem xs={12} sm={7} md={4} lg={5}>
-              <TextInputField
-                id="email"
-                name="email"
-                value={values.email}
-                labelText={language === "_en" ? "Email" : "Eorreo electrónico"}
-                handleChange={handleChange}
-                errors={errors && !!errors.email}
-                inputProps={{
-                  name: "email",
-                  maxLength: 18,
-                  placeholder:
-                    language === "_en" ? "Email" : "Correo electrónico",
-                }}
-                formControlProps={{
-                  fullWidth: true,
-                }}
-              />
-              <TextInputField
-                id="automatizacion"
-                name="automatizacion"
-                value={values.automatizacion}
-                labelText={
-                  language === "_en"
-                    ? "Automation Needs"
-                    : "Necesidades de Automatización"
-                }
-                handleChange={handleChange}
-                errors={errors && !!errors.automatizacion}
-                inputProps={{
-                  name: "automatizacion",
-                  maxLength: 18,
-                  placeholder:
-                    language === "_en"
-                      ? "Automation Needs"
-                      : "Necesidades de Automatización",
-                }}
-                formControlProps={{
-                  fullWidth: true,
-                }}
-              />
+            <GridItem xs={12} sm={10} md={8}>
+              <GridContainer>
+                <GridItem item xs={12} sm={6} md={6}>
+                  <TextInputField
+                    id="nombre"
+                    name="nombre"
+                    value={values.nombre}
+                    labelText={language === "_en" ? "Name" : "Nombre"}
+                    handleChange={handleChange}
+                    errors={errors && !!errors.nombre}
+                    inputProps={{
+                      name: "nombre",
+                      maxLength: 18,
+                      placeholder: language === "_en" ? "Name" : "Nombre",
+                    }}
+                    formControlProps={{
+                      fullWidth: true,
+                    }}
+                  />
+                </GridItem>
+                <GridItem item xs={12} sm={6} md={6}>
+                  <TextInputField
+                    id="email"
+                    name="email"
+                    value={values.email}
+                    labelText={
+                      language === "_en" ? "Email" : "Eorreo electrónico"
+                    }
+                    handleChange={handleChange}
+                    errors={errors && !!errors.email}
+                    inputProps={{
+                      name: "email",
+                      maxLength: 18,
+                      placeholder:
+                        language === "_en" ? "Email" : "Correo electrónico",
+                    }}
+                    formControlProps={{
+                      fullWidth: true,
+                    }}
+                  />
+                </GridItem>
+                <GridItem item xs={12} sm={5} md={5}>
+                  <TextInputField
+                    id="empresa"
+                    name="empresa"
+                    value={values.empresa}
+                    labelText={language === "_en" ? "Company" : "Empresa"}
+                    handleChange={handleChange}
+                    errors={errors && !!errors.empresa}
+                    inputProps={{
+                      name: "empresa",
+                      maxLength: 18,
+                      placeholder: language === "_en" ? "Company" : "Empresa",
+                    }}
+                    formControlProps={{
+                      fullWidth: true,
+                    }}
+                  />
+                </GridItem>
+                <GridItem item xs={12} sm={7} md={7}>
+                  <TextInputField
+                    id="automatizacion"
+                    name="automatizacion"
+                    value={values.automatizacion}
+                    labelText={
+                      language === "_en"
+                        ? "Automation Needs"
+                        : "Necesidades de Automatización"
+                    }
+                    handleChange={handleChange}
+                    errors={errors && !!errors.automatizacion}
+                    inputProps={{
+                      name: "automatizacion",
+                      maxLength: 18,
+                      placeholder:
+                        language === "_en"
+                          ? "Automation Needs"
+                          : "Necesidades de Automatización",
+                    }}
+                    formControlProps={{
+                      fullWidth: true,
+                    }}
+                  />
+                </GridItem>
+              </GridContainer>
             </GridItem>
           </GridContainer>
           <GridContainer justify="center" className={classes.mt4rem}>

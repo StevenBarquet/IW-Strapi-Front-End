@@ -73,20 +73,20 @@ const Benefits = () => {
   };
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return null;
   }
 
   if (error) {
     return (
-      <h1>
+      <span>
         Error:
         {JSON.stringify(error)}
-      </h1>
+      </span>
     );
   }
 
   if (!data.robot) {
-    return <h1>¡Revisar CMS!</h1>;
+    return <span>¡Revisar CMS!</span>;
   }
 
   const {

@@ -73,6 +73,10 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
+          <script
+            src="https://kit.fontawesome.com/ccaa22cd11.js"
+            crossOrigin="anonymous"
+          />
 
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:url" content="https://www.interware.com.mx" />

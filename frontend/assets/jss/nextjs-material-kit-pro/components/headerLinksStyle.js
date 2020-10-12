@@ -2,6 +2,7 @@
 import {
   grayColor,
   whiteColor,
+  valenciaColor,
   mlAuto,
   hexToRgb,
 } from "~/assets/jss/nextjs-material-kit-pro";
@@ -95,6 +96,9 @@ const headerLinksStyle = (theme) => ({
       width: "20px",
       height: "20px",
     },
+  },
+  selectedNavLink: {
+    color: valenciaColor,
   },
   navLinkJustIcon: {
     "& .fab,& .far,& .fal,& .fas,& .material-icons": {

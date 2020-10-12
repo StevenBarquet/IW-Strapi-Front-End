@@ -24,7 +24,12 @@ const withLayout = (Page) => {
     const classes = useStyles();
     return (
       <>
-        <Header color="white" brand={<Logo />} links={<HeaderLinks />} fixed />
+        <Header
+          color="white"
+          brand={<Logo />}
+          links={<HeaderLinks dropdownHoverColor="primary" />}
+          fixed
+        />
         <div style={{ marginTop: "60px" }}>
           <Page />
         </div>

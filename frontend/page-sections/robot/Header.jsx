@@ -31,7 +31,7 @@ const Header = () => {
   const classes = useStyles();
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return null;
   }
 
   if (error) {

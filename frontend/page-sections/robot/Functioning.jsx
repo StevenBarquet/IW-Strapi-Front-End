@@ -49,10 +49,6 @@ const Functioning = () => {
     return null;
   }
 
-  if (!data.robot) {
-    return <span>¡Revisar CMS!</span>;
-  }
-
   if (error) {
     return (
       <span>
@@ -60,6 +56,10 @@ const Functioning = () => {
         {JSON.stringify(error)}
       </span>
     );
+  }
+
+  if (!data.robot) {
+    return <span>¡Revisar CMS!</span>;
   }
 
   const {

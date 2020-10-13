@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "joinuses",
+  "info": {
+    "name": "joinUs"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.image-with-capition"
+    },
+    "joinTeam": {
+      "type": "component",
+      "repeatable": false,
+      "component": "joinus.join-team"
+    },
+    "cardVacant": {
+      "type": "component",
+      "repeatable": true,
+      "component": "joinus.card-vacant"
+    }
+  }
+}

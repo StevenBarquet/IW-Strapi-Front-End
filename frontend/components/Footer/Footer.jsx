@@ -7,7 +7,7 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-import styles from "~/assets/jss/nextjs-material-kit-pro/components/footerStyle";
+import styles from "assets/jss/nextjs-material-kit-pro/components/footerStyle";
 
 const useStyles = makeStyles(styles);
 

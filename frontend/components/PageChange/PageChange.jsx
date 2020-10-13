@@ -7,7 +7,7 @@ import {
   primaryColor,
   whiteColor,
   title,
-} from "~/assets/jss/nextjs-material-kit-pro";
+} from "assets/jss/nextjs-material-kit-pro";
 
 const useStyles = makeStyles({
   progress: {

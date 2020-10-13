@@ -2,10 +2,10 @@
 import { useQuery } from "@apollo/client";
 
 // core-components
-import RotatingCard from "~/components-sections/home/RotatingCard";
+import RotatingCard from "components-sections/home/RotatingCard";
 
 // gql
-import { HOME_BUSINESS_PARTNERS_CARDS } from "~/gql/queries/home";
+import { HOME_BUSINESS_PARTNERS_CARDS } from "gql/queries/home";
 
 const BusinessPartnersCards = () => {
   const { loading, error, data } = useQuery(HOME_BUSINESS_PARTNERS_CARDS);

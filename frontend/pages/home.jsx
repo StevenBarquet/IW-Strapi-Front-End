@@ -8,22 +8,22 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
 // apollo
-import { withApollo } from "~/libs/apollo";
+import { withApollo } from "libs/apollo";
 
 // layout
-import withLayout from "~/layouts/main";
+import withLayout from "layouts/main";
 
 // jss styles
-import homeStyle from "~/assets/jss/homeStyle";
+import homeStyle from "assets/jss/homeStyle";
 
 // sections
-const Header = dynamic(import("~/page-sections/home/Header"));
-const SectionAboutUs = dynamic(import("~/page-sections/home/AboutUs"));
-const SectionExperience = dynamic(import("~/page-sections/home/Experience"));
+const Header = dynamic(import("page-sections/home/Header"));
+const SectionAboutUs = dynamic(import("page-sections/home/AboutUs"));
+const SectionExperience = dynamic(import("page-sections/home/Experience"));
 const SectionBusinessPartners = dynamic(
-  import("~/page-sections/home/BusinessPartners")
+  import("page-sections/home/BusinessPartners")
 );
-const SectionTheyTrust = dynamic(import("~/page-sections/home/TheyTrust"));
+const SectionTheyTrust = dynamic(import("page-sections/home/TheyTrust"));
 
 const useStyles = makeStyles(homeStyle);
 

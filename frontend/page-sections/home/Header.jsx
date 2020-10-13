@@ -7,16 +7,16 @@ import Carousel from "react-slick";
 import { makeStyles } from "@material-ui/core/styles";
 
 // context
-import { useSettings } from "~/context/Settings";
+import { useSettings } from "context/Settings";
 
 // components
-import RenderHTML from "~/components/HTML/RenderHTML";
+import RenderHTML from "components/HTML/RenderHTML";
 
 // gql
-import { HOME_HEADER_QUERY } from "~/gql/queries/home";
+import { HOME_HEADER_QUERY } from "gql/queries/home";
 
 // jss styles
-import homeStyle from "~/assets/jss/homeStyle";
+import homeStyle from "assets/jss/homeStyle";
 
 const {
   publicRuntimeConfig: { apiUrl },

@@ -11,17 +11,17 @@ import ListItem from "@material-ui/core/ListItem";
 import Icon from "@material-ui/core/Icon";
 
 // core components
-import CustomDropDown from "~/components/CustomDropDown/CustomDropDown";
-import Button from "~/components/CustomButtons/Button";
+import CustomDropDown from "components/CustomDropDown/CustomDropDown";
+import Button from "components/CustomButtons/Button";
 
 // context
-import { useSettings } from "~/context/Settings";
+import { useSettings } from "context/Settings";
 
 // gql
-import MAIN_HEADER_QUERY from "~/gql/queries/header";
+import MAIN_HEADER_QUERY from "gql/queries/header";
 
 // jss styles
-import headerLinksStyle from "~/assets/jss/nextjs-material-kit-pro/components/headerLinksStyle";
+import headerLinksStyle from "assets/jss/nextjs-material-kit-pro/components/headerLinksStyle";
 
 const useStyles = makeStyles(headerLinksStyle);
 

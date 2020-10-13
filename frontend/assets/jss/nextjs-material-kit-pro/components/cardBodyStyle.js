@@ -1,4 +1,4 @@
-import { whiteColor, hexToRgb } from "~/assets/jss/nextjs-material-kit-pro";
+import { whiteColor, hexToRgb } from "assets/jss/nextjs-material-kit-pro";
 
 const cardBodyStyle = {
   cardBody: {

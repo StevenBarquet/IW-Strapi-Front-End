@@ -21,7 +21,7 @@ import Menu from "@material-ui/icons/Menu";
 import Close from "@material-ui/icons/Close";
 
 // jss styles
-import headerStyle from "~/assets/jss/nextjs-material-kit-pro/components/headerStyle";
+import headerStyle from "assets/jss/nextjs-material-kit-pro/components/headerStyle";
 
 const useStyles = makeStyles(headerStyle);
 

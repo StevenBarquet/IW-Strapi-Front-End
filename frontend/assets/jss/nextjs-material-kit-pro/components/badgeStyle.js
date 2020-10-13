@@ -5,7 +5,7 @@ import {
   successColor,
   whiteColor,
   grayColor,
-} from "~/assets/jss/nextjs-material-kit-pro";
+} from "assets/jss/nextjs-material-kit-pro";
 
 const badgeStyle = {
   badge: {

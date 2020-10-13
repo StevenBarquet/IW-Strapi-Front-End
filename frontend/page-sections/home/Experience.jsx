@@ -7,19 +7,19 @@ import { makeStyles } from "@material-ui/core/styles";
 import Icon from "@material-ui/core/Icon";
 
 // core-components
-import GridContainer from "~/components/Grid/GridContainer";
-import GridItem from "~/components/Grid/GridItem";
-import RenderHTML from "~/components/HTML/RenderHTML";
-import Button from "~/components/CustomButtons/Button";
+import GridContainer from "components/Grid/GridContainer";
+import GridItem from "components/Grid/GridItem";
+import RenderHTML from "components/HTML/RenderHTML";
+import Button from "components/CustomButtons/Button";
 
 // context
-import { useSettings } from "~/context/Settings";
+import { useSettings } from "context/Settings";
 
 // gql
-import { HOME_OUR_EXPERIENCE_QUERY } from "~/gql/queries/home";
+import { HOME_OUR_EXPERIENCE_QUERY } from "gql/queries/home";
 
 // jss styles
-import homeStyle from "~/assets/jss/homeStyle";
+import homeStyle from "assets/jss/homeStyle";
 
 const useStyles = makeStyles(homeStyle);
 

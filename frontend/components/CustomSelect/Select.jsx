@@ -16,11 +16,11 @@ import Clear from "@material-ui/icons/Clear";
 import Check from "@material-ui/icons/Check";
 
 // core components
-import InputLabel from "~/components/InputLabel/InputLabel";
+import InputLabel from "components/InputLabel/InputLabel";
 
-import styles from "~/assets/jss/nextjs-material-kit-pro/customSelectStyle";
-import stylesInput from "~/assets/jss/nextjs-material-kit-pro/components/customInputStyle";
-import basicsStyle from "~/assets/jss/nextjs-material-kit-pro/pages/componentsSections/basicsStyle";
+import styles from "assets/jss/nextjs-material-kit-pro/customSelectStyle";
+import stylesInput from "assets/jss/nextjs-material-kit-pro/components/customInputStyle";
+import basicsStyle from "assets/jss/nextjs-material-kit-pro/pages/componentsSections/basicsStyle";
 
 const useStylesSelect = makeStyles(styles);
 const useStylesInput = makeStyles(stylesInput);

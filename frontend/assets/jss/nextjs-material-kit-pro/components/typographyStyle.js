@@ -5,7 +5,7 @@ import {
   warningColor,
   dangerColor,
   grayColor,
-} from "~/assets/jss/nextjs-material-kit-pro.js";
+} from "assets/jss/nextjs-material-kit-pro.js";
 
 const typographyStyle = {
   defaultFontStyle: {

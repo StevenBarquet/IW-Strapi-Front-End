@@ -8,19 +8,19 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 
 // context
-import { useSettings } from "~/context/Settings";
+import { useSettings } from "context/Settings";
 
 // core-components
-import GridContainer from "~/components/Grid/GridContainer";
-import GridItem from "~/components/Grid/GridItem";
-import TextInputField from "~/components/CustomInput/CustomInput";
-import Button from "~/components/CustomButtons/Button";
-import RenderHTML from "~/components/HTML/RenderHTML";
+import GridContainer from "components/Grid/GridContainer";
+import GridItem from "components/Grid/GridItem";
+import TextInputField from "components/CustomInput/CustomInput";
+import Button from "components/CustomButtons/Button";
+import RenderHTML from "components/HTML/RenderHTML";
 
 // gql
-import { ROBOT_FORM_QUERY } from "~/gql/queries/robot";
+import { ROBOT_FORM_QUERY } from "gql/queries/robot";
 
-import robotStyles from "~/assets/jss/robotStyles";
+import robotStyles from "assets/jss/robotStyles";
 
 const useStyles = makeStyles(robotStyles);
 

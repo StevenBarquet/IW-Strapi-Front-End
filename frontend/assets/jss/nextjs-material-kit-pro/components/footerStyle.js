@@ -3,7 +3,7 @@ import {
   container,
   primaryColor,
   grayColor,
-} from "~/assets/jss/nextjs-material-kit-pro";
+} from "assets/jss/nextjs-material-kit-pro";
 
 const footerStyle = {
   left: {

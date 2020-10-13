@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
-import CustomInput from "~/components/CustomInput/CustomInput";
-import Button from "~/components/CustomButtons/Button";
+import CustomInput from "components/CustomInput/CustomInput";
+import Button from "components/CustomButtons/Button";
 
-import styles from "~/assets/jss/nextjs-material-kit-pro/components/customFileInputStyle";
+import styles from "assets/jss/nextjs-material-kit-pro/components/customFileInputStyle";
 
 const useStyles = makeStyles(styles);
 

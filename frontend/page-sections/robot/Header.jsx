@@ -6,16 +6,16 @@ import { useQuery } from "@apollo/client";
 import { makeStyles } from "@material-ui/core/styles";
 
 // context
-import { useSettings } from "~/context/Settings";
+import { useSettings } from "context/Settings";
 
 // components
-import Parallax from "~/components/Parallax/Parallax";
-import RenderHTML from "~/components/HTML/RenderHTML";
+import Parallax from "components/Parallax/Parallax";
+import RenderHTML from "components/HTML/RenderHTML";
 
 // gql
-import { ROBOT_HEADER_QUERY } from "~/gql/queries/robot";
+import { ROBOT_HEADER_QUERY } from "gql/queries/robot";
 
-import robotStyles from "~/assets/jss/robotStyles";
+import robotStyles from "assets/jss/robotStyles";
 
 const {
   publicRuntimeConfig: { apiUrl },

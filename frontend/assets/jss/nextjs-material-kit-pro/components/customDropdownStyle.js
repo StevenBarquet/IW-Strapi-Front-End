@@ -8,7 +8,7 @@ import {
   whiteColor,
   grayColor,
   hexToRgb
-} from "~/assets/jss/nextjs-material-kit-pro.js";
+} from "assets/jss/nextjs-material-kit-pro.js";
 
 const customDropdownStyle = theme => ({
   popperClose: {

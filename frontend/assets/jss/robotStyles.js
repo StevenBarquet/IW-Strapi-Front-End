@@ -11,7 +11,7 @@ import {
   cardTitle,
   centerImage,
   sectionWithBackgroundColor,
-} from "~/assets/jss/nextjs-material-kit-pro";
+} from "assets/jss/nextjs-material-kit-pro";
 
 const robotStyle = () => ({
   section,

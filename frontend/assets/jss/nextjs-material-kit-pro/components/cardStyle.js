@@ -9,7 +9,7 @@ import {
   warningColor,
   hexToRgb,
   secondaryColor,
-} from "~/assets/jss/nextjs-material-kit-pro";
+} from "assets/jss/nextjs-material-kit-pro";
 
 const cardStyle = {
   card: {

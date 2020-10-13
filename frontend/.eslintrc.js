@@ -46,7 +46,16 @@ module.exports = {
     "import/resolver": {
       "eslint-import-resolver-custom-alias": {
         alias: {
-          "~": "./",
+          assets: "./assets",
+          components: "./components",
+          "components-sections": "components-sections",
+          context: "./context",
+          gql: "./gql",
+          layouts: "./layouts",
+          libs: "./libs",
+          "page-sections": "./page-sections",
+          pages: "./pages",
+          public: "./public",
         },
         extensions: [".js", ".jsx"],
       },

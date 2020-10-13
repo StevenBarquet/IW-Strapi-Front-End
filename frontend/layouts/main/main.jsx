@@ -5,17 +5,17 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
 // core components
-import Header from "~/components/Header/Header";
-import HeaderLinks from "~/components/Header/HeaderLinks";
-import Footer from "~/components/Footer/Footer";
-import GridContainer from "~/components/Grid/GridContainer";
-import GridItem from "~/components/Grid/GridItem";
+import Header from "components/Header/Header";
+import HeaderLinks from "components/Header/HeaderLinks";
+import Footer from "components/Footer/Footer";
+import GridContainer from "components/Grid/GridContainer";
+import GridItem from "components/Grid/GridItem";
 
 // images
-import Logo from "~/assets/img/logo.svg";
+import Logo from "assets/img/logo.svg";
 
 // jss styles
-import styles from "~/assets/jss/footerStyle";
+import styles from "assets/jss/footerStyle";
 
 const useStyles = makeStyles(styles);
 

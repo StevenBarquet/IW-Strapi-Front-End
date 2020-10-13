@@ -6,7 +6,7 @@ import { string } from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 
-import basicsStyle from "~/assets/jss/nextjs-material-kit-pro/pages/componentsSections/basicsStyle";
+import basicsStyle from "assets/jss/nextjs-material-kit-pro/pages/componentsSections/basicsStyle";
 
 const useStyles = makeStyles(basicsStyle);
 

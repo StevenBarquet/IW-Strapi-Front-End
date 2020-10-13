@@ -16,8 +16,8 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Clear from "@material-ui/icons/Clear";
 import Check from "@material-ui/icons/Check";
 
-import style from "~/assets/jss/nextjs-material-kit-pro/components/customCheckboxRadioSwitchStyle";
-import basicsStyle from "~/assets/jss/nextjs-material-kit-pro/components/customInputStyle.js";
+import style from "assets/jss/nextjs-material-kit-pro/components/customCheckboxRadioSwitchStyle";
+import basicsStyle from "assets/jss/nextjs-material-kit-pro/components/customInputStyle.js";
 
 const useStyles = makeStyles(style);
 const useStylesInput = makeStyles(basicsStyle);

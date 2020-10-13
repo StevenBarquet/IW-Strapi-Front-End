@@ -9,23 +9,23 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
 // apollo
-import { withApollo } from "~/libs/apollo";
+import { withApollo } from "libs/apollo";
 
 // layout
-import withLayout from "~/layouts/main";
+import withLayout from "layouts/main";
 
 // InicialValues & Schema
-import { initialValues, schema } from "~/page-sections/robot/formConfig";
+import { initialValues, schema } from "page-sections/robot/formConfig";
 
 // styles
-import robotStyles from "~/assets/jss/robotStyles";
+import robotStyles from "assets/jss/robotStyles";
 
 // sections
-const Header = dynamic(import("~/page-sections/robot/Header"));
-const Functioning = dynamic(import("~/page-sections/robot/Functioning"));
-const Benefits = dynamic(import("~/page-sections/robot/Benefits"));
-const Form = dynamic(import("~/page-sections/robot/Form"));
-const PlansForYou = dynamic(import("~/page-sections/robot/PlansForYou"));
+const Header = dynamic(import("page-sections/robot/Header"));
+const Functioning = dynamic(import("page-sections/robot/Functioning"));
+const Benefits = dynamic(import("page-sections/robot/Benefits"));
+const Form = dynamic(import("page-sections/robot/Form"));
+const PlansForYou = dynamic(import("page-sections/robot/PlansForYou"));
 
 const useStyles = makeStyles(robotStyles);
 

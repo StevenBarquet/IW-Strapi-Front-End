@@ -6,21 +6,21 @@ import { useQuery } from "@apollo/client";
 import { makeStyles } from "@material-ui/core/styles";
 
 // core-components
-import SectionTitle from "~/components-sections/SectionTitle";
-import GridContainer from "~/components/Grid/GridContainer";
+import SectionTitle from "components-sections/SectionTitle";
+import GridContainer from "components/Grid/GridContainer";
 
 // context
-import { useSettings } from "~/context/Settings";
+import { useSettings } from "context/Settings";
 
 // gql
-import { HOME_BUSINESS_PARTNERS } from "~/gql/queries/home";
+import { HOME_BUSINESS_PARTNERS } from "gql/queries/home";
 
 // jss styles
-import homeStyle from "~/assets/jss/homeStyle";
+import homeStyle from "assets/jss/homeStyle";
 
 // components
 const SectionBusinessPartnersCards = dynamic(
-  import("~/page-sections/home/BusinessPartnersCards")
+  import("page-sections/home/BusinessPartnersCards")
 );
 
 const useStyles = makeStyles(homeStyle);

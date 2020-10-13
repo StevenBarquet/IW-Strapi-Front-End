@@ -1,5 +1,5 @@
 /* eslint-disable prefer-template */
-import { blackColor, hexToRgb } from "~/assets/jss/nextjs-material-kit-pro";
+import { blackColor, hexToRgb } from "assets/jss/nextjs-material-kit-pro";
 
 const cardAvatarStyle = {
   cardAvatar: {

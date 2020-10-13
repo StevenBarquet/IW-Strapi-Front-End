@@ -4,9 +4,9 @@ import {
   title,
   mlAuto,
   mrAuto,
-} from "~/assets/jss/nextjs-material-kit-pro.js";
-import customCheckboxRadioSwitch from "~/assets/jss/nextjs-material-kit-pro/components/customCheckboxRadioSwitchStyle";
-import customSelectStyle from "~/assets/jss/nextjs-material-kit-pro/customSelectStyle";
+} from "assets/jss/nextjs-material-kit-pro.js";
+import customCheckboxRadioSwitch from "assets/jss/nextjs-material-kit-pro/components/customCheckboxRadioSwitchStyle";
+import customSelectStyle from "assets/jss/nextjs-material-kit-pro/customSelectStyle";
 
 const basicsStyle = {
   mlAuto,

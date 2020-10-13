@@ -1,6 +1,6 @@
 /* eslint-disable prefer-template */
 // eslint-disable-next-line import/extensions
-import { blackColor, hexToRgb } from "~/assets/jss/nextjs-material-kit-pro.js";
+import { blackColor, hexToRgb } from "assets/jss/nextjs-material-kit-pro.js";
 
 const imagesStyles = {
   imgFluid: {

@@ -5,7 +5,7 @@ import {
   grayColor,
   hexToRgb,
   // eslint-disable-next-line import/extensions
-} from "~/assets/jss/nextjs-material-kit-pro.js";
+} from "assets/jss/nextjs-material-kit-pro.js";
 
 const tooltipsStyle = {
   tooltip: {

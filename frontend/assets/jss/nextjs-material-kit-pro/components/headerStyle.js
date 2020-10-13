@@ -13,7 +13,7 @@ import {
   whiteColor,
   grayColor,
   hexToRgb,
-} from "~/assets/jss/nextjs-material-kit-pro";
+} from "assets/jss/nextjs-material-kit-pro";
 
 const headerStyle = (theme) => ({
   appBar: {

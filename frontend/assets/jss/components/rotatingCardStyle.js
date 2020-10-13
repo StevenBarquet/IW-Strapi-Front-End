@@ -2,7 +2,7 @@ import {
   whiteColor,
   blackColor,
   hexToRgb,
-} from "~/assets/jss/nextjs-material-kit-pro";
+} from "assets/jss/nextjs-material-kit-pro";
 
 const partnersSection = {
   rotatingCardContainer: {

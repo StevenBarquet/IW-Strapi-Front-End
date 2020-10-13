@@ -5,9 +5,9 @@ import {
   valenciaColor,
   mlAuto,
   hexToRgb,
-} from "~/assets/jss/nextjs-material-kit-pro";
+} from "assets/jss/nextjs-material-kit-pro";
 
-import tooltip from "~/assets/jss/nextjs-material-kit-pro/tooltipsStyle";
+import tooltip from "assets/jss/nextjs-material-kit-pro/tooltipsStyle";
 
 const headerLinksStyle = (theme) => ({
   list: {

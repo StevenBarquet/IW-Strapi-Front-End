@@ -6,7 +6,7 @@ import {
   whiteColor,
   grayColor,
   defaultFont,
-} from "~/assets/jss/nextjs-material-kit-pro";
+} from "assets/jss/nextjs-material-kit-pro";
 
 const customInputStyle = {
   disabled: {

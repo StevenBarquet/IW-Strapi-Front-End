@@ -10,7 +10,7 @@ import EventIcon from "@material-ui/icons/Event";
 import AlarmRoundedIcon from "@material-ui/icons/AlarmRounded";
 
 // core components
-import CustomInput from "~/components/CustomInput/CustomInput";
+import CustomInput from "components/CustomInput/CustomInput";
 
 const CustomDateTime = ({
   id,

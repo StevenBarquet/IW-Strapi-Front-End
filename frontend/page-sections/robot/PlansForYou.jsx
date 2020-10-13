@@ -5,22 +5,22 @@ import { useQuery } from "@apollo/client";
 import { makeStyles } from "@material-ui/core/styles";
 
 // core-components
-import GridContainer from "~/components/Grid/GridContainer";
-import GridItem from "~/components/Grid/GridItem";
-import RenderHTML from "~/components/HTML/RenderHTML";
-import SectionTitle from "~/components-sections/SectionTitle";
-import Card from "~/components/Card/Card";
-import CardBody from "~/components/Card/CardBody";
-import CardHeader from "~/components/Card/CardHeader";
-import Button from "~/components/CustomButtons/Button";
+import GridContainer from "components/Grid/GridContainer";
+import GridItem from "components/Grid/GridItem";
+import RenderHTML from "components/HTML/RenderHTML";
+import SectionTitle from "components-sections/SectionTitle";
+import Card from "components/Card/Card";
+import CardBody from "components/Card/CardBody";
+import CardHeader from "components/Card/CardHeader";
+import Button from "components/CustomButtons/Button";
 
 // gql
-import { ROBOT_PLANSFORYOU_QUERY } from "~/gql/queries/robot";
+import { ROBOT_PLANSFORYOU_QUERY } from "gql/queries/robot";
 
-import robotStyles from "~/assets/jss/robotStyles";
+import robotStyles from "assets/jss/robotStyles";
 
 // context
-import { useSettings } from "~/context/Settings";
+import { useSettings } from "context/Settings";
 
 const useStyles = makeStyles(robotStyles);
 

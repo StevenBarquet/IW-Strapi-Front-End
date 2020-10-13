@@ -1,5 +1,5 @@
 /* eslint-disable prefer-template */
-import { whiteColor, grayColor } from "~/assets/jss/nextjs-material-kit-pro";
+import { whiteColor, grayColor } from "assets/jss/nextjs-material-kit-pro";
 
 const modalStyle = (theme) => ({
   modalRoot: {

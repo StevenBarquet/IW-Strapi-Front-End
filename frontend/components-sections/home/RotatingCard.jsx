@@ -10,17 +10,17 @@ import Icon from "@material-ui/core/Icon";
 import IconButton from "@material-ui/core/IconButton";
 
 // core-components
-import GridItem from "~/components/Grid/GridItem";
-import Card from "~/components/Card/Card";
-import CardBody from "~/components/Card/CardBody";
-import CardFooter from "~/components/Card/CardFooter";
-import Button from "~/components/CustomButtons/Button";
+import GridItem from "components/Grid/GridItem";
+import Card from "components/Card/Card";
+import CardBody from "components/Card/CardBody";
+import CardFooter from "components/Card/CardFooter";
+import Button from "components/CustomButtons/Button";
 
 // context
-import { useSettings } from "~/context/Settings";
+import { useSettings } from "context/Settings";
 
 // jss styles
-import rotatingCardStyle from "~/assets/jss/components/rotatingCardStyle";
+import rotatingCardStyle from "assets/jss/components/rotatingCardStyle";
 
 const {
   publicRuntimeConfig: { apiUrl },

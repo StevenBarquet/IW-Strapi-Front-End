@@ -5,16 +5,16 @@ import Router from "next/router";
 import PropTypes from "prop-types";
 
 // loader component
-import PageChange from "~/components/PageChange/PageChange";
+import PageChange from "components/PageChange/PageChange";
 
 // context
-import { SettingsProvider } from "~/context/Settings";
+import { SettingsProvider } from "context/Settings";
 
 // lazysizes
-import "~/assets/js/lazysizes.min";
+import "assets/js/lazysizes.min";
 
 // Styles
-import "~/assets/scss/nextjs-material-kit-pro.scss";
+import "assets/scss/nextjs-material-kit-pro.scss";
 import "animate.css/animate.min.css";
 
 Router.events.on("routeChangeStart", (url) => {

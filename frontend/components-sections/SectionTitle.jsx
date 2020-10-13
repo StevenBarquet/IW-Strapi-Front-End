@@ -7,14 +7,14 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
 // core-components
-import GridItem from "~/components/Grid/GridItem";
+import GridItem from "components/Grid/GridItem";
 
 import {
   legend,
   title,
   subTitle,
   centerImage,
-} from "~/assets/jss/nextjs-material-kit-pro";
+} from "assets/jss/nextjs-material-kit-pro";
 
 const {
   publicRuntimeConfig: { apiUrl },

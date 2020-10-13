@@ -10,19 +10,19 @@ import { makeStyles } from "@material-ui/core/styles";
 import TrendingUpIcon from "@material-ui/icons/TrendingUp";
 
 // context
-import { useSettings } from "~/context/Settings";
+import { useSettings } from "context/Settings";
 
 // core-components
-import GridContainer from "~/components/Grid/GridContainer";
-import GridItem from "~/components/Grid/GridItem";
-import InfoArea from "~/components/InfoArea/InfoArea";
-import RenderHTML from "~/components/HTML/RenderHTML";
-import SectionTitle from "~/components-sections/SectionTitle";
+import GridContainer from "components/Grid/GridContainer";
+import GridItem from "components/Grid/GridItem";
+import InfoArea from "components/InfoArea/InfoArea";
+import RenderHTML from "components/HTML/RenderHTML";
+import SectionTitle from "components-sections/SectionTitle";
 
 // gql
-import { ROBOT_BENEFITS_QUERY } from "~/gql/queries/robot";
+import { ROBOT_BENEFITS_QUERY } from "gql/queries/robot";
 
-import robotStyles from "~/assets/jss/robotStyles";
+import robotStyles from "assets/jss/robotStyles";
 
 const {
   publicRuntimeConfig: { apiUrl },

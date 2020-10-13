@@ -5,18 +5,18 @@ import { useQuery } from "@apollo/client";
 import { makeStyles } from "@material-ui/core/styles";
 
 // context
-import { useSettings } from "~/context/Settings";
+import { useSettings } from "context/Settings";
 
 // core components
-import GridContainer from "~/components/Grid/GridContainer";
-import GridItem from "~/components/Grid/GridItem";
-import RenderHTML from "~/components/HTML/RenderHTML";
-import Badge from "~/components/Badge/Badge";
+import GridContainer from "components/Grid/GridContainer";
+import GridItem from "components/Grid/GridItem";
+import RenderHTML from "components/HTML/RenderHTML";
+import Badge from "components/Badge/Badge";
 
 // gql
-import { JOIN_US_TEAM_QUERY } from "~/gql/queries/join-us";
+import { JOIN_US_TEAM_QUERY } from "gql/queries/join-us";
 
-import joinUsStyle from "~/assets/jss/joinUsStyle";
+import joinUsStyle from "assets/jss/joinUsStyle";
 
 const useStyles = makeStyles(joinUsStyle);
 

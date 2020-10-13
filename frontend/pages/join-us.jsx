@@ -8,17 +8,17 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
 // apollo
-import { withApollo } from "~/libs/apollo";
+import { withApollo } from "libs/apollo";
 
 // layout
-import withLayout from "~/layouts/main";
+import withLayout from "layouts/main";
 
 // jss styles
-import joinUsStyle from "~/assets/jss/joinUsStyle";
+import joinUsStyle from "assets/jss/joinUsStyle";
 
 // sections
-const Header = dynamic(import("~/page-sections/join-us/Header"));
-const JoinTeam = dynamic(import("~/page-sections/join-us/JoinTeam"));
+const Header = dynamic(import("page-sections/join-us/Header"));
+const JoinTeam = dynamic(import("page-sections/join-us/JoinTeam"));
 
 const useStyles = makeStyles(joinUsStyle);
 

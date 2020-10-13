@@ -5,7 +5,7 @@ import {
   textCenter,
   title,
   sectionWithBackgroundColor,
-} from "~/assets/jss/nextjs-material-kit-pro";
+} from "assets/jss/nextjs-material-kit-pro";
 
 const joinUsStyle = () => ({
   main,

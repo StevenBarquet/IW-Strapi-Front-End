@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_joinus_card_vacants",
+  "info": {
+    "name": "card",
+    "icon": "file-alt"
+  },
+  "options": {},
+  "attributes": {
+    "age": {
+      "type": "string"
+    },
+    "age_en": {
+      "type": "string"
+    },
+    "sex": {
+      "type": "string"
+    },
+    "sex_en": {
+      "type": "string"
+    },
+    "scholarship": {
+      "type": "string"
+    },
+    "scholarship_en": {
+      "type": "string"
+    },
+    "workZone": {
+      "type": "string"
+    },
+    "workZone_en": {
+      "type": "string"
+    },
+    "specificRequirements": {
+      "type": "richtext"
+    },
+    "specificRequirements_en": {
+      "type": "richtext"
+    },
+    "contact": {
+      "type": "string"
+    }
+  }
+}

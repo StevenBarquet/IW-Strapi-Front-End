@@ -1,3 +1,6 @@
+// Dependencies
+import PropTypes from "prop-types";
+
 const SettingsContext = React.createContext();
 
 export const SettingsProvider = ({ children }) => {
@@ -26,6 +29,10 @@ export const SettingsProvider = ({ children }) => {
       {children}
     </SettingsContext.Provider>
   );
+};
+
+SettingsProvider.propTypes = {
+  children: PropTypes.element.isRequired,
 };
 
 export const useSettings = () => {

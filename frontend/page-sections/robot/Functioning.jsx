@@ -5,6 +5,7 @@ import Carousel from "react-slick";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import Hidden from "@material-ui/core/Hidden";
 
 // context
 import { useSettings } from "context/Settings";
@@ -63,28 +64,50 @@ const Functioning = () => {
   }
 
   const {
-    robot: { funtioning, header },
+    robot: { funtioning },
   } = data;
 
   return (
     <div id="section-funtioning" className={classes.section}>
-      <div className={classes.captionContainerText}>
-        <RenderHTML
-          html={header[`title${language}`]}
-          className={classes.textOverlay}
-        />
-      </div>
-      <Carousel {...sliderSettings}>
-        {funtioning.header.images.map((image) => (
-          <div key={image.id}>
-            <img
-              src={`${apiUrl}${image.url}`}
-              alt={image.alternativeText}
-              className="slick-image"
-            />
-          </div>
-        ))}
-      </Carousel>
+      <Hidden only={["sm", "md", "lg", "xl"]}>
+        <Carousel {...sliderSettings}>
+          {funtioning.header.small_images.map((image) => (
+            <div key={image.id}>
+              <img
+                src={`${apiUrl}${image.url}`}
+                alt={image.alternativeText}
+                className="slick-image"
+              />
+            </div>
+          ))}
+        </Carousel>
+      </Hidden>
+      <Hidden only={["xs", "md", "lg", "xl"]}>
+        <Carousel {...sliderSettings}>
+          {funtioning.header.medium_images.map((image) => (
+            <div key={image.id}>
+              <img
+                src={`${apiUrl}${image.url}`}
+                alt={image.alternativeText}
+                className="slick-image"
+              />
+            </div>
+          ))}
+        </Carousel>
+      </Hidden>
+      <Hidden only={["xs", "sm"]}>
+        <Carousel {...sliderSettings}>
+          {funtioning.header.large_images.map((image) => (
+            <div key={image.id}>
+              <img
+                src={`${apiUrl}${image.url}`}
+                alt={image.alternativeText}
+                className="slick-image"
+              />
+            </div>
+          ))}
+        </Carousel>
+      </Hidden>
       <GridContainer justify="center">
         <GridItem xs={12} sm={10} md={9}>
           <h2 className={classes.title}>

@@ -74,67 +74,22 @@ const HeaderLinks = () => {
         }
 
         return (
-          <CustomDropDown
-            buttonText={
-              navigationMenuItem[`topLabel${defaultSettings.language}`]
-            }
-            buttonProps={{
-              className: classes.navLink,
-              color: "transparent",
-            }}
-            dropdownList={navigationMenuItem.nestedLinks.map(
-              (nestedLink) => nestedLink[`label${defaultSettings.language}`]
-            )}
-          />
+          <ListItem key={navigationMenuItem.id} className={classes.listItem}>
+            <CustomDropDown
+              buttonText={
+                navigationMenuItem[`topLabel${defaultSettings.language}`]
+              }
+              buttonProps={{
+                className: classes.navLink,
+                color: "transparent",
+              }}
+              dropdownList={navigationMenuItem.nestedLinks.map(
+                (nestedLink) => nestedLink[`label${defaultSettings.language}`]
+              )}
+            />
+          </ListItem>
         );
       })}
-      {/* <ListItem className={classes.listItem}>
-        <Link href="/home">
-          <a
-            className={classNames(classes.navLink, {
-              [classes.selectedNavLink]: router.pathname === "/home",
-            })}
-          >
-            Home
-          </a>
-        </Link>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Link href="/robot">
-          <a
-            className={classNames(classes.navLink, {
-              [classes.selectedNavLink]: router.pathname === "/robot",
-            })}
-          >
-            Iw Robot
-          </a>
-        </Link>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Link href="/home">
-          <a className={classes.navLink}>Nosotros</a>
-        </Link>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Link href="/home">
-          <a className={classes.navLink}>Experiencia</a>
-        </Link>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Link href="/home">
-          <a className={classes.navLink}>Partners</a>
-        </Link>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Link href="/home">
-          <a className={classes.navLink}>Blog</a>
-        </Link>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Link href="/home">
-          <a className={classes.navLink}>Contacto</a>
-        </Link>
-      </ListItem> */}
       <ListItem className={classes.listItem}>
         <div>
           <Button

@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import Hidden from "@material-ui/core/Hidden";
 
 // context
 import { useSettings } from "context/Settings";
@@ -51,16 +52,32 @@ const Header = () => {
     robot: { header },
   } = data;
 
+  const Caption = () => (
+    <div className={classes.captionContainer}>
+      <RenderHTML
+        html={header[`title${language}`]}
+        className={classes.textOverlay}
+      />
+    </div>
+  );
+
   return (
     <header id="header">
-      <Parallax image={`${apiUrl}${header.image.url}`} small>
-        <div className={classes.captionContainer}>
-          <RenderHTML
-            html={header[`title${language}`]}
-            className={classes.textOverlay}
-          />
-        </div>
-      </Parallax>
+      <Hidden only={["sm", "md", "lg", "xl"]}>
+        <Parallax image={`${apiUrl}${header.small_image.url}`} small>
+          <Caption />
+        </Parallax>
+      </Hidden>
+      <Hidden only={["xs", "md", "lg", "xl"]}>
+        <Parallax image={`${apiUrl}${header.medium_image.url}`} small>
+          <Caption />
+        </Parallax>
+      </Hidden>
+      <Hidden only={["xs", "sm"]}>
+        <Parallax image={`${apiUrl}${header.large_image.url}`} small>
+          <Caption />
+        </Parallax>
+      </Hidden>
     </header>
   );
 };

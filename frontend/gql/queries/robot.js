@@ -4,7 +4,17 @@ const ROBOT_HEADER_QUERY = gql`
   query Header {
     robot {
       header {
-        image {
+        small_image {
+          id
+          url
+          alternativeText
+        }
+        medium_image {
+          id
+          url
+          alternativeText
+        }
+        large_image {
           id
           url
           alternativeText
@@ -19,19 +29,20 @@ const ROBOT_HEADER_QUERY = gql`
 const ROBOT_FUNTIONING_QUERY = gql`
   query Funtioning {
     robot {
-      header {
-        image {
-          id
-          url
-          alternativeText
-        }
-        title
-        title_en
-      }
       funtioning {
         id
         header {
-          images {
+          small_images {
+            id
+            url
+            alternativeText
+          }
+          medium_images {
+            id
+            url
+            alternativeText
+          }
+          large_images {
             id
             url
             alternativeText

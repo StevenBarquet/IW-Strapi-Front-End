@@ -5,17 +5,17 @@ const HOME_HEADER_QUERY = gql`
   query Header {
     home {
       header {
-        images {
+        small_images {
           id
           url
           alternativeText
         }
-        tablet_images {
+        medium_images {
           id
           url
           alternativeText
         }
-        phone_images {
+        large_images {
           id
           url
           alternativeText

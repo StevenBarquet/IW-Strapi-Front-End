@@ -5,6 +5,7 @@ import Carousel from "react-slick";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import Hidden from "@material-ui/core/Hidden";
 
 // context
 import { useSettings } from "context/Settings";
@@ -67,17 +68,45 @@ const Header = () => {
 
   return (
     <header id="header" className={classes.carouselContainer}>
-      <Carousel {...sliderSettings}>
-        {header.images.map((image) => (
-          <div key={image.id}>
-            <img
-              src={`${apiUrl}${image.url}`}
-              alt={image.alternativeText}
-              className="slick-image"
-            />
-          </div>
-        ))}
-      </Carousel>
+      <Hidden only={["sm", "md", "lg", "xl"]}>
+        <Carousel {...sliderSettings}>
+          {header.small_images.map((image) => (
+            <div key={image.id}>
+              <img
+                src={`${apiUrl}${image.url}`}
+                alt={image.alternativeText}
+                className="slick-image"
+              />
+            </div>
+          ))}
+        </Carousel>
+      </Hidden>
+      <Hidden only={["xs", "md", "lg", "xl"]}>
+        <Carousel {...sliderSettings}>
+          {header.medium_images.map((image) => (
+            <div key={image.id}>
+              <img
+                src={`${apiUrl}${image.url}`}
+                alt={image.alternativeText}
+                className="slick-image"
+              />
+            </div>
+          ))}
+        </Carousel>
+      </Hidden>
+      <Hidden only={["xs", "sm"]}>
+        <Carousel {...sliderSettings}>
+          {header.large_images.map((image) => (
+            <div key={image.id}>
+              <img
+                src={`${apiUrl}${image.url}`}
+                alt={image.alternativeText}
+                className="slick-image"
+              />
+            </div>
+          ))}
+        </Carousel>
+      </Hidden>
       <div className={classes.captionContainer}>
         <RenderHTML
           html={header[`caption${language}`]}

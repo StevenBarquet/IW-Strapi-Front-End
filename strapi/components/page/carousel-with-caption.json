@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "images": {
+    "large_images": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
@@ -23,7 +23,7 @@
     "caption_en": {
       "type": "richtext"
     },
-    "tablet_images": {
+    "medium_images": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
@@ -32,7 +32,7 @@
       "plugin": "upload",
       "required": false
     },
-    "phone_images": {
+    "small_images": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [

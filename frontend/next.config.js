@@ -7,8 +7,6 @@ const withImages = require("next-images");
 const withSass = require("@zeit/next-sass");
 const withCSS = require("@zeit/next-css");
 
-const path = require("path");
-
 const nextConfig = {
   publicRuntimeConfig: {
     apiUrl: process.env.API_URL,
@@ -27,9 +25,6 @@ const mainConfig = {
     if (!isProduction) {
       return config;
     }
-
-    // eslint-disable-next-line no-param-reassign
-    config.resolve.alias["~"] = path.join(__dirname, "./");
 
     config.plugins.push(
       new webpack.optimize.LimitChunkCountPlugin({

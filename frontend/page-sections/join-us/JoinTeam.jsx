@@ -11,7 +11,6 @@ import { useSettings } from "context/Settings";
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 import RenderHTML from "components/HTML/RenderHTML";
-import Badge from "components/Badge/Badge";
 
 // gql
 import { JOIN_US_TEAM_QUERY } from "gql/queries/join-us";
@@ -46,17 +45,21 @@ const JoinTeam = () => {
   }
 
   const {
-    joinUs: { joinTeam },
+    joinUs: { joinTeam, header },
   } = data;
-
-  const tags = [
-    { name: "Agosto", id: "1" },
-    { name: "Desarrollo Full Stack", id: "2" },
-  ];
 
   return (
     <div id="section-joinTeam" className={classes.section}>
-      <GridContainer justify="center">
+      <div className={classes.captionContainerText}>
+        <RenderHTML
+          html={header[`title${language}`]}
+          className={classes.textOverlay}
+        />
+      </div>
+      <GridContainer
+        justify="center"
+        className={classes.sectionBackgroundColor}
+      >
         <GridItem xs={12} sm={10} md={9} className={classes.textCenter}>
           <h2 className={classes.title}>
             {joinTeam.title[`sectionTitle${language}`]}
@@ -66,24 +69,6 @@ const JoinTeam = () => {
             className={classes.introductoryText}
           />
           <div className={classes.featuresSection} />
-        </GridItem>
-      </GridContainer>
-      <GridContainer>
-        <GridItem xs={12} sm={9} md={9} className={classes.marginAuto}>
-          <div className={classes.tagsFlex}>
-            <div className={classes.tagsJustify}>
-              Tags:{" "}
-              {tags.map((tag) => (
-                <Badge key={tag.id} color="primary">
-                  <span className={classes.tag}>{tag.name}</span>
-                </Badge>
-              ))}
-            </div>
-            <div>
-              <p className={classes.lengthText}>Vacantes publicadas 15</p>
-            </div>
-          </div>
-          <hr />
         </GridItem>
       </GridContainer>
     </div>

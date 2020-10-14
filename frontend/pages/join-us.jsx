@@ -19,6 +19,8 @@ import joinUsStyle from "assets/jss/joinUsStyle";
 // sections
 const Header = dynamic(import("page-sections/join-us/Header"));
 const JoinTeam = dynamic(import("page-sections/join-us/JoinTeam"));
+const SendCV = dynamic(import("page-sections/join-us/SendCV"));
+const Vacancies = dynamic(import("page-sections/join-us/Vacancies"));
 
 const useStyles = makeStyles(joinUsStyle);
 
@@ -30,6 +32,8 @@ const JoinUsPage = () => {
       <Header />
       <main className={classNames(classes.main, classes.mainRaised)}>
         <JoinTeam />
+        <Vacancies />
+        <SendCV />
       </main>
     </>
   );

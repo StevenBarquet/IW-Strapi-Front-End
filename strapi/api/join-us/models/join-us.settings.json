@@ -19,10 +19,10 @@
       "repeatable": false,
       "component": "joinus.join-team"
     },
-    "cardVacant": {
+    "sendCV": {
       "type": "component",
-      "repeatable": true,
-      "component": "joinus.card-vacant"
+      "repeatable": false,
+      "component": "joinus.send-cv"
     }
   }
 }

@@ -584,8 +584,11 @@
                 "name_en": {
                   "type": "string"
                 },
-                "vacancy": {
-                  "type": "string"
+                "vacancies": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "created_by": {
                   "type": "string"

@@ -217,7 +217,6 @@ const subTitle = {
   fontFamily: `"Raleway", "Times New Roman", serif`,
 };
 
-
 const cardTitle = {
   "&, & a": {
     ...title,
@@ -310,6 +309,12 @@ const btnLink = {
   marginBottom: "5px",
 };
 
+const divider = {
+  borderTop: "10px solid #00C7B1",
+  marginTop: "-1.2rem",
+  marginBottom: "2rem",
+};
+
 const coloredShadow = {
   // some jss/css to make the cards look a bit better on Internet Explorer
   "@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)": {
@@ -370,6 +375,7 @@ export {
   section,
   sectionWithBackgroundColor,
   sectionDark,
+  divider,
   mlAuto,
   mrAuto,
   floatRight,

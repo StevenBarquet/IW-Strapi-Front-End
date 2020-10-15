@@ -528,64 +528,67 @@
           "name_en": {
             "type": "string"
           },
-          "vacancy": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "title_en": {
-                "type": "string"
-              },
-              "age": {
-                "type": "string"
-              },
-              "age_en": {
-                "type": "string"
-              },
-              "gender": {
-                "type": "string"
-              },
-              "gender_en": {
-                "type": "string"
-              },
-              "scholarship": {
-                "type": "string"
-              },
-              "scholarship_en": {
-                "type": "string"
-              },
-              "workZone": {
-                "type": "string"
-              },
-              "workZone_en": {
-                "type": "string"
-              },
-              "specificRequirements": {
-                "type": "string"
-              },
-              "specificRequirements_en": {
-                "type": "string"
-              },
-              "tags": {
-                "type": "array",
-                "items": {
+          "vacancies": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "title_en": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": "string"
+                },
+                "age_en": {
+                  "type": "string"
+                },
+                "gender": {
+                  "type": "string"
+                },
+                "gender_en": {
+                  "type": "string"
+                },
+                "scholarship": {
+                  "type": "string"
+                },
+                "scholarship_en": {
+                  "type": "string"
+                },
+                "workZone": {
+                  "type": "string"
+                },
+                "workZone_en": {
+                  "type": "string"
+                },
+                "specificRequirements": {
+                  "type": "string"
+                },
+                "specificRequirements_en": {
+                  "type": "string"
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "contact": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "contact": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           }
@@ -599,8 +602,11 @@
           "name_en": {
             "type": "string"
           },
-          "vacancy": {
-            "type": "string"
+          "vacancies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"

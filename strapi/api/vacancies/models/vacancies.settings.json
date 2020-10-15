@@ -57,7 +57,8 @@
     },
     "tags": {
       "collection": "tags",
-      "via": "vacancy"
+      "via": "vacancies",
+      "dominant": true
     },
     "contact": {
       "type": "string"

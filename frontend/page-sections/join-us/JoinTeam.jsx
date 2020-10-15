@@ -31,10 +31,6 @@ const JoinTeam = () => {
     return null;
   }
 
-  if (!data.joinUs) {
-    return <span>¡Revisar CMS!</span>;
-  }
-
   if (error) {
     return (
       <span>
@@ -44,18 +40,16 @@ const JoinTeam = () => {
     );
   }
 
+  if (!data.joinUs) {
+    return <span>¡Revisar CMS!</span>;
+  }
+
   const {
-    joinUs: { joinTeam, header },
+    joinUs: { joinTeam },
   } = data;
 
   return (
     <div id="section-joinTeam" className={classes.section}>
-      <div className={classes.captionContainerText}>
-        <RenderHTML
-          html={header[`title${language}`]}
-          className={classes.textOverlay}
-        />
-      </div>
       <GridContainer
         justify="center"
         className={classes.sectionBackgroundColor}

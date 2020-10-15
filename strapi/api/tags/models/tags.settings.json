@@ -15,9 +15,9 @@
     "name_en": {
       "type": "string"
     },
-    "vacancy": {
+    "vacancies": {
       "via": "tags",
-      "model": "vacancies"
+      "collection": "vacancies"
     }
   }
 }

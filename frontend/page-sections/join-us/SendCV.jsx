@@ -63,11 +63,13 @@ const SendCV = () => {
           </div>
         </GridItem>
         <GridItem xs={10} sm={6} md={4} lg={4}>
-          <RenderHTML
-            html={sendCV[`introductoryText${language}`]}
-            className={classes.experienceDescription}
-          />
-          <GridItem xs={6} sm={4} md={3} className={classes.marginAuto}>
+          <RenderHTML html={sendCV[`introductoryText${language}`]} />
+          <GridItem
+            xs={6}
+            sm={4}
+            md={3}
+            className={`${classes.mlAuto} ${classes.mrAuto}`}
+          >
             <Button onClick={(e) => e.preventDefault()} round color="behance">
               {sendCV.actionButton[`label${language}`]}
             </Button>

@@ -4,7 +4,17 @@ const JOIN_US_HEADER_QUERY = gql`
   query Header {
     joinUs {
       header {
-        image {
+        small_image {
+          id
+          url
+          alternativeText
+        }
+        medium_image {
+          id
+          url
+          alternativeText
+        }
+        large_image {
           id
           url
           alternativeText
@@ -19,15 +29,6 @@ const JOIN_US_HEADER_QUERY = gql`
 const JOIN_US_TEAM_QUERY = gql`
   query JoinTeam {
     joinUs {
-      header {
-        image {
-          id
-          url
-          alternativeText
-        }
-        title
-        title_en
-      }
       joinTeam {
         title {
           sectionTitle
@@ -82,6 +83,12 @@ const JOIN_US_SENDCV_QUERY = gql`
 
 const JOIN_US_VACANCIES_QUERY = gql`
   query Vacancies($where: JSON, $limit: Int, $start: Int, $sort: String) {
+    vacanciesCount
+    tags {
+      id
+      name
+      name_en
+    }
     vacancies(where: $where, limit: $limit, start: $start, sort: $sort) {
       id
       tags {

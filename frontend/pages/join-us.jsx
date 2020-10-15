@@ -1,4 +1,5 @@
 // Dependencies
+import React, { useState } from "react";
 import dynamic from "next/dynamic";
 
 // nodejs library that concatenates classes
@@ -26,13 +27,20 @@ const useStyles = makeStyles(joinUsStyle);
 
 const JoinUsPage = () => {
   const classes = useStyles();
+  const [pageVacant, setPageVacant] = useState(1);
+  const [multipleValue, setMultipleValue] = React.useState([]);
 
   return (
     <>
       <Header />
       <main className={classNames(classes.main, classes.mainRaised)}>
         <JoinTeam />
-        <Vacancies />
+        <Vacancies
+          pageVacant={pageVacant}
+          setPageVacant={setPageVacant}
+          multipleValue={multipleValue}
+          setMultipleValue={setMultipleValue}
+        />
         <SendCV />
       </main>
     </>

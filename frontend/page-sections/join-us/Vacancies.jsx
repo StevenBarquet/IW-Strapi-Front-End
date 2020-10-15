@@ -14,6 +14,7 @@ import RenderHTML from "components/HTML/RenderHTML";
 import Badge from "components/Badge/Badge";
 import Card from "components/Card/Card";
 import CardBody from "components/Card/CardBody";
+import CustomSelect from "components/CustomSelect/Select";
 import Pagination from "components/Pagination/Pagination";
 
 // gql
@@ -23,16 +24,19 @@ import joinUsStyle from "assets/jss/joinUsStyle";
 
 const useStyles = makeStyles(joinUsStyle);
 
-const JoinTeam = () => {
+const Vacancies = ({ pageVacant, setPageVacant, multipleValue, setMultipleValue }) => {
   const {
     defaultSettings: { language },
   } = useSettings();
 
+  const start = pageVacant === 1 ? 0 : (pageVacant - 1) * 4;
+
   const { loading, error, data } = useQuery(JOIN_US_VACANCIES_QUERY, {
     variables: {
-      where: { tags: { id_nin: ["5f5145f3955f97000dd62822"] } },
+      where: multipleValue ? { tags: { id_in: multipleValue } } : {},
       limit: 4,
-      sort: "createdAt:desc",
+      start,
+      sort: "created_at:desc",
     },
   });
   const classes = useStyles();
@@ -40,10 +44,6 @@ const JoinTeam = () => {
   if (loading) {
     return null;
   }
-
-//   if (!data.joinUs) {
-//     return <span>¡Revisar CMS!</span>;
-//   }
 
   if (error) {
     return (
@@ -54,76 +54,84 @@ const JoinTeam = () => {
     );
   }
 
-//   const {
-//     joinUs: { joinTeam },
-//   } = data;
+  if (!data.vacancies) {
+    return <span>¡Revisar CMS!</span>;
+  }
+
+  const { vacancies } = data;
 
   const tags = [
-    { name: "Agosto", id: "1" },
-    { name: "Desarrollo Full Stack", id: "2" },
+    { value: "1", label: "Agosto" },
+    { value: "2", label: "Desarrollo Full Stack" },
+    { value: "3", label: "Octubre" },
   ];
 
+  const lastpage = Math.ceil(data.vacanciesCount / 4);
+
   return (
-    <div id="section-joinTeam" className={classes.section}>
-      <GridContainer>
-        <GridItem
-          xs={12}
-          sm={11}
-          md={9}
-          className={`${classes.marginAuto} ${classes.displayNone}`}
-        >
-          <div className={classes.tagsFlex}>
-            <div className={classes.tagsJustify}>
-              Tags:{" "}
-              {tags.map((tag) => (
-                <Badge key={tag.id} color="primary">
-                  <span className={classes.tag}>{tag.name}</span>
-                </Badge>
-              ))}
-            </div>
-            <div>
-              <p className={classes.lengthText}>
-                {language !== "_en"
-                  ? "Vacantes publicadas "
-                  : "Posted vacancies "}
-                {joinTeam.cardVacant.length}
-              </p>
-            </div>
-          </div>
-          <hr />
+    <div id="section-vacancies" className={classes.section}>
+      <GridContainer
+        item
+        xs={12}
+        sm={11}
+        md={9}
+        className={`${classes.mlAuto}  ${classes.mrAuto} ${classes.displayNone}`}
+      >
+        <GridItem xs={12} sm={11} md={6}>
+          {/* Tags:{" "}
+          {tags.map((tag) => (
+            <Badge key={tag.id} color="primary">
+              <span>{tag.name}</span>
+            </Badge>
+          ))} */}
+          <CustomSelect
+            multiple
+            id="tags"
+            name="tags"
+            label="Tags"
+            noOptionText="Seleccione los tags"
+            value={multipleValue}
+            handleChange={e => setMultipleValue(e.target.value)}
+            options={tags}
+          />
+        </GridItem>
+        <GridItem xs={12} sm={11} md={6}>
+          <p className={classes.lengthVacantText}>
+            {language !== "_en" ? "Vacantes publicadas " : "Posted vacancies "}
+            {data.vacanciesCount}
+          </p>
+        </GridItem>
+        <GridItem xs={12} sm={11} md={12}>
+          <div className={classes.dividerTags} />
         </GridItem>
       </GridContainer>
-      <GridContainer item xs={12} sm={12} md={9} className={classes.marginAuto}>
-        {/* {joinTeam.cardVacant.map((item) => {
+      <GridContainer
+        item
+        xs={12}
+        sm={12}
+        md={9}
+        className={`${classes.mlAuto} ${classes.mrAuto}`}
+      >
+        {vacancies.map((item) => {
           return (
-            <GridItem
-              xs={12}
-              sm={6}
-              md={6}
-              className={classes.marginAuto}
-              key={item.id}
-            >
+            <GridItem xs={12} sm={6} md={6} key={item.id}>
               <Card>
                 <CardBody>
-                  <GridItem
-                    xs={12}
-                    sm={12}
-                    md={12}
-                    className={classes.tagsFlexEnd}
-                  >
-                    {item.tags.map((tag) => (
-                      <Badge key={tag.id} color="primary">
-                        <span className={classes.tag}>
-                          {tag[`name${language}`]}
-                        </span>
-                      </Badge>
-                    ))}
+                  <GridItem xs={12} sm={12} md={12}>
+                    <div className={classes.floatRight}>
+                      {item.tags.map((tag) => (
+                        <Badge key={tag.id} color="primary">
+                          <span>{tag[`name${language}`]}</span>
+                        </Badge>
+                      ))}
+                    </div>
+                    <br />
                   </GridItem>
                   <GridItem xs={12} sm={12} md={8}>
                     <h3 className={classes.titleVacante}>
-                      {item[`nameVancant${language}`]}
+                      {item[`title${language}`]}
                     </h3>
-                    <hr className={classes.dividerGreen} />
+                    <hr className={classes.dividerGray} />
                   </GridItem>
                   <GridItem xs={12} sm={12} md={12}>
                     <p>
@@ -131,8 +139,10 @@ const JoinTeam = () => {
                       {item[`age${language}`]}
                     </p>
                     <p>
-                      <strong>{language !== "_en" ? "Sexo: " : "Sex: "}</strong>
-                      {item[`sex${language}`]}
+                      <strong>
+                        {language !== "_en" ? "Sexo: " : "Gender: "}
+                      </strong>
+                      {item[`gender${language}`]}
                     </p>
                     <p className={classes.mlText}>
                       <strong>
@@ -174,7 +184,7 @@ const JoinTeam = () => {
               </Card>
             </GridItem>
           );
-        })} */}
+        })}
       </GridContainer>
       <GridContainer>
         <GridItem xs={12} sm={12} md={10}>
@@ -183,11 +193,13 @@ const JoinTeam = () => {
               pages={[
                 {
                   text: "Previous",
-                  onClick: () => {},
+                  onClick: () => setPageVacant(pageVacant - 1),
+                  disabled: pageVacant <= 1,
                 },
                 {
                   text: "Next",
-                  onClick: () => {},
+                  onClick: () => setPageVacant(pageVacant + 1),
+                  disabled: pageVacant >= lastpage,
                 },
               ]}
             />
@@ -198,4 +210,4 @@ const JoinTeam = () => {
   );
 };
 
-export default JoinTeam;
+export default Vacancies;

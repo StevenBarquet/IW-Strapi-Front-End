@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_specialized_services_talent_scouts",
+  "info": {
+    "name": "talentScout",
+    "icon": "bullseye"
+  },
+  "options": {},
+  "attributes": {
+    "talentScoutTitle": {
+      "type": "string"
+    },
+    "talentScoutTitle_en": {
+      "type": "string"
+    },
+    "talentScoutIntroduction": {
+      "type": "richtext"
+    },
+    "talentScoutIntroduction_en": {
+      "type": "richtext"
+    },
+    "talentScoutSearchField": {
+      "type": "string"
+    },
+    "talentScoutSearchField_en": {
+      "type": "string"
+    }
+  }
+}

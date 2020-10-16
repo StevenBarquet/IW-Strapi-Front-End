@@ -2,7 +2,7 @@
 import {
   grayColor,
   whiteColor,
-  valenciaColor,
+  bigStoneColor,
   mlAuto,
   hexToRgb,
 } from "assets/jss/nextjs-material-kit-pro";
@@ -64,12 +64,15 @@ const headerLinksStyle = (theme) => ({
     position: "relative",
     padding: "0.9375rem",
     fontWeight: "400",
-    fontSize: "16px",
+    fontSize: "14px",
     textTransform: "none",
     lineHeight: "20px",
     textDecoration: "none",
     margin: "0px",
     display: "inline-flex",
+    "& span": {
+      color: bigStoneColor,
+    },
     "&:hover,&:focus": {
       color: "inherit",
     },
@@ -98,7 +101,10 @@ const headerLinksStyle = (theme) => ({
     },
   },
   selectedNavLink: {
-    color: valenciaColor,
+    "& span > a": {
+      color: whiteColor,
+      fontWeight: "700",
+    },
   },
   navLinkJustIcon: {
     "& .fab,& .far,& .fal,& .fas,& .material-icons": {

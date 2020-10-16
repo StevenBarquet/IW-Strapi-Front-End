@@ -1,16 +1,14 @@
-// nodejs library that concatenates classes
+// Dependencies
 import classNames from "classnames";
-
-// nodejs library to set properties for components
 import PropTypes from "prop-types";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
 // core components
-import styles from "assets/jss/nextjs-material-kit-pro/components/parallaxStyle";
+import parallaxStyle from "assets/jss/parallaxStyle";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(parallaxStyle);
 
 const Parallax = (props) => {
   const windowScrollTop = 0;
@@ -19,6 +17,7 @@ const Parallax = (props) => {
   );
 
   const resetTransform = () => {
+    // eslint-disable-next-line no-shadow
     const windowScrollTop = window.pageYOffset / 3;
     setTransform(`translate3d(0,${windowScrollTop}px,0)`);
   };
@@ -34,11 +33,10 @@ const Parallax = (props) => {
     };
   });
 
-  const { filter, className, children, style, image, small } = props;
+  const { className, children, style, image, small } = props;
   const classes = useStyles();
   const parallaxClasses = classNames({
     [classes.parallax]: true,
-    [classes[`${filter}Color`]]: filter !== undefined,
     [classes.small]: small,
     [className]: className !== undefined,
   });
@@ -56,16 +54,16 @@ const Parallax = (props) => {
   );
 };
 
+Parallax.defaultProps = {
+  className: "",
+  style: {},
+  image: "",
+  small: false,
+};
+
 Parallax.propTypes = {
   className: PropTypes.string,
-  filter: PropTypes.oneOf([
-    "primary",
-    "dark",
-    "success",
-    "warning",
-    "danger",
-  ]),
-  children: PropTypes.node,
+  children: PropTypes.element.isRequired,
   style: PropTypes.string,
   image: PropTypes.string,
   small: PropTypes.bool,

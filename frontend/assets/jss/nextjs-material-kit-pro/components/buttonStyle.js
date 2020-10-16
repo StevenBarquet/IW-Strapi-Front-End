@@ -33,6 +33,7 @@ const buttonStyle = {
     position: "relative",
     padding: "12px 30px",
     margin: ".3125rem 1px",
+    fontFamily: "inherit",
     fontSize: "0.875rem",
     fontWeight: "400",
     textTransform: "none",

@@ -42,7 +42,7 @@ const paginationStyle = {
     textDecoration: "none",
     boxSizing: "border-box",
     "&,&:hover,&:focus": {
-      color: grayColor[0],
+      color: "#292828",
     },
     "&:hover,&:focus": {
       zIndex: "3",

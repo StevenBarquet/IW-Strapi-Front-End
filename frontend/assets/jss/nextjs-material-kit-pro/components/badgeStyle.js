@@ -14,12 +14,12 @@ const badgeStyle = {
     textTransform: "uppercase",
     fontSize: "10px",
     fontWeight: "600",
+    cursor: "default",
     lineHeight: "1",
     color: "#262626",
     textAlign: "center",
     whiteSpace: "nowrap",
     verticalAlign: "baseline",
-    display: "inline-block",
   },
   primary: {
     backgroundColor: primaryColor[0],

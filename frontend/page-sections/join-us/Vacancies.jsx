@@ -1,5 +1,7 @@
 // Dependencies
+import React from "react";
 import { useQuery } from "@apollo/client";
+import PropTypes from "prop-types";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -14,7 +16,6 @@ import RenderHTML from "components/HTML/RenderHTML";
 import Badge from "components/Badge/Badge";
 import Card from "components/Card/Card";
 import CardBody from "components/Card/CardBody";
-import CustomSelect from "components/CustomSelect/Select";
 import Pagination from "components/Pagination/Pagination";
 
 // gql
@@ -24,22 +25,29 @@ import joinUsStyle from "assets/jss/joinUsStyle";
 
 const useStyles = makeStyles(joinUsStyle);
 
-const Vacancies = ({ pageVacant, setPageVacant, multipleValue, setMultipleValue }) => {
+const Vacancies = ({
+  pageVacant,
+  tagsID,
+  multipleSelectValue,
+  onTags,
+  SelectTags,
+  setPageVacant,
+}) => {
   const {
     defaultSettings: { language },
   } = useSettings();
+  const classes = useStyles();
 
   const start = pageVacant === 1 ? 0 : (pageVacant - 1) * 4;
 
   const { loading, error, data } = useQuery(JOIN_US_VACANCIES_QUERY, {
     variables: {
-      where: multipleValue ? { tags: { id_in: multipleValue } } : {},
+      where: tagsID ? { tags: { id_in: tagsID } } : {},
       limit: 4,
       start,
       sort: "created_at:desc",
     },
   });
-  const classes = useStyles();
 
   if (loading) {
     return null;
@@ -60,12 +68,6 @@ const Vacancies = ({ pageVacant, setPageVacant, multipleValue, setMultipleValue 
 
   const { vacancies } = data;
 
-  const tags = [
-    { value: "1", label: "Agosto" },
-    { value: "2", label: "Desarrollo Full Stack" },
-    { value: "3", label: "Octubre" },
-  ];
-
   const lastpage = Math.ceil(data.vacanciesCount / 4);
 
   return (
@@ -78,22 +80,24 @@ const Vacancies = ({ pageVacant, setPageVacant, multipleValue, setMultipleValue 
         className={`${classes.mlAuto}  ${classes.mrAuto} ${classes.displayNone}`}
       >
         <GridItem xs={12} sm={11} md={6}>
-          {/* Tags:{" "}
-          {tags.map((tag) => (
-            <Badge key={tag.id} color="primary">
-              <span>{tag.name}</span>
-            </Badge>
-          ))} */}
-          <CustomSelect
-            multiple
-            id="tags"
-            name="tags"
-            label="Tags"
-            noOptionText="Seleccione los tags"
-            value={multipleValue}
-            handleChange={e => setMultipleValue(e.target.value)}
-            options={tags}
-          />
+          Tags:{" "}
+          {multipleSelectValue
+            .filter((tag) => tag.active)
+            .map((tag) => (
+              <Badge key={tag.id} color="primary">
+                <button
+                  type="button"
+                  className={classes.removeIcon}
+                  onClick={() => onTags(tag)}
+                >
+                  <span>{tag[`name${language}`]}</span>
+                </button>
+              </Badge>
+            ))}
+          <br />
+          <div>
+            <SelectTags />
+          </div>
         </GridItem>
         <GridItem xs={12} sm={11} md={6}>
           <p className={classes.lengthVacantText}>
@@ -208,6 +212,20 @@ const Vacancies = ({ pageVacant, setPageVacant, multipleValue, setMultipleValue 
       </GridContainer>
     </div>
   );
+};
+
+Vacancies.defaultProps = {
+  multipleSelectValue: [],
+  tagsID: [],
+};
+
+Vacancies.propTypes = {
+  multipleSelectValue: PropTypes.arrayOf(PropTypes.shape({})),
+  tagsID: PropTypes.arrayOf(PropTypes.shape({})),
+  pageVacant: PropTypes.number.isRequired,
+  setPageVacant: PropTypes.func.isRequired,
+  onTags: PropTypes.func.isRequired,
+  SelectTags: PropTypes.func.isRequired,
 };
 
 export default Vacancies;

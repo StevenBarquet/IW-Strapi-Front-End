@@ -127,6 +127,15 @@ const joinUsStyle = () => ({
       display: "none",
     },
   },
+  removeIcon: {
+    outline: 0,
+    backgroundImage: "url(assets/img/eliminar.svg') no-repeat",
+    backgroundPosition: "center center",
+    border: "none",
+    paddingRight: "1rem",
+    flexBasis: "20%",
+    backgroundColor: "Transparent",
+  },
 });
 
 export default joinUsStyle;

@@ -583,52 +583,118 @@
                     "type": "string"
                   }
                 }
+              },
+              "cardVacant": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "age": {
+                      "type": "string"
+                    },
+                    "age_en": {
+                      "type": "string"
+                    },
+                    "sex": {
+                      "type": "string"
+                    },
+                    "sex_en": {
+                      "type": "string"
+                    },
+                    "scholarship": {
+                      "type": "string"
+                    },
+                    "scholarship_en": {
+                      "type": "string"
+                    },
+                    "workZone": {
+                      "type": "string"
+                    },
+                    "workZone_en": {
+                      "type": "string"
+                    },
+                    "specificRequirements": {
+                      "type": "string"
+                    },
+                    "specificRequirements_en": {
+                      "type": "string"
+                    },
+                    "contact": {
+                      "type": "string"
+                    },
+                    "nameVancant": {
+                      "type": "string"
+                    },
+                    "nameVancant_en": {
+                      "type": "string"
+                    },
+                    "tags": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "name_en": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           },
-          "cardVacant": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "age": {
-                  "type": "string"
-                },
-                "age_en": {
-                  "type": "string"
-                },
-                "sex": {
-                  "type": "string"
-                },
-                "sex_en": {
-                  "type": "string"
-                },
-                "scholarship": {
-                  "type": "string"
-                },
-                "scholarship_en": {
-                  "type": "string"
-                },
-                "workZone": {
-                  "type": "string"
-                },
-                "workZone_en": {
-                  "type": "string"
-                },
-                "specificRequirements": {
-                  "type": "string"
-                },
-                "specificRequirements_en": {
-                  "type": "string"
-                },
-                "contact": {
-                  "type": "string"
+          "sendCV": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "underlinedTitle": {
+                "type": "string"
+              },
+              "underlinedTitle_en": {
+                "type": "string"
+              },
+              "introductoryText": {
+                "type": "string"
+              },
+              "introductoryText_en": {
+                "type": "string"
+              },
+              "actionButton": {
+                "type": "object",
+                "required": [
+                  "id"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "label_en": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -897,52 +963,118 @@
                     "type": "string"
                   }
                 }
+              },
+              "cardVacant": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "age": {
+                      "type": "string"
+                    },
+                    "age_en": {
+                      "type": "string"
+                    },
+                    "sex": {
+                      "type": "string"
+                    },
+                    "sex_en": {
+                      "type": "string"
+                    },
+                    "scholarship": {
+                      "type": "string"
+                    },
+                    "scholarship_en": {
+                      "type": "string"
+                    },
+                    "workZone": {
+                      "type": "string"
+                    },
+                    "workZone_en": {
+                      "type": "string"
+                    },
+                    "specificRequirements": {
+                      "type": "string"
+                    },
+                    "specificRequirements_en": {
+                      "type": "string"
+                    },
+                    "contact": {
+                      "type": "string"
+                    },
+                    "nameVancant": {
+                      "type": "string"
+                    },
+                    "nameVancant_en": {
+                      "type": "string"
+                    },
+                    "tags": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "name_en": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           },
-          "cardVacant": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "age": {
-                  "type": "string"
-                },
-                "age_en": {
-                  "type": "string"
-                },
-                "sex": {
-                  "type": "string"
-                },
-                "sex_en": {
-                  "type": "string"
-                },
-                "scholarship": {
-                  "type": "string"
-                },
-                "scholarship_en": {
-                  "type": "string"
-                },
-                "workZone": {
-                  "type": "string"
-                },
-                "workZone_en": {
-                  "type": "string"
-                },
-                "specificRequirements": {
-                  "type": "string"
-                },
-                "specificRequirements_en": {
-                  "type": "string"
-                },
-                "contact": {
-                  "type": "string"
+          "sendCV": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "underlinedTitle": {
+                "type": "string"
+              },
+              "underlinedTitle_en": {
+                "type": "string"
+              },
+              "introductoryText": {
+                "type": "string"
+              },
+              "introductoryText_en": {
+                "type": "string"
+              },
+              "actionButton": {
+                "type": "object",
+                "required": [
+                  "id"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "label_en": {
+                    "type": "string"
+                  }
                 }
               }
             }

@@ -3,7 +3,6 @@ import {
   warningColor,
   dangerColor,
   successColor,
-  whiteColor,
   grayColor,
 } from "assets/jss/nextjs-material-kit-pro";
 
@@ -14,13 +13,13 @@ const badgeStyle = {
     padding: "5px 12px",
     textTransform: "uppercase",
     fontSize: "10px",
-    fontWeight: "500",
+    fontWeight: "600",
+    cursor: "default",
     lineHeight: "1",
-    color: whiteColor,
+    color: "#262626",
     textAlign: "center",
     whiteSpace: "nowrap",
     verticalAlign: "baseline",
-    display: "inline-block",
   },
   primary: {
     backgroundColor: primaryColor[0],

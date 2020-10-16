@@ -38,6 +38,17 @@
     },
     "contact": {
       "type": "string"
+    },
+    "nameVancant": {
+      "type": "string"
+    },
+    "nameVancant_en": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "joinus.tags"
     }
   }
 }

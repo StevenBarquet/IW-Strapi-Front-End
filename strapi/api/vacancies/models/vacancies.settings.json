@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vacancies",
+  "info": {
+    "name": "vacancies"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "title_en": {
+      "type": "string"
+    },
+    "age": {
+      "type": "string"
+    },
+    "age_en": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Masculino",
+        "Femenino",
+        "Indistinto"
+      ]
+    },
+    "gender_en": {
+      "type": "enumeration",
+      "enum": [
+        "male",
+        "female",
+        "Indistinct"
+      ]
+    },
+    "scholarship": {
+      "type": "string"
+    },
+    "scholarship_en": {
+      "type": "string"
+    },
+    "workZone": {
+      "type": "string"
+    },
+    "workZone_en": {
+      "type": "string"
+    },
+    "specificRequirements": {
+      "type": "richtext"
+    },
+    "specificRequirements_en": {
+      "type": "richtext"
+    },
+    "tags": {
+      "collection": "tags",
+      "via": "vacancies",
+      "dominant": true
+    },
+    "contact": {
+      "type": "string"
+    }
+  }
+}

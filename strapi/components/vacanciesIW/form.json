@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_vacanciesiw_forms",
+  "info": {
+    "name": "form",
+    "icon": "sticky-note"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "subtitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.subtitle"
+    },
+    "actionButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.action-button"
+    }
+  }
+}

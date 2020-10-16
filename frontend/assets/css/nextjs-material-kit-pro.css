@@ -732,7 +732,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 * https://github.com/YouCanBookMe/react-datetime
 */
 .rdt {
-  position: relative; }
+  position: relative;     
+  bottom: 1.1rem;
+}
   .rdt .rdtPicker {
     -webkit-transition: all 150ms linear;
     -moz-transition: all 150ms linear;

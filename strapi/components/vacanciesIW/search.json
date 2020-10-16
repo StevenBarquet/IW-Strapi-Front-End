@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_vacanciesiw_searches",
+  "info": {
+    "name": "search",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "introductoryText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.introductory-text"
+    }
+  }
+}

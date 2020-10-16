@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "vacancies_iws",
+  "info": {
+    "name": "vacanciesIW"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.image-with-capition"
+    },
+    "search": {
+      "type": "component",
+      "repeatable": false,
+      "component": "vacanciesiw.search"
+    },
+    "form": {
+      "type": "component",
+      "repeatable": false,
+      "component": "vacanciesiw.form"
+    }
+  }
+}

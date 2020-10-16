@@ -117,7 +117,7 @@ export default function CustomDropdown(props) {
     <div className={innerDropDown ? classes.innerManager : classes.manager}>
       <div className={buttonText !== undefined ? "" : classes.target}>
         <Button
-          aria-label="Notifications"
+          aria-label="Dropdown-menu"
           aria-owns={anchorEl ? "menu-list" : null}
           aria-haspopup="true"
           {...buttonProps}

@@ -73,6 +73,7 @@ const dribbbleColor = "#ea4c89";
 const valenciaColor = "#D9373E";
 const pampasColor = "#F4F3ED";
 const mineShaftColor = "#383838";
+const bigStoneColor = "#111B2E";
 
 const transition = {
   transition: "all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)",
@@ -217,6 +218,32 @@ const subTitle = {
   fontFamily: `"Raleway", "Times New Roman", serif`,
 };
 
+const captionContainer = {
+  "@media (max-width: 576px)": {
+    textAlign: "center",
+    position: "static",
+    transform: "none",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  left: "25%",
+  transform: "translate(-25%, -50%)",
+  top: "40%",
+  position: "absolute",
+  zIndex: "1",
+};
+
+const textOverlay = {
+  width: "400px",
+  "& p": {
+    fontSize: "2.8rem",
+    fontWeight: "100",
+    clear: "both",
+    display: "block",
+  },
+};
+
 const cardTitle = {
   "&, & a": {
     ...title,
@@ -356,6 +383,7 @@ export {
   dribbbleColor,
   valenciaColor,
   pampasColor,
+  bigStoneColor,
   primaryBoxShadow,
   successBoxShadow,
   warningBoxShadow,
@@ -367,6 +395,8 @@ export {
   cardHeader,
   title,
   subTitle,
+  captionContainer,
+  textOverlay,
   cardTitle,
   description,
   cardSubtitle,

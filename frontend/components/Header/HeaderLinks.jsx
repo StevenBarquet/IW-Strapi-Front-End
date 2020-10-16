@@ -59,16 +59,24 @@ const HeaderLinks = () => {
               key={navigationMenuItem.path}
               className={classes.listItem}
             >
-              <Link href={navigationMenuItem.path}>
-                <a
-                  className={classNames(classes.navLink, {
-                    [classes.selectedNavLink]:
-                      router.pathname === navigationMenuItem.path,
-                  })}
-                >
-                  {navigationMenuItem[`label${defaultSettings.language}`]}
-                </a>
-              </Link>
+              <Button
+                className={classNames(classes.navLink, {
+                  [classes.selectedNavLink]:
+                    router.pathname === navigationMenuItem.path,
+                })}
+                onClick={() => router.push(navigationMenuItem.path)}
+                color={
+                  router.pathname === navigationMenuItem.path
+                    ? "primary"
+                    : "transparent"
+                }
+              >
+                <Link href={navigationMenuItem.path}>
+                  <a>
+                    {navigationMenuItem[`label${defaultSettings.language}`]}
+                  </a>
+                </Link>
+              </Button>
             </ListItem>
           );
         }
@@ -83,9 +91,11 @@ const HeaderLinks = () => {
                 className: classes.navLink,
                 color: "transparent",
               }}
-              dropdownList={navigationMenuItem.nestedLinks.map(
-                (nestedLink) => nestedLink[`label${defaultSettings.language}`]
-              )}
+              dropdownList={navigationMenuItem.nestedLinks.map((nestedLink) => (
+                <Link href={nestedLink.path}>
+                  <a>{nestedLink[`label${defaultSettings.language}`]}</a>
+                </Link>
+              ))}
             />
           </ListItem>
         );

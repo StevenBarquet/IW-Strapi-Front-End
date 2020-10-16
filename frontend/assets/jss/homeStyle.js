@@ -2,6 +2,8 @@ import {
   main,
   mainRaised,
   section,
+  captionContainer,
+  textOverlay,
   floatRight,
   textCenter,
   sectionWithBackgroundColor,
@@ -22,30 +24,8 @@ const homeStyle = (theme) => ({
     },
     position: "relative",
   },
-  captionContainer: {
-    "@media (max-width: 576px)": {
-      textAlign: "center",
-      position: "static",
-      transform: "none",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-    },
-    left: "25%",
-    transform: "translate(-25%, -50%)",
-    top: "40%",
-    position: "absolute",
-    zIndex: "1",
-  },
-  textOverlay: {
-    width: "400px",
-    "& p": {
-      fontSize: "2.8rem",
-      fontWeight: "100",
-      clear: "both",
-      display: "block",
-    },
-  },
+  captionContainer,
+  textOverlay,
   underlinedTitleContainer: {
     "@media (max-width: 576px)": {
       width: "auto",

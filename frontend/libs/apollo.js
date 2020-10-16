@@ -144,6 +144,9 @@ function createApolloClient(initialState = {}) {
           joinUs: {
             merge: true,
           },
+          specializedService: {
+            merge: true,
+          },
           vacanciesIw: {
             merge: true,
           },

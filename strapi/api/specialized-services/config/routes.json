@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/specialized-services",
+      "handler": "specialized-services.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/specialized-services",
+      "handler": "specialized-services.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/specialized-services",
+      "handler": "specialized-services.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

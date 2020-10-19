@@ -18,6 +18,26 @@
       "type": "component",
       "repeatable": false,
       "component": "specialized-services.talent-scout"
+    },
+    "talentAttraction": {
+      "type": "component",
+      "repeatable": false,
+      "component": "specialized-services.talent-attraction"
+    },
+    "talentAttractionCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "specialized-services.talent-attraction-cards"
+    },
+    "recruitBest": {
+      "type": "component",
+      "repeatable": false,
+      "component": "specialized-services.recruit-best"
+    },
+    "requestQuote": {
+      "type": "component",
+      "repeatable": false,
+      "component": "specialized-services.request-quote"
     }
   }
 }

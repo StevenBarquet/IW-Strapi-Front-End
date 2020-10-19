@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_specialized_services_recruit_bests",
+  "info": {
+    "name": "recruitBest",
+    "icon": "file-audio"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "introductoryText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.introductory-text"
+    },
+    "carousel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.carousel-with-caption"
+    },
+    "introductionTextCarousel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.introductory-text"
+    }
+  }
+}

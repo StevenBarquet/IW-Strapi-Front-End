@@ -29,6 +29,8 @@ const VACANCIES_SEARCH_QUERY = gql`
   query Search {
     vacanciesIw {
       search {
+        searchField
+        searchField_en
         title {
           sectionTitle
           sectionTitle_en

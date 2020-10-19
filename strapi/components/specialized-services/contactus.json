@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_specialized_services_contactuses",
+  "info": {
+    "name": "contactus",
+    "icon": "dragon"
+  },
+  "options": {},
+  "attributes": {
+    "sectionIcon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "actionButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.action-button"
+    }
+  }
+}

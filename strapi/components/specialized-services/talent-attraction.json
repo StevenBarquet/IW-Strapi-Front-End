@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_specialized_services_talent_attractions",
+  "info": {
+    "name": "talentAttraction",
+    "icon": "cash-register"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "introductoryText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.introductory-text"
+    },
+    "talentAttractionTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "contactus": {
+      "type": "component",
+      "repeatable": false,
+      "component": "specialized-services.contactus"
+    }
+  }
+}

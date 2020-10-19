@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_specialized_services_talent_attraction_cards",
+  "info": {
+    "name": "talentAttractionCards",
+    "icon": "award"
+  },
+  "options": {},
+  "attributes": {
+    "front": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.front"
+    },
+    "back": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.back"
+    }
+  }
+}

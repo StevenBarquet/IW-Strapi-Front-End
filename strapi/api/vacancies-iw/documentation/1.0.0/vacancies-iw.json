@@ -583,6 +583,12 @@
                     "type": "string"
                   }
                 }
+              },
+              "searchField": {
+                "type": "string"
+              },
+              "searchField_en": {
+                "type": "string"
               }
             }
           },
@@ -912,6 +918,12 @@
                     "type": "string"
                   }
                 }
+              },
+              "searchField": {
+                "type": "string"
+              },
+              "searchField_en": {
+                "type": "string"
               }
             }
           },

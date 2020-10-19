@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_specialized_services_request_quotes",
+  "info": {
+    "name": "requestQuote",
+    "icon": "file-invoice-dollar"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "introductoryText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.introductory-text"
+    },
+    "actionButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.action-button"
+    },
+    "checkboxTitle": {
+      "type": "text"
+    },
+    "checkboxTitle_en": {
+      "type": "text"
+    }
+  }
+}

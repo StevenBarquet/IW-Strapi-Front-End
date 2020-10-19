@@ -68,7 +68,7 @@ const customCheckboxRadioSwitch = {
   label: {
     cursor: "pointer",
     paddingLeft: "0",
-    color: grayColor[10],
+    color: "#5a5151",
     fontSize: "14px",
     lineHeight: "1.428571429",
     fontWeight: "400",

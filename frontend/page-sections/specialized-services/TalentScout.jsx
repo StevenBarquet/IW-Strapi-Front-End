@@ -17,9 +17,9 @@ import { useSettings } from "context/Settings";
 import { SPECIALIZED_SERVICES_TALENT_SCOUT_QUERY } from "gql/queries/specialized-services";
 
 // jss styles
-import homeStyle from "assets/jss/homeStyle";
+import specializedServicesStyle from "assets/jss/specializedServicesStyle";
 
-const useStyles = makeStyles(homeStyle);
+const useStyles = makeStyles(specializedServicesStyle);
 
 const SectionAboutUs = () => {
   const {
@@ -57,14 +57,28 @@ const SectionAboutUs = () => {
       className={classes.sectionWithBackgroundColor}
     >
       <GridContainer justify="center">
-        <GridItem md={4}>
+        <GridItem xs={10} sm={5} md={5} lg={5}>
           <h3>{talentScout[`talentScoutTitle${language}`]}</h3>
           <RenderHTML
             html={talentScout[`talentScoutIntroduction${language}`]}
           />
         </GridItem>
-        <GridItem md={4}>
-          <CustomInput />
+        <GridItem xs={10} sm={6} md={4} lg={4}>
+          <CustomInput
+            id="talentScoutSearch"
+            name="talentScoutSearch"
+            value=""
+            labelText={talentScout[`talentScoutSearchField${language}`]}
+            handleChange={() => {}}
+            inputProps={{
+              name: "talentScoutSearch",
+              maxLength: 18,
+              placeholder: talentScout[`talentScoutSearchField${language}`],
+            }}
+            formControlProps={{
+              fullWidth: true,
+            }}
+          />
         </GridItem>
       </GridContainer>
     </div>

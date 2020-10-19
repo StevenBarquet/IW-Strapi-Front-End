@@ -8,7 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 import RenderHTML from "components/HTML/RenderHTML";
-import Button from "components/CustomButtons/Button";
+import CustomInput from "components/CustomInput/CustomInput";
 
 // context
 import { useSettings } from "context/Settings";
@@ -50,31 +50,35 @@ const SearchVacancies = () => {
   } = data;
 
   return (
-    <div id="section-searchVacancies">
-      <GridContainer
-        justify="center"
-        alignItems="center"
-        className={classes.sectionWithBackgroundColor}
-      >
+    <div
+      id="section-searchVacancies"
+      className={classes.sectionWithBackgroundColor}
+    >
+      <GridContainer justify="center" alignItems="center">
         <GridItem xs={10} sm={5} md={5} lg={5}>
           <div className={classes.titleContainer}>
-            <h2>{search.title[`sectionTitle${language}`]}</h2>
+            <h3>{search.title[`sectionTitle${language}`]}</h3>
           </div>
           <RenderHTML
             html={search.introductoryText[`introductoryText${language}`]}
           />
         </GridItem>
         <GridItem xs={10} sm={6} md={4} lg={4}>
-          <GridItem
-            xs={6}
-            sm={4}
-            md={3}
-            className={`${classes.mlAuto} ${classes.mrAuto}`}
-          >
-            <Button onClick={(e) => e.preventDefault()} round color="behance">
-              BBUSCARA
-            </Button>
-          </GridItem>
+          <CustomInput
+            id="automatizacion"
+            name="automatizacion"
+            value=""
+            labelText={search[`searchField${language}`]}
+            handleChange={() => {}}
+            inputProps={{
+              name: "automatizacion",
+              maxLength: 18,
+              placeholder: search[`searchField${language}`],
+            }}
+            formControlProps={{
+              fullWidth: true,
+            }}
+          />
         </GridItem>
       </GridContainer>
     </div>

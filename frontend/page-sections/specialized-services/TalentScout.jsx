@@ -58,7 +58,7 @@ const SectionAboutUs = () => {
     >
       <GridContainer justify="center">
         <GridItem xs={10} sm={5} md={5} lg={5}>
-          <h3>{talentScout[`talentScoutTitle${language}`]}</h3>
+          <h2>{talentScout[`talentScoutTitle${language}`]}</h2>
           <RenderHTML
             html={talentScout[`talentScoutIntroduction${language}`]}
           />

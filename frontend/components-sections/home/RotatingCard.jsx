@@ -117,7 +117,7 @@ const PartnerCard = ({ card: { front, back } }) => {
           <div className={classes.back}>
             <CardBody className={classes.cardBodyRotate}>
               <div className={classes.backContainer}>
-                <h3>{back[`backCardTitle${language}`]}</h3>
+                <h2>{back[`backCardTitle${language}`]}</h2>
                 <div className={classes.backSolutionsList}>
                   <CardBackList />
                 </div>

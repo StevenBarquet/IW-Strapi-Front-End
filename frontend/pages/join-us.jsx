@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import dynamic from "next/dynamic";
 
@@ -8,13 +8,6 @@ import classNames from "classnames";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import Icon from "@material-ui/core/Icon";
-
-// context
-import { useSettings } from "context/Settings";
-
-// core components
-import Badge from "components/Badge/Badge";
 
 // gql
 import { JOIN_US_TAGS_QUERY } from "gql/queries/join-us";
@@ -24,9 +17,6 @@ import { withApollo } from "libs/apollo";
 
 // layout
 import withLayout from "layouts/main";
-
-// utils
-import { replaceObject, getItemByAttr, removeItem } from "utils/utils";
 
 // jss styles
 import joinUsStyle from "assets/jss/joinUsStyle";
@@ -45,10 +35,6 @@ const JoinUsPage = () => {
   const [multipleValue, setMultipleValue] = useState([]);
   const [multipleSelectValue, setMultipleSelectValue] = useState([]);
   const [tagsID, setTagsID] = useState([]);
-
-  const {
-    defaultSettings: { language },
-  } = useSettings();
 
   const { loading, error, data } = useQuery(JOIN_US_TAGS_QUERY);
 
@@ -71,50 +57,6 @@ const JoinUsPage = () => {
 
   const { tags } = data;
 
-  useEffect(() => {
-    tags.forEach((s) =>
-      setMultipleSelectValue((suc) => [...suc, { ...s, active: true }])
-    );
-  }, []);
-
-  const onRemoveItem = (id) => {
-    const selectTag = getItemByAttr(multipleSelectValue, { id });
-    selectTag.active = true;
-
-    setMultipleValue(removeItem(multipleValue, { id }));
-    setTagsID(removeItem(multipleValue, { id }));
-    setMultipleSelectValue(
-      replaceObject(multipleSelectValue, { id }, selectTag)
-    );
-  };
-
-  const onTags = (temp) => {
-    const selectTags = getItemByAttr(multipleSelectValue, {
-      id: temp.id,
-    });
-    selectTags.active = false;
-    multipleValue.push(temp);
-    setTagsID([...tagsID, temp.id]);
-    setMultipleValue(multipleValue);
-    setMultipleSelectValue(
-      replaceObject(multipleSelectValue, { id: temp.id }, selectTags)
-    );
-  };
-
-  const SelectTags = () =>
-    multipleValue.map((item) => (
-      <Badge key={item.id} color="primary">
-        <button
-          type="button"
-          className={classes.removeIcon}
-          onClick={() => onRemoveItem(item.id)}
-        >
-          <span>{item[`name${language}`]}</span>
-          <Icon style={{ position: "absolute", bottom: "-1px" }}>clear</Icon>
-        </button>
-      </Badge>
-    ));
-
   return (
     <>
       <Header />
@@ -125,8 +67,11 @@ const JoinUsPage = () => {
           setPageVacant={setPageVacant}
           tagsID={tagsID}
           multipleSelectValue={multipleSelectValue}
-          onTags={onTags}
-          SelectTags={SelectTags}
+          multipleValue={multipleValue}
+          setMultipleSelectValue={setMultipleSelectValue}
+          setTagsID={setTagsID}
+          tagsData={tags}
+          setMultipleValue={setMultipleValue}
         />
         <SendCV />
       </main>

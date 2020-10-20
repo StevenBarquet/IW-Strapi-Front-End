@@ -56,6 +56,7 @@ module.exports = {
           "page-sections": "./page-sections",
           pages: "./pages",
           public: "./public",
+          utils: "./utils",
         },
         extensions: [".js", ".jsx"],
       },

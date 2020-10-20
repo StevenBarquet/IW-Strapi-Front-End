@@ -150,6 +150,9 @@ function createApolloClient(initialState = {}) {
           vacanciesIw: {
             merge: true,
           },
+          blog: {
+            merge: true,
+          },
         },
       },
     },

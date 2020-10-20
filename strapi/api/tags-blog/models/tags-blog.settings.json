@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags_blogs",
+  "info": {
+    "name": "tagsBlog"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "articles": {
+      "via": "tags",
+      "collection": "articles"
+    }
+  }
+}

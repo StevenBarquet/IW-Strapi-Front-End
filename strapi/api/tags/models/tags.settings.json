@@ -18,6 +18,10 @@
     "vacancies": {
       "via": "tags",
       "collection": "vacancies"
+    },
+    "articles": {
+      "via": "tags",
+      "collection": "articles"
     }
   }
 }

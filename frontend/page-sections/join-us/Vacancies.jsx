@@ -1,10 +1,11 @@
 // Dependencies
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import PropTypes from "prop-types";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import Icon from "@material-ui/core/Icon";
 
 // context
 import { useSettings } from "context/Settings";
@@ -21,6 +22,9 @@ import Pagination from "components/Pagination/Pagination";
 // gql
 import { JOIN_US_VACANCIES_QUERY } from "gql/queries/join-us";
 
+// utils
+import { replaceObject, getItemByAttr, removeItem } from "utils/Utils";
+
 import joinUsStyle from "assets/jss/joinUsStyle";
 
 const useStyles = makeStyles(joinUsStyle);
@@ -28,10 +32,13 @@ const useStyles = makeStyles(joinUsStyle);
 const Vacancies = ({
   pageVacant,
   tagsID,
+  tagsData,
   multipleSelectValue,
-  onTags,
-  SelectTags,
   setPageVacant,
+  multipleValue,
+  setMultipleValue,
+  setTagsID,
+  setMultipleSelectValue,
 }) => {
   const {
     defaultSettings: { language },
@@ -39,15 +46,22 @@ const Vacancies = ({
   const classes = useStyles();
 
   const start = pageVacant === 1 ? 0 : (pageVacant - 1) * 4;
+  const arrayId = Object.values(tagsID).map((t) => t.id);
 
   const { loading, error, data } = useQuery(JOIN_US_VACANCIES_QUERY, {
     variables: {
-      where: tagsID ? { tags: { id_in: tagsID } } : {},
+      where: tagsID ? { tags: { id_in: arrayId } } : {},
       limit: 4,
       start,
       sort: "created_at:desc",
     },
   });
+
+  useEffect(() => {
+    tagsData.forEach((t) =>
+      setMultipleSelectValue((tag) => [...tag, { ...t, active: true }])
+    );
+  }, []);
 
   if (loading) {
     return null;
@@ -65,6 +79,44 @@ const Vacancies = ({
   if (!data.vacancies) {
     return <span>¡Revisar CMS!</span>;
   }
+
+  const onRemoveItem = (id) => {
+    const selectTag = getItemByAttr(multipleSelectValue, { id });
+    selectTag.active = true;
+
+    setMultipleValue(removeItem(multipleValue, { id }));
+    setTagsID(removeItem(tagsID, { id }));
+    setMultipleSelectValue(
+      replaceObject(multipleSelectValue, { id }, selectTag)
+    );
+  };
+
+  const onTags = (temp) => {
+    const selectTags = getItemByAttr(multipleSelectValue, {
+      id: temp.id,
+    });
+    selectTags.active = false;
+    multipleValue.push(temp);
+    setTagsID([...tagsID, { id: temp.id }]);
+    setMultipleValue(multipleValue);
+    setMultipleSelectValue(
+      replaceObject(multipleSelectValue, { id: temp.id }, selectTags)
+    );
+  };
+
+  const SelectTags = () =>
+    multipleValue.map((item) => (
+      <Badge key={item.id} color="primary">
+        <button
+          type="button"
+          className={classes.removeIcon}
+          onClick={() => onRemoveItem(item.id)}
+        >
+          <span>{item[`name${language}`]}</span>
+          <Icon style={{ position: "absolute", bottom: "-1px" }}>clear</Icon>
+        </button>
+      </Badge>
+    ));
 
   const { vacancies } = data;
 
@@ -217,15 +269,20 @@ const Vacancies = ({
 Vacancies.defaultProps = {
   multipleSelectValue: [],
   tagsID: [],
+  multipleValue: [],
+  tagsData: [],
 };
 
 Vacancies.propTypes = {
+  tagsData: PropTypes.arrayOf(PropTypes.shape({})),
   multipleSelectValue: PropTypes.arrayOf(PropTypes.shape({})),
+  multipleValue: PropTypes.arrayOf(PropTypes.shape({})),
   tagsID: PropTypes.arrayOf(PropTypes.shape({})),
   pageVacant: PropTypes.number.isRequired,
   setPageVacant: PropTypes.func.isRequired,
-  onTags: PropTypes.func.isRequired,
-  SelectTags: PropTypes.func.isRequired,
+  setMultipleSelectValue: PropTypes.func.isRequired,
+  setTagsID: PropTypes.func.isRequired,
+  setMultipleValue: PropTypes.func.isRequired,
 };
 
 export default Vacancies;

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_blog_seos",
+  "info": {
+    "name": "Seo",
+    "icon": "atlas"
+  },
+  "options": {},
+  "attributes": {
+    "shareImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaTitle_en": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "richtext"
+    },
+    "metaDescription_en": {
+      "type": "richtext"
+    }
+  }
+}

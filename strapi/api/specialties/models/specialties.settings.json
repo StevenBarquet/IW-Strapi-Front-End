@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "specialties",
+  "info": {
+    "name": "specialties"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    }
+  }
+}

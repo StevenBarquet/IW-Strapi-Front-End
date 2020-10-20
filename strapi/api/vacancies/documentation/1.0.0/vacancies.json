@@ -590,6 +590,12 @@
                     "type": "string"
                   }
                 },
+                "articles": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "created_by": {
                   "type": "string"
                 },

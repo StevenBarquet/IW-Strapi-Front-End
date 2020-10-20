@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "name": "articles"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blog.seo"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "content_en": {
+      "type": "richtext"
+    },
+    "category": {
+      "model": "categories"
+    },
+    "tags": {
+      "collection": "tags-blog",
+      "via": "articles",
+      "dominant": true
+    },
+    "user": {
+      "model": "teams",
+      "via": "articles"
+    }
+  }
+}

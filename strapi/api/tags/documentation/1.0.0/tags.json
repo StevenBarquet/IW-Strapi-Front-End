@@ -591,6 +591,46 @@
                 }
               }
             }
+          },
+          "articles": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "seo": {
+                  "type": "component"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "content_en": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "user": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -603,6 +643,12 @@
             "type": "string"
           },
           "vacancies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "articles": {
             "type": "array",
             "items": {
               "type": "string"

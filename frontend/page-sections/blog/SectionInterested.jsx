@@ -61,11 +61,14 @@ const SectionPills = () => {
   const { articles } = data;
 
   return (
-    <div id="section-about" className={classes.section}>
+    <div
+      id="section-about"
+      className={`${classes.section} ${classes.margin5rem}`}
+    >
       <GridContainer justify="center">
         {articles &&
           articles.map((article) => (
-            <GridItem key={article.id} xs={12} sm={4} md={3} lg={3} xl={2}>
+            <GridItem key={article.id} xs={12} sm={5} md={3} lg={3} xl={2}>
               <Card plain blog>
                 <CardHeader image plain>
                   <img

@@ -25,14 +25,35 @@ const SectionTeams = dynamic(import("page-sections/blog/SectionTeams"));
 const useStyles = makeStyles(blogStyle);
 
 const HomePage = () => {
-  const [activeBtn, setActiveBtn] = useState(true);
+  const [categoryID, setcategoryID] = useState("");
+  const [pageArticle, setPageArticle] = useState(1);
+  const [btnHome, setbtnHome] = useState(true);
   const classes = useStyles();
+
+  const articleCategory = (categoty) => {
+    if (categoty === "ALL") {
+      setcategoryID("");
+      setbtnHome(false);
+    } else if (categoty === "HOME") {
+      setbtnHome(true);
+    } else {
+      setcategoryID(categoty.id);
+      setbtnHome(false);
+    }
+    setPageArticle(1);
+  };
 
   return (
     <>
       <Header />
       <main className={classNames(classes.main, classes.mainRaised)}>
-        <SectionPills activeBtn={activeBtn} />
+        <SectionPills
+          setPageArticle={setPageArticle}
+          pageArticle={pageArticle}
+          categoryID={categoryID}
+          btnHome={btnHome}
+          articleCategory={articleCategory}
+        />
         <SectionTeams />
       </main>
     </>

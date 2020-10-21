@@ -97,6 +97,7 @@ const buttonStyle = {
     width: "100%",
   },
   primary: {
+    color: "black",
     backgroundColor: primaryColor[0],
     boxShadow:
       "0 2px 2px 0 rgba(" +

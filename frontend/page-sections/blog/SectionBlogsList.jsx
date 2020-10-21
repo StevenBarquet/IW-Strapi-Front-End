@@ -1,6 +1,7 @@
 // Dependencies
 import { useQuery } from "@apollo/client";
 import getConfig from "next/config";
+import PropTypes from "prop-types";
 import Link from "next/link";
 
 // @material-ui/core components
@@ -10,7 +11,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 import Card from "components/Card/Card";
-import CardBody from "components/Card/CardBody";
 import CardHeader from "components/Card/CardHeader";
 import RenderHTML from "components/HTML/RenderHTML";
 
@@ -29,12 +29,13 @@ const {
   publicRuntimeConfig: { apiUrl },
 } = getConfig();
 
-const SectionPills = ({ showImage }) => {
+const SectionBlogsList = ({ showImage, id }) => {
   const {
     defaultSettings: { language },
   } = useSettings();
   const { loading, error, data } = useQuery(BLOG_ARTICLES_QUERY, {
     variables: {
+      where: showImage ? {} : { id_nin: [id] },
       sort: "created_at:desc",
       limit: showImage ? 5 : 3,
     },
@@ -67,23 +68,31 @@ const SectionPills = ({ showImage }) => {
       md={showImage ? 6 : 12}
       lg={showImage ? 6 : 12}
     >
-      <h2 className={classes.title}>Destacados</h2>
+      <h2 className={classes.title}>
+        {language === "_en" ? "Featured" : "Destacados"}
+      </h2>
       <hr />
       {articles &&
         articles.map((article) => (
           <Card key={article.id} plain blog>
             <GridContainer>
               {showImage && (
-                <GridItem xs={12} sm={2} md={3}>
+                <GridItem
+                  xs={8}
+                  sm={5}
+                  md={3}
+                  className={`${classes.imageArticle}`}
+                >
                   <CardHeader image plain>
                     <a href="#pablito" onClick={(e) => e.preventDefault()}>
                       <img
-                        style={{
-                          width: "177px",
-                          height: "115px",
-                        }}
                         src={`${apiUrl}${article.seo.shareImage.url}`}
-                        alt="..."
+                        alt={article.seo.shareImage.alternativeText}
+                        style={{
+                          height: "110px",
+                          width: "100%",
+                          display: "block",
+                        }}
                       />
                     </a>
                     <div
@@ -103,7 +112,7 @@ const SectionPills = ({ showImage }) => {
                   </CardHeader>
                 </GridItem>
               )}
-              <GridItem xs={12} sm={showImage ? 5 : 11} md={showImage ? 7 : 11}>
+              <GridItem xs={12} sm={showImage ? 7 : 11} md={showImage ? 7 : 11}>
                 <p className={classes.cardCategory}>{article.tags.name}</p>
                 <h2 className={classes.cardTitle}>
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -123,4 +132,14 @@ const SectionPills = ({ showImage }) => {
   );
 };
 
-export default SectionPills;
+SectionBlogsList.defaultProps = {
+  showImage: false,
+  id: "",
+};
+
+SectionBlogsList.propTypes = {
+  showImage: PropTypes.bool,
+  id: PropTypes.string,
+};
+
+export default SectionBlogsList;

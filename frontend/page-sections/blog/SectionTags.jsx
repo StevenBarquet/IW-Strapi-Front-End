@@ -1,13 +1,11 @@
 // Dependencies
 import { useQuery } from "@apollo/client";
-import getConfig from "next/config";
 import Link from "next/link";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
 // core components
-import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 import CardHeader from "components/Card/CardHeader";
 import Badge from "components/Badge/Badge";
@@ -25,7 +23,7 @@ import blogStyle from "assets/jss/blogStyle";
 
 const useStyles = makeStyles(blogStyle);
 
-const SectionPills = ({ BannerOne, BannerTwo }) => {
+const SectionPills = ({ BannerOne, BannerTwo, articleImg }) => {
   const {
     defaultSettings: { language },
   } = useSettings();
@@ -52,8 +50,8 @@ const SectionPills = ({ BannerOne, BannerTwo }) => {
   const { tagsBlogs } = data;
 
   return (
-    <GridItem xs={12} sm={11} md={3}>
-      <GridItem xs={12} sm={11} md={12}>
+    <GridItem xs={12} sm={10} md={articleImg ? 12 : 3}>
+      <GridItem xs={12} sm={11} md={12} className={classes.marginTop5rem}>
         <CardHeader image plain>
           <img src={BannerOne} alt="BannerOne" />
           <div
@@ -65,9 +63,7 @@ const SectionPills = ({ BannerOne, BannerTwo }) => {
           />
         </CardHeader>
       </GridItem>
-      <br />
-      <br />
-      <GridItem xs={12} sm={11} md={12}>
+      <GridItem xs={12} sm={11} md={12} className={classes.marginTop5rem}>
         <CardHeader image plain>
           <img src={BannerTwo} alt="BannerTwo" />
           <div
@@ -79,8 +75,7 @@ const SectionPills = ({ BannerOne, BannerTwo }) => {
           />
         </CardHeader>
       </GridItem>
-      <br />
-      <GridItem xs={12} sm={11} md={12}>
+      <GridItem xs={12} sm={11} md={12} className={classes.marginTop5rem}>
         <h2>
           {language === "_en" ? "Interware Newsletter" : "Boletín Interware"}
         </h2>
@@ -113,20 +108,18 @@ const SectionPills = ({ BannerOne, BannerTwo }) => {
           {language === "_en" ? "Send" : "Enviar"}
         </Button>
       </GridItem>
-      <GridItem xs={12} sm={11} md={11}>
-        <br />
-        <GridItem xs={12} sm={12} md={11}>
-          <h2>Tags</h2>
-          <hr />
-          {tagsBlogs &&
-            tagsBlogs.map((tag) => (
-              <Badge key={tag.id} color="primary">
-                <Link href="/blog">
-                  <span>{tag[`name${language}`]}</span>
-                </Link>
-              </Badge>
-            ))}
-        </GridItem>
+      <br />
+      <GridItem xs={12} sm={12} md={11}>
+        <h2>Tags</h2>
+        <hr />
+        {tagsBlogs &&
+          tagsBlogs.map((tag) => (
+            <Badge key={tag.id} color="primary">
+              <Link href="/blog">
+                <span>{tag[`name${language}`]}</span>
+              </Link>
+            </Badge>
+          ))}
       </GridItem>
     </GridItem>
   );

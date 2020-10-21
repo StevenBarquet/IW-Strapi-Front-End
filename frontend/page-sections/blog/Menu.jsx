@@ -1,4 +1,5 @@
 // Dependencies
+import PropTypes from "prop-types";
 import { useQuery } from "@apollo/client";
 
 // @material-ui/core components
@@ -20,7 +21,7 @@ import blogStyle from "assets/jss/blogStyle";
 
 const useStyles = makeStyles(blogStyle);
 
-const Menu = () => {
+const Menu = ({ articleCategory, categoryID, btnHome }) => {
   const {
     defaultSettings: { language },
   } = useSettings();
@@ -47,16 +48,44 @@ const Menu = () => {
   const { categories } = data;
 
   return (
-    <div id="section-menu">
+    <div id="section-menu" className={classes.margin5rem}>
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
-          <Button color="behance">HOME</Button>
-          <Button color="behance">ALL</Button>
+          <Button
+            onClick={() => articleCategory("HOME", false)}
+            color="behance"
+            className={
+              btnHome ? classes.bottomCategorySelect : classes.bottomCategory
+            }
+          >
+            HOME
+          </Button>
+          <Button
+            onClick={() => articleCategory("ALL", false)}
+            color="behance"
+            className={
+              !categoryID && !btnHome
+                ? classes.bottomCategorySelect
+                : classes.bottomCategory
+            }
+          >
+            ALL
+          </Button>
           {categories &&
             categories.map((category) => {
               return (
                 <span key={category.id}>
-                  <Button color="behance">{category[`name${language}`]}</Button>
+                  <Button
+                    onClick={() => articleCategory(category, false)}
+                    color="behance"
+                    className={
+                      categoryID === category.id && !btnHome
+                        ? classes.bottomCategorySelect
+                        : classes.bottomCategory
+                    }
+                  >
+                    {category[`name${language}`]}
+                  </Button>
                 </span>
               );
             })}
@@ -65,6 +94,17 @@ const Menu = () => {
       </GridContainer>
     </div>
   );
+};
+
+Menu.defaultProps = {
+  categoryID: "",
+  btnHome: true,
+};
+
+Menu.propTypes = {
+  categoryID: PropTypes.string,
+  btnHome: PropTypes.bool,
+  articleCategory: PropTypes.func.isRequired,
 };
 
 export default Menu;

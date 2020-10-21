@@ -6,6 +6,8 @@ import {
   textOverlay,
   floatRight,
   textCenter,
+  mrAuto,
+  mlAuto,
   sectionWithBackgroundColor,
 } from "assets/jss/nextjs-material-kit-pro";
 
@@ -16,6 +18,8 @@ const homeStyle = (theme) => ({
   sectionWithBackgroundColor,
   floatRight,
   textCenter,
+  mrAuto,
+  mlAuto,
   carouselContainer: {
     "@media (max-width: 576px)": {
       position: "static",

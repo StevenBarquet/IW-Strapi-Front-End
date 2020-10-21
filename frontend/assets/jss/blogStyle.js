@@ -13,6 +13,7 @@ import {
   title,
   coloredShadow,
   sectionWithBackgroundColor,
+  bottomCategory,
 } from "assets/jss/nextjs-material-kit-pro";
 
 const blogStyle = () => ({
@@ -25,6 +26,7 @@ const blogStyle = () => ({
   sectionWithBackgroundColor,
   floatRight,
   textCenter,
+  bottomCategory,
   cardTitle: {
     ...cardTitle,
     fontSize: "1.5rem",
@@ -34,6 +36,14 @@ const blogStyle = () => ({
     ...captionContainer,
     left: "45%",
     top: "50%",
+    "@media (max-width: 1024px)": {
+      left: "37% !important",
+      top: "60% !important",
+    },
+    "@media (max-width: 736px)": {
+      left: "45% !important",
+      top: "90% !important",
+    },
   },
   textOverlay: {
     ...textOverlay,
@@ -90,6 +100,48 @@ const blogStyle = () => ({
   socialButtons: {
     "& li": {
       display: "inline-block",
+    },
+  },
+  margin5rem: {
+    marginBottom: "5rem",
+  },
+  marginTop5rem: {
+    marginTop: "5rem",
+  },
+  imageArticle: {
+    "@media (max-width: 736px)": {
+      marginLeft: "auto",
+      marginRight: "auto",
+    },
+  },
+  bottomCategorySelect: {
+    ...bottomCategory,
+    backgroundColor: "#999 !important",
+  },
+  date: {
+    color: "#21646D",
+    fontWeight: 600,
+    position: "relative",
+    top: "9px",
+    left: "32px",
+    textTransform: "uppercase",
+  },
+  titleArticle: {
+    fontWeight: 600,
+    color: "#21646D",
+    fontSize: "2rem",
+  },
+  constentsArticle: {
+    "@media (max-width: 1024px)": {
+      "& h1": {
+        fontSize: "2rem",
+      },
+      "& h2": {
+        fontSize: "1.7rem",
+      },
+      "& img": {
+        width: "87%",
+      },
     },
   },
 });

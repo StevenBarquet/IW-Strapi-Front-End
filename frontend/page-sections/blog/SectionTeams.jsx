@@ -63,7 +63,7 @@ const SectionTeams = () => {
             {teams &&
               teams.map((team) => {
                 return (
-                  <GridItem key={team.id} xs={12} sm={3} md={3}>
+                  <GridItem key={team.id} xs={12} sm={6} md={3}>
                     <Card profile plain>
                       <CardAvatar profile plain>
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>

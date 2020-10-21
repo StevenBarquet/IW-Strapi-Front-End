@@ -13,6 +13,11 @@
       "type": "component",
       "repeatable": false,
       "component": "page.image-with-capition"
+    },
+    "carouselBlog": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.carousel-with-caption"
     }
   }
 }

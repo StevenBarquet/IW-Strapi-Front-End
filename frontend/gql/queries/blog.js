@@ -24,6 +24,32 @@ const BLOG_HEADER_QUERY = gql`
   }
 `;
 
+const BLOG_CAROUSEL_HEADER_QUERY = gql`
+  query CarouselBlog {
+    blog {
+      carouselBlog {
+        small_images {
+          id
+          url
+          alternativeText
+        }
+        medium_images {
+          id
+          url
+          alternativeText
+        }
+        large_images {
+          id
+          url
+          alternativeText
+        }
+        caption
+        caption_en
+      }
+    }
+  }
+`;
+
 const BLOG_ARTICLES_QUERY = gql`
   query Articles($where: JSON, $limit: Int, $start: Int, $sort: String) {
     articles(where: $where, limit: $limit, start: $start, sort: $sort) {
@@ -34,6 +60,48 @@ const BLOG_ARTICLES_QUERY = gql`
       tags {
         id
         name
+        name_en
+      }
+      user {
+        name
+        lastName
+        description
+        description_en
+        linkedin
+        shereImage {
+          url
+          alternativeText
+        }
+      }
+      category {
+        id
+        name
+      }
+      seo {
+        metaTitle
+        metaTitle_en
+        metaDescription
+        metaDescription_en
+        shareImage {
+          url
+          alternativeText
+        }
+      }
+    }
+  }
+`;
+
+const BLOG_ARTICLE_QUERY = gql`
+  query Article($id: ID!) {
+    article(id: $id) {
+      id
+      content
+      content_en
+      created_at
+      tags {
+        id
+        name
+        name_en
       }
       user {
         name
@@ -112,123 +180,6 @@ export {
   BLOG_CATEGORIES_QUERY,
   BLOG_TEAMS_QUERY,
   BLOG_TAGS_QUERY,
+  BLOG_CAROUSEL_HEADER_QUERY,
+  BLOG_ARTICLE_QUERY,
 };
-
-// export const ARTICLES_QUERY = gql`
-//   query Articles($where: JSON, $limit: Int, $start: Int, $sort: String) {
-//     articles(where: $where, limit: $limit, start: $start, sort: $sort) {
-//       id
-//       content
-//       createdAt
-//       tags {
-//         id
-//         name
-//       }
-//       user {
-//         name
-//         lastName
-//         description
-//         linkedin
-//         alt
-//         image {
-//           url
-//         }
-//       }
-//       category {
-//         id
-//         name
-//       }
-//       Seo {
-//         metaTitle
-//         metaDescription
-//         shareImage {
-//           alt
-//           image {
-//             alternativeText
-//             url
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
-// export const ARTICLE_CATEGORY_QUERY = gql`
-//   query category($id: ID!) {
-//     category(id: $id) {
-//       id
-//       name
-//       articles {
-//         id
-//         content
-//         tags {
-//           id
-//           name
-//         }
-//         user {
-//           name
-//           lastName
-//           description
-//           linkedin
-//           alt
-//           image {
-//             url
-//           }
-//         }
-//         category {
-//           id
-//           name
-//         }
-//         Seo {
-//           metaTitle
-//           metaDescription
-//           shareImage {
-//             alt
-//             image {
-//               alternativeText
-//               url
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
-// export const BLOGSEO_QUERY = gql`
-//   query BlogSeo {
-//     blog {
-//       Seo {
-//         metaTitle
-//         metaDescription
-//         shareImage {
-//           alt
-//           image {
-//             url
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
-// export const CATEGORIES_QUERY = gql`
-//   query categories {
-//     categories {
-//       id
-//       name
-//       articles {
-//         id
-//       }
-//     }
-//   }
-// `;
-
-// export const TAGS_QUERY = gql`
-//   query tags($limit: Int) {
-//     tags(limit: $limit) {
-//       id
-//       name
-//     }
-//   }
-// `;

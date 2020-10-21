@@ -342,6 +342,15 @@ const divider = {
   marginBottom: "2rem",
 };
 
+const bottomCategory= {
+  color: "#000",
+  boxShadow:
+    " 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(61, 180, 158, 0.4)",
+  backgroundColor: "#3DB49E !important",
+  borderRadius: "2rem !important",
+  marginLeft: "2rem !important",
+};
+
 const coloredShadow = {
   // some jss/css to make the cards look a bit better on Internet Explorer
   "@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)": {
@@ -415,4 +424,5 @@ export {
   coloredShadow,
   hexToRgb,
   legend,
+  bottomCategory,
 };

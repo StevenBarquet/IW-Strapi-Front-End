@@ -29,9 +29,6 @@ import { BLOG_ARTICLES_QUERY } from "gql/queries/blog";
 // jss styles
 import blogStyle from "assets/jss/blogStyle";
 
-import cardBlog3 from "assets/img/blog5.jpg";
-import cardBlog4 from "assets/img/blog6.jpg";
-
 const Menu = dynamic(import("page-sections/blog/Menu"));
 const SectionInterested = dynamic(
   import("page-sections/blog/SectionInterested")
@@ -88,6 +85,10 @@ const SectionPills = ({
 
   const { articles } = data;
 
+  const lastpage = Math.ceil(
+    categoryID ? articles.length / 4 : data.articlesCount / 4
+  );
+
   return (
     <div id="section-about" className={classes.section}>
       <Menu
@@ -130,7 +131,9 @@ const SectionPills = ({
                         <Link as={`/blog/${article.id}`} href="/blog/[id]">
                           <Button round className={classes.btonLeer}>
                             <FormatAlignLeft className={classes.icons} />
-                            Leer más...
+                            {language === "_en"
+                              ? "Read more..."
+                              : "Leer más..."}
                           </Button>
                         </Link>
                       </CardBody>
@@ -149,7 +152,7 @@ const SectionPills = ({
                   {
                     text: "Next",
                     onClick: () => setPageArticle(pageArticle + 1),
-                    // disabled: pageArticle >= lastpage,
+                    disabled: pageArticle >= lastpage,
                   },
                 ]}
               />
@@ -162,7 +165,7 @@ const SectionPills = ({
           <SectionInterested />
           <GridContainer justify="center">
             <SectionBlogsList showImage />
-            <SectionTags BannerOne={cardBlog4} BannerTwo={cardBlog3} />
+            <SectionTags />
           </GridContainer>
         </>
       )}

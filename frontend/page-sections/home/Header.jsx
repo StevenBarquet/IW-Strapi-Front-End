@@ -66,8 +66,6 @@ const Header = () => {
     home: { header },
   } = data;
 
-  console.log("header", header);
-
   return (
     <header id="header" className={classes.carouselContainer}>
       <Hidden only={["sm", "md", "lg", "xl"]}>

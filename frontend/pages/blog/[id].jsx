@@ -26,9 +26,6 @@ import GridItem from "components/Grid/GridItem";
 import GridContainer from "components/Grid/GridContainer";
 import Button from "components/CustomButtons/Button";
 
-import cardBlog3 from "assets/img/blog5.jpg";
-import cardBlog4 from "assets/img/blog6.jpg";
-
 // context
 import { useSettings } from "context/Settings";
 
@@ -110,11 +107,7 @@ const ArticlePage = () => {
             <SectionArticleText article={article} />
           </GridItem>
           <GridItem xs={12} sm={5} md={3}>
-            <SectionTags
-              BannerOne={cardBlog4}
-              BannerTwo={cardBlog3}
-              articleImg
-            />
+            <SectionTags articleImg />
             <SectionBlogsList id={router.query.id} />
           </GridItem>
         </GridContainer>

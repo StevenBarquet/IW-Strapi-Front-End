@@ -18,6 +18,11 @@
       "type": "component",
       "repeatable": false,
       "component": "page.carousel-with-caption"
+    },
+    "bannersBlog": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blog.banners-blog"
     }
   }
 }

@@ -84,7 +84,7 @@ const SectionBlogsList = ({ showImage, id }) => {
                   className={`${classes.imageArticle}`}
                 >
                   <CardHeader image plain>
-                    <a href="#pablito" onClick={(e) => e.preventDefault()}>
+                    <a href="#interware" onClick={(e) => e.preventDefault()}>
                       <img
                         src={`${apiUrl}${article.seo.shareImage.url}`}
                         alt={article.seo.shareImage.alternativeText}
@@ -115,13 +115,15 @@ const SectionBlogsList = ({ showImage, id }) => {
               <GridItem xs={12} sm={showImage ? 7 : 11} md={showImage ? 7 : 11}>
                 <p className={classes.cardCategory}>{article.tags.name}</p>
                 <h2 className={classes.cardTitle}>
-                  <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                  <a href="#interware" onClick={(e) => e.preventDefault()}>
                     {article.seo[`metaTitle${language}`]}
                   </a>
                 </h2>
                 <RenderHTML html={article.seo[`metaDescription${language}`]} />
                 <Link as={`/blog/${article.id}`} href="/blog/[id]">
-                  <a href="#pablo"> Leer más…</a>
+                  <a href="#interware">
+                    {language === "_en" ? "Read more..." : "Leer más..."}
+                  </a>
                 </Link>
               </GridItem>
               <hr />

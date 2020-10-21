@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_blog_banners_blogs",
+  "info": {
+    "name": "bannersBlog",
+    "icon": "laptop"
+  },
+  "options": {},
+  "attributes": {
+    "bannerUp": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "bannerDown": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

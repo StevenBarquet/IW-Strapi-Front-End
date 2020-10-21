@@ -115,6 +115,15 @@ class MyDocument extends Document {
             src="https://static.addtoany.com/menu/page.js"
             lang="es_Es"
           />
+          {/* script del compartir Facebook */}
+          <div id="fb-root" />
+          <script
+            async
+            defer
+            // Crossorigin="anonymous"
+            src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0"
+            nonce="ZJ50uWzN"
+          />
           {/* script del comentarios Facebook */}
           <div id="fb-root" />
           <script
@@ -122,7 +131,7 @@ class MyDocument extends Document {
             defer
             // Crossorigin="anonymous"
             src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0"
-            nonce="m7l67mVu"
+            nonce="AwXK80E3"
           />
           <div id="page-transition" />
           <Main />

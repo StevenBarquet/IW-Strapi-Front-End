@@ -52,6 +52,7 @@ const BLOG_CAROUSEL_HEADER_QUERY = gql`
 
 const BLOG_ARTICLES_QUERY = gql`
   query Articles($where: JSON, $limit: Int, $start: Int, $sort: String) {
+    articlesCount
     articles(where: $where, limit: $limit, start: $start, sort: $sort) {
       id
       content
@@ -170,6 +171,18 @@ const BLOG_TAGS_QUERY = gql`
       id
       name
       name_en
+    }
+    blog {
+      bannersBlog {
+        bannerUp {
+          url
+          alternativeText
+        }
+        bannerDown {
+          url
+          alternativeText
+        }
+      }
     }
   }
 `;

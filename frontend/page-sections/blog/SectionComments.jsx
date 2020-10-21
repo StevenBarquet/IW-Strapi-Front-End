@@ -37,12 +37,12 @@ const SectionComments = ({ id }) => {
               <GridItem style={{ marginRight: "27px" }} xs={2} sm={3} md={1}>
                 <div
                   className="fb-share-button"
-                  data-href="https://developers.facebook.com/docs/plugins/"
+                  data-href={`http://198.199.101.145/blog/${id}`}
                   data-layout="button"
                   data-size="small"
                 >
                   <a
-                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                    href={`https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F198.199.101.145%2Fblog%2F${id}&amp;src=sdkpreparse`}
                     className="fb-xfbml-parse-ignore"
                     target="_blank"
                   >
@@ -62,7 +62,7 @@ const SectionComments = ({ id }) => {
             {/* Comentarios */}
             <div
               className="fb-comments"
-              data-href={`http://localhost:3000/blog/${id}`}
+              data-href={`http://198.199.101.145/blog/${id}`}
               data-numposts="5"
               data-width="100%"
             />

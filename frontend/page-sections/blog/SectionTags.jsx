@@ -1,6 +1,8 @@
 // Dependencies
 import { useQuery } from "@apollo/client";
 import Link from "next/link";
+import getConfig from "next/config";
+import PropTypes from "prop-types";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -23,7 +25,11 @@ import blogStyle from "assets/jss/blogStyle";
 
 const useStyles = makeStyles(blogStyle);
 
-const SectionPills = ({ BannerOne, BannerTwo, articleImg }) => {
+const {
+  publicRuntimeConfig: { apiUrl },
+} = getConfig();
+
+const SectionTags = ({ articleImg }) => {
   const {
     defaultSettings: { language },
   } = useSettings();
@@ -53,11 +59,14 @@ const SectionPills = ({ BannerOne, BannerTwo, articleImg }) => {
     <GridItem xs={12} sm={10} md={articleImg ? 12 : 3}>
       <GridItem xs={12} sm={11} md={12} className={classes.marginTop5rem}>
         <CardHeader image plain>
-          <img src={BannerOne} alt="BannerOne" />
+          <img
+            src={`${apiUrl}${data.blog.bannersBlog.bannerUp.url}`}
+            alt={data.blog.bannersBlog.bannerDown.alternativeText}
+          />
           <div
             className={classes.coloredShadow}
             style={{
-              backgroundImage: `url(${BannerOne})`,
+              backgroundImage: `url(${apiUrl}${data.blog.bannersBlog.bannerUp.url})`,
               opacity: "1",
             }}
           />
@@ -65,11 +74,14 @@ const SectionPills = ({ BannerOne, BannerTwo, articleImg }) => {
       </GridItem>
       <GridItem xs={12} sm={11} md={12} className={classes.marginTop5rem}>
         <CardHeader image plain>
-          <img src={BannerTwo} alt="BannerTwo" />
+          <img
+            src={`${apiUrl}${data.blog.bannersBlog.bannerDown.url}`}
+            alt={data.blog.bannersBlog.bannerDown.alternativeText}
+          />
           <div
             className={classes.coloredShadow}
             style={{
-              backgroundImage: `url(${BannerTwo})`,
+              backgroundImage: `url(${apiUrl}${data.blog.bannersBlog.bannerDown.url})`,
               opacity: "1",
             }}
           />
@@ -125,4 +137,12 @@ const SectionPills = ({ BannerOne, BannerTwo, articleImg }) => {
   );
 };
 
-export default SectionPills;
+SectionTags.defaultProps = {
+  articleImg: false,
+};
+
+SectionTags.propTypes = {
+  articleImg: PropTypes.bool,
+};
+
+export default SectionTags;

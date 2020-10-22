@@ -13,6 +13,7 @@ const partnersSection = {
       textAlign: "center",
       width: "100%",
       height: "100%",
+      paddingBottom: "0.5rem",
     },
     "&:not($manualRotate):hover $cardRotate": {
       transform: "rotateY(180deg)",
@@ -54,7 +55,7 @@ const partnersSection = {
   front: {},
   back: {
     color: whiteColor,
-    background: "radial-gradient(circle, #21646D 0%, #3DB49E 100%)",
+    background: "radial-gradient(circle, #21646D 0%, #0E2243 100%)",
   },
   activateRotate: {},
   manualRotate: {},
@@ -81,7 +82,17 @@ const partnersSection = {
   },
   cardBodyContent: {
     padding: "2rem 0",
+    fontSize: "20px",
     textAlign: "center",
+    "& span": {
+      opacity: 0.8,
+      color: "#21646D",
+      fontWeight: 700,
+      lineHeight: "24px",
+    },
+    "& p": {
+      fontSize: "20px",
+    },
   },
   backContainer: {
     display: "flex",

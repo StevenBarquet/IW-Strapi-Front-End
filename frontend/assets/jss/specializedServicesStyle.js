@@ -76,10 +76,17 @@ const robotStyle = () => ({
   },
   textOverlayLeft: {
     ...textOverlay,
-    width: "500px",
+    width: "700px",
+    "& h1": {
+      margin: "0px",
+    },
     "@media (max-width: 1024px)": {
+      width: "500px",
       "& p": {
         fontSize: "1.8rem",
+      },
+      "& h1": {
+        fontSize: "29px",
       },
     },
     "@media (max-width: 736px)": {

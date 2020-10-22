@@ -40,6 +40,11 @@
       "type": "component",
       "repeatable": false,
       "component": "home.they-trust"
+    },
+    "technologyImplementation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.technology-implementation"
     }
   }
 }

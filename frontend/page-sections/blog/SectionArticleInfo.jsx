@@ -29,7 +29,7 @@ const SectionArticleInfo = ({ article }) => {
       <GridContainer justify="center">
         <GridItem xs={12} sm={10} md={8}>
           <GridContainer>
-            <GridItem xs={12} sm={6} md={9}>
+            <GridItem xs={12} sm={12} md={9}>
               <div className={classes.blogTags}>
                 Tags:{" "}
                 {article.tags.map((tag) => (

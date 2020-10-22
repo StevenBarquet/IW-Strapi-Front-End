@@ -74,6 +74,7 @@ const valenciaColor = "#D9373E";
 const pampasColor = "#F4F3ED";
 const mineShaftColor = "#383838";
 const bigStoneColor = "#111B2E";
+const blackcolor = "#373736";
 
 const transition = {
   transition: "all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)",
@@ -342,13 +343,19 @@ const divider = {
   marginBottom: "2rem",
 };
 
-const bottomCategory= {
+const bottomCategory = {
   color: "#000",
   boxShadow:
     " 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(61, 180, 158, 0.4)",
   backgroundColor: "#3DB49E !important",
   borderRadius: "2rem !important",
   marginLeft: "2rem !important",
+  "@media (max-width: 1024px)": {
+    marginLeft: "0.3rem !important",
+  },
+  "@media (max-width: 736px)": {
+    marginLeft: "0.1rem !important",
+  },
 };
 
 const coloredShadow = {
@@ -391,6 +398,7 @@ export {
   behanceColor,
   dribbbleColor,
   valenciaColor,
+  blackcolor,
   pampasColor,
   bigStoneColor,
   primaryBoxShadow,

@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 
 // core components
+import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 import CardHeader from "components/Card/CardHeader";
 import Badge from "components/Badge/Badge";
@@ -121,17 +122,21 @@ const SectionTags = ({ articleImg }) => {
         </Button>
       </GridItem>
       <br />
-      <GridItem xs={12} sm={12} md={11}>
+      <GridItem xs={12} sm={12} md={12}>
         <h2>Tags</h2>
         <hr />
-        {tagsBlogs &&
-          tagsBlogs.map((tag) => (
-            <Badge key={tag.id} color="primary">
-              <Link href="/blog">
-                <span>{tag[`name${language}`]}</span>
-              </Link>
-            </Badge>
-          ))}
+        <GridContainer>
+          {tagsBlogs &&
+            tagsBlogs.map((tag) => (
+              <div style={{ margin: "3px" }}>
+                <Badge key={tag.id} color="primary">
+                  <Link href="/blog">
+                    <span>{tag[`name${language}`]}</span>
+                  </Link>
+                </Badge>
+              </div>
+            ))}
+        </GridContainer>
       </GridItem>
     </GridItem>
   );

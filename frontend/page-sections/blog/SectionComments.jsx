@@ -28,21 +28,16 @@ const SectionComments = ({ id }) => {
       <GridContainer justify="center">
         <GridItem xs={12} sm={10} md={10}>
           <div>
-            <p className={classes.titleArticle}>
-              {language === "_en" ? "Comments" : "Comentarios"}
-            </p>
-            <hr />
-            <br />
             <div style={{ display: "flex" }}>
-              <GridItem style={{ marginRight: "27px" }} xs={2} sm={3} md={1}>
+              <GridItem style={{ marginRight: "7px" }} xs={2} sm={3} md={1}>
                 <div
                   className="fb-share-button"
-                  data-href={`http://198.199.101.145/blog/${id}`}
+                  data-href={`http://interware.mx/blog/${id}`}
                   data-layout="button"
                   data-size="small"
                 >
                   <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F198.199.101.145%2Fblog%2F${id}&amp;src=sdkpreparse`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Finterware.mx%2Fblog%2F${id}&amp;src=sdkpreparse`}
                     className="fb-xfbml-parse-ignore"
                     target="_blank"
                   >
@@ -50,19 +45,19 @@ const SectionComments = ({ id }) => {
                   </a>
                 </div>
               </GridItem>
-              {/* <GridItem style={{ marginTop: "4px" }} xs={3} sm={3} md={2}>
+              <GridItem style={{ marginTop: "4px" }} xs={3} sm={3} md={2}>
                 <div className="a2a_kit">
                   <a
                     className="a2a_button_linkedin_share"
-                    data-url={`http://localhost:3000/blog/${id}`}
+                    data-url={`http://interware.mx/blog/${id}`}
                   />
                 </div>
-              </GridItem> */}
+              </GridItem>
             </div>
             {/* Comentarios */}
             <div
               className="fb-comments"
-              data-href={`http://198.199.101.145/blog/${id}`}
+              data-href={`http://interware.mx/blog/${id}`}
               data-numposts="5"
               data-width="100%"
             />

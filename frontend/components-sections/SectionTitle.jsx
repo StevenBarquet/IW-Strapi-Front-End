@@ -49,7 +49,7 @@ const SectionTitle = ({ legend, title, subTitle, icon, children }) => {
   };
 
   return (
-    <GridItem xs={10} sm={8} md={8} lg={10}>
+    <GridItem xs={10} sm={9} md={8} lg={10}>
       {icon && <Icon />}
       {legend && <legend className={classes.legend}>{legend}</legend>}
       {title && <h1 className={classes.title}>{title}</h1>}

@@ -122,7 +122,7 @@ class MyDocument extends Document {
             defer
             // Crossorigin="anonymous"
             src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0"
-            nonce="ZJ50uWzN"
+            nonce="bFoqUfk4"
           />
           {/* script del comentarios Facebook */}
           <div id="fb-root" />
@@ -131,7 +131,7 @@ class MyDocument extends Document {
             defer
             // Crossorigin="anonymous"
             src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0"
-            nonce="AwXK80E3"
+            nonce="mPqzJT8d"
           />
           <div id="page-transition" />
           <Main />

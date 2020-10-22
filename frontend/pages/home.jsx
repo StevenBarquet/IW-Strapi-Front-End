@@ -20,6 +20,9 @@ import homeStyle from "assets/jss/homeStyle";
 const Header = dynamic(import("page-sections/home/Header"));
 const SectionAboutUs = dynamic(import("page-sections/home/AboutUs"));
 const SectionExperience = dynamic(import("page-sections/home/Experience"));
+const TechnologyImplementation = dynamic(
+  import("page-sections/home/TechnologyImplementation")
+);
 const SectionBusinessPartners = dynamic(
   import("page-sections/home/BusinessPartners")
 );
@@ -36,6 +39,7 @@ const HomePage = () => {
       <main className={classNames(classes.main, classes.mainRaised)}>
         <SectionAboutUs />
         <SectionExperience />
+        <TechnologyImplementation />
         <SectionBusinessPartners />
         <SectionTheyTrust />
       </main>

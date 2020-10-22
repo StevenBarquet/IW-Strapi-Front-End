@@ -109,11 +109,11 @@ const Vacancies = ({
       <Badge key={item.id} color="primary">
         <button
           type="button"
-          className={classes.removeIcon}
+          className={classes.tagsButton}
           onClick={() => onRemoveItem(item.id)}
         >
           <span>{item[`name${language}`]}</span>
-          <Icon style={{ position: "absolute", bottom: "-1px" }}>clear</Icon>
+          <Icon className={classes.removeIcon}>clear</Icon>
         </button>
       </Badge>
     ));
@@ -139,7 +139,7 @@ const Vacancies = ({
               <Badge key={tag.id} color="primary">
                 <button
                   type="button"
-                  className={classes.removeIcon}
+                  className={classes.tagsButton}
                   onClick={() => onTags(tag)}
                 >
                   <span>{tag[`name${language}`]}</span>

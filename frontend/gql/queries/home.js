@@ -167,6 +167,39 @@ const HOME_THEY_TRUST = gql`
   }
 `;
 
+const BLOG_TECHNOLOGY_IMPLEMENTATION_QUERY = gql`
+  query TechnologyImplementation {
+    home {
+      technologyImplementation {
+        title {
+          sectionTitle
+          sectionTitle_en
+        }
+        subtitle {
+          sectionSubTitle
+          sectionSubTitle_en
+        }
+        titleIconScrum {
+          sectionTitle
+          sectionTitle_en
+        }
+        titleIconDevOps {
+          sectionTitle
+          sectionTitle_en
+        }
+        scrum {
+          url
+          alternativeText
+        }
+        devOps {
+          url
+          alternativeText
+        }
+      }
+    }
+  }
+`;
+
 export {
   HOME_HEADER_QUERY,
   HOME_ABOUT_US_QUERY,
@@ -174,4 +207,5 @@ export {
   HOME_BUSINESS_PARTNERS,
   HOME_BUSINESS_PARTNERS_CARDS,
   HOME_THEY_TRUST,
+  BLOG_TECHNOLOGY_IMPLEMENTATION_QUERY,
 };

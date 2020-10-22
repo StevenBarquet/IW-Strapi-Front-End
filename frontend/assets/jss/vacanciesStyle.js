@@ -8,6 +8,8 @@ import {
   mlAuto,
   mrAuto,
   floatRight,
+  captionContainer,
+  textOverlay,
   sectionWithBackgroundColor,
 } from "assets/jss/nextjs-material-kit-pro";
 
@@ -23,35 +25,22 @@ const vacanciesStyle = () => ({
   sectionWithBackgroundColor,
   title,
   captionContainer: {
-    "@media (max-width: 576px)": {
-      textAlign: "center",
-      position: "static",
-      transform: "none",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-    },
-    left: "38%",
+    ...captionContainer,
+    left: "38% !important",
     textAlign: "center",
-    transform: "translate(-25%, -50%)",
-    top: "40%",
-    position: "absolute",
-    zIndex: "1",
     "@media (max-width: 1024px)": {
-      left: "34%",
+      left: "34% !important",
     },
     "@media (max-width: 768px)": {
-      left: "28%",
+      left: "28% !important",
     },
   },
   textOverlay: {
+    ...textOverlay,
     width: "600px",
     "& p": {
       textAlign: "center",
       fontSize: "2.8rem",
-      fontWeight: "100",
-      clear: "both",
-      display: "block",
     },
     "@media (max-width: 576px)": {
       "& h1": {

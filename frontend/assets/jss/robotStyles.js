@@ -4,7 +4,7 @@ import {
   section,
   subTitle,
   textCenter,
-  orangeColor,
+  blackcolor,
   hexToRgb,
   blackColor,
   title,
@@ -72,7 +72,7 @@ const robotStyle = () => ({
         fontSize: "2rem",
       },
     },
-    color: orangeColor,
+    color: blackcolor,
     width: "650px",
     "& h1": {
       fontWeight: "700",
@@ -139,7 +139,7 @@ const robotStyle = () => ({
   },
   subtitle: {
     ...subTitle,
-    color: "#9B4C03 !important",
+    color: "#21646D !important",
     marginBottom: "0px !important",
     "@media (max-width: 736px)": {
       fontSize: "1rem",
@@ -170,7 +170,7 @@ const robotStyle = () => ({
   cardTitle: {
     ...cardTitle,
     fontSize: "1.500rem",
-    color: `${orangeColor}!important`,
+    color: `${blackcolor}!important`,
   },
   cardPosition: {
     position: "relative",
@@ -178,14 +178,14 @@ const robotStyle = () => ({
     bottom: "30px",
   },
   backgroundContainer: {
-    background: "#F09F54",
+    background: blackcolor,
     padding: "1rem",
     borderRadius: "1rem",
     width: "90%",
     right: "-2px",
   },
   textBackground: {
-    color: "#111",
+    color: "#F09F54",
     fontWeight: "bold",
     fontSize: "2rem",
   },

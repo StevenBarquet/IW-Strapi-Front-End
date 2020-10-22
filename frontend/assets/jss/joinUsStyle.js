@@ -8,6 +8,8 @@ import {
   mlAuto,
   mrAuto,
   floatRight,
+  textOverlay,
+  captionContainer,
   sectionWithBackgroundColor,
 } from "assets/jss/nextjs-material-kit-pro";
 
@@ -22,29 +24,14 @@ const joinUsStyle = () => ({
   mrAuto,
   sectionWithBackgroundColor,
   title,
-  captionContainer: {
-    "@media (max-width: 576px)": {
-      textAlign: "center",
-      position: "static",
-      transform: "none",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-    },
-    left: "25%",
-    transform: "translate(-25%, -50%)",
-    top: "40%",
-    position: "absolute",
-    zIndex: "1",
-  },
+  captionContainer,
   textOverlay: {
-    width: "600px",
+    ...textOverlay,
+    width: "600px !important",
     "& p": {
-      textAlign: "center",
+      textAlign: "center !important",
       fontSize: "2.8rem",
       fontWeight: "100",
-      clear: "both",
-      display: "block",
     },
   },
   introductoryText: {
@@ -127,14 +114,22 @@ const joinUsStyle = () => ({
       display: "none",
     },
   },
-  removeIcon: {
+  tagsButton: {
     outline: 0,
-    backgroundImage: "url(assets/img/eliminar.svg') no-repeat",
     backgroundPosition: "center center",
     border: "none",
     paddingRight: "1rem",
     flexBasis: "20%",
     backgroundColor: "Transparent",
+  },
+  removeIcon: {
+    color: "#525558",
+    position: "absolute",
+    marginLeft: "4px",
+    bottom: "2px",
+    fontSize: "17px",
+    borderRadius: "8px",
+    background: "rgb(17 46 17 / 14%)",
   },
 });
 

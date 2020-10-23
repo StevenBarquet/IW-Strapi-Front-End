@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_technology_consulting_task_optimizations",
+  "info": {
+    "name": "taskOptimization",
+    "icon": "bezier-curve"
+  },
+  "options": {},
+  "attributes": {
+    "legend": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.legend"
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "subtitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.subtitle"
+    },
+    "titleType": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    }
+  }
+}

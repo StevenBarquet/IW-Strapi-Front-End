@@ -153,6 +153,9 @@ function createApolloClient(initialState = {}) {
           blog: {
             merge: true,
           },
+          technologyConsulting: {
+            merge: true,
+          },
         },
       },
     },

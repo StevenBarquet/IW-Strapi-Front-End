@@ -8,6 +8,7 @@ import {
   textOverlay,
   textCenter,
   divider,
+  captionTextContainer,
 } from "assets/jss/nextjs-material-kit-pro";
 
 const robotStyle = () => ({
@@ -57,21 +58,30 @@ const robotStyle = () => ({
     },
   },
   recruitBestLeftCaptionContainer: {
-    ...captionContainer,
+    ...captionTextContainer,
     top: "67%",
     left: "17%",
     "@media (max-width: 1024px)": {
       top: "73%",
       left: "21%",
     },
+    "@media (max-width: 736px)": {
+      top: "353%",
+      left: "24%",
+      textAlign: "center",
+    },
   },
   recruitBestRightCaptionContainer: {
-    ...captionContainer,
+    ...captionTextContainer,
     top: "67%",
     left: "60%",
     "@media (max-width: 1024px)": {
       top: "73%",
       marginTop: "1.3rem",
+    },
+    "@media (max-width: 736px)": {
+      top: "377%",
+      left: "33%",
     },
   },
   textOverlayLeft: {

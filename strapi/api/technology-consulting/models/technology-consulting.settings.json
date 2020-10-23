@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "technology_consultings",
+  "info": {
+    "name": "technologyConsulting"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.image-with-capition"
+    },
+    "taskOptimization": {
+      "type": "component",
+      "repeatable": false,
+      "component": "technology-consulting.task-optimization"
+    },
+    "taskOptimizationCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "technology-consulting.task-optimization-cards"
+    },
+    "offerGuarantees": {
+      "type": "component",
+      "repeatable": false,
+      "component": "technology-consulting.offer-guarantees"
+    },
+    "consultingOptions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "technology-consulting.consulting-options"
+    },
+    "successStories": {
+      "type": "component",
+      "repeatable": false,
+      "component": "technology-consulting.success-stories"
+    }
+  }
+}

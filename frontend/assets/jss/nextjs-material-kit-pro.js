@@ -245,6 +245,14 @@ const textOverlay = {
   },
 };
 
+const captionTextContainer = {
+  top: "90%",
+  transform: "translate(-25%, -50%)",
+  left: "65%",
+  position: "absolute",
+  zIndex: "1",
+};
+
 const cardTitle = {
   "&, & a": {
     ...title,
@@ -409,6 +417,7 @@ export {
   successCardHeader,
   dangerCardHeader,
   primaryCardHeader,
+  captionTextContainer,
   cardHeader,
   title,
   subTitle,

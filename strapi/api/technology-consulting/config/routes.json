@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/technology-consulting",
+      "handler": "technology-consulting.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/technology-consulting",
+      "handler": "technology-consulting.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/technology-consulting",
+      "handler": "technology-consulting.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -116,8 +116,11 @@ const joinUsStyle = () => ({
   },
   tagsButton: {
     outline: 0,
+    color: "#262626",
+    fontFamily: `"Raleway", "Times New Roman", serif`,
     backgroundPosition: "center center",
     border: "none",
+    fontWeight: "600",
     paddingRight: "1rem",
     flexBasis: "20%",
     backgroundColor: "Transparent",
@@ -125,7 +128,7 @@ const joinUsStyle = () => ({
   removeIcon: {
     color: "#525558",
     position: "absolute",
-    marginLeft: "4px",
+    marginLeft: "7px",
     bottom: "2px",
     fontSize: "17px",
     borderRadius: "8px",

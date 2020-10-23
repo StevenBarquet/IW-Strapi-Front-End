@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_technology_consulting_success_stories",
+  "info": {
+    "name": "successStories",
+    "icon": "chess-queen"
+  },
+  "options": {},
+  "attributes": {
+    "sectionIcon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "successStoriesCarousel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.carousel-with-caption"
+    }
+  }
+}

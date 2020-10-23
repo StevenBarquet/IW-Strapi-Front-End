@@ -14,7 +14,7 @@ import GridItem from "components/Grid/GridItem";
 import { useSettings } from "context/Settings";
 
 // gql
-import { BLOG_TECHNOLOGY_IMPLEMENTATION_QUERY } from "gql/queries/home";
+import { HOME_TECHNOLOGY_IMPLEMENTATION_QUERY } from "gql/queries/home";
 
 // jss styles
 import homeStyle from "assets/jss/homeStyle";
@@ -29,7 +29,7 @@ const TechnologyImplementation = () => {
     defaultSettings: { language },
   } = useSettings();
   const { loading, error, data } = useQuery(
-    BLOG_TECHNOLOGY_IMPLEMENTATION_QUERY
+    HOME_TECHNOLOGY_IMPLEMENTATION_QUERY
   );
   const classes = useStyles();
 

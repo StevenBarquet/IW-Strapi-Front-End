@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "quality_assurances",
+  "info": {
+    "name": "qualityAssurance"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.image-with-capition"
+    },
+    "qaDescription": {
+      "type": "component",
+      "repeatable": false,
+      "component": "quality-assurance.qa-description"
+    },
+    "qaOffer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "quality-assurance.qa-offer"
+    },
+    "offerGuaranteesQA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "quality-assurance.offer-guarantees-qa"
+    },
+    "successStoriesQA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "quality-assurance.success-stories-qa"
+    }
+  }
+}

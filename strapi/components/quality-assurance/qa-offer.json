@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_quality_assurance_qa_offers",
+  "info": {
+    "name": "qaOffer",
+    "icon": "calculator"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "qaOfferCarousel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.carousel-with-caption"
+    },
+    "IntroductoryText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.introductory-text"
+    }
+  }
+}

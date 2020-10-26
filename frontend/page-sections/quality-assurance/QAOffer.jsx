@@ -15,25 +15,23 @@ import RenderHTML from "components/HTML/RenderHTML";
 import GridItem from "components/Grid/GridItem";
 
 // gql
-import { TECHNOLOGY_CONSULTING_CONSULTING_QUERY } from "gql/queries/technology-consulting";
+import { QUALITY_QA_OFFER_QUERY } from "gql/queries/quality-assurance";
 
 // jss styles
-import technologyConsultingStyle from "assets/jss/technologyConsultingStyle";
+import qualityAssuranceStyle from "assets/jss/qualityAssuranceStyle";
 
 const {
   publicRuntimeConfig: { apiUrl },
 } = getConfig();
 
-const useStyles = makeStyles(technologyConsultingStyle);
+const useStyles = makeStyles(qualityAssuranceStyle);
 
-const ConsultingOptions = () => {
+const QAOffer = () => {
   const {
     defaultSettings: { language },
   } = useSettings();
 
-  const { loading, error, data } = useQuery(
-    TECHNOLOGY_CONSULTING_CONSULTING_QUERY
-  );
+  const { loading, error, data } = useQuery(QUALITY_QA_OFFER_QUERY);
   const classes = useStyles();
 
   const sliderSettings = {
@@ -61,24 +59,24 @@ const ConsultingOptions = () => {
     );
   }
 
-  if (!data.technologyConsulting) {
+  if (!data.qualityAssurance) {
     return <span>¡Revisar CMS!</span>;
   }
 
   const {
-    technologyConsulting: { consultingOptions },
+    qualityAssurance: { qaOffer },
   } = data;
 
   return (
     <div id="section-QAOffer" className={classes.section}>
       <h1 className={`${classes.title} ${classes.textCenter}`}>
-        {consultingOptions.title[`sectionTitle${language}`]}
+        {qaOffer.title[`sectionTitle${language}`]}
       </h1>
       <br />
       <header id="header" className={classes.carouselContainer}>
         <Hidden only={["sm", "md", "lg", "xl"]}>
           <Carousel {...sliderSettings}>
-            {consultingOptions.carousel.small_images.map((image) => (
+            {qaOffer.qaOfferCarousel.small_images.map((image) => (
               <div key={image.id}>
                 <img
                   src={`${apiUrl}${image.url}`}
@@ -91,7 +89,7 @@ const ConsultingOptions = () => {
         </Hidden>
         <Hidden only={["xs", "md", "lg", "xl"]}>
           <Carousel {...sliderSettings}>
-            {consultingOptions.carousel.medium_images.map((image) => (
+            {qaOffer.qaOfferCarousel.medium_images.map((image) => (
               <div key={image.id}>
                 <img
                   src={`${apiUrl}${image.url}`}
@@ -104,7 +102,7 @@ const ConsultingOptions = () => {
         </Hidden>
         <Hidden only={["xs", "sm"]}>
           <Carousel {...sliderSettings}>
-            {consultingOptions.carousel.large_images.map((image) => (
+            {qaOffer.qaOfferCarousel.large_images.map((image) => (
               <div key={image.id}>
                 <img
                   src={`${apiUrl}${image.url}`}
@@ -115,21 +113,17 @@ const ConsultingOptions = () => {
             ))}
           </Carousel>
         </Hidden>
-        <div className={classes.consultingOptionsCaption}>
-          <GridItem xs={12} sm={10} md={8}>
+        <div className={classes.qaOfferCaption}>
+          <GridItem xs={12} sm={10} md={7}>
             <RenderHTML
-              html={consultingOptions.carousel[`caption${language}`]}
+              html={qaOffer.qaOfferCarousel[`caption${language}`]}
               className={classes.textOverlay}
             />
             <div className={classes.divider} />
           </GridItem>
-          <GridItem xs={12} sm={12} md={12}>
+          <GridItem xs={12} sm={12} md={10}>
             <RenderHTML
-              html={
-                consultingOptions.introductoryText[
-                  `introductoryText${language}`
-                ]
-              }
+              html={qaOffer.IntroductoryText[`introductoryText${language}`]}
             />
           </GridItem>
         </div>
@@ -138,4 +132,4 @@ const ConsultingOptions = () => {
   );
 };
 
-export default ConsultingOptions;
+export default QAOffer;

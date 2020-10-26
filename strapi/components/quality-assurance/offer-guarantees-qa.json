@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_quality_assurance_offer_guarantees_qas",
+  "info": {
+    "name": "offerGuaranteesQA",
+    "icon": "cogs"
+  },
+  "options": {},
+  "attributes": {
+    "sectionIcon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "infoArea": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.card-info-with-icon"
+    }
+  }
+}

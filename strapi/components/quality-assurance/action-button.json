@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_action_buttons",
+  "info": {
+    "name": "actionButton",
+    "icon": "grin-stars"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "label_en": {
+      "type": "string"
+    }
+  }
+}

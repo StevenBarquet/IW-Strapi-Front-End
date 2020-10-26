@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_quality_assurance_success_stories_qas",
+  "info": {
+    "name": "successStoriesQA",
+    "icon": "car-crash"
+  },
+  "options": {},
+  "attributes": {
+    "sectionIcon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "successStoriesQACarousel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.carousel-with-caption"
+    }
+  }
+}

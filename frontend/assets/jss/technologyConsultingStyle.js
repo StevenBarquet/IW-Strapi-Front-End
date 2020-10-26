@@ -38,19 +38,20 @@ const technologyConsultingStyle = () => ({
       left: "41%",
     },
     "@media (max-width: 736px)": {
-      top: "406%",
+      top: "430%",
       left: "24%",
       textAlign: "center",
     },
   },
   successStoriesCaption: {
     ...captionTextContainer,
+    top: "88%",
     "@media (max-width: 1024px)": {
-      top: "95%",
+      top: "93%",
       left: "41%",
     },
     "@media (max-width: 736px)": {
-      top: "513%",
+      top: "535%",
       left: "24%",
       textAlign: "center",
     },

@@ -36,21 +36,21 @@ const qualityAssuranceStyle = () => ({
       left: "41%",
     },
     "@media (max-width: 736px)": {
-      top: "247%",
+      top: "260%",
       left: "24%",
       textAlign: "center",
     },
   },
   successStoriesCaption: {
     ...captionTextContainer,
-    top: "85%",
+    top: "86%",
     left: "62%",
     "@media (max-width: 1024px)": {
       top: "91%",
       left: "40%",
     },
     "@media (max-width: 736px)": {
-      top: "402%",
+      top: "422%",
       left: "31%",
       textAlign: "center",
     },

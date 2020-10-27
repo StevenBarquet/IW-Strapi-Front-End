@@ -99,6 +99,7 @@ const Vacancies = ({
     multipleValue.push(temp);
     setTagsID([...tagsID, { id: temp.id }]);
     setMultipleValue(multipleValue);
+    setPageVacant(1);
     setMultipleSelectValue(
       replaceObject(multipleSelectValue, { id: temp.id }, selectTags)
     );
@@ -120,7 +121,9 @@ const Vacancies = ({
 
   const { vacancies } = data;
 
-  const lastpage = Math.ceil(data.vacanciesCount / 4);
+  const lastpage = Math.ceil(
+    vacancies.length <= 3 ? vacancies.length / 4 : data.vacanciesCount / 4
+  );
 
   return (
     <div id="section-vacancies" className={classes.section}>

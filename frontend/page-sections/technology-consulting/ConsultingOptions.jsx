@@ -70,7 +70,7 @@ const ConsultingOptions = () => {
   } = data;
 
   return (
-    <div id="section-QAOffer" className={classes.section}>
+    <div id="section-consulting-options" className={classes.section}>
       <h1 className={`${classes.title} ${classes.textCenter}`}>
         {consultingOptions.title[`sectionTitle${language}`]}
       </h1>

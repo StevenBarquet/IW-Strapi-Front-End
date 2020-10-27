@@ -26,7 +26,10 @@ const qualityAssuranceStyle = () => ({
     top: "45%",
     left: "15%",
   },
-  textOverlay,
+  textOverlay: {
+    ...textOverlay,
+    width: "376px",
+  },
   qaOfferCaption: {
     ...captionTextContainer,
     top: "33%",
@@ -36,7 +39,7 @@ const qualityAssuranceStyle = () => ({
       left: "41%",
     },
     "@media (max-width: 736px)": {
-      top: "260%",
+      top: "270%",
       left: "24%",
       textAlign: "center",
     },
@@ -49,8 +52,8 @@ const qualityAssuranceStyle = () => ({
       top: "91%",
       left: "40%",
     },
-    "@media (max-width: 736px)": {
-      top: "422%",
+    "@media (max-width: 828px)": {
+      top: "428%",
       left: "31%",
       textAlign: "center",
     },

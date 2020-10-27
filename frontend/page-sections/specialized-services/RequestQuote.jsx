@@ -55,7 +55,7 @@ const RequestQuote = ({ values, errors, handleChange }) => {
   } = data;
 
   return (
-    <div id="section-recruit-Best" className={classes.section}>
+    <div id="section-request-quote" className={classes.section}>
       <GridContainer justify="center">
         <SectionTitle title={requestQuote.title[`sectionTitle${language}`]}>
           <>

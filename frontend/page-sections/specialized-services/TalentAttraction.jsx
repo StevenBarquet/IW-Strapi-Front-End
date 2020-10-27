@@ -83,10 +83,10 @@ const TalentAttraction = () => {
             talentAttraction.talentAttractionTitle[`sectionTitle${language}`]
           }
         >
-          <>
+          <GridContainer justify="center">
             <br />
             <TalentAttractionCards />
-          </>
+          </GridContainer>
         </SectionTitle>
       </GridContainer>
       <GridContainer justify="center" className={classes.margin8rem}>

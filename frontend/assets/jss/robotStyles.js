@@ -10,6 +10,8 @@ import {
   title,
   cardTitle,
   centerImage,
+  captionContainer,
+  textOverlay,
   sectionWithBackgroundColor,
 } from "assets/jss/nextjs-material-kit-pro";
 
@@ -27,67 +29,25 @@ const robotStyle = () => ({
     },
   },
   captionContainer: {
-    "@media (max-width: 736px)": {
-      display: "none",
-    },
-    left: "18%",
-    transform: "translate(-25%, -50%)",
+    ...captionContainer,
+    left: "22%",
     top: "53%",
-    position: "absolute",
-    zIndex: "1",
-  },
-  captionContainerText: {
-    "@media (max-width: 736px)": {
-      position: "static",
-      marginLeft: "1.509rem",
-      transform: "none",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-    },
-    display: "none",
   },
   textOverlay: {
-    "@media (max-width: 1024px)": {
-      width: "300px",
-      "& h1": {
-        fontSize: "1.6rem",
-        "& span": {
-          fontSize: "2rem",
-        },
-      },
-      "& p": {
-        fontSize: "3rem",
-      },
-    },
-    "@media (max-width: 736px)": {
-      width: "300px",
-      "& h1": {
-        fontSize: "1.6rem",
-        "& span": {
-          fontSize: "2rem",
-        },
-      },
-      "& p": {
-        fontSize: "2rem",
-      },
-    },
-    color: blackcolor,
+    ...textOverlay,
     width: "650px",
-    "& h1": {
-      fontWeight: "700",
-      "& span": {
-        fontWeight: "100",
-        clear: "both",
-        display: "block",
-      },
-    },
     "& p": {
       fontSize: "3rem",
       fontWeight: "700",
       clear: "both",
       display: "block",
       color: "#7B7575",
+    },
+    "@media (max-width: 736px)": {
+      width: "450px",
+      "& h1": {
+        fontSize: "2rem",
+      },
     },
   },
   iframeContainer: {

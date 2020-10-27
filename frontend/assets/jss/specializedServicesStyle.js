@@ -66,7 +66,7 @@ const robotStyle = () => ({
       left: "21%",
     },
     "@media (max-width: 736px)": {
-      top: "353%",
+      top: "400%",
       left: "24%",
       textAlign: "center",
     },
@@ -80,7 +80,7 @@ const robotStyle = () => ({
       marginTop: "1.3rem",
     },
     "@media (max-width: 736px)": {
-      top: "377%",
+      top: "420%",
       left: "33%",
     },
   },
@@ -100,10 +100,11 @@ const robotStyle = () => ({
       },
     },
     "@media (max-width: 736px)": {
-      width: "400px",
+      width: "350px",
     },
   },
   textOverlayRight: {
+    width: "340px",
     "& p": {
       marginTop: "3rem",
       fontSize: "1.5rem",

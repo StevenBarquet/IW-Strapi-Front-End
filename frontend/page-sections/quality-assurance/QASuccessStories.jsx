@@ -26,7 +26,7 @@ const {
 
 const useStyles = makeStyles(qualityAssuranceStyle);
 
-const SuccessStories = () => {
+const QASuccessStories = () => {
   const {
     defaultSettings: { language },
   } = useSettings();
@@ -68,7 +68,7 @@ const SuccessStories = () => {
   } = data;
 
   return (
-    <header id="header" className={classes.carouselContainer}>
+    <header id="QASuccessStories" className={classes.carouselContainer}>
       <Hidden only={["sm", "md", "lg", "xl"]}>
         <Carousel {...sliderSettings}>
           {successStoriesQA.successStoriesQACarousel.small_images.map(
@@ -128,4 +128,4 @@ const SuccessStories = () => {
   );
 };
 
-export default SuccessStories;
+export default QASuccessStories;

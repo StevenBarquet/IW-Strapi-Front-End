@@ -71,7 +71,7 @@ const SuccessStories = () => {
   } = data;
 
   return (
-    <header id="header" className={classes.carouselContainer}>
+    <header id="success-stories" className={classes.carouselContainer}>
       <Hidden only={["sm", "md", "lg", "xl"]}>
         <Carousel {...sliderSettings}>
           {successStories.successStoriesCarousel.small_images.map((image) => (

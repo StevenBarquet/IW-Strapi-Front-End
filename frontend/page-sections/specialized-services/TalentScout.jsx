@@ -21,7 +21,7 @@ import specializedServicesStyle from "assets/jss/specializedServicesStyle";
 
 const useStyles = makeStyles(specializedServicesStyle);
 
-const SectionAboutUs = () => {
+const TalentScout = () => {
   const {
     defaultSettings: { language },
   } = useSettings();
@@ -85,4 +85,4 @@ const SectionAboutUs = () => {
   );
 };
 
-export default SectionAboutUs;
+export default TalentScout;

@@ -28,7 +28,10 @@ const technologyConsultingStyle = () => ({
     top: "45%",
     left: "15%",
   },
-  textOverlay,
+  textOverlay: {
+    ...textOverlay,
+    width: "368px",
+  },
   consultingOptionsCaption: {
     ...captionTextContainer,
     top: "63%",
@@ -38,7 +41,7 @@ const technologyConsultingStyle = () => ({
       left: "41%",
     },
     "@media (max-width: 736px)": {
-      top: "430%",
+      top: "444%",
       left: "24%",
       textAlign: "center",
     },
@@ -51,7 +54,7 @@ const technologyConsultingStyle = () => ({
       left: "41%",
     },
     "@media (max-width: 736px)": {
-      top: "535%",
+      top: "552%",
       left: "24%",
       textAlign: "center",
     },

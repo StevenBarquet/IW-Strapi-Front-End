@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "software_factories",
+  "info": {
+    "name": "softwareFactory"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.image-with-capition"
+    },
+    "timeMarket": {
+      "type": "component",
+      "repeatable": false,
+      "component": "software-factory.time-market"
+    },
+    "factoryServices": {
+      "type": "component",
+      "repeatable": false,
+      "component": "software-factory.factory-services"
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": false,
+      "component": "software-factory.benefits"
+    },
+    "deliverables": {
+      "type": "component",
+      "repeatable": false,
+      "component": "software-factory.deliverables"
+    },
+    "deliverablesCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "software-factory.deliverables-cards"
+    },
+    "digitalServices": {
+      "type": "component",
+      "repeatable": false,
+      "component": "software-factory.digital-services"
+    }
+  }
+}

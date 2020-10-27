@@ -30,7 +30,7 @@ const {
 
 const useStyles = makeStyles(robotStyles);
 
-const Benefits = () => {
+const OfferGuarantees = () => {
   const {
     defaultSettings: { language },
   } = useSettings();
@@ -123,7 +123,7 @@ const Benefits = () => {
   };
 
   return (
-    <div id="section-benefits" className={classes.section}>
+    <div id="section-offer-guarantees" className={classes.section}>
       <GridContainer justify="center">
         <SectionTitle
           icon={offerGuarantees.sectionIcon}
@@ -147,4 +147,4 @@ const Benefits = () => {
   );
 };
 
-export default Benefits;
+export default OfferGuarantees;

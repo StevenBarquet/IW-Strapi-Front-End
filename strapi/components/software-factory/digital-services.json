@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_software_factory_digital_services",
+  "info": {
+    "name": "digitalServices",
+    "icon": "holly-berry"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "introductoryText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.introductory-text"
+    },
+    "actionButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.action-button",
+      "required": true
+    }
+  }
+}

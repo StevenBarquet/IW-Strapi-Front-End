@@ -7,23 +7,24 @@ import { makeStyles } from "@material-ui/core/styles";
 // core-components
 import GridContainer from "components/Grid/GridContainer";
 import SectionTitle from "components-sections/SectionTitle";
+import RenderHTML from "components/HTML/RenderHTML";
 
 // context
 import { useSettings } from "context/Settings";
 
 // gql
-import { QUALITY_QA_DESCRIPTION_QUERY } from "gql/queries/quality-assurance";
+import { SW_FACTORY_TIMEMARKET_QUERY } from "gql/queries/software-factory";
 
 // jss styles
-import qualityAssuranceStyle from "assets/jss/qualityAssuranceStyle";
+import softwareFactoryStyle from "assets/jss/softwareFactoryStyle";
 
-const useStyles = makeStyles(qualityAssuranceStyle);
+const useStyles = makeStyles(softwareFactoryStyle);
 
-const QADescription = () => {
+const TimeMarket = () => {
   const {
     defaultSettings: { language },
   } = useSettings();
-  const { loading, error, data } = useQuery(QUALITY_QA_DESCRIPTION_QUERY);
+  const { loading, error, data } = useQuery(SW_FACTORY_TIMEMARKET_QUERY);
   const classes = useStyles();
 
   if (loading) {
@@ -39,25 +40,26 @@ const QADescription = () => {
     );
   }
 
-  if (!data.qualityAssurance) {
+  if (!data.softwareFactory) {
     return <span>¡Revisar CMS!</span>;
   }
 
   const {
-    qualityAssurance: { qaDescription },
+    softwareFactory: { timeMarket },
   } = data;
 
   return (
-    <div id="section-QADescription" className={classes.section}>
+    <div id="section-timeMarket" className={classes.section}>
       <GridContainer justify="center">
-        <SectionTitle
-          legend={qaDescription.legend[`sectionLegendTitle${language}`]}
-          title={qaDescription.title[`sectionTitle${language}`]}
-          subTitle={qaDescription.subtitle[`sectionSubTitle${language}`]}
-        />
+        <SectionTitle title={timeMarket.title[`sectionTitle${language}`]}>
+          <RenderHTML
+            html={timeMarket.introductoryText[`introductoryText${language}`]}
+            className={classes.swDescription}
+          />
+        </SectionTitle>
       </GridContainer>
     </div>
   );
 };
 
-export default QADescription;
+export default TimeMarket;

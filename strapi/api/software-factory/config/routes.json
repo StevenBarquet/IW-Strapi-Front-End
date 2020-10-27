@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/software-factory",
+      "handler": "software-factory.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/software-factory",
+      "handler": "software-factory.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/software-factory",
+      "handler": "software-factory.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

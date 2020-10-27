@@ -140,7 +140,8 @@ html * {
 
 body {
   font-size: 1rem;
-  overflow-x: hidden; }
+  overflow-x: hidden; 
+}
 
 body,
 h1,
@@ -221,7 +222,8 @@ body {
   border: 0;
   outline: 0;
   font-size: 1rem;
-  text-align: left; }
+  text-align: left; 
+}
 
 legend {
   color: #D9373E;

@@ -159,6 +159,9 @@ function createApolloClient(initialState = {}) {
           qualityAssurance: {
             merge: true,
           },
+          softwareFactory: {
+            merge: true,
+          },
         },
       },
     },

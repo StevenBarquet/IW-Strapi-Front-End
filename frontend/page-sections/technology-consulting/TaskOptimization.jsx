@@ -65,7 +65,9 @@ const TaskOptimization = () => {
             <h1 className={`${classes.title} ${classes.textCenter}`}>
               {taskOptimization.titleType[`sectionTitle${language}`]}
             </h1>
-            <TaskOptimizationCard />
+            <GridContainer justify="center">
+              <TaskOptimizationCard />
+            </GridContainer>
           </div>
         </SectionTitle>
       </GridContainer>

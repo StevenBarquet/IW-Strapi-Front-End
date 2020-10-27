@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_software_factory_factory_services",
+  "info": {
+    "name": "factoryServices",
+    "icon": "handshake"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.title"
+    },
+    "factoryServicesCarousel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.carousel-with-caption"
+    },
+    "introductoryText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.introductory-text"
+    }
+  }
+}

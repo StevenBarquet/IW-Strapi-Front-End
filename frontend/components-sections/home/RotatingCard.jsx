@@ -82,7 +82,7 @@ const PartnerCard = ({ card: { front, back } }) => {
     ));
 
   return (
-    <GridItem xs={12} sm={10} md={6} lg={4}>
+    <GridItem xs={12} sm={6} md={6} lg={4}>
       <div
         className={`${classes.rotatingCardContainer} ${classes.manualRotate} ${activeRotate}`}
       >

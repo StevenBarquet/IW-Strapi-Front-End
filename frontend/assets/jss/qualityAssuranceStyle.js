@@ -9,6 +9,7 @@ import {
   mlAuto,
   divider,
   captionTextContainer,
+  positionRelative,
   sectionWithBackgroundColor,
 } from "assets/jss/nextjs-material-kit-pro";
 
@@ -21,6 +22,7 @@ const qualityAssuranceStyle = () => ({
   mrAuto,
   mlAuto,
   divider,
+  positionRelative,
   captionContainer: {
     ...captionContainer,
     top: "45%",
@@ -32,28 +34,28 @@ const qualityAssuranceStyle = () => ({
   },
   qaOfferCaption: {
     ...captionTextContainer,
-    top: "33%",
+    top: "53%",
     left: "65%",
     "@media (max-width: 1024px)": {
-      top: "45%",
+      top: "68%",
       left: "41%",
     },
     "@media (max-width: 736px)": {
-      top: "270%",
+      top: "68%",
       left: "24%",
       textAlign: "center",
     },
   },
   successStoriesCaption: {
     ...captionTextContainer,
-    top: "86%",
+    top: "49%",
     left: "62%",
     "@media (max-width: 1024px)": {
-      top: "91%",
+      top: "95%",
       left: "40%",
     },
     "@media (max-width: 828px)": {
-      top: "428%",
+      top: "57%",
       left: "31%",
       textAlign: "center",
     },

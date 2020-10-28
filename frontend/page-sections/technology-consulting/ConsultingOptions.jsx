@@ -75,7 +75,7 @@ const ConsultingOptions = () => {
         {consultingOptions.title[`sectionTitle${language}`]}
       </h1>
       <br />
-      <header id="header" className={classes.carouselContainer}>
+      <div className={classes.positionRelative}>
         <Hidden only={["sm", "md", "lg", "xl"]}>
           <Carousel {...sliderSettings}>
             {consultingOptions.carousel.small_images.map((image) => (
@@ -133,7 +133,7 @@ const ConsultingOptions = () => {
             />
           </GridItem>
         </div>
-      </header>
+      </div>
     </div>
   );
 };

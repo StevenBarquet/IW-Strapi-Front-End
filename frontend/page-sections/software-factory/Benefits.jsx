@@ -4,12 +4,14 @@ import { useQuery } from "@apollo/client";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import ReorderIcon from "@material-ui/icons/Reorder";
 
 // core-components
 import GridContainer from "components/Grid/GridContainer";
 import SectionTitle from "components-sections/SectionTitle";
 import GridItem from "components/Grid/GridItem";
 import RenderHTML from "components/HTML/RenderHTML";
+import NavPills from "components/NavPills/NavPills";
 
 // context
 import { useSettings } from "context/Settings";
@@ -54,6 +56,18 @@ const Benefits = () => {
     softwareFactory: { benefits },
   } = data;
 
+  const tags = () => {
+    return benefits.benefitsNavPills.map((tag) => ({
+      tabIcon: tag.tabIcon,
+      tabContent: (
+        <RenderHTML
+          html={tag.introductoryText[`introductoryText${language}`]}
+          className={classes.swDescription}
+        />
+      ),
+    }));
+  };
+
   return (
     <div id="section-benefits" className={classes.section}>
       <GridContainer justify="center">
@@ -63,26 +77,10 @@ const Benefits = () => {
         >
           <>
             <GridContainer justify="center">
-              {benefits.sectionImages.map((image) => (
-                <GridItem
-                  xs={4}
-                  sm={1}
-                  md={1}
-                  style={{ margin: "2rem" }}
-                  key={image.id}
-                >
-                  <img
-                    src={`${apiUrl}${image.url}`}
-                    alt={image.alternativeText}
-                    className={classes.imageBenefits}
-                  />
-                </GridItem>
-              ))}
+              <GridItem xs={12} sm={12} md={12}>
+                <NavPills alignCenter tabs={tags()} />
+              </GridItem>
             </GridContainer>
-            <RenderHTML
-              html={benefits.introductoryText[`introductoryText${language}`]}
-              className={classes.swDescription}
-            />
           </>
         </SectionTitle>
       </GridContainer>

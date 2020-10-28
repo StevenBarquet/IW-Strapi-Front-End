@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "10/26/2020 11:43:01 PM"
+    "x-generation-date": "10/28/2020 10:41:20 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -12846,79 +12846,6 @@
                     "type": "string"
                   }
                 }
-              },
-              "cardVacant": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "age": {
-                      "type": "string"
-                    },
-                    "age_en": {
-                      "type": "string"
-                    },
-                    "sex": {
-                      "type": "string"
-                    },
-                    "sex_en": {
-                      "type": "string"
-                    },
-                    "scholarship": {
-                      "type": "string"
-                    },
-                    "scholarship_en": {
-                      "type": "string"
-                    },
-                    "workZone": {
-                      "type": "string"
-                    },
-                    "workZone_en": {
-                      "type": "string"
-                    },
-                    "specificRequirements": {
-                      "type": "string"
-                    },
-                    "specificRequirements_en": {
-                      "type": "string"
-                    },
-                    "contact": {
-                      "type": "string"
-                    },
-                    "nameVancant": {
-                      "type": "string"
-                    },
-                    "nameVancant_en": {
-                      "type": "string"
-                    },
-                    "tags": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "id"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "name_en": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
               }
             }
           },
@@ -13224,79 +13151,6 @@
                   },
                   "introductoryText_en": {
                     "type": "string"
-                  }
-                }
-              },
-              "cardVacant": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "age": {
-                      "type": "string"
-                    },
-                    "age_en": {
-                      "type": "string"
-                    },
-                    "sex": {
-                      "type": "string"
-                    },
-                    "sex_en": {
-                      "type": "string"
-                    },
-                    "scholarship": {
-                      "type": "string"
-                    },
-                    "scholarship_en": {
-                      "type": "string"
-                    },
-                    "workZone": {
-                      "type": "string"
-                    },
-                    "workZone_en": {
-                      "type": "string"
-                    },
-                    "specificRequirements": {
-                      "type": "string"
-                    },
-                    "specificRequirements_en": {
-                      "type": "string"
-                    },
-                    "contact": {
-                      "type": "string"
-                    },
-                    "nameVancant": {
-                      "type": "string"
-                    },
-                    "nameVancant_en": {
-                      "type": "string"
-                    },
-                    "tags": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "id"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "name_en": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
                   }
                 }
               }
@@ -18338,89 +18192,36 @@
                   }
                 }
               },
-              "introductoryText": {
-                "type": "object",
-                "required": [
-                  "id"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "introductoryText": {
-                    "type": "string"
-                  },
-                  "introductoryText_en": {
-                    "type": "string"
-                  }
-                }
-              },
-              "sectionImages": {
+              "benefitsNavPills": {
                 "type": "array",
                 "items": {
+                  "type": "object",
                   "required": [
-                    "id",
-                    "name",
-                    "hash",
-                    "mime",
-                    "size",
-                    "url",
-                    "provider"
+                    "id"
                   ],
                   "properties": {
                     "id": {
                       "type": "string"
                     },
-                    "name": {
+                    "tabIcon": {
                       "type": "string"
                     },
-                    "alternativeText": {
-                      "type": "string"
-                    },
-                    "caption": {
-                      "type": "string"
-                    },
-                    "width": {
-                      "type": "integer"
-                    },
-                    "height": {
-                      "type": "integer"
-                    },
-                    "formats": {
-                      "type": "object"
-                    },
-                    "hash": {
-                      "type": "string"
-                    },
-                    "ext": {
-                      "type": "string"
-                    },
-                    "mime": {
-                      "type": "string"
-                    },
-                    "size": {
-                      "type": "number"
-                    },
-                    "url": {
-                      "type": "string"
-                    },
-                    "previewUrl": {
-                      "type": "string"
-                    },
-                    "provider": {
-                      "type": "string"
-                    },
-                    "provider_metadata": {
-                      "type": "object"
-                    },
-                    "related": {
-                      "type": "string"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
+                    "introductoryText": {
+                      "type": "object",
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "introductoryText": {
+                          "type": "string"
+                        },
+                        "introductoryText_en": {
+                          "type": "string"
+                        }
+                      }
                     }
                   }
                 }
@@ -19373,89 +19174,36 @@
                   }
                 }
               },
-              "introductoryText": {
-                "type": "object",
-                "required": [
-                  "id"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "introductoryText": {
-                    "type": "string"
-                  },
-                  "introductoryText_en": {
-                    "type": "string"
-                  }
-                }
-              },
-              "sectionImages": {
+              "benefitsNavPills": {
                 "type": "array",
                 "items": {
+                  "type": "object",
                   "required": [
-                    "id",
-                    "name",
-                    "hash",
-                    "mime",
-                    "size",
-                    "url",
-                    "provider"
+                    "id"
                   ],
                   "properties": {
                     "id": {
                       "type": "string"
                     },
-                    "name": {
+                    "tabIcon": {
                       "type": "string"
                     },
-                    "alternativeText": {
-                      "type": "string"
-                    },
-                    "caption": {
-                      "type": "string"
-                    },
-                    "width": {
-                      "type": "integer"
-                    },
-                    "height": {
-                      "type": "integer"
-                    },
-                    "formats": {
-                      "type": "object"
-                    },
-                    "hash": {
-                      "type": "string"
-                    },
-                    "ext": {
-                      "type": "string"
-                    },
-                    "mime": {
-                      "type": "string"
-                    },
-                    "size": {
-                      "type": "number"
-                    },
-                    "url": {
-                      "type": "string"
-                    },
-                    "previewUrl": {
-                      "type": "string"
-                    },
-                    "provider": {
-                      "type": "string"
-                    },
-                    "provider_metadata": {
-                      "type": "object"
-                    },
-                    "related": {
-                      "type": "string"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
+                    "introductoryText": {
+                      "type": "object",
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "introductoryText": {
+                          "type": "string"
+                        },
+                        "introductoryText_en": {
+                          "type": "string"
+                        }
+                      }
                     }
                   }
                 }

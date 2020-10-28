@@ -128,8 +128,8 @@ const SectionTags = ({ articleImg }) => {
         <GridContainer>
           {tagsBlogs &&
             tagsBlogs.map((tag) => (
-              <div style={{ margin: "3px" }}>
-                <Badge key={tag.id} color="primary">
+              <div style={{ margin: "3px" }} key={tag.id}>
+                <Badge color="primary">
                   <Link href="/blog">
                     <span>{tag[`name${language}`]}</span>
                   </Link>

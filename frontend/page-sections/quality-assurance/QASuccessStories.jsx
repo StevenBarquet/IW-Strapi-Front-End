@@ -68,7 +68,10 @@ const QASuccessStories = () => {
   } = data;
 
   return (
-    <header id="QASuccessStories" className={classes.carouselContainer}>
+    <div
+      id="section-success-stories"
+      className={`${classes.section} ${classes.positionRelative}`}
+    >
       <Hidden only={["sm", "md", "lg", "xl"]}>
         <Carousel {...sliderSettings}>
           {successStoriesQA.successStoriesQACarousel.small_images.map(
@@ -124,7 +127,7 @@ const QASuccessStories = () => {
           />
         </GridItem>
       </div>
-    </header>
+    </div>
   );
 };
 

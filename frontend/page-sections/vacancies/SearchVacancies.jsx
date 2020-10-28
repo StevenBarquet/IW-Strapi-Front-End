@@ -57,7 +57,7 @@ const SearchVacancies = () => {
       <GridContainer justify="center" alignItems="center">
         <GridItem xs={10} sm={5} md={5} lg={5}>
           <div className={classes.titleContainer}>
-            <h3>{search.title[`sectionTitle${language}`]}</h3>
+            <h2>{search.title[`sectionTitle${language}`]}</h2>
           </div>
           <RenderHTML
             html={search.introductoryText[`introductoryText${language}`]}

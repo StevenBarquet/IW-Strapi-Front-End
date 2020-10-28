@@ -73,7 +73,7 @@ const FactoryServices = () => {
         {factoryServices.title[`sectionTitle${language}`]}
       </h1>
       <br />
-      <header id="header" className={classes.carouselContainer}>
+      <div className={classes.positionRelative}>
         <Hidden only={["sm", "md", "lg", "xl"]}>
           <Carousel {...sliderSettings}>
             {factoryServices.factoryServicesCarousel.small_images.map(
@@ -137,7 +137,7 @@ const FactoryServices = () => {
             />
           </GridItem>
         </div>
-      </header>
+      </div>
     </div>
   );
 };

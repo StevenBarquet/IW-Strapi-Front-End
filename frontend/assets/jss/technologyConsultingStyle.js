@@ -9,6 +9,8 @@ import {
   mrAuto,
   mlAuto,
   divider,
+  subTitle,
+  positionRelative,
   captionTextContainer,
   sectionWithBackgroundColor,
 } from "assets/jss/nextjs-material-kit-pro";
@@ -23,6 +25,17 @@ const technologyConsultingStyle = () => ({
   mrAuto,
   mlAuto,
   divider,
+  subTitle: {
+    ...subTitle,
+    fontSize: "1.8rem",
+    fontFamily: `"Raleway", "Times New Roman", serif`,
+
+    "@media (max-width: 736px)": {
+      fontSize: "1.5rem",
+      fontFamily: `"Raleway", "Times New Roman", serif`,
+    },
+  },
+  positionRelative,
   captionContainer: {
     ...captionContainer,
     top: "45%",
@@ -34,27 +47,28 @@ const technologyConsultingStyle = () => ({
   },
   consultingOptionsCaption: {
     ...captionTextContainer,
-    top: "63%",
+    top: "50%",
     left: "65%",
     "@media (max-width: 1024px)": {
-      top: "68%",
+      top: "58%",
       left: "41%",
     },
     "@media (max-width: 736px)": {
-      top: "444%",
+      top: "54%",
       left: "24%",
       textAlign: "center",
     },
   },
   successStoriesCaption: {
     ...captionTextContainer,
-    top: "88%",
+    top: "51%",
+    left: "65%",
     "@media (max-width: 1024px)": {
-      top: "93%",
+      top: "78%",
       left: "41%",
     },
     "@media (max-width: 736px)": {
-      top: "552%",
+      top: "61%",
       left: "24%",
       textAlign: "center",
     },

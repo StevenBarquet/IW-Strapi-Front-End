@@ -22,21 +22,10 @@
       "repeatable": false,
       "component": "page.title"
     },
-    "introductoryText": {
+    "benefitsNavPills": {
       "type": "component",
-      "repeatable": false,
-      "component": "page.introductory-text"
-    },
-    "sectionImages": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
+      "repeatable": true,
+      "component": "software-factory.benefits-nav-pills"
     }
   }
 }

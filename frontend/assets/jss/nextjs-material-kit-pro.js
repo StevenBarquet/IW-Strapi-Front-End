@@ -217,6 +217,9 @@ const subTitle = {
   marginBottom: "15px",
   minHeight: "32px",
   fontFamily: `"Raleway", "Times New Roman", serif`,
+  "@media (max-width: 576px)": {
+    fontSize: "1.3rem",
+  },
 };
 
 const captionContainer = {
@@ -246,11 +249,15 @@ const textOverlay = {
 };
 
 const captionTextContainer = {
-  top: "90%",
-  transform: "translate(-25%, -50%)",
-  left: "65%",
   position: "absolute",
+  top: "46%",
+  left: "30%",
   zIndex: "1",
+  transform: "translate(-25%, -50%)",
+};
+
+const positionRelative = {
+  position: "relative",
 };
 
 const cardTitle = {
@@ -408,6 +415,7 @@ export {
   valenciaColor,
   blackcolor,
   pampasColor,
+  positionRelative,
   bigStoneColor,
   primaryBoxShadow,
   successBoxShadow,

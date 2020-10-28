@@ -38,27 +38,6 @@ const JOIN_US_TEAM_QUERY = gql`
           introductoryText
           introductoryText_en
         }
-        cardVacant {
-          id
-          tags {
-            id
-            name
-            name_en
-          }
-          nameVancant
-          nameVancant_en
-          age
-          age_en
-          sex
-          sex_en
-          scholarship
-          scholarship_en
-          workZone
-          workZone_en
-          specificRequirements
-          specificRequirements_en
-          contact
-        }
       }
     }
   }

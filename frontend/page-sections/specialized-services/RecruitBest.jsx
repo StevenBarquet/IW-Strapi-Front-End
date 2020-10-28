@@ -12,7 +12,6 @@ import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 import RenderHTML from "components/HTML/RenderHTML";
 import SectionTitle from "components-sections/SectionTitle";
-import CustomInput from "components/CustomInput/CustomInput";
 
 // context
 import { useSettings } from "context/Settings";
@@ -84,69 +83,71 @@ const RecruitBest = () => {
         </SectionTitle>
       </GridContainer>
       <div className={classes.margin8rem} />
-      <Hidden only={["sm", "md", "lg", "xl"]}>
-        <Carousel {...sliderSettings}>
-          {recruitBest.carousel.small_images.map((image) => (
-            <div key={image.id}>
-              <img
-                src={`${apiUrl}${image.url}`}
-                alt={image.alternativeText}
-                className="slick-image"
-              />
-            </div>
-          ))}
-        </Carousel>
-      </Hidden>
-      <Hidden only={["xs", "md", "lg", "xl"]}>
-        <Carousel {...sliderSettings}>
-          {recruitBest.carousel.medium_images.map((image) => (
-            <div key={image.id}>
-              <img
-                src={`${apiUrl}${image.url}`}
-                alt={image.alternativeText}
-                className="slick-image"
-              />
-            </div>
-          ))}
-        </Carousel>
-      </Hidden>
-      <Hidden only={["xs", "sm"]}>
-        <Carousel {...sliderSettings}>
-          {recruitBest.carousel.large_images.map((image) => (
-            <div key={image.id}>
-              <img
-                src={`${apiUrl}${image.url}`}
-                alt={image.alternativeText}
-                className="slick-image"
-              />
-            </div>
-          ))}
-        </Carousel>
-      </Hidden>
-      <GridContainer>
+      <div className={classes.positionRelative}>
+        <Hidden only={["sm", "md", "lg", "xl"]}>
+          <Carousel {...sliderSettings}>
+            {recruitBest.carousel.small_images.map((image) => (
+              <div key={image.id}>
+                <img
+                  src={`${apiUrl}${image.url}`}
+                  alt={image.alternativeText}
+                  className="slick-image"
+                />
+              </div>
+            ))}
+          </Carousel>
+        </Hidden>
+        <Hidden only={["xs", "md", "lg", "xl"]}>
+          <Carousel {...sliderSettings}>
+            {recruitBest.carousel.medium_images.map((image) => (
+              <div key={image.id}>
+                <img
+                  src={`${apiUrl}${image.url}`}
+                  alt={image.alternativeText}
+                  className="slick-image"
+                />
+              </div>
+            ))}
+          </Carousel>
+        </Hidden>
+        <Hidden only={["xs", "sm"]}>
+          <Carousel {...sliderSettings}>
+            {recruitBest.carousel.large_images.map((image) => (
+              <div key={image.id}>
+                <img
+                  src={`${apiUrl}${image.url}`}
+                  alt={image.alternativeText}
+                  className="slick-image"
+                />
+              </div>
+            ))}
+          </Carousel>
+        </Hidden>
         <div className={classes.recruitBestLeftCaptionContainer}>
-          <GridItem xs={12} sm={5} md={5} lg={7}>
-            <RenderHTML
-              html={recruitBest.carousel[`caption${language}`]}
-              className={classes.textOverlayLeft}
-            />
-            <br />
-            <div className={classes.divider} />
-          </GridItem>
+          <GridContainer>
+            <GridItem xs={12} sm={6} md={5} lg={6}>
+              <RenderHTML
+                html={recruitBest.carousel[`caption${language}`]}
+                className={classes.textOverlayLeft}
+              />
+              <br />
+              <GridItem xs={12} sm={11} md={5} lg={8}>
+                <div className={classes.divider} />
+              </GridItem>
+            </GridItem>
+            <GridItem xs={12} sm={6} md={5} lg={4}>
+              <RenderHTML
+                html={
+                  recruitBest.introductionTextCarousel[
+                    `introductoryText${language}`
+                  ]
+                }
+                className={classes.textOverlayRight}
+              />
+            </GridItem>
+          </GridContainer>
         </div>
-        <div className={classes.recruitBestRightCaptionContainer}>
-          <GridItem xs={12} sm={12} md={8} lg={11}>
-            <RenderHTML
-              html={
-                recruitBest.introductionTextCarousel[
-                  `introductoryText${language}`
-                ]
-              }
-              className={classes.textOverlayRight}
-            />
-          </GridItem>
-        </div>
-      </GridContainer>
+      </div>
     </div>
   );
 };

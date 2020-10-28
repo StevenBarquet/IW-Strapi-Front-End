@@ -88,14 +88,12 @@ const SW_FACTORY_BENEFITS_QUERY = gql`
           sectionTitle
           sectionTitle_en
         }
-        introductoryText {
-          introductoryText
-          introductoryText_en
-        }
-        sectionImages {
-          id
-          url
-          alternativeText
+        benefitsNavPills {
+          tabIcon
+          introductoryText {
+            introductoryText
+            introductoryText_en
+          }
         }
       }
     }

@@ -73,7 +73,7 @@ const QAOffer = () => {
         {qaOffer.title[`sectionTitle${language}`]}
       </h1>
       <br />
-      <header id="header" className={classes.carouselContainer}>
+      <div className={classes.positionRelative}>
         <Hidden only={["sm", "md", "lg", "xl"]}>
           <Carousel {...sliderSettings}>
             {qaOffer.qaOfferCarousel.small_images.map((image) => (
@@ -127,7 +127,7 @@ const QAOffer = () => {
             />
           </GridItem>
         </div>
-      </header>
+      </div>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import {
   mrAuto,
   mlAuto,
   divider,
+  positionRelative,
   captionTextContainer,
   sectionWithBackgroundColor,
 } from "assets/jss/nextjs-material-kit-pro";
@@ -21,6 +22,7 @@ const softwareFactoryStyle = () => ({
   mrAuto,
   mlAuto,
   divider,
+  positionRelative,
   captionContainer: {
     ...captionContainer,
     top: "45%",
@@ -33,21 +35,30 @@ const softwareFactoryStyle = () => ({
   swDescription: {
     ...textCenter,
     margin: "4rem 0rem",
+    minHeight: "32px",
+    color: "#383838",
     "& p": {
       fontSize: "1.8rem",
       color: "#383838",
     },
+    "@media (max-width: 736px)": {
+      "& p": {
+        fontSize: "1.3rem",
+        color: "#383838",
+        minHeight: "32px",
+      },
+    },
   },
   factoryServicesCaption: {
     ...captionTextContainer,
-    top: "32%",
+    top: "52%",
     left: "65%",
     "@media (max-width: 1024px)": {
-      top: "36%",
+      top: "63%",
       left: "41%",
     },
     "@media (max-width: 736px)": {
-      top: "229%",
+      top: "62%",
       left: "24%",
       textAlign: "center",
     },

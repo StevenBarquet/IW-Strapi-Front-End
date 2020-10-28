@@ -73,7 +73,7 @@ const Form = ({ values, errors, handleChange }) => {
           <GridContainer>
             <GridItem item xs={12} sm={6} md={6}>
               <TextInputField
-                id="nombre"
+                id="nombre1"
                 name="nombre"
                 value={values.nombre}
                 labelText={language === "_en" ? "Name" : "Nombre"}
@@ -91,7 +91,7 @@ const Form = ({ values, errors, handleChange }) => {
             </GridItem>
             <GridItem item xs={12} sm={6} md={6}>
               <TextInputField
-                id="email"
+                id="email2"
                 name="email"
                 value={values.email}
                 labelText={language === "_en" ? "Email" : "Correo electrónico"}
@@ -117,7 +117,7 @@ const Form = ({ values, errors, handleChange }) => {
           <GridContainer>
             <GridItem item xs={12} sm={4} md={4}>
               <TextInputField
-                id="empresa"
+                id="empresa3"
                 name="empresa"
                 value={values.empresa}
                 labelText={language === "_en" ? "Company" : "Empresa"}
@@ -135,7 +135,7 @@ const Form = ({ values, errors, handleChange }) => {
             </GridItem>
             <GridItem item xs={12} sm={4} md={4}>
               <TextInputField
-                id="automatizacion"
+                id="automatizacion4"
                 name="automatizacion"
                 value={values.automatizacion}
                 labelText={
@@ -165,7 +165,7 @@ const Form = ({ values, errors, handleChange }) => {
             </GridItem>
             <GridItem item xs={12} sm={5} md={5}>
               <TextInputField
-                id="empresa"
+                id="empresa5"
                 name="empresa"
                 value={values.empresa}
                 labelText={language === "_en" ? "Company" : "Empresa"}
@@ -183,7 +183,7 @@ const Form = ({ values, errors, handleChange }) => {
             </GridItem>
             <GridItem item xs={12} sm={7} md={7}>
               <TextInputField
-                id="automatizacion"
+                id="automatizacion6"
                 name="automatizacion"
                 value={values.automatizacion}
                 labelText={
@@ -194,7 +194,7 @@ const Form = ({ values, errors, handleChange }) => {
                 handleChange={handleChange}
                 errors={errors && !!errors.automatizacion}
                 inputProps={{
-                  name: "automatizacion",
+                  name: "automatizacion7",
                   maxLength: 18,
                   placeholder:
                     language === "_en"
@@ -215,7 +215,7 @@ const Form = ({ values, errors, handleChange }) => {
           <GridContainer>
             <GridItem item xs={12} sm={4} md={4}>
               <TextInputField
-                id="empresa"
+                id="empresa8"
                 name="empresa"
                 value={values.empresa}
                 labelText={language === "_en" ? "Company" : "Empresa"}
@@ -233,7 +233,7 @@ const Form = ({ values, errors, handleChange }) => {
             </GridItem>
             <GridItem item xs={12} sm={4} md={4}>
               <TextInputField
-                id="automatizacion"
+                id="automatizacion9"
                 name="automatizacion"
                 value={values.automatizacion}
                 labelText={
@@ -254,7 +254,7 @@ const Form = ({ values, errors, handleChange }) => {
             </GridItem>
             <GridItem xs={12} sm={4} md={4}>
               <TextInputField
-                id="automatizacion"
+                id="automatizacion1"
                 name="automatizacion"
                 value={values.automatizacion}
                 labelText={
@@ -282,11 +282,11 @@ const Form = ({ values, errors, handleChange }) => {
           <GridContainer>
             <GridItem item xs={12} sm={6} md={6}>
               <CustomFileInput
-                id="archivoCarga"
+                id="archivoCarga1"
                 value=""
                 label="Seleccionar archivo..."
                 fileInputProps={{
-                  id: "archivoCarga",
+                  id: "archivoCarga1",
                   name: "archivoCarga",
                   accept:
                     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel",
@@ -308,7 +308,7 @@ const Form = ({ values, errors, handleChange }) => {
                   icon: <AttachFile />,
                 }}
               />
-              <p className={classes.colorText}>
+              <p className={classes.colorText} id="text">
                 {language === "_en"
                   ? "Formato Word o PDF, RTF peso menor a 2000 KB "
                   : "Word or PDF format, RTF weight less than 2000 KB"}
@@ -316,7 +316,7 @@ const Form = ({ values, errors, handleChange }) => {
             </GridItem>
             <GridItem item xs={12} sm={6} md={6}>
               <TextInputField
-                id="automatizacion"
+                id="automatizacion2"
                 name="automatizacion"
                 value={values.automatizacion}
                 labelText={

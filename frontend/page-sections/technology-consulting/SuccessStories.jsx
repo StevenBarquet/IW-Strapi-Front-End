@@ -61,7 +61,6 @@ const SuccessStories = () => {
     );
   }
 
-
   if (!data.technologyConsulting) {
     return <span>¡Revisar CMS!</span>;
   }
@@ -71,7 +70,10 @@ const SuccessStories = () => {
   } = data;
 
   return (
-    <header id="success-stories" className={classes.carouselContainer}>
+    <div
+      id="section-success-stories"
+      className={`${classes.section} ${classes.positionRelative}`}
+    >
       <Hidden only={["sm", "md", "lg", "xl"]}>
         <Carousel {...sliderSettings}>
           {successStories.successStoriesCarousel.small_images.map((image) => (
@@ -119,7 +121,7 @@ const SuccessStories = () => {
           />
         </GridItem>
       </div>
-    </header>
+    </div>
   );
 };
 

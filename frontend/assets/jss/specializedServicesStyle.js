@@ -8,6 +8,7 @@ import {
   textOverlay,
   textCenter,
   divider,
+  positionRelative,
   captionTextContainer,
 } from "assets/jss/nextjs-material-kit-pro";
 
@@ -19,6 +20,7 @@ const robotStyle = () => ({
   captionContainer,
   title,
   divider,
+  positionRelative,
   textOverlay: {
     ...textOverlay,
     width: "550px",
@@ -42,12 +44,13 @@ const robotStyle = () => ({
   sectionWithBackgroundColor,
   introductoryText: {
     ...textCenter,
+    marginTop: "3rem",
     "& p": {
-      fontSize: "2rem",
+      fontSize: "1.8rem",
     },
     "@media (max-width: 736px)": {
       "& p": {
-        fontSize: "1rem",
+        fontSize: "1.4rem",
       },
     },
   },
@@ -59,29 +62,14 @@ const robotStyle = () => ({
   },
   recruitBestLeftCaptionContainer: {
     ...captionTextContainer,
-    top: "67%",
-    left: "17%",
     "@media (max-width: 1024px)": {
-      top: "73%",
-      left: "21%",
+      top: "62%",
+      left: "27%",
     },
     "@media (max-width: 736px)": {
-      top: "400%",
-      left: "24%",
+      top: "58%",
+      left: "29%",
       textAlign: "center",
-    },
-  },
-  recruitBestRightCaptionContainer: {
-    ...captionTextContainer,
-    top: "67%",
-    left: "60%",
-    "@media (max-width: 1024px)": {
-      top: "73%",
-      marginTop: "1.3rem",
-    },
-    "@media (max-width: 736px)": {
-      top: "420%",
-      left: "33%",
     },
   },
   textOverlayLeft: {
@@ -104,14 +92,22 @@ const robotStyle = () => ({
     },
   },
   textOverlayRight: {
-    width: "340px",
+    width: "550px",
     "& p": {
-      marginTop: "3rem",
+      marginLeft: "7rem",
       fontSize: "1.5rem",
     },
     "@media (max-width: 1024px)": {
+      width: "340px",
       "& p": {
+        marginLeft: "3rem",
         fontSize: "1rem",
+      },
+    },
+    "@media (max-width: 736px)": {
+      width: "340px",
+      "& p": {
+        marginLeft: "0.5rem",
       },
     },
   },

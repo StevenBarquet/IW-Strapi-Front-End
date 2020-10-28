@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 // Dependencies
 import PropTypes from "prop-types";
 import { useQuery } from "@apollo/client";
@@ -209,7 +210,7 @@ RequestQuote.propTypes = {
     company: PropTypes.string,
     telephone: PropTypes.string,
     description: PropTypes.string,
-    validate: PropTypes.boolean,
+    validate: PropTypes.bool,
   }),
   errors: PropTypes.shape({
     name: PropTypes.string,

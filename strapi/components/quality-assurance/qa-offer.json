@@ -14,12 +14,7 @@
     "qaOfferCarousel": {
       "type": "component",
       "repeatable": false,
-      "component": "page.carousel-with-caption"
-    },
-    "IntroductoryText": {
-      "type": "component",
-      "repeatable": false,
-      "component": "page.introductory-text"
+      "component": "page.carousel-with-images-en"
     }
   }
 }

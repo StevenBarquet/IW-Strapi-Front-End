@@ -75,64 +75,52 @@ const ConsultingOptions = () => {
         {consultingOptions.title[`sectionTitle${language}`]}
       </h1>
       <br />
-      <div className={classes.positionRelative}>
+      <div>
         <Hidden only={["sm", "md", "lg", "xl"]}>
           <Carousel {...sliderSettings}>
-            {consultingOptions.carousel.small_images.map((image) => (
-              <div key={image.id}>
-                <img
-                  src={`${apiUrl}${image.url}`}
-                  alt={image.alternativeText}
-                  className="slick-image"
-                />
-              </div>
-            ))}
+            {consultingOptions.carousel[`small_images${language}`].map(
+              (image) => (
+                <div key={image.id}>
+                  <img
+                    src={`${apiUrl}${image.url}`}
+                    alt={image.alternativeText}
+                    className="slick-image"
+                  />
+                </div>
+              )
+            )}
           </Carousel>
         </Hidden>
         <Hidden only={["xs", "md", "lg", "xl"]}>
           <Carousel {...sliderSettings}>
-            {consultingOptions.carousel.medium_images.map((image) => (
-              <div key={image.id}>
-                <img
-                  src={`${apiUrl}${image.url}`}
-                  alt={image.alternativeText}
-                  className="slick-image"
-                />
-              </div>
-            ))}
+            {consultingOptions.carousel[`medium_images${language}`].map(
+              (image) => (
+                <div key={image.id}>
+                  <img
+                    src={`${apiUrl}${image.url}`}
+                    alt={image.alternativeText}
+                    className="slick-image"
+                  />
+                </div>
+              )
+            )}
           </Carousel>
         </Hidden>
         <Hidden only={["xs", "sm"]}>
           <Carousel {...sliderSettings}>
-            {consultingOptions.carousel.large_images.map((image) => (
-              <div key={image.id}>
-                <img
-                  src={`${apiUrl}${image.url}`}
-                  alt={image.alternativeText}
-                  className="slick-image"
-                />
-              </div>
-            ))}
+            {consultingOptions.carousel[`large_images${language}`].map(
+              (image) => (
+                <div key={image.id}>
+                  <img
+                    src={`${apiUrl}${image.url}`}
+                    alt={image.alternativeText}
+                    className="slick-image"
+                  />
+                </div>
+              )
+            )}
           </Carousel>
         </Hidden>
-        <div className={classes.consultingOptionsCaption}>
-          <GridItem xs={12} sm={10} md={8}>
-            <RenderHTML
-              html={consultingOptions.carousel[`caption${language}`]}
-              className={classes.textOverlay}
-            />
-            <div className={classes.divider} />
-          </GridItem>
-          <GridItem xs={12} sm={12} md={12}>
-            <RenderHTML
-              html={
-                consultingOptions.introductoryText[
-                  `introductoryText${language}`
-                ]
-              }
-            />
-          </GridItem>
-        </div>
       </div>
     </div>
   );

@@ -119,15 +119,8 @@ const SPECIALIZED_SERVICES_RECRUITBEST_QUERY = gql`
           introductoryText
           introductoryText_en
         }
-        introductionTextCarousel {
-          introductoryText
-          introductoryText_en
-        }
         carousel {
-          id
-          caption
-          caption_en
-          large_images {
+          small_images {
             id
             url
             alternativeText
@@ -137,7 +130,22 @@ const SPECIALIZED_SERVICES_RECRUITBEST_QUERY = gql`
             url
             alternativeText
           }
-          small_images {
+          large_images {
+            id
+            url
+            alternativeText
+          }
+          small_images_en {
+            id
+            url
+            alternativeText
+          }
+          medium_images_en {
+            id
+            url
+            alternativeText
+          }
+          large_images_en {
             id
             url
             alternativeText

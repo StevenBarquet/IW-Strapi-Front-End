@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
@@ -23,6 +24,7 @@ const SectionComments = ({ id }) => {
     defaultSettings: { language },
   } = useSettings();
   const classes = useStyles();
+
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
@@ -31,6 +33,7 @@ const SectionComments = ({ id }) => {
             <div style={{ display: "flex" }}>
               <GridItem style={{ marginRight: "7px" }} xs={2} sm={3} md={1}>
                 <div
+                  data-lazy="true"
                   className="fb-share-button"
                   data-href={`http://interware.mx/blog/${id}`}
                   data-layout="button"
@@ -40,9 +43,7 @@ const SectionComments = ({ id }) => {
                     href={`https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Finterware.mx%2Fblog%2F${id}&amp;src=sdkpreparse`}
                     className="fb-xfbml-parse-ignore"
                     target="_blank"
-                  >
-                    {language === "_en" ? "Share" : "Compartir"}
-                  </a>
+                  />
                 </div>
               </GridItem>
               <GridItem style={{ marginTop: "4px" }} xs={3} sm={3} md={2}>
@@ -56,6 +57,7 @@ const SectionComments = ({ id }) => {
             </div>
             {/* Comentarios */}
             <div
+              data-lazy="true"
               className="fb-comments"
               data-href={`http://interware.mx/blog/${id}`}
               data-numposts="5"

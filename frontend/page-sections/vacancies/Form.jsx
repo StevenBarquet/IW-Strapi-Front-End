@@ -113,7 +113,9 @@ const Form = ({ values, errors, handleChange }) => {
       </GridContainer>
       <GridContainer justify="center">
         <GridItem xs={12} sm={10} md={10}>
-          <h3>Datos Personales</h3>
+          <h3>
+            {language === "_en" ? "Personal information" : "Datos Personales"}
+          </h3>
           <GridContainer>
             <GridItem item xs={12} sm={4} md={4}>
               <TextInputField
@@ -211,7 +213,9 @@ const Form = ({ values, errors, handleChange }) => {
       </GridContainer>
       <GridContainer justify="center">
         <GridItem xs={12} sm={10} md={10}>
-          <h3>Datos de Contacto</h3>
+          <h3>
+            {language === "_en" ? "Contact information" : "Datos de Contacto"}
+          </h3>
           <GridContainer>
             <GridItem item xs={12} sm={4} md={4}>
               <TextInputField
@@ -278,7 +282,11 @@ const Form = ({ values, errors, handleChange }) => {
       </GridContainer>
       <GridContainer justify="center">
         <GridItem xs={12} sm={10} md={10}>
-          <h3>Adjunta tu Curriculum Vitae</h3>
+          <h3>
+            {language === "_en"
+              ? "Attach your Curriculum Vitae"
+              : "Adjunta tu Curriculum Vitae"}
+          </h3>
           <GridContainer>
             <GridItem item xs={12} sm={6} md={6}>
               <CustomFileInput

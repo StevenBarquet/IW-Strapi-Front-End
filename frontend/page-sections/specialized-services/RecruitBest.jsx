@@ -83,10 +83,10 @@ const RecruitBest = () => {
         </SectionTitle>
       </GridContainer>
       <div className={classes.margin8rem} />
-      <div className={classes.positionRelative}>
+      <div>
         <Hidden only={["sm", "md", "lg", "xl"]}>
           <Carousel {...sliderSettings}>
-            {recruitBest.carousel.small_images.map((image) => (
+            {recruitBest.carousel[`small_images${language}`].map((image) => (
               <div key={image.id}>
                 <img
                   src={`${apiUrl}${image.url}`}
@@ -99,7 +99,7 @@ const RecruitBest = () => {
         </Hidden>
         <Hidden only={["xs", "md", "lg", "xl"]}>
           <Carousel {...sliderSettings}>
-            {recruitBest.carousel.medium_images.map((image) => (
+            {recruitBest.carousel[`medium_images${language}`].map((image) => (
               <div key={image.id}>
                 <img
                   src={`${apiUrl}${image.url}`}
@@ -112,7 +112,7 @@ const RecruitBest = () => {
         </Hidden>
         <Hidden only={["xs", "sm"]}>
           <Carousel {...sliderSettings}>
-            {recruitBest.carousel.large_images.map((image) => (
+            {recruitBest.carousel[`large_images${language}`].map((image) => (
               <div key={image.id}>
                 <img
                   src={`${apiUrl}${image.url}`}
@@ -123,30 +123,6 @@ const RecruitBest = () => {
             ))}
           </Carousel>
         </Hidden>
-        <div className={classes.recruitBestLeftCaptionContainer}>
-          <GridContainer>
-            <GridItem xs={12} sm={6} md={5} lg={6}>
-              <RenderHTML
-                html={recruitBest.carousel[`caption${language}`]}
-                className={classes.textOverlayLeft}
-              />
-              <br />
-              <GridItem xs={12} sm={11} md={5} lg={8}>
-                <div className={classes.divider} />
-              </GridItem>
-            </GridItem>
-            <GridItem xs={12} sm={6} md={5} lg={4}>
-              <RenderHTML
-                html={
-                  recruitBest.introductionTextCarousel[
-                    `introductoryText${language}`
-                  ]
-                }
-                className={classes.textOverlayRight}
-              />
-            </GridItem>
-          </GridContainer>
-        </div>
       </div>
     </div>
   );

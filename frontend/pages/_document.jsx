@@ -109,6 +109,16 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
+          {/* script del comentarios Facebook */}
+          <div id="fb-root" />
+          <script
+            async
+            defer
+            // Crossorigin="anonymous"
+            src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0"
+            nonce="mPqzJT8d"
+          />
+          <div id="fb-root" />
           {/* script del compartir Linkedin */}
           <script
             async
@@ -123,15 +133,6 @@ class MyDocument extends Document {
             // Crossorigin="anonymous"
             src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0"
             nonce="bFoqUfk4"
-          />
-          {/* script del comentarios Facebook */}
-          <div id="fb-root" />
-          <script
-            async
-            defer
-            // Crossorigin="anonymous"
-            src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0"
-            nonce="mPqzJT8d"
           />
           <div id="page-transition" />
           <Main />

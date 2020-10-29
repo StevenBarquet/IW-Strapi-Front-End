@@ -73,10 +73,10 @@ const QAOffer = () => {
         {qaOffer.title[`sectionTitle${language}`]}
       </h1>
       <br />
-      <div className={classes.positionRelative}>
+      <div>
         <Hidden only={["sm", "md", "lg", "xl"]}>
           <Carousel {...sliderSettings}>
-            {qaOffer.qaOfferCarousel.small_images.map((image) => (
+            {qaOffer.qaOfferCarousel[`small_images${language}`].map((image) => (
               <div key={image.id}>
                 <img
                   src={`${apiUrl}${image.url}`}
@@ -89,20 +89,22 @@ const QAOffer = () => {
         </Hidden>
         <Hidden only={["xs", "md", "lg", "xl"]}>
           <Carousel {...sliderSettings}>
-            {qaOffer.qaOfferCarousel.medium_images.map((image) => (
-              <div key={image.id}>
-                <img
-                  src={`${apiUrl}${image.url}`}
-                  alt={image.alternativeText}
-                  className="slick-image"
-                />
-              </div>
-            ))}
+            {qaOffer.qaOfferCarousel[`medium_images${language}`].map(
+              (image) => (
+                <div key={image.id}>
+                  <img
+                    src={`${apiUrl}${image.url}`}
+                    alt={image.alternativeText}
+                    className="slick-image"
+                  />
+                </div>
+              )
+            )}
           </Carousel>
         </Hidden>
         <Hidden only={["xs", "sm"]}>
           <Carousel {...sliderSettings}>
-            {qaOffer.qaOfferCarousel.large_images.map((image) => (
+            {qaOffer.qaOfferCarousel[`large_images${language}`].map((image) => (
               <div key={image.id}>
                 <img
                   src={`${apiUrl}${image.url}`}
@@ -113,20 +115,6 @@ const QAOffer = () => {
             ))}
           </Carousel>
         </Hidden>
-        <div className={classes.qaOfferCaption}>
-          <GridItem xs={12} sm={10} md={7}>
-            <RenderHTML
-              html={qaOffer.qaOfferCarousel[`caption${language}`]}
-              className={classes.textOverlay}
-            />
-            <div className={classes.divider} />
-          </GridItem>
-          <GridItem xs={12} sm={12} md={10}>
-            <RenderHTML
-              html={qaOffer.IntroductoryText[`introductoryText${language}`]}
-            />
-          </GridItem>
-        </div>
       </div>
     </div>
   );

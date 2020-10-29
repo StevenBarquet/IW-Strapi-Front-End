@@ -70,26 +70,27 @@ const SuccessStories = () => {
   } = data;
 
   return (
-    <div
-      id="section-success-stories"
-      className={`${classes.section} ${classes.positionRelative}`}
-    >
+    <div id="section-success-stories" className={`${classes.section}`}>
       <Hidden only={["sm", "md", "lg", "xl"]}>
         <Carousel {...sliderSettings}>
-          {successStories.successStoriesCarousel.small_images.map((image) => (
-            <div key={image.id}>
-              <img
-                src={`${apiUrl}${image.url}`}
-                alt={image.alternativeText}
-                className="slick-image"
-              />
-            </div>
-          ))}
+          {successStories.successStoriesCarousel[`small_images${language}`].map(
+            (image) => (
+              <div key={image.id}>
+                <img
+                  src={`${apiUrl}${image.url}`}
+                  alt={image.alternativeText}
+                  className="slick-image"
+                />
+              </div>
+            )
+          )}
         </Carousel>
       </Hidden>
       <Hidden only={["xs", "md", "lg", "xl"]}>
         <Carousel {...sliderSettings}>
-          {successStories.successStoriesCarousel.medium_images.map((image) => (
+          {successStories.successStoriesCarousel[
+            `medium_images${language}`
+          ].map((image) => (
             <div key={image.id}>
               <img
                 src={`${apiUrl}${image.url}`}
@@ -102,25 +103,19 @@ const SuccessStories = () => {
       </Hidden>
       <Hidden only={["xs", "sm"]}>
         <Carousel {...sliderSettings}>
-          {successStories.successStoriesCarousel.large_images.map((image) => (
-            <div key={image.id}>
-              <img
-                src={`${apiUrl}${image.url}`}
-                alt={image.alternativeText}
-                className="slick-image"
-              />
-            </div>
-          ))}
+          {successStories.successStoriesCarousel[`large_images${language}`].map(
+            (image) => (
+              <div key={image.id}>
+                <img
+                  src={`${apiUrl}${image.url}`}
+                  alt={image.alternativeText}
+                  className="slick-image"
+                />
+              </div>
+            )
+          )}
         </Carousel>
       </Hidden>
-      <div className={classes.successStoriesCaption}>
-        <GridItem xs={12} sm={10} md={8}>
-          <RenderHTML
-            html={successStories.successStoriesCarousel[`caption${language}`]}
-            className={classes.successStoriesOverlay}
-          />
-        </GridItem>
-      </div>
     </div>
   );
 };

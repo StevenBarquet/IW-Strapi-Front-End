@@ -116,10 +116,6 @@ const TECHNOLOGY_CONSULTING_CONSULTING_QUERY = gql`
           sectionTitle
           sectionTitle_en
         }
-        introductoryText {
-          introductoryText
-          introductoryText_en
-        }
         carousel {
           small_images {
             id
@@ -136,8 +132,21 @@ const TECHNOLOGY_CONSULTING_CONSULTING_QUERY = gql`
             url
             alternativeText
           }
-          caption
-          caption_en
+          small_images_en {
+            id
+            url
+            alternativeText
+          }
+          medium_images_en {
+            id
+            url
+            alternativeText
+          }
+          large_images_en {
+            id
+            url
+            alternativeText
+          }
         }
       }
     }
@@ -172,8 +181,21 @@ const TECHNOLOGY_CONSULTING_SUCCESSSTORIES_QUERY = gql`
             url
             alternativeText
           }
-          caption
-          caption_en
+          small_images_en {
+            id
+            url
+            alternativeText
+          }
+          medium_images_en {
+            id
+            url
+            alternativeText
+          }
+          large_images_en {
+            id
+            url
+            alternativeText
+          }
         }
       }
     }

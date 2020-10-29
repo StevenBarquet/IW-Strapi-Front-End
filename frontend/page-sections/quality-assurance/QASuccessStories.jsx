@@ -68,65 +68,52 @@ const QASuccessStories = () => {
   } = data;
 
   return (
-    <div
-      id="section-success-stories"
-      className={`${classes.section} ${classes.positionRelative}`}
-    >
+    <div id="section-success-stories" className={`${classes.section}`}>
       <Hidden only={["sm", "md", "lg", "xl"]}>
         <Carousel {...sliderSettings}>
-          {successStoriesQA.successStoriesQACarousel.small_images.map(
-            (image) => (
-              <div key={image.id}>
-                <img
-                  src={`${apiUrl}${image.url}`}
-                  alt={image.alternativeText}
-                  className="slick-image"
-                />
-              </div>
-            )
-          )}
+          {successStoriesQA.successStoriesQACarousel[
+            `small_images${language}`
+          ].map((image) => (
+            <div key={image.id}>
+              <img
+                src={`${apiUrl}${image.url}`}
+                alt={image.alternativeText}
+                className="slick-image"
+              />
+            </div>
+          ))}
         </Carousel>
       </Hidden>
       <Hidden only={["xs", "md", "lg", "xl"]}>
         <Carousel {...sliderSettings}>
-          {successStoriesQA.successStoriesQACarousel.medium_images.map(
-            (image) => (
-              <div key={image.id}>
-                <img
-                  src={`${apiUrl}${image.url}`}
-                  alt={image.alternativeText}
-                  className="slick-image"
-                />
-              </div>
-            )
-          )}
+          {successStoriesQA.successStoriesQACarousel[
+            `medium_images${language}`
+          ].map((image) => (
+            <div key={image.id}>
+              <img
+                src={`${apiUrl}${image.url}`}
+                alt={image.alternativeText}
+                className="slick-image"
+              />
+            </div>
+          ))}
         </Carousel>
       </Hidden>
       <Hidden only={["xs", "sm"]}>
         <Carousel {...sliderSettings}>
-          {successStoriesQA.successStoriesQACarousel.large_images.map(
-            (image) => (
-              <div key={image.id}>
-                <img
-                  src={`${apiUrl}${image.url}`}
-                  alt={image.alternativeText}
-                  className="slick-image"
-                />
-              </div>
-            )
-          )}
+          {successStoriesQA.successStoriesQACarousel[
+            `large_images${language}`
+          ].map((image) => (
+            <div key={image.id}>
+              <img
+                src={`${apiUrl}${image.url}`}
+                alt={image.alternativeText}
+                className="slick-image"
+              />
+            </div>
+          ))}
         </Carousel>
       </Hidden>
-      <div className={classes.successStoriesCaption}>
-        <GridItem xs={12} sm={12} md={12}>
-          <RenderHTML
-            html={
-              successStoriesQA.successStoriesQACarousel[`caption${language}`]
-            }
-            className={classes.successStoriesOverlay}
-          />
-        </GridItem>
-      </div>
     </div>
   );
 };

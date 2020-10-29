@@ -73,70 +73,52 @@ const FactoryServices = () => {
         {factoryServices.title[`sectionTitle${language}`]}
       </h1>
       <br />
-      <div className={classes.positionRelative}>
+      <div>
         <Hidden only={["sm", "md", "lg", "xl"]}>
           <Carousel {...sliderSettings}>
-            {factoryServices.factoryServicesCarousel.small_images.map(
-              (image) => (
-                <div key={image.id}>
-                  <img
-                    src={`${apiUrl}${image.url}`}
-                    alt={image.alternativeText}
-                    className="slick-image"
-                  />
-                </div>
-              )
-            )}
+            {factoryServices.factoryServicesCarousel[
+              `small_images${language}`
+            ].map((image) => (
+              <div key={image.id}>
+                <img
+                  src={`${apiUrl}${image.url}`}
+                  alt={image.alternativeText}
+                  className="slick-image"
+                />
+              </div>
+            ))}
           </Carousel>
         </Hidden>
         <Hidden only={["xs", "md", "lg", "xl"]}>
           <Carousel {...sliderSettings}>
-            {factoryServices.factoryServicesCarousel.medium_images.map(
-              (image) => (
-                <div key={image.id}>
-                  <img
-                    src={`${apiUrl}${image.url}`}
-                    alt={image.alternativeText}
-                    className="slick-image"
-                  />
-                </div>
-              )
-            )}
+            {factoryServices.factoryServicesCarousel[
+              `medium_images${language}`
+            ].map((image) => (
+              <div key={image.id}>
+                <img
+                  src={`${apiUrl}${image.url}`}
+                  alt={image.alternativeText}
+                  className="slick-image"
+                />
+              </div>
+            ))}
           </Carousel>
         </Hidden>
         <Hidden only={["xs", "sm"]}>
           <Carousel {...sliderSettings}>
-            {factoryServices.factoryServicesCarousel.large_images.map(
-              (image) => (
-                <div key={image.id}>
-                  <img
-                    src={`${apiUrl}${image.url}`}
-                    alt={image.alternativeText}
-                    className="slick-image"
-                  />
-                </div>
-              )
-            )}
+            {factoryServices.factoryServicesCarousel[
+              `large_images${language}`
+            ].map((image) => (
+              <div key={image.id}>
+                <img
+                  src={`${apiUrl}${image.url}`}
+                  alt={image.alternativeText}
+                  className="slick-image"
+                />
+              </div>
+            ))}
           </Carousel>
         </Hidden>
-        <div className={classes.factoryServicesCaption}>
-          <GridItem xs={12} sm={10} md={7}>
-            <RenderHTML
-              html={
-                factoryServices.factoryServicesCarousel[`caption${language}`]
-              }
-              className={classes.textOverlay}
-            />
-            <div className={classes.divider} />
-          </GridItem>
-          <GridItem xs={12} sm={12} md={10}>
-            <RenderHTML
-              html={
-                factoryServices.introductoryText[`introductoryText${language}`]
-              }
-            />
-          </GridItem>
-        </div>
       </div>
     </div>
   );

@@ -19,12 +19,7 @@
     "carousel": {
       "type": "component",
       "repeatable": false,
-      "component": "page.carousel-with-caption"
-    },
-    "introductionTextCarousel": {
-      "type": "component",
-      "repeatable": false,
-      "component": "page.introductory-text"
+      "component": "page.carousel-with-images-en"
     }
   }
 }

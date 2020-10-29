@@ -14,12 +14,7 @@
     "factoryServicesCarousel": {
       "type": "component",
       "repeatable": false,
-      "component": "page.carousel-with-caption"
-    },
-    "introductoryText": {
-      "type": "component",
-      "repeatable": false,
-      "component": "page.introductory-text"
+      "component": "page.carousel-with-images-en"
     }
   }
 }

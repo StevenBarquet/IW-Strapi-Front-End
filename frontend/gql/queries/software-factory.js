@@ -48,10 +48,6 @@ const SW_FACTORY_SERVICES_QUERY = gql`
           sectionTitle
           sectionTitle_en
         }
-        introductoryText {
-          introductoryText
-          introductoryText_en
-        }
         factoryServicesCarousel {
           small_images {
             id
@@ -68,8 +64,21 @@ const SW_FACTORY_SERVICES_QUERY = gql`
             url
             alternativeText
           }
-          caption
-          caption_en
+          small_images_en {
+            id
+            url
+            alternativeText
+          }
+          medium_images_en {
+            id
+            url
+            alternativeText
+          }
+          large_images_en {
+            id
+            url
+            alternativeText
+          }
         }
       }
     }

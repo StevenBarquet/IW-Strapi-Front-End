@@ -52,10 +52,6 @@ const QUALITY_QA_OFFER_QUERY = gql`
           sectionTitle
           sectionTitle_en
         }
-        IntroductoryText {
-          introductoryText
-          introductoryText_en
-        }
         qaOfferCarousel {
           small_images {
             id
@@ -72,8 +68,21 @@ const QUALITY_QA_OFFER_QUERY = gql`
             url
             alternativeText
           }
-          caption
-          caption_en
+          small_images_en {
+            id
+            url
+            alternativeText
+          }
+          medium_images_en {
+            id
+            url
+            alternativeText
+          }
+          large_images_en {
+            id
+            url
+            alternativeText
+          }
         }
       }
     }
@@ -134,8 +143,21 @@ const QUALITY_SUCCESS_STORIES_QUERY = gql`
             url
             alternativeText
           }
-          caption
-          caption_en
+          small_images_en {
+            id
+            url
+            alternativeText
+          }
+          medium_images_en {
+            id
+            url
+            alternativeText
+          }
+          large_images_en {
+            id
+            url
+            alternativeText
+          }
         }
       }
     }

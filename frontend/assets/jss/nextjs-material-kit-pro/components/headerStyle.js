@@ -183,9 +183,10 @@ const headerStyle = (theme) => ({
   },
   closeButtonDrawer: {
     position: "absolute",
-    right: "8px",
+    right: "20px",
     top: "9px",
     zIndex: "1",
+    color: "#262626",
   },
 });
 

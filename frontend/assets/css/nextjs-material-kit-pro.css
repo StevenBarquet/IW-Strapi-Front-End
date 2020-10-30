@@ -133,7 +133,9 @@
 
 html * {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
 
 * {
   letter-spacing: normal !important; }
@@ -213,7 +215,9 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; 
+  scroll-behavior: smooth;
+}
 
 body {
   color: #111B2E;
@@ -1775,7 +1779,8 @@ button.slick-arrow.slick-next {
   height: 200px;
   display: flex;
   align-items: center;
-  animation: slideshow 80s linear infinite; }
+  animation: slideshow 70s linear infinite; 
+}
 
 .logoSlider svg {
   height: auto;

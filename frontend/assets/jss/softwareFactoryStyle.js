@@ -8,8 +8,6 @@ import {
   mrAuto,
   mlAuto,
   divider,
-  positionRelative,
-  captionTextContainer,
   sectionWithBackgroundColor,
 } from "assets/jss/nextjs-material-kit-pro";
 
@@ -22,15 +20,21 @@ const softwareFactoryStyle = () => ({
   mrAuto,
   mlAuto,
   divider,
-  positionRelative,
   captionContainer: {
     ...captionContainer,
-    top: "45%",
-    left: "15%",
+    top: "34%",
+    left: "21%",
+    "@media (max-width: 1024px)": {
+      top: "17%",
+      left: "19%",
+    },
   },
   textOverlay: {
     ...textOverlay,
     width: "372px",
+    "@media (max-width: 736px)": {
+      marginTop: "3rem",
+    },
   },
   swDescription: {
     ...textCenter,
@@ -47,20 +51,6 @@ const softwareFactoryStyle = () => ({
         color: "#383838",
         minHeight: "32px",
       },
-    },
-  },
-  factoryServicesCaption: {
-    ...captionTextContainer,
-    top: "52%",
-    left: "65%",
-    "@media (max-width: 1024px)": {
-      top: "63%",
-      left: "41%",
-    },
-    "@media (max-width: 736px)": {
-      top: "62%",
-      left: "24%",
-      textAlign: "center",
     },
   },
   titleContainer: {
@@ -82,14 +72,6 @@ const softwareFactoryStyle = () => ({
     marginTop: "6rem",
     "@media (max-width: 1024px)": {
       marginTop: "3rem",
-    },
-  },
-  imageBenefits: {
-    width: "121px",
-    height: "121px",
-    "@media (max-width: 1024px)": {
-      width: "110px",
-      height: "110px",
     },
   },
 });

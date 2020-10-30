@@ -1,6 +1,5 @@
 /* eslint-disable react/require-default-props */
 // Dependencies
-import getConfig from "next/config";
 import { useQuery } from "@apollo/client";
 import PropTypes from "prop-types";
 
@@ -16,6 +15,7 @@ import GridItem from "components/Grid/GridItem";
 import TextInputField from "components/CustomInput/CustomInput";
 import Button from "components/CustomButtons/Button";
 import RenderHTML from "components/HTML/RenderHTML";
+import SectionTitle from "components-sections/SectionTitle";
 
 // gql
 import { ROBOT_FORM_QUERY } from "gql/queries/robot";
@@ -23,10 +23,6 @@ import { ROBOT_FORM_QUERY } from "gql/queries/robot";
 import robotStyles from "assets/jss/robotStyles";
 
 const useStyles = makeStyles(robotStyles);
-
-const {
-  publicRuntimeConfig: { apiUrl },
-} = getConfig();
 
 const Form = ({ values, errors, handleChange }) => {
   const {
@@ -62,22 +58,18 @@ const Form = ({ values, errors, handleChange }) => {
         justify="center"
         className={classes.sectionWithBackgroundColor}
       >
-        <GridItem xs={10} sm={8} md={8} lg={10}>
-          <img
-            src={`${apiUrl}${form.sectionIcon.url}`}
-            alt={form.sectionIcon.alternativeText}
-            className={classes.centerImage}
-          />
-          <h1 className={classes.title}>
-            {form.title[`sectionTitle${language}`]}
-          </h1>
-          <h2 className={classes.subtitle}>
-            {form.subtitle[`sectionSubTitle${language}`]}
-          </h2>
+        <SectionTitle
+          icon={form.sectionIcon}
+          title={form.title[`sectionTitle${language}`]}
+          subTitle={form.subtitle[`sectionSubTitle${language}`]}
+          changeColor
+        >
           <RenderHTML
             className={classes.descriptionText}
             html={form.introductoryText[`introductoryText${language}`]}
           />
+        </SectionTitle>
+        <GridItem xs={10} sm={8} md={8} lg={10}>
           <GridContainer justify="center">
             <GridItem xs={12} sm={10} md={8}>
               <GridContainer>

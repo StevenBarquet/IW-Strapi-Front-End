@@ -64,20 +64,15 @@ const Header = () => {
   return (
     <header id="header">
       <Hidden only={["sm", "md", "lg", "xl"]}>
-        <Parallax image={`${apiUrl}${header.small_image.url}`} small>
-          <Caption />
-        </Parallax>
+        <Parallax image={`${apiUrl}${header.small_image.url}`} small />
       </Hidden>
       <Hidden only={["xs", "md", "lg", "xl"]}>
-        <Parallax image={`${apiUrl}${header.medium_image.url}`} small>
-          <Caption />
-        </Parallax>
+        <Parallax image={`${apiUrl}${header.medium_image.url}`} small />
       </Hidden>
       <Hidden only={["xs", "sm"]}>
-        <Parallax image={`${apiUrl}${header.large_image.url}`} small>
-          <Caption />
-        </Parallax>
+        <Parallax image={`${apiUrl}${header.large_image.url}`} small />
       </Hidden>
+      <Caption />
     </header>
   );
 };

@@ -63,7 +63,7 @@ Parallax.defaultProps = {
 
 Parallax.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
   style: PropTypes.shape({}),
   image: PropTypes.string,
   small: PropTypes.bool,

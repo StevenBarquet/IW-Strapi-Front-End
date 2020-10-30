@@ -10,6 +10,7 @@ import HeaderLinks from "components/Header/HeaderLinks";
 import Footer from "components/Footer/Footer";
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
+import ScrollTop from "components/ScrollTop/ScrollTop";
 
 // images
 import Logo from "assets/img/logo.svg";
@@ -32,6 +33,7 @@ const withLayout = (Page) => {
         />
         <div style={{ marginTop: "60px" }}>
           <Page />
+          <ScrollTop />
         </div>
         <Footer
           big

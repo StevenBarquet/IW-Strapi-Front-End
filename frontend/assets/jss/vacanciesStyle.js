@@ -26,13 +26,11 @@ const vacanciesStyle = () => ({
   title,
   captionContainer: {
     ...captionContainer,
-    left: "38% !important",
+    left: "38%",
     textAlign: "center",
     "@media (max-width: 1024px)": {
-      left: "34% !important",
-    },
-    "@media (max-width: 768px)": {
-      left: "28% !important",
+      top: "17%",
+      left: "42%",
     },
   },
   textOverlay: {
@@ -42,7 +40,8 @@ const vacanciesStyle = () => ({
       textAlign: "center",
       fontSize: "2.8rem",
     },
-    "@media (max-width: 576px)": {
+    "@media (max-width: 736px)": {
+      margin: "3rem 0px",
       "& h1": {
         fontSize: "2rem",
         margin: "0px",

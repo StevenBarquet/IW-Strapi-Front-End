@@ -194,8 +194,9 @@ const cardHeader = {
 const legend = {
   color: valenciaColor,
   textTransform: "uppercase",
-  textAlign: "center",
+  textAlign: "center !important",
   marginTop: "16px",
+  letterSpacing: "0.3em !important",
 };
 
 const title = {
@@ -246,18 +247,6 @@ const textOverlay = {
     clear: "both",
     display: "block",
   },
-};
-
-const captionTextContainer = {
-  position: "absolute",
-  top: "46%",
-  left: "30%",
-  zIndex: "1",
-  transform: "translate(-25%, -50%)",
-};
-
-const positionRelative = {
-  position: "relative",
 };
 
 const cardTitle = {
@@ -415,7 +404,6 @@ export {
   valenciaColor,
   blackcolor,
   pampasColor,
-  positionRelative,
   bigStoneColor,
   primaryBoxShadow,
   successBoxShadow,
@@ -425,7 +413,6 @@ export {
   successCardHeader,
   dangerCardHeader,
   primaryCardHeader,
-  captionTextContainer,
   cardHeader,
   title,
   subTitle,

@@ -40,10 +40,11 @@ const OfferGuarantees = () => {
 
   const sliderSettings = {
     dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    infinite: true,
+    autoplay: true,
+    lazyLoad: "ondemand",
+    adaptiveHeight: false,
+    speed: 1700,
     initialSlide: 0,
     responsive: [
       {

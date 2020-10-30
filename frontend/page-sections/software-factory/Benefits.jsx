@@ -75,13 +75,11 @@ const Benefits = () => {
           icon={benefits.sectionIcon}
           title={benefits.title[`sectionTitle${language}`]}
         >
-          <>
-            <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={12}>
-                <NavPills alignCenter tabs={tags()} />
-              </GridItem>
-            </GridContainer>
-          </>
+          <GridContainer justify="center">
+            <GridItem xs={12} sm={12} md={12}>
+              <NavPills alignCenter tabs={tags()} />
+            </GridItem>
+          </GridContainer>
         </SectionTitle>
       </GridContainer>
     </div>

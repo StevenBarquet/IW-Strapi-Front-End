@@ -2,7 +2,6 @@ import {
   main,
   mainRaised,
   section,
-  subTitle,
   textCenter,
   blackcolor,
   hexToRgb,
@@ -30,8 +29,12 @@ const robotStyle = () => ({
   },
   captionContainer: {
     ...captionContainer,
-    left: "22%",
-    top: "53%",
+    top: "42%",
+    left: "18%",
+    "@media (max-width: 1024px)": {
+      top: "20%",
+      left: "22%",
+    },
   },
   textOverlay: {
     ...textOverlay,
@@ -43,11 +46,15 @@ const robotStyle = () => ({
       display: "block",
       color: "#7B7575",
     },
-    "@media (max-width: 736px)": {
+    "@media (max-width: 1024px)": {
       width: "450px",
       "& h1": {
         fontSize: "2rem",
       },
+    },
+    "@media (max-width: 736px)": {
+      marginTop: "4rem",
+      width: "450px",
     },
   },
   iframeContainer: {
@@ -97,14 +104,6 @@ const robotStyle = () => ({
     ...section,
     paddingBottom: "0px !important",
   },
-  subtitle: {
-    ...subTitle,
-    color: "#21646D !important",
-    marginBottom: "0px !important",
-    "@media (max-width: 736px)": {
-      fontSize: "1rem",
-    },
-  },
   descriptionText: {
     marginTop: "0px !important",
     textDecoration: "none",
@@ -123,9 +122,6 @@ const robotStyle = () => ({
       minHeight: "10px",
       marginTop: "1.400rem !important",
     },
-  },
-  featuresSection: {
-    margin: "50px 0px",
   },
   cardTitle: {
     ...cardTitle,

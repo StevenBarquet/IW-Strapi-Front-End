@@ -44,7 +44,7 @@ const RobotPage = () => {
       <main className={classNames(classes.main, classes.mainRaised)}>
         <Functioning />
         <Benefits />
-        <PlansForYou />
+        {/* <PlansForYou />
         <Formik
           initialValues={initialValues}
           onSubmit={onSubmitForm}
@@ -56,7 +56,7 @@ const RobotPage = () => {
               <Form {...props} />
             </form>
           )}
-        </Formik>
+        </Formik> */}
       </main>
     </>
   );

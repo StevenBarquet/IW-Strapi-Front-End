@@ -24,14 +24,36 @@ const joinUsStyle = () => ({
   mrAuto,
   sectionWithBackgroundColor,
   title,
-  captionContainer,
+  captionContainer: {
+    ...captionContainer,
+    top: "36%",
+    left: "18%",
+    "@media (max-width: 1024px)": {
+      top: "17%",
+      left: "19%",
+    },
+  },
   textOverlay: {
     ...textOverlay,
-    width: "600px !important",
+    width: "600px",
+    textAlign: "center",
     "& p": {
-      textAlign: "center !important",
       fontSize: "2.8rem",
       fontWeight: "100",
+    },
+    "@media (max-width: 1024px)": {
+      width: "400px",
+      "& p": {
+        fontSize: "1.9rem",
+      },
+      "& h1": {
+        fontSize: "2rem",
+      },
+    },
+    "@media (max-width: 736px)": {
+      width: "450px",
+      marginTop: "3rem",
+      minHeight: "32px",
     },
   },
   introductoryText: {

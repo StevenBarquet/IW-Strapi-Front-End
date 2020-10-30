@@ -13,6 +13,8 @@ import {
   legend,
   title,
   subTitle,
+  mlAuto,
+  mrAuto,
   centerImage,
 } from "assets/jss/nextjs-material-kit-pro";
 
@@ -22,6 +24,8 @@ const {
 
 const sectionTitleStyle = {
   legend,
+  mlAuto,
+  mrAuto,
   title: {
     ...title,
     "@media (max-width: 830px)": {
@@ -29,13 +33,17 @@ const sectionTitleStyle = {
     },
   },
   subTitle,
+  subTitleColor: {
+    ...subTitle,
+    color: "#21646D",
+  },
   centerImage,
 };
 
 const useStyles = makeStyles(sectionTitleStyle);
 
 // eslint-disable-next-line no-shadow
-const SectionTitle = ({ legend, title, subTitle, icon, children }) => {
+const SectionTitle = ({ legend, title, subTitle, icon, children, changeColor }) => {
   const classes = useStyles();
 
   const Icon = () => {
@@ -51,9 +59,13 @@ const SectionTitle = ({ legend, title, subTitle, icon, children }) => {
   return (
     <GridItem xs={10} sm={9} md={8} lg={10}>
       {icon && <Icon />}
-      {legend && <legend className={classes.legend}>{legend}</legend>}
+      {legend && <p className={classes.legend}>{legend}</p>}
       {title && <h1 className={classes.title}>{title}</h1>}
-      {subTitle && <h2 className={classes.subTitle}>{subTitle}</h2>}
+      {subTitle && (
+        <h2 className={changeColor ? classes.subTitleColor : classes.subTitle}>
+          {subTitle}
+        </h2>
+      )}
       {children}
     </GridItem>
   );
@@ -65,6 +77,7 @@ SectionTitle.defaultProps = {
   subTitle: "",
   icon: null,
   children: null,
+  changeColor: false,
 };
 
 SectionTitle.propTypes = {
@@ -75,6 +88,7 @@ SectionTitle.propTypes = {
     url: PropTypes.string,
     alt: PropTypes.string,
   }),
+  changeColor: PropTypes.bool,
   children: PropTypes.element,
 };
 

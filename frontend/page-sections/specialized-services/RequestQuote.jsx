@@ -151,7 +151,8 @@ const RequestQuote = ({ values, errors, handleChange }) => {
         </GridItem>
         <GridItem xs={12} sm={10} md={10}>
           <CustomInput
-            id="descripcion"
+            id="description"
+            name="description"
             value={values.description}
             labelText={
               language === "_en"
@@ -162,7 +163,7 @@ const RequestQuote = ({ values, errors, handleChange }) => {
             fullWidth
             multiline
             inputProps={{
-              name: "descripcion",
+              name: "description",
               placeholder:
                 language === "_en"
                   ? "Indicate your need (# of vacancies, description, salary range, etc):"

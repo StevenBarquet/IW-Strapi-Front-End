@@ -9,7 +9,6 @@ import Hidden from "@material-ui/core/Hidden";
 
 // core components
 import GridContainer from "components/Grid/GridContainer";
-import GridItem from "components/Grid/GridItem";
 import RenderHTML from "components/HTML/RenderHTML";
 import SectionTitle from "components-sections/SectionTitle";
 

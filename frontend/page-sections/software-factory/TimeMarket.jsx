@@ -49,7 +49,7 @@ const TimeMarket = () => {
   } = data;
 
   return (
-    <div id="section-timeMarket" className={classes.section}>
+    <div id="section-time-market" className={classes.section}>
       <GridContainer justify="center">
         <SectionTitle title={timeMarket.title[`sectionTitle${language}`]}>
           <RenderHTML

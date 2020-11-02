@@ -55,7 +55,7 @@ const TechnologyImplementation = () => {
   } = data;
 
   return (
-    <div id="section-partners" className={classes.section}>
+    <div id="section-technology-implementation" className={classes.section}>
       <GridContainer justify="center">
         <SectionTitle
           title={technologyImplementation.title[`sectionTitle${language}`]}

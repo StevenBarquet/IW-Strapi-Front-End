@@ -90,7 +90,7 @@ const SectionPills = ({
   );
 
   return (
-    <div id="section-about" className={classes.section}>
+    <div id="section-pills" className={classes.section}>
       <Menu
         articleCategory={articleCategory}
         categoryID={categoryID}

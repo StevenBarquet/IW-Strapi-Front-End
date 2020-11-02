@@ -1,10 +1,8 @@
 // Dependencies
-import getConfig from "next/config";
 import { useQuery } from "@apollo/client";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import ReorderIcon from "@material-ui/icons/Reorder";
 
 // core-components
 import GridContainer from "components/Grid/GridContainer";
@@ -23,10 +21,6 @@ import { SW_FACTORY_BENEFITS_QUERY } from "gql/queries/software-factory";
 import softwareFactoryStyle from "assets/jss/softwareFactoryStyle";
 
 const useStyles = makeStyles(softwareFactoryStyle);
-
-const {
-  publicRuntimeConfig: { apiUrl },
-} = getConfig();
 
 const Benefits = () => {
   const {

@@ -25,7 +25,7 @@ const SectionArticleInfo = ({ article }) => {
   const classes = useStyles();
   const languageDate = language === "_en" ? "en" : "es";
   return (
-    <div className={classes.section}>
+    <div id="section-articleInfo" className={classes.section}>
       <GridContainer justify="center">
         <GridItem xs={12} sm={10} md={8}>
           <GridContainer>

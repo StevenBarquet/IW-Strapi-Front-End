@@ -53,7 +53,7 @@ const SectionTeams = () => {
   const { teams } = data;
 
   return (
-    <div id="section-menu" className={classes.section}>
+    <div id="section-teams" className={classes.section}>
       <GridContainer justify="center">
         <SectionTitle
           title={language === "_en" ? "Our experts" : "Nuestros Expertos"}

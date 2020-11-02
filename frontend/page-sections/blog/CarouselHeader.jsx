@@ -59,7 +59,7 @@ const CarouselHeader = () => {
   } = data;
 
   return (
-    <header id="header" className={classes.carouselContainer}>
+    <div id="carousel-header" className={classes.carouselContainer}>
       <GridItem
         xs={12}
         sm={10}
@@ -106,7 +106,7 @@ const CarouselHeader = () => {
           </Carousel>
         </Hidden>
       </GridItem>
-    </header>
+    </div>
   );
 };
 

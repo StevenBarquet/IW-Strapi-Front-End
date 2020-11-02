@@ -1,4 +1,6 @@
 // Dependencies
+import * as yup from "yup";
+import { Formik } from "formik";
 import { useQuery } from "@apollo/client";
 import Link from "next/link";
 import getConfig from "next/config";
@@ -30,6 +32,14 @@ const {
   publicRuntimeConfig: { apiUrl },
 } = getConfig();
 
+const initialValues = {
+  inscribete: "",
+};
+
+const schema = yup.object().shape({
+  inscribete: yup.string().notRequired(),
+});
+
 const SectionTags = ({ articleImg }) => {
   const {
     defaultSettings: { language },
@@ -55,6 +65,12 @@ const SectionTags = ({ articleImg }) => {
   }
 
   const { tagsBlogs } = data;
+
+  const onSubmitForm = async (values, { resetForm, setSubmitting }) => {
+    console.log("values", values);
+    resetForm();
+    setSubmitting(false);
+  };
 
   return (
     <GridItem xs={12} sm={10} md={articleImg ? 12 : 3}>
@@ -98,28 +114,42 @@ const SectionTags = ({ articleImg }) => {
             ? "Sign up for our newsletter"
             : "Inscríbete a nuestro boletín"}
         </h3>
-        <CustomInput
-          id="inscribete"
-          name="inscribete"
-          value=""
-          labelText={language === "_en" ? "Sign up" : "Inscríbete"}
-          handleChange={() => {}}
-          inputProps={{
-            name: "inscribete",
-            placeholder: language === "_en" ? "Sign up" : "Inscríbete",
-          }}
-          formControlProps={{
-            fullWidth: true,
-          }}
-        />
-        <Button
-          onClick={(e) => e.preventDefault()}
-          color="primary"
-          className={classes.btnBoletin}
-          round
+        <Formik
+          initialValues={initialValues}
+          validationSchema={schema}
+          onSubmit={onSubmitForm}
+          enableReinitialize
+          validateOnChange={false}
         >
-          {language === "_en" ? "Send" : "Enviar"}
-        </Button>
+          {({ handleChange, handleSubmit, values: { inscribete } }) => {
+            return (
+              <form onSubmit={handleSubmit}>
+                <CustomInput
+                  id="inscribete"
+                  name="inscribete"
+                  value={inscribete}
+                  labelText={language === "_en" ? "Sign up" : "Inscríbete"}
+                  handleChange={handleChange}
+                  inputProps={{
+                    name: "inscribete",
+                    placeholder: language === "_en" ? "Sign up" : "Inscríbete",
+                  }}
+                  formControlProps={{
+                    fullWidth: true,
+                  }}
+                />
+                <Button
+                  color="primary"
+                  className={classes.btnBoletin}
+                  round
+                  type="submit"
+                >
+                  {language === "_en" ? "Send" : "Enviar"}
+                </Button>
+              </form>
+            );
+          }}
+        </Formik>
       </GridItem>
       <br />
       <GridItem xs={12} sm={12} md={12}>

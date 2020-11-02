@@ -31,7 +31,7 @@ const SectionArticleText = ({ article }) => {
   const classes = useStyles();
 
   return (
-    <div>
+    <div id="section-articleText">
       <GridContainer justify="center">
         <GridItem xs={12} sm={10} md={8}>
           <RenderHTML

@@ -29,7 +29,7 @@ const {
   publicRuntimeConfig: { apiUrl },
 } = getConfig();
 
-const SectionPills = () => {
+const SectionInterested = () => {
   const {
     defaultSettings: { language },
   } = useSettings();
@@ -62,7 +62,7 @@ const SectionPills = () => {
 
   return (
     <div
-      id="section-about"
+      id="section-SectionInterested"
       className={`${classes.section} ${classes.margin5rem}`}
     >
       <GridContainer justify="center">
@@ -108,4 +108,4 @@ const SectionPills = () => {
   );
 };
 
-export default SectionPills;
+export default SectionInterested;

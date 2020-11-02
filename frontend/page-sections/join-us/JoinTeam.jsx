@@ -49,7 +49,7 @@ const JoinTeam = () => {
   } = data;
 
   return (
-    <div id="section-joinTeam" className={classes.section}>
+    <div id="section-join-team" className={classes.section}>
       <GridContainer
         justify="center"
         className={classes.sectionBackgroundColor}

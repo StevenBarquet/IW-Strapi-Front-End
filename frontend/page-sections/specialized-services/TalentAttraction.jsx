@@ -64,17 +64,15 @@ const TalentAttraction = () => {
   } = data;
 
   return (
-    <div id="section-talentAttraction" className={classes.section}>
+    <div id="section-talent-attraction" className={classes.section}>
       <GridContainer justify="center">
         <SectionTitle title={talentAttraction.title[`sectionTitle${language}`]}>
-          <>
-            <RenderHTML
-              html={
-                talentAttraction.introductoryText[`introductoryText${language}`]
-              }
-              className={classes.introductoryText}
-            />
-          </>
+          <RenderHTML
+            html={
+              talentAttraction.introductoryText[`introductoryText${language}`]
+            }
+            className={classes.introductoryText}
+          />
         </SectionTitle>
       </GridContainer>
       <GridContainer justify="center" className={classes.margin8rem}>

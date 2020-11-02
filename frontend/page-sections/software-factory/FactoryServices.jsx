@@ -64,7 +64,7 @@ const FactoryServices = () => {
   } = data;
 
   return (
-    <div id="section-factoryServices" className={classes.section}>
+    <div id="section-factory-services" className={classes.section}>
       <h1 className={`${classes.title} ${classes.textCenter}`}>
         {factoryServices.title[`sectionTitle${language}`]}
       </h1>

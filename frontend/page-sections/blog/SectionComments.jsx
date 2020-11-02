@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/anchor-has-content */
-/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -14,19 +13,13 @@ import blogStyle from "assets/jss/blogStyle";
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 
-// context
-import { useSettings } from "context/Settings";
-
 const useStyles = makeStyles(blogStyle);
 
 const SectionComments = ({ id }) => {
-  const {
-    defaultSettings: { language },
-  } = useSettings();
   const classes = useStyles();
 
   return (
-    <div className={classes.section}>
+    <div id="section-comments" className={classes.section}>
       <GridContainer justify="center">
         <GridItem xs={12} sm={10} md={10}>
           <div>

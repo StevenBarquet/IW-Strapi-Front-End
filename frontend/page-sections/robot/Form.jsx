@@ -97,7 +97,7 @@ const Form = ({ values, errors, handleChange }) => {
                     name="email"
                     value={values.email}
                     labelText={
-                      language === "_en" ? "Email" : "Eorreo electrónico"
+                      language === "_en" ? "Email" : "Correo electrónico"
                     }
                     handleChange={handleChange}
                     errors={errors && !!errors.email}

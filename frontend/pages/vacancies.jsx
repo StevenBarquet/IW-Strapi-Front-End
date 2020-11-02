@@ -32,8 +32,10 @@ const useStyles = makeStyles(joinUsStyle);
 const Vacancies = () => {
   const classes = useStyles();
 
-  const onSubmitForm = async (values) => {
+  const onSubmitForm = async (values, { resetForm, setSubmitting }) => {
     console.log("values", values);
+    resetForm();
+    setSubmitting(false);
   };
 
   return (

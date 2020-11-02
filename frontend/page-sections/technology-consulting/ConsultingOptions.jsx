@@ -10,10 +10,6 @@ import Hidden from "@material-ui/core/Hidden";
 // context
 import { useSettings } from "context/Settings";
 
-// components
-import RenderHTML from "components/HTML/RenderHTML";
-import GridItem from "components/Grid/GridItem";
-
 // gql
 import { TECHNOLOGY_CONSULTING_CONSULTING_QUERY } from "gql/queries/technology-consulting";
 

@@ -44,19 +44,19 @@ const PartnerCard = ({ card: { front, back }, numCard }) => {
       const rotatingCard = rotatingCards[i];
       const cardFront = rotatingCard.getElementsByClassName(classes.front)[0];
       const cardBack = rotatingCard.getElementsByClassName(classes.back)[0];
-      cardFront.style.height = "unset";
-      cardFront.style.width = "unset";
-      cardBack.style.height = "unset";
-      cardBack.style.width = "unset";
+      cardFront.style.height = "370px";
+      cardFront.style.width = "459px";
+      cardBack.style.height = "370px";
+      cardBack.style.width = "459px";
       const rotatingWrapper = rotatingCard.parentElement;
       const cardWidth = rotatingCard.parentElement.offsetWidth;
       const cardHeight = rotatingCard.children[0].children[0].offsetHeight;
       rotatingWrapper.style.height = `${cardHeight}px`;
       rotatingWrapper.style["margin-bottom"] = `${30}px`;
-      cardFront.style.height = "unset";
-      cardFront.style.width = "unset";
-      cardBack.style.height = "unset";
-      cardBack.style.width = "unset";
+      cardFront.style.height = "370px";
+      cardFront.style.width = "459px";
+      cardBack.style.height = "370px";
+      cardBack.style.width = "459px";
       cardFront.style.height = `${cardHeight + 35}px`;
       cardFront.style.width = `${cardWidth}px`;
       cardBack.style.height = `${cardHeight + 35}px`;
@@ -94,9 +94,9 @@ const PartnerCard = ({ card: { front, back }, numCard }) => {
         <div
           className={`${classes.rotatingCardContainer} ${classes.manualRotate} ${activeRotate}`}
         >
-          <Card className={classes.cardRotate}>
+          <Card pricing className={classes.cardRotate}>
             <div className={classes.front}>
-              <CardBody className={classes.cardBodyRotate}>
+              <CardBody className={classes.cardBodyRotate} pricing plain>
                 <legend className={classes.title}>
                   {front[`frontCardTitle${language}`]}
                 </legend>

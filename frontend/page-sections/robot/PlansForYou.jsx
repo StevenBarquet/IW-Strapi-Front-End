@@ -72,6 +72,7 @@ const PlansForYou = () => {
                     <ScrollAnimation
                       animateIn="bounceInUp"
                       duration={index + 1}
+                      animateOnce
                     >
                       <Card pricing className={classes.margimTop4rem}>
                         <CardHeader

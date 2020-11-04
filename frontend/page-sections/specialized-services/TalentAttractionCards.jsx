@@ -1,9 +1,6 @@
 // Dependencies
 import { useQuery } from "@apollo/client";
 
-// library used for cool animations
-import ScrollAnimation from "react-animate-on-scroll";
-
 // core-components
 import RotatingCard from "components-sections/home/RotatingCard";
 

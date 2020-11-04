@@ -68,7 +68,7 @@ const SectionTitle = ({
 
   const Icon = () => {
     return (
-      <ScrollAnimation animateIn="slideInUp">
+      <ScrollAnimation animateIn="slideInUp" animateOnce>
         <img
           src={`${apiUrl}${icon.url}`}
           alt={icon.alternativeText}
@@ -84,7 +84,7 @@ const SectionTitle = ({
       {legend && <p className={classes.legend}>{legend}</p>}
       {title &&
         (effect ? (
-          <ScrollAnimation animateIn="flipInX" duration={2}>
+          <ScrollAnimation animateIn="flipInX" duration={2} animateOnce>
             <h1 className={classes.title}>{title}</h1>
           </ScrollAnimation>
         ) : (

@@ -110,7 +110,7 @@ const TalentAttraction = () => {
           </GridItem>
         </GridItem>
         <GridItem xs={12} sm={12} md={5}>
-          <ScrollAnimation animateIn="bounceInRight" duration={3}>
+          <ScrollAnimation animateIn="bounceInRight" duration={3} animateOnce>
             <img
               src={`${apiUrl}${talentAttraction.contactus.sectionIcon.url}`}
               alt={talentAttraction.contactus.sectionIcon.alternativeText}

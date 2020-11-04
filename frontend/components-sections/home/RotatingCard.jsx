@@ -86,7 +86,11 @@ const PartnerCard = ({ card: { front, back }, numCard }) => {
 
   return (
     <GridItem xs={12} sm={6} md={6} lg={4}>
-      <ScrollAnimation animateIn="bounceInUp" duration={numCard + 1}>
+      <ScrollAnimation
+        animateIn="bounceInUp"
+        duration={numCard + 1}
+        animateOnce
+      >
         <div
           className={`${classes.rotatingCardContainer} ${classes.manualRotate} ${activeRotate}`}
         >

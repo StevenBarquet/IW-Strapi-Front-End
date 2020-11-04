@@ -31,8 +31,8 @@ const BusinessPartnersCards = () => {
     home: { businessPartnersCards },
   } = data;
 
-  return businessPartnersCards.map((card) => (
-    <RotatingCard key={card.id} card={card} />
+  return businessPartnersCards.map((card, index) => (
+    <RotatingCard key={card.id} card={card} numCard={index} />
   ));
 };
 

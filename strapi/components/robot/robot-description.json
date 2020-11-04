@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_robot_robot_descriptions",
+  "info": {
+    "name": "robotDescription",
+    "icon": "comment-dots"
+  },
+  "options": {},
+  "attributes": {
+    "sectionIcon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "introductoryText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.introductory-text"
+    }
+  }
+}

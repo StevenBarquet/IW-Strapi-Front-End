@@ -33,8 +33,8 @@ const TaskOptimizationCard = () => {
     technologyConsulting: { taskOptimizationCards },
   } = data;
 
-  return taskOptimizationCards.map((card) => (
-    <RotatingCard key={card.id} card={card} />
+  return taskOptimizationCards.map((card, index) => (
+    <RotatingCard key={card.id} card={card} numCard={index} />
   ));
 };
 

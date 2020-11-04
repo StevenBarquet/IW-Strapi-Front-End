@@ -51,7 +51,10 @@ const TimeMarket = () => {
   return (
     <div id="section-time-market" className={classes.section}>
       <GridContainer justify="center">
-        <SectionTitle title={timeMarket.title[`sectionTitle${language}`]}>
+        <SectionTitle
+          title={timeMarket.title[`sectionTitle${language}`]}
+          effect
+        >
           <RenderHTML
             html={timeMarket.introductoryText[`introductoryText${language}`]}
             className={classes.swDescription}

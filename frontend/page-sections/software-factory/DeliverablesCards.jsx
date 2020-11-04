@@ -33,8 +33,8 @@ const DeliverablesCards = () => {
     softwareFactory: { deliverablesCards },
   } = data;
 
-  return deliverablesCards.map((card) => (
-    <RotatingCard key={card.id} card={card} />
+  return deliverablesCards.map((card, index) => (
+    <RotatingCard key={card.id} card={card} numCard={index} />
   ));
 };
 

@@ -7,6 +7,10 @@ import Carousel from "react-slick";
 import { makeStyles } from "@material-ui/core/styles";
 import Hidden from "@material-ui/core/Hidden";
 
+// Components core
+import SectionTitle from "components-sections/SectionTitle";
+import GridContainer from "components/Grid/GridContainer";
+
 // context
 import { useSettings } from "context/Settings";
 
@@ -67,6 +71,12 @@ const SuccessStories = () => {
 
   return (
     <div id="section-success-stories" className={`${classes.section}`}>
+      <GridContainer justify="center">
+        <SectionTitle
+          icon={successStories.sectionIcon}
+          title={successStories.title[`sectionTitle${language}`]}
+        />
+      </GridContainer>
       <Hidden only={["sm", "md", "lg", "xl"]}>
         <Carousel {...sliderSettings}>
           {successStories.successStoriesCarousel[`small_images${language}`].map(

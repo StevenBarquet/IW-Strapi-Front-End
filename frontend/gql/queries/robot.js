@@ -30,25 +30,15 @@ const ROBOT_FUNTIONING_QUERY = gql`
   query Funtioning {
     robot {
       funtioning {
-        id
         header {
-          small_images {
-            id
+          sectionIcon {
             url
             alternativeText
           }
-          medium_images {
-            id
-            url
-            alternativeText
+          introductoryText {
+            introductoryText
+            introductoryText_en
           }
-          large_images {
-            id
-            url
-            alternativeText
-          }
-          caption
-          caption_en
         }
         title {
           sectionTitle

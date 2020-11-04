@@ -60,6 +60,7 @@ const TaskOptimization = () => {
           legend={taskOptimization.legend[`sectionLegendTitle${language}`]}
           title={taskOptimization.title[`sectionTitle${language}`]}
           subTitle={taskOptimization.subtitle[`sectionSubTitle${language}`]}
+          effect
         >
           <div className={classes.section}>
             <h1 className={`${classes.title} ${classes.textCenter}`}>

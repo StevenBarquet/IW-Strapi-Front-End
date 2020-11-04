@@ -6,6 +6,9 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
+// library used for cool animations
+import ScrollAnimation from "react-animate-on-scroll";
+
 // core-components
 import GridItem from "components/Grid/GridItem";
 
@@ -37,22 +40,41 @@ const sectionTitleStyle = {
     ...subTitle,
     color: "#21646D",
   },
+  animationFlipInX: {
+    animation: "flipInX",
+    animationDuration: "3s",
+  },
+
+  animationSlideInUp: {
+    animation: "slideInUp",
+    animationDuration: "3s",
+  },
   centerImage,
 };
 
 const useStyles = makeStyles(sectionTitleStyle);
 
 // eslint-disable-next-line no-shadow
-const SectionTitle = ({ legend, title, subTitle, icon, children, changeColor }) => {
+const SectionTitle = ({
+  legend,
+  title,
+  subTitle,
+  icon,
+  effect,
+  children,
+  changeColor,
+}) => {
   const classes = useStyles();
 
   const Icon = () => {
     return (
-      <img
-        src={`${apiUrl}${icon.url}`}
-        alt={icon.alternativeText}
-        className={classNames(classes.centerImage, "lazyload")}
-      />
+      <ScrollAnimation animateIn="slideInUp">
+        <img
+          src={`${apiUrl}${icon.url}`}
+          alt={icon.alternativeText}
+          className={classNames(classes.centerImage, "lazyload")}
+        />
+      </ScrollAnimation>
     );
   };
 
@@ -60,7 +82,14 @@ const SectionTitle = ({ legend, title, subTitle, icon, children, changeColor }) 
     <GridItem xs={10} sm={9} md={8} lg={10}>
       {icon && <Icon />}
       {legend && <p className={classes.legend}>{legend}</p>}
-      {title && <h1 className={classes.title}>{title}</h1>}
+      {title &&
+        (effect ? (
+          <ScrollAnimation animateIn="flipInX" duration={2}>
+            <h1 className={classes.title}>{title}</h1>
+          </ScrollAnimation>
+        ) : (
+          <h1 className={classes.title}>{title}</h1>
+        ))}
       {subTitle && (
         <h2 className={changeColor ? classes.subTitleColor : classes.subTitle}>
           {subTitle}
@@ -78,6 +107,7 @@ SectionTitle.defaultProps = {
   icon: null,
   children: null,
   changeColor: false,
+  effect: false,
 };
 
 SectionTitle.propTypes = {
@@ -88,6 +118,7 @@ SectionTitle.propTypes = {
     url: PropTypes.string,
     alt: PropTypes.string,
   }),
+  effect: PropTypes.bool,
   changeColor: PropTypes.bool,
   children: PropTypes.element,
 };

@@ -5,6 +5,9 @@ import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
+// library used for cool animations
+import ScrollAnimation from "react-animate-on-scroll";
+
 // @material-ui/core components
 import Icon from "@material-ui/core/Icon";
 import IconButton from "@material-ui/core/IconButton";
@@ -28,7 +31,7 @@ const {
 
 const useStyles = makeStyles(rotatingCardStyle);
 
-const PartnerCard = ({ card: { front, back } }) => {
+const PartnerCard = ({ card: { front, back }, numCard }) => {
   const {
     defaultSettings: { language },
   } = useSettings();
@@ -83,61 +86,63 @@ const PartnerCard = ({ card: { front, back } }) => {
 
   return (
     <GridItem xs={12} sm={6} md={6} lg={4}>
-      <div
-        className={`${classes.rotatingCardContainer} ${classes.manualRotate} ${activeRotate}`}
-      >
-        <Card className={classes.cardRotate}>
-          <div className={classes.front}>
-            <CardBody className={classes.cardBodyRotate}>
-              <legend className={classes.title}>
-                {front[`frontCardTitle${language}`]}
-              </legend>
-              <img
-                src={`${apiUrl}${front.brandImage.url}`}
-                alt="Partner Card"
-                style={{ maxWidth: "100%", display: "block", margin: "auto" }}
-              />
-              <div className={classes.cardBodyContent}>
-                <span>{front[`partnerType${language}`]}</span>
-                <p>{front[`allianceTime${language}`]}</p>
-              </div>
-            </CardBody>
-            <CardFooter>
-              <div style={{ width: "100%" }}>
-                <Button
-                  link
-                  className={classes.floatRight}
-                  onClick={() => setActiveRotate(classes.activateRotate)}
-                >
-                  {front[`buttonLabel${language}`]}
-                </Button>
-              </div>
-            </CardFooter>
-          </div>
-          <div className={classes.back}>
-            <CardBody className={classes.cardBodyRotate}>
-              <div className={classes.backContainer}>
-                <h2>{back[`backCardTitle${language}`]}</h2>
-                <div className={classes.backSolutionsList}>
-                  <CardBackList />
+      <ScrollAnimation animateIn="bounceInUp" duration={numCard + 1}>
+        <div
+          className={`${classes.rotatingCardContainer} ${classes.manualRotate} ${activeRotate}`}
+        >
+          <Card className={classes.cardRotate}>
+            <div className={classes.front}>
+              <CardBody className={classes.cardBodyRotate}>
+                <legend className={classes.title}>
+                  {front[`frontCardTitle${language}`]}
+                </legend>
+                <img
+                  src={`${apiUrl}${front.brandImage.url}`}
+                  alt="Partner Card"
+                  style={{ maxWidth: "100%", display: "block", margin: "auto" }}
+                />
+                <div className={classes.cardBodyContent}>
+                  <span>{front[`partnerType${language}`]}</span>
+                  <p>{front[`allianceTime${language}`]}</p>
                 </div>
-              </div>
-            </CardBody>
-            <CardFooter>
-              <div className={classes.backFooterContainer}>
-                <IconButton
-                  color="inherit"
-                  aria-label={`rotating card ${front.frontCardTitle}`}
-                  className={classes.floatRight}
-                  onClick={() => setActiveRotate("")}
-                >
-                  <Icon>replay</Icon>
-                </IconButton>
-              </div>
-            </CardFooter>
-          </div>
-        </Card>
-      </div>
+              </CardBody>
+              <CardFooter>
+                <div style={{ width: "100%" }}>
+                  <Button
+                    link
+                    className={classes.floatRight}
+                    onClick={() => setActiveRotate(classes.activateRotate)}
+                  >
+                    {front[`buttonLabel${language}`]}
+                  </Button>
+                </div>
+              </CardFooter>
+            </div>
+            <div className={classes.back}>
+              <CardBody className={classes.cardBodyRotate}>
+                <div className={classes.backContainer}>
+                  <h2>{back[`backCardTitle${language}`]}</h2>
+                  <div className={classes.backSolutionsList}>
+                    <CardBackList />
+                  </div>
+                </div>
+              </CardBody>
+              <CardFooter>
+                <div className={classes.backFooterContainer}>
+                  <IconButton
+                    color="inherit"
+                    aria-label={`rotating card ${front.frontCardTitle}`}
+                    className={classes.floatRight}
+                    onClick={() => setActiveRotate("")}
+                  >
+                    <Icon>replay</Icon>
+                  </IconButton>
+                </div>
+              </CardFooter>
+            </div>
+          </Card>
+        </div>
+      </ScrollAnimation>
     </GridItem>
   );
 };
@@ -147,6 +152,7 @@ PartnerCard.defaultProps = {
     front: {},
     back: {},
   },
+  numCard: null,
 };
 
 PartnerCard.propTypes = {
@@ -170,6 +176,7 @@ PartnerCard.propTypes = {
       ),
     }),
   }),
+  numCard: PropTypes.number,
 };
 
 export default PartnerCard;

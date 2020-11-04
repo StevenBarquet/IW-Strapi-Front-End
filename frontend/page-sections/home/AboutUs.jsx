@@ -55,6 +55,7 @@ const SectionAboutUs = () => {
         <SectionTitle
           legend={aboutUs.legend[`sectionLegendTitle${language}`]}
           title={aboutUs.title[`sectionTitle${language}`]}
+          effect
         >
           <>
             <RenderHTML

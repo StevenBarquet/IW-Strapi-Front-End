@@ -6,6 +6,9 @@ import { useQuery } from "@apollo/client";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
+// library used for cool animations
+import ScrollAnimation from "react-animate-on-scroll";
+
 // core-components
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
@@ -66,7 +69,10 @@ const TalentAttraction = () => {
   return (
     <div id="section-talent-attraction" className={classes.section}>
       <GridContainer justify="center">
-        <SectionTitle title={talentAttraction.title[`sectionTitle${language}`]}>
+        <SectionTitle
+          title={talentAttraction.title[`sectionTitle${language}`]}
+          effect
+        >
           <RenderHTML
             html={
               talentAttraction.introductoryText[`introductoryText${language}`]
@@ -103,12 +109,14 @@ const TalentAttraction = () => {
             </Button>
           </GridItem>
         </GridItem>
-        <GridItem xs={12} sm={12} md={3} lg={3}>
-          <img
-            src={`${apiUrl}${talentAttraction.contactus.sectionIcon.url}`}
-            alt={talentAttraction.contactus.sectionIcon.alternativeText}
-            style={{ width: "98%" }}
-          />
+        <GridItem xs={12} sm={12} md={5}>
+          <ScrollAnimation animateIn="bounceInRight" duration={3}>
+            <img
+              src={`${apiUrl}${talentAttraction.contactus.sectionIcon.url}`}
+              alt={talentAttraction.contactus.sectionIcon.alternativeText}
+              style={{ width: "98%" }}
+            />
+          </ScrollAnimation>
         </GridItem>
       </GridContainer>
     </div>

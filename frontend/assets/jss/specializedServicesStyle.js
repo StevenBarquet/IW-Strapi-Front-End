@@ -60,6 +60,10 @@ const specializedServicesStyle = () => ({
       marginTop: "3rem",
     },
   },
+  animationBounceInRight: {
+    animation: "bounceInRight",
+    animationDuration: "3s",
+  },
 });
 
 export default specializedServicesStyle;

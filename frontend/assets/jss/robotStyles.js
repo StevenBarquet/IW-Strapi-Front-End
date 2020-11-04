@@ -104,6 +104,23 @@ const robotStyle = () => ({
     ...section,
     paddingBottom: "0px !important",
   },
+  swDescription: {
+    ...textCenter,
+    margin: "4rem 0rem",
+    minHeight: "32px",
+    color: "#383838",
+    "& p": {
+      fontSize: "1.8rem",
+      color: "#383838",
+    },
+    "@media (max-width: 736px)": {
+      "& p": {
+        fontSize: "1.3rem",
+        color: "#383838",
+        minHeight: "32px",
+      },
+    },
+  },
   descriptionText: {
     marginTop: "0px !important",
     textDecoration: "none",
@@ -167,6 +184,10 @@ const robotStyle = () => ({
       marginLeft: "auto",
       marginRight: "auto",
     },
+  },
+  animationBounceInUp: {
+    animation: "bounceInUp",
+    animationDuration: "3s",
   },
 });
 

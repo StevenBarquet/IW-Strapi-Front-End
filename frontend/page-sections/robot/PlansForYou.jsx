@@ -4,6 +4,9 @@ import { useQuery } from "@apollo/client";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
+// library used for cool animations
+import ScrollAnimation from "react-animate-on-scroll";
+
 // core-components
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
@@ -61,29 +64,38 @@ const PlansForYou = () => {
           title={plansForYou.title[`sectionTitle${language}`]}
         >
           <>
-            <GridContainer className={classes.margimTop7rem}>
+            <GridContainer className={`${classes.margimTop7rem}`}>
               {plansForYou.cardsPlans.map((item, index) => {
                 return (
                   <GridItem xs={12} sm={12} md={6} lg={4} key={item.id}>
                     {index !== 1 && <br />}
-                    <Card pricing className={classes.margimTop4rem}>
-                      <CardHeader className={classes.cardPosition} image plain>
-                        <div className={classes.backgroundContainer}>
-                          <p className={classes.textBackground}>
-                            {item[`sectionTitle${language}`]}
-                          </p>
-                        </div>
-                      </CardHeader>
-                      <CardBody pricing plain>
-                        <h1 className={classes.cardTitle}>
-                          {item[`sectionSubTitle${language}`]}
-                        </h1>
-                        <RenderHTML
-                          className={classes.textDescription6rem}
-                          html={item[`description${language}`]}
-                        />
-                      </CardBody>
-                    </Card>
+                    <ScrollAnimation
+                      animateIn="bounceInUp"
+                      duration={index + 1}
+                    >
+                      <Card pricing className={classes.margimTop4rem}>
+                        <CardHeader
+                          className={classes.cardPosition}
+                          image
+                          plain
+                        >
+                          <div className={classes.backgroundContainer}>
+                            <p className={classes.textBackground}>
+                              {item[`sectionTitle${language}`]}
+                            </p>
+                          </div>
+                        </CardHeader>
+                        <CardBody pricing plain>
+                          <h1 className={classes.cardTitle}>
+                            {item[`sectionSubTitle${language}`]}
+                          </h1>
+                          <RenderHTML
+                            className={classes.textDescription6rem}
+                            html={item[`description${language}`]}
+                          />
+                        </CardBody>
+                      </Card>
+                    </ScrollAnimation>
                   </GridItem>
                 );
               })}

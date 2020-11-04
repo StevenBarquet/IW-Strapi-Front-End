@@ -54,6 +54,7 @@ const QADescription = () => {
           legend={qaDescription.legend[`sectionLegendTitle${language}`]}
           title={qaDescription.title[`sectionTitle${language}`]}
           subTitle={qaDescription.subtitle[`sectionSubTitle${language}`]}
+          effect
         />
       </GridContainer>
     </div>

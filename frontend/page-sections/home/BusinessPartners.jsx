@@ -62,7 +62,9 @@ const BusinessPartners = () => {
           title={businessPartners.title[`sectionTitle${language}`]}
           subTitle={businessPartners.subTitle[`sectionSubTitle${language}`]}
         >
-          <SectionBusinessPartnersCards />
+          <GridContainer justify="center">
+            <SectionBusinessPartnersCards />
+          </GridContainer>
         </SectionTitle>
       </GridContainer>
     </div>

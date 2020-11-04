@@ -1,6 +1,9 @@
 // Dependencies
 import { useQuery } from "@apollo/client";
 
+// library used for cool animations
+import ScrollAnimation from "react-animate-on-scroll";
+
 // core-components
 import RotatingCard from "components-sections/home/RotatingCard";
 
@@ -33,8 +36,8 @@ const TalentAttractionCards = () => {
     specializedService: { talentAttractionCards },
   } = data;
 
-  return talentAttractionCards.map((card) => (
-    <RotatingCard key={card.id} card={card} />
+  return talentAttractionCards.map((card, index) => (
+    <RotatingCard key={card.id} card={card} numCard={index} />
   ));
 };
 

@@ -1,7 +1,7 @@
 module.exports = {
   settings: {
     cors: {
-      origin: ['https://www.interware.mx', 'https://www.interware.mx/', 'https://www.interware.mx:1337'],
+      origin: ['https://interware.mx/', 'https://www.interware.mx', 'https://interware.mx:1337' , 'https://www.interware.mx:1337'],
     },
   },
 };

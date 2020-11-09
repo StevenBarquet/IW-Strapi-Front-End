@@ -1,5 +1,6 @@
 // Dependencies
 import getConfig from "next/config";
+import Image from "next/image";
 import { useQuery } from "@apollo/client";
 import Carousel from "react-slick";
 
@@ -70,15 +71,19 @@ const Header = () => {
     <header id="header" className={classes.carouselContainer}>
       <Hidden only={["sm", "md", "lg", "xl"]}>
         <Carousel {...sliderSettings}>
-          {header.small_images.map((image) => (
-            <div key={image.id}>
-              <img
-                src={`${apiUrl}${image.url}`}
-                alt={image.alternativeText}
-                className="slick-image"
-              />
-            </div>
-          ))}
+          {header.small_images.map((image) => {
+            return (
+              <div key={image.id}>
+                <Image
+                  src={`${apiUrl}${image.url}`}
+                  alt={image.alternativeText}
+                  className="slick-image"
+                  width={image.width}
+                  height={image.height}
+                />
+              </div>
+            );
+          })}
         </Carousel>
       </Hidden>
       <Hidden only={["xs", "md", "lg", "xl"]}>

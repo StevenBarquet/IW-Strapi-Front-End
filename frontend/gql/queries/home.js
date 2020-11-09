@@ -9,16 +9,22 @@ const HOME_HEADER_QUERY = gql`
           id
           url
           alternativeText
+          width
+          height
         }
         medium_images {
           id
           url
           alternativeText
+          width
+          height
         }
         large_images {
           id
           url
           alternativeText
+          width
+          height
         }
         caption
         caption_en

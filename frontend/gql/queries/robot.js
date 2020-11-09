@@ -8,16 +8,22 @@ const ROBOT_HEADER_QUERY = gql`
           id
           url
           alternativeText
+          width
+          height
         }
         medium_image {
           id
           url
           alternativeText
+          width
+          height
         }
         large_image {
           id
           url
           alternativeText
+          width
+          height
         }
         title
         title_en
@@ -34,6 +40,8 @@ const ROBOT_FUNTIONING_QUERY = gql`
           sectionIcon {
             url
             alternativeText
+            width
+            height
           }
           introductoryText {
             introductoryText
@@ -61,6 +69,8 @@ const ROBOT_BENEFITS_QUERY = gql`
         sectionIcon {
           url
           alternativeText
+          width
+          height
         }
         legend {
           sectionLegendTitle
@@ -93,6 +103,8 @@ const ROBOT_FORM_QUERY = gql`
         sectionIcon {
           url
           alternativeText
+          width
+          height
         }
         title {
           sectionTitle
@@ -122,6 +134,8 @@ const ROBOT_PLANSFORYOU_QUERY = gql`
         sectionIcon {
           url
           alternativeText
+          width
+          height
         }
         legend {
           sectionLegendTitle

@@ -1,5 +1,6 @@
 // Dependencies
 import getConfig from "next/config";
+import Image from "next/image";
 import { useQuery } from "@apollo/client";
 
 // @material-ui/core components
@@ -68,9 +69,11 @@ const TechnologyImplementation = () => {
             className={`${classes.section} ${classes.margin5Rem}`}
           >
             <GridItem xs={6} sm={6} md={5}>
-              <img
+              <Image
                 src={`${apiUrl}${technologyImplementation.scrum.url}`}
                 alt={technologyImplementation.scrum.alternativeText}
+                width={technologyImplementation.scrum.width}
+                height={technologyImplementation.scrum.height}
               />
               <GridItem xs={12} sm={8} md={3}>
                 <h1 className={classes.technologyTitle}>
@@ -83,9 +86,11 @@ const TechnologyImplementation = () => {
               </GridItem>
             </GridItem>
             <GridItem xs={10} sm={6} md={2}>
-              <img
+              <Image
                 src={`${apiUrl}${technologyImplementation.devOps.url}`}
-                alt={technologyImplementation.scrum.alternativeText}
+                alt={technologyImplementation.devOps.alternativeText}
+                width={technologyImplementation.devOps.width}
+                height={technologyImplementation.devOps.height}
               />
               <GridItem xs={12} sm={12} md={12} style={{ marginTop: "1.9rem" }}>
                 <h1 className={classes.technologyTitle}>

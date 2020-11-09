@@ -330,8 +330,8 @@ const textCenter = {
 
 const centerImage = {
   display: "block",
-  marginLeft: "auto",
-  marginRight: "auto",
+  marginLeft: "auto !important",
+  marginRight: "auto !important",
 };
 
 const btnLink = {

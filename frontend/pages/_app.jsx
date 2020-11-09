@@ -10,9 +10,6 @@ import PageChange from "components/PageChange/PageChange";
 // context
 import { SettingsProvider } from "context/Settings";
 
-// lazysizes
-import "assets/js/lazysizes.min";
-
 // Styles
 import "assets/scss/nextjs-material-kit-pro.scss";
 import "animate.css/animate.min.css";

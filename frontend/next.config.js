@@ -11,6 +11,9 @@ const nextConfig = {
   publicRuntimeConfig: {
     apiUrl: process.env.API_URL,
   },
+  images: {
+    domains: ["localhost", "interware.mx"],
+  },
 };
 
 const mainConfig = {

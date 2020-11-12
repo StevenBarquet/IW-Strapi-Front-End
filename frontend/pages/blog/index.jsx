@@ -1,15 +1,9 @@
 // Dependencies
 import React, { useState } from "react";
-import dynamic from "next/dynamic";
-
-// nodejs library that concatenates classes
 import classNames from "classnames";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
-// apollo
-import { withApollo } from "libs/apollo";
 
 // layout
 import withLayout from "layouts/main";
@@ -18,15 +12,14 @@ import withLayout from "layouts/main";
 import blogStyle from "assets/jss/blogStyle";
 
 // sections
-const Header = dynamic(import("page-sections/blog/Header"));
-const SectionPills = dynamic(import("page-sections/blog/SectionPills"));
-const SectionTeams = dynamic(import("page-sections/blog/SectionTeams"));
+import Header from "page-sections/blog/Header";
+import SectionPills from "page-sections/blog/SectionPills";
+import SectionTeams from "page-sections/blog/SectionTeams";
 
 const useStyles = makeStyles(blogStyle);
 
 const HomePage = () => {
   const [categoryID, setcategoryID] = useState("");
-  const [pageArticle, setPageArticle] = useState(1);
   const [btnHome, setbtnHome] = useState(true);
   const classes = useStyles();
 
@@ -40,7 +33,6 @@ const HomePage = () => {
       setcategoryID(categoty.id);
       setbtnHome(false);
     }
-    setPageArticle(1);
   };
 
   return (
@@ -48,8 +40,6 @@ const HomePage = () => {
       <Header />
       <main className={classNames(classes.main, classes.mainRaised)}>
         <SectionPills
-          setPageArticle={setPageArticle}
-          pageArticle={pageArticle}
           categoryID={categoryID}
           btnHome={btnHome}
           articleCategory={articleCategory}
@@ -60,4 +50,4 @@ const HomePage = () => {
   );
 };
 
-export default withApollo(withLayout(HomePage));
+export default withLayout(HomePage);

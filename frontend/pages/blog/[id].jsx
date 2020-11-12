@@ -12,11 +12,10 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 
-// apollo
-import { withApollo } from "libs/apollo";
+import { initializeApollo } from "libs/apollo";
 
 // gql
-import { BLOG_ARTICLE_QUERY } from "gql/queries/blog";
+import { BLOG_ARTICLES_QUERY, BLOG_ARTICLE_QUERY } from "gql/queries/blog";
 
 // layout
 import withLayout from "layouts/main";
@@ -117,4 +116,37 @@ const ArticlePage = () => {
   );
 };
 
-export default withApollo(withLayout(ArticlePage));
+export async function getStaticPaths() {
+  const apolloClient = initializeApollo();
+
+  const { data } = await apolloClient.query({
+    query: BLOG_ARTICLES_QUERY,
+  });
+
+  return {
+    paths: data.articles.map((article) => ({
+      params: {
+        id: article.id,
+      },
+    })),
+    fallback: true,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const apolloClient = initializeApollo();
+
+  const { data } = await apolloClient.query({
+    query: BLOG_ARTICLE_QUERY,
+    variables: {
+      id: params.id,
+    },
+  });
+
+  return {
+    props: { id: data.article.id },
+    revalidate: 1,
+  };
+}
+
+export default withLayout(ArticlePage);

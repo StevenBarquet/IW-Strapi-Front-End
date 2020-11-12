@@ -41,21 +41,6 @@ const homeStyle = (theme) => ({
     marginTop: "-1.2rem",
     marginBottom: "2rem",
   },
-  technologyTitle: {
-    opacity: 0.7,
-    color: "#21646D",
-    fontSize: "30px",
-    fontWeight: 700,
-    lineHeight: "40px",
-    textAlign: "center",
-    "@media (max-width: 736px)": {
-      marginBottom: "5rem",
-      fontSize: "22px",
-    },
-  },
-  margin5Rem: {
-    marginTop: "4rem",
-  },
   businessListContainer: {
     [theme.breakpoints.down("md")]: {
       marginTop: "2rem",
@@ -98,6 +83,26 @@ const homeStyle = (theme) => ({
         },
       },
     },
+  },
+  technologyImplementationTitle: {
+    opacity: 0.7,
+    color: "#21646D",
+    fontSize: "30px",
+    fontWeight: 700,
+    lineHeight: "40px",
+    textAlign: "center",
+    "@media (max-width: 736px)": {
+      marginBottom: "5rem",
+      fontSize: "22px",
+    },
+  },
+  marginTopDefault: {
+    marginTop: "4rem",
+  },
+  technologyImplementation: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
 });
 

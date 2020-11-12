@@ -1,6 +1,5 @@
 // Dependencies
 import getConfig from "next/config";
-import Image from "next/image";
 import PropTypes from "prop-types";
 
 // @material-ui/core components
@@ -35,19 +34,11 @@ const SectionTitle = ({
   const Icon = () => {
     return (
       <ScrollAnimation animateIn="slideInUp" animateOnce>
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <Image
+        <div>
+          <img
             src={`${apiUrl}${icon.url}`}
             alt={icon.alternativeText}
             className={classes.centerImage}
-            width={icon.width}
-            height={icon.height}
           />
         </div>
       </ScrollAnimation>

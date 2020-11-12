@@ -1,6 +1,5 @@
 // Dependencies
 import getConfig from "next/config";
-import Image from "next/image";
 import { useQuery } from "@apollo/client";
 import Carousel from "react-slick";
 import PropTypes from "prop-types";
@@ -38,12 +37,11 @@ const Header = () => {
   const sliderSettings = {
     autoplay: true,
     dots: true,
-    lazyLoad: "ondemand",
+    lazyLoad: true,
     infinite: true,
     speed: 1500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: true,
     arrows: false,
   };
 
@@ -70,13 +68,10 @@ const Header = () => {
 
   const ImageComponent = ({ image }) => (
     <div>
-      <Image
+      <img
         src={`${apiUrl}${image.url}`}
         alt={image.alternativeText}
         className="slick-image"
-        layout="responsive"
-        width={image.width}
-        height={image.height}
       />
     </div>
   );

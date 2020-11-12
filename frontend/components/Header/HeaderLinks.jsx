@@ -8,7 +8,6 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Icon from "@material-ui/core/Icon";
 
 // core components
 import CustomDropDown from "components/CustomDropDown/CustomDropDown";
@@ -59,24 +58,16 @@ const HeaderLinks = () => {
               key={navigationMenuItem.path}
               className={classes.listItem}
             >
-              <Button
-                className={classNames(classes.navLink, {
-                  [classes.selectedNavLink]:
-                    router.pathname === navigationMenuItem.path,
-                })}
-                onClick={() => router.push(navigationMenuItem.path)}
-                color={
-                  router.pathname === navigationMenuItem.path
-                    ? "primary"
-                    : "transparent"
-                }
-              >
-                <Link href={navigationMenuItem.path}>
-                  <a>
-                    {navigationMenuItem[`label${defaultSettings.language}`]}
-                  </a>
-                </Link>
-              </Button>
+              <Link href={navigationMenuItem.path}>
+                <a
+                  className={classNames(classes.navLink, {
+                    [classes.selectedNavLink]:
+                      router.pathname === navigationMenuItem.path,
+                  })}
+                >
+                  {navigationMenuItem[`label${defaultSettings.language}`]}
+                </a>
+              </Link>
             </ListItem>
           );
         }
@@ -91,11 +82,14 @@ const HeaderLinks = () => {
                 className: classes.navLink,
                 color: "transparent",
               }}
+              navDropdown
+              link
               dropdownList={navigationMenuItem.nestedLinks.map((nestedLink) => (
                 <Link href={nestedLink.path}>
                   <a>{nestedLink[`label${defaultSettings.language}`]}</a>
                 </Link>
               ))}
+              onClick={(e) => router.push(e.props.href)}
             />
           </ListItem>
         );
@@ -104,21 +98,19 @@ const HeaderLinks = () => {
         <div>
           <Button
             onClick={() => changeSettings({ language: "" })}
-            round
-            justIcon
             disabled={!defaultSettings.language}
             color="transparent"
+            className={classes.navLink}
           >
-            <Icon>flag</Icon>
+            ES
           </Button>
           <Button
             onClick={() => changeSettings({ language: "_en" })}
-            round
-            justIcon
             disabled={defaultSettings.language === "_en"}
             color="transparent"
+            className={classes.navLink}
           >
-            <Icon>emoji_flags</Icon>
+            EN
           </Button>
         </div>
       </ListItem>

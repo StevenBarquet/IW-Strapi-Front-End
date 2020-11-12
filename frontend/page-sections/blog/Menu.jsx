@@ -53,23 +53,17 @@ const Menu = ({ articleCategory, categoryID, btnHome }) => {
         <GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
           <Button
             onClick={() => articleCategory("HOME", false)}
-            color="behance"
-            className={
-              btnHome ? classes.bottomCategorySelect : classes.bottomCategory
-            }
+            link
+            disabled={btnHome}
           >
-            HOME
+            {!language ? "Inicio" : "Home"}
           </Button>
           <Button
             onClick={() => articleCategory("ALL", false)}
-            color="behance"
-            className={
-              !categoryID && !btnHome
-                ? classes.bottomCategorySelect
-                : classes.bottomCategory
-            }
+            link
+            disabled={!categoryID && !btnHome}
           >
-            ALL
+            {!language ? "Todos" : "All"}
           </Button>
           {categories &&
             categories.map((category) => {
@@ -77,12 +71,8 @@ const Menu = ({ articleCategory, categoryID, btnHome }) => {
                 <span key={category.id}>
                   <Button
                     onClick={() => articleCategory(category, false)}
-                    color="behance"
-                    className={
-                      categoryID === category.id && !btnHome
-                        ? classes.bottomCategorySelect
-                        : classes.bottomCategory
-                    }
+                    link
+                    disabled={categoryID === category.id && !btnHome}
                   >
                     {category[`name${language}`]}
                   </Button>

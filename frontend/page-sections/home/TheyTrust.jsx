@@ -1,11 +1,11 @@
 // Dependencies
 import getConfig from "next/config";
-import Image from "next/image";
 import { useQuery } from "@apollo/client";
 import Carousel from "react-slick";
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 // core components
 import GridContainer from "components/Grid/GridContainer";
@@ -31,17 +31,20 @@ const TheyTrust = () => {
     defaultSettings: { language },
   } = useSettings();
   const { loading, error, data } = useQuery(HOME_THEY_TRUST);
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
   const classes = useStyles();
 
   const sliderSettings = {
     dots: false,
     arrows: false,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: matches ? 1 : 3,
     slidesToScroll: 1,
     autoplay: true,
+    lazyLoad: true,
     speed: 4800,
-    autoplaySpeed: 4800,
+    autoplaySpeed: 0,
     cssEase: "linear",
   };
 
@@ -79,14 +82,12 @@ const TheyTrust = () => {
             <Carousel {...sliderSettings}>
               {theyTrust.brandSlider.map((brandImage) => {
                 return (
-                  <Image
-                    key={brandImage.id}
-                    src={`${apiUrl}${brandImage.url}`}
-                    alt={brandImage.alternativeText}
-                    // layout="responsive"
-                    width={brandImage.width}
-                    height={brandImage.height}
-                  />
+                  <div key={brandImage.id}>
+                    <img
+                      src={`${apiUrl}${brandImage.url}`}
+                      alt={brandImage.alternativeText}
+                    />
+                  </div>
                 );
               })}
             </Carousel>

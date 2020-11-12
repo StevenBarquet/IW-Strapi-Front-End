@@ -9,7 +9,6 @@ import {
   dangerColor,
   blackColor,
   whiteColor,
-  behanceColor,
   hexToRgb,
 } from "assets/jss/nextjs-material-kit-pro";
 
@@ -213,30 +212,6 @@ const buttonStyle = {
     "&,&:focus,&:hover": {
       backgroundColor: whiteColor,
       color: grayColor[0],
-    },
-  },
-  behance: {
-    backgroundColor: behanceColor,
-    color: whiteColor,
-    boxShadow:
-      "0 2px 2px 0 rgba(" +
-      hexToRgb(behanceColor) +
-      ", 0.14), 0 3px 1px -2px rgba(" +
-      hexToRgb(behanceColor) +
-      ", 0.2), 0 1px 5px 0 rgba(" +
-      hexToRgb(behanceColor) +
-      ", 0.12)",
-    "&:hover,&:focus": {
-      backgroundColor: behanceColor,
-      color: whiteColor,
-      boxShadow:
-        "0 14px 26px -12px rgba(" +
-        hexToRgb(behanceColor) +
-        ", 0.42), 0 4px 23px 0px rgba(" +
-        hexToRgb(blackColor) +
-        ", 0.12), 0 8px 10px -5px rgba(" +
-        hexToRgb(behanceColor) +
-        ", 0.2)",
     },
   },
   simple: {

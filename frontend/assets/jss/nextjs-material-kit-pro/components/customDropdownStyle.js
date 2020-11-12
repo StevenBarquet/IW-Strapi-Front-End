@@ -7,6 +7,8 @@ import {
   blackColor,
   whiteColor,
   grayColor,
+  bigStoneColor,
+  valenciaColor,
   hexToRgb,
 } from "assets/jss/nextjs-material-kit-pro";
 
@@ -108,15 +110,6 @@ const customDropdownStyle = (theme) => ({
     whiteSpace: "nowrap",
     minHeight: "unset",
   },
-  darkHover: {
-    "&:hover": {
-      boxShadow: `0 4px 20px 0px rgba(${hexToRgb(
-        blackColor
-      )}, 0.14), 0 7px 10px -5px rgba(${hexToRgb(grayColor[9])}, 0.4)`,
-      backgroundColor: grayColor[9],
-      color: whiteColor,
-    },
-  },
   primaryHover: {
     "&:hover": {
       backgroundColor: primaryColor[0],
@@ -181,6 +174,21 @@ const customDropdownStyle = (theme) => ({
   },
   noLiPadding: {
     padding: "0",
+  },
+  link: {
+    backgroundColor: "transparent !important",
+    "& > a": {
+      fontWeight: "700",
+      color: bigStoneColor,
+    },
+    margin: "10px",
+    "&:hover": {
+      backgroundColor: "transparent !important",
+      boxShadow: "none",
+      "& a": {
+        color: valenciaColor,
+      },
+    },
   },
 });
 

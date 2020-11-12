@@ -1,7 +1,5 @@
-import React from "react";
-// nodejs library that concatenates classes
+// Dependencies
 import classNames from "classnames";
-// nodejs library to set properties for components
 import PropTypes from "prop-types";
 
 // @material-ui/core components
@@ -56,6 +54,7 @@ export default function CustomDropdown(props) {
     noLiPadding,
     innerDropDown,
     navDropdown,
+    link,
   } = props;
   const classes = useStyles();
   const caretClasses = classNames({
@@ -65,6 +64,7 @@ export default function CustomDropdown(props) {
     [classes.caretRTL]: rtlActive,
   });
   const dropdownItem = classNames({
+    [classes.link]: link,
     [classes.dropdownItem]: true,
     [classes[`${hoverColor}Hover`]]: true,
     [classes.noLiPadding]: noLiPadding,
@@ -84,7 +84,7 @@ export default function CustomDropdown(props) {
         if (prop.divider) {
           return (
             <Divider
-              key={key}
+              key={key} // eslint-disable-line react/no-array-index-key
               onClick={() => handleCloseMenu("divider")}
               className={classes.dropdownDividerItem}
             />
@@ -93,7 +93,7 @@ export default function CustomDropdown(props) {
         if (prop.props !== undefined && prop.props["data-ref"] === "multi") {
           return (
             <MenuItem
-              key={key}
+              key={key} // eslint-disable-line react/no-array-index-key
               className={dropdownItem}
               style={{ overflow: "visible", padding: 0 }}
             >
@@ -103,7 +103,7 @@ export default function CustomDropdown(props) {
         }
         return (
           <MenuItem
-            key={key}
+            key={key} // eslint-disable-line react/no-array-index-key
             onClick={() => handleCloseMenu(prop)}
             className={dropdownItem}
           >
@@ -211,4 +211,5 @@ CustomDropdown.propTypes = {
   navDropdown: PropTypes.bool,
   // This is a function that returns the clicked menu item
   onClick: PropTypes.func,
+  link: PropTypes.bool,
 };

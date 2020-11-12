@@ -8,11 +8,26 @@ const withSass = require("@zeit/next-sass");
 const withCSS = require("@zeit/next-css");
 
 const nextConfig = {
+  trailingSlash: true,
   publicRuntimeConfig: {
     apiUrl: process.env.API_URL,
   },
   images: {
     domains: ["localhost", "interware.mx"],
+  },
+  async exportPathMap() {
+    return {
+      "/": { page: "/" },
+      "/home": { page: "/home" },
+      "/robot": { page: "/robot" },
+      "/specialized-services": { page: "/specialized-services" },
+      "/join-us": { page: "/join-us" },
+      "/vacancies": { page: "/vacancies" },
+      "/technology-consulting": { page: "/technology-consulting" },
+      "/quality-assurance": { page: "/quality-assurance" },
+      "/software-factory": { page: "/software-factory" },
+      "/blog": { page: "/blog" },
+    };
   },
 };
 

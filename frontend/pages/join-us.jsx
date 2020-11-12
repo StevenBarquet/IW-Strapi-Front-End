@@ -12,9 +12,6 @@ import { makeStyles } from "@material-ui/core/styles";
 // gql
 import { JOIN_US_TAGS_QUERY } from "gql/queries/join-us";
 
-// apollo
-import { withApollo } from "libs/apollo";
-
 // layout
 import withLayout from "layouts/main";
 
@@ -79,4 +76,4 @@ const JoinUsPage = () => {
   );
 };
 
-export default withApollo(withLayout(JoinUsPage));
+export default withLayout(JoinUsPage);

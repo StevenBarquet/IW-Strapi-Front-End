@@ -8,9 +8,6 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-// apollo
-import { withApollo } from "libs/apollo";
-
 // layout
 import withLayout from "layouts/main";
 
@@ -33,7 +30,7 @@ const Vacancies = () => {
   const classes = useStyles();
 
   const onSubmitForm = async (values, { resetForm, setSubmitting }) => {
-    console.log("values", values);
+    console.log("FormValues", values); // eslint-disable-line no-console
     resetForm();
     setSubmitting(false);
   };
@@ -60,4 +57,4 @@ const Vacancies = () => {
   );
 };
 
-export default withApollo(withLayout(Vacancies));
+export default withLayout(Vacancies);

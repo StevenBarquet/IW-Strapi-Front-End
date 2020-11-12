@@ -13,7 +13,6 @@ import {
   title,
   coloredShadow,
   sectionWithBackgroundColor,
-  bottomCategory,
 } from "assets/jss/nextjs-material-kit-pro";
 
 const blogStyle = () => ({
@@ -26,7 +25,6 @@ const blogStyle = () => ({
   sectionWithBackgroundColor,
   floatRight,
   textCenter,
-  bottomCategory,
   cardTitle: {
     ...cardTitle,
     fontSize: "1.5rem",
@@ -113,10 +111,6 @@ const blogStyle = () => ({
       marginLeft: "auto",
       marginRight: "auto",
     },
-  },
-  bottomCategorySelect: {
-    ...bottomCategory,
-    backgroundColor: "#999 !important",
   },
   date: {
     color: "#21646D",

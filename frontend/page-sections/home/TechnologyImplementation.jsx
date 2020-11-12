@@ -63,39 +63,36 @@ const TechnologyImplementation = () => {
             technologyImplementation.subtitle[`sectionSubTitle${language}`]
           }
         >
-          <GridContainer
-            justify="center"
-            className={`${classes.section} ${classes.margin5Rem}`}
-          >
+          <GridContainer justify="center" className={classes.marginTopDefault}>
             <GridItem xs={6} sm={6} md={5}>
-              <img
-                src={`${apiUrl}${technologyImplementation.scrum.url}`}
-                alt={technologyImplementation.scrum.alternativeText}
-              />
-              <GridItem xs={12} sm={8} md={3}>
-                <h1 className={classes.technologyTitle}>
+              <div className={classes.technologyImplementation}>
+                <img
+                  src={`${apiUrl}${technologyImplementation.scrum.url}`}
+                  alt={technologyImplementation.scrum.alternativeText}
+                />
+                <h1 className={classes.technologyImplementationTitle}>
                   {
                     technologyImplementation.titleIconScrum[
                       `sectionTitle${language}`
                     ]
                   }
                 </h1>
-              </GridItem>
+              </div>
             </GridItem>
-            <GridItem xs={10} sm={6} md={2}>
-              <img
-                src={`${apiUrl}${technologyImplementation.devOps.url}`}
-                alt={technologyImplementation.scrum.alternativeText}
-              />
-              <GridItem xs={12} sm={12} md={12} style={{ marginTop: "1.9rem" }}>
-                <h1 className={classes.technologyTitle}>
+            <GridItem xs={10} sm={6} md={5} lg={5}>
+              <div className={classes.technologyImplementation}>
+                <img
+                  src={`${apiUrl}${technologyImplementation.devOps.url}`}
+                  alt={technologyImplementation.devOps.alternativeText}
+                />
+                <h1 className={classes.technologyImplementationTitle}>
                   {
                     technologyImplementation.titleIconDevOps[
                       `sectionTitle${language}`
                     ]
                   }
                 </h1>
-              </GridItem>
+              </div>
             </GridItem>
           </GridContainer>
         </SectionTitle>

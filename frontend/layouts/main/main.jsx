@@ -1,4 +1,4 @@
-// nodejs library that concatenates classes
+// Dependencies
 import classNames from "classnames";
 
 // @material-ui/core components
@@ -37,14 +37,14 @@ const withLayout = (Page) => {
         </div>
         <Footer
           big
-          content={(
+          content={( // eslint-disable-line prettier/prettier
             <div>
               <div
                 className={classNames(classes.pullCenter, classes.copyRight)}
               >
                 Copyright &copy; {1900 + new Date().getYear()}{" "}
                 <a
-                  href="https://www.interware.com.mx"
+                  href="https://interware.com.mx"
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -53,7 +53,7 @@ const withLayout = (Page) => {
                 Todos los derechos reservados.
               </div>
             </div>
-          )}
+          )} // eslint-disable-line prettier/prettier
         >
           <div className={classes.footer}>
             <GridContainer justify="center">

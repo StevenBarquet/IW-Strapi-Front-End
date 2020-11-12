@@ -3,6 +3,7 @@ import {
   grayColor,
   whiteColor,
   bigStoneColor,
+  valenciaColor,
   mlAuto,
   hexToRgb,
 } from "assets/jss/nextjs-material-kit-pro";
@@ -60,10 +61,10 @@ const headerLinksStyle = (theme) => ({
     padding: "0 !important",
   },
   navLink: {
-    color: "inherit",
+    color: bigStoneColor,
     position: "relative",
     padding: "0.9375rem",
-    fontWeight: "400",
+    fontWeight: "600",
     fontSize: "14px",
     textTransform: "none",
     lineHeight: "20px",
@@ -73,8 +74,11 @@ const headerLinksStyle = (theme) => ({
     "& span": {
       color: bigStoneColor,
     },
+    "& span:hover,&:focus": {
+      color: valenciaColor,
+    },
     "&:hover,&:focus": {
-      color: "inherit",
+      color: valenciaColor,
     },
     "& .fab,& .far,& .fal,& .fas,& .material-icons": {
       position: "relative",
@@ -101,10 +105,7 @@ const headerLinksStyle = (theme) => ({
     },
   },
   selectedNavLink: {
-    "& span > a": {
-      color: whiteColor,
-      fontWeight: "700",
-    },
+    color: valenciaColor,
   },
   navLinkJustIcon: {
     "& .fab,& .far,& .fal,& .fas,& .material-icons": {
@@ -133,38 +134,6 @@ const headerLinksStyle = (theme) => ({
         justifyContent: "flex-start",
       },
     },
-    "& $icons": {
-      marginRight: "3px",
-    },
-  },
-  notificationNavLink: {
-    [theme.breakpoints.down("md")]: {
-      top: "0",
-      margin: "5px 15px",
-    },
-    color: whiteColor,
-    padding: "0.9375rem",
-    fontWeight: "400",
-    fontSize: "12px",
-    textTransform: "none",
-    lineHeight: "20px",
-    textDecoration: "none",
-    margin: "0px",
-    display: "inline-flex",
-  },
-  registerNavLink: {
-    [theme.breakpoints.down("md")]: {
-      top: "0",
-      margin: "5px 15px",
-    },
-    position: "relative",
-    fontWeight: "400",
-    fontSize: "12px",
-    textTransform: "none",
-    lineHeight: "20px",
-    textDecoration: "none",
-    margin: "0px",
-    display: "inline-flex",
   },
   navLinkActive: {
     "&, &:hover, &:focus,&:active ": {
@@ -172,30 +141,11 @@ const headerLinksStyle = (theme) => ({
       backgroundColor: "rgba(" + hexToRgb(whiteColor) + ", 0.1)",
     },
   },
-  icons: {
-    width: "20px",
-    height: "20px",
-    marginRight: "14px",
-  },
-  dropdownIcons: {
-    width: "24px",
-    height: "24px",
-    marginRight: "14px",
-    opacity: "0.5",
-    marginTop: "-4px",
-    top: "1px",
-    verticalAlign: "middle",
-    fontSize: "24px",
-    position: "relative",
-  },
-  socialIcons: {
-    position: "relative",
-    fontSize: "1.25rem",
-    maxWidth: "24px",
-  },
   dropdownLink: {
-    "&,&:hover,&:focus": {
-      color: "inherit",
+    fontWeight: "700",
+    color: bigStoneColor,
+    "&:hover,&:focus": {
+      color: valenciaColor,
       textDecoration: "none",
       display: "flex",
       padding: "0.75rem 1.25rem 0.75rem 0.75rem",

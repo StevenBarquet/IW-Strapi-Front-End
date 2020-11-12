@@ -12,9 +12,6 @@ import { makeStyles } from "@material-ui/core/styles";
 // gql
 import { FORM_EMAIL_QUERY } from "gql/queries/email";
 
-// apollo
-import { withApollo } from "libs/apollo";
-
 // layout
 import withLayout from "layouts/main";
 
@@ -93,4 +90,4 @@ const SpecializedServices = () => {
   );
 };
 
-export default withApollo(withLayout(SpecializedServices));
+export default withLayout(SpecializedServices);

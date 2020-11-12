@@ -330,8 +330,8 @@ const textCenter = {
 
 const centerImage = {
   display: "block",
-  marginLeft: "auto",
-  marginRight: "auto",
+  marginLeft: "auto !important",
+  marginRight: "auto !important",
 };
 
 const btnLink = {
@@ -345,21 +345,6 @@ const divider = {
   borderTop: "10px solid #00C7B1",
   marginTop: "-1.2rem",
   marginBottom: "2rem",
-};
-
-const bottomCategory = {
-  color: "#000",
-  boxShadow:
-    " 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(61, 180, 158, 0.4)",
-  backgroundColor: "#3DB49E !important",
-  borderRadius: "2rem !important",
-  marginLeft: "2rem !important",
-  "@media (max-width: 1024px)": {
-    marginLeft: "0.3rem !important",
-  },
-  "@media (max-width: 736px)": {
-    marginLeft: "0.1rem !important",
-  },
 };
 
 const coloredShadow = {
@@ -436,5 +421,4 @@ export {
   coloredShadow,
   hexToRgb,
   legend,
-  bottomCategory,
 };

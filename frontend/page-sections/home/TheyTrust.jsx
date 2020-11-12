@@ -1,9 +1,11 @@
 // Dependencies
 import getConfig from "next/config";
 import { useQuery } from "@apollo/client";
+import Carousel from "react-slick";
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 // core components
 import GridContainer from "components/Grid/GridContainer";
@@ -29,7 +31,22 @@ const TheyTrust = () => {
     defaultSettings: { language },
   } = useSettings();
   const { loading, error, data } = useQuery(HOME_THEY_TRUST);
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
   const classes = useStyles();
+
+  const sliderSettings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    slidesToShow: matches ? 1 : 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    lazyLoad: true,
+    speed: 4800,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+  };
 
   if (loading) {
     return null;
@@ -52,18 +69,6 @@ const TheyTrust = () => {
     home: { theyTrust },
   } = data;
 
-  const LogoSlider = () =>
-    theyTrust.brandSlider.map((brandImage) => {
-      return (
-        <img
-          key={brandImage.id}
-          src={`${apiUrl}${brandImage.url}`}
-          alt={brandImage.alternativeText}
-          className="lazyload"
-        />
-      );
-    });
-
   return (
     <div id="section-they-trust" className={classes.section}>
       <GridContainer justify="center">
@@ -73,15 +78,19 @@ const TheyTrust = () => {
           title={theyTrust.title[`sectionTitle${language}`]}
           subTitle={theyTrust.subTitle[`sectionSubTitle${language}`]}
         >
-          <div className="wrapperCompanySlider">
-            <div className="brandSlider">
-              <div className="logoSlider">
-                <LogoSlider />
-              </div>
-              <div className="logoSlider">
-                <LogoSlider />
-              </div>
-            </div>
+          <div>
+            <Carousel {...sliderSettings}>
+              {theyTrust.brandSlider.map((brandImage) => {
+                return (
+                  <div key={brandImage.id}>
+                    <img
+                      src={`${apiUrl}${brandImage.url}`}
+                      alt={brandImage.alternativeText}
+                    />
+                  </div>
+                );
+              })}
+            </Carousel>
           </div>
         </SectionTitle>
       </GridContainer>

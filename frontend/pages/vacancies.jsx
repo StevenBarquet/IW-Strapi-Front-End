@@ -10,9 +10,6 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-// apollo
-import { withApollo } from "libs/apollo";
-
 // layout
 import withLayout from "layouts/main";
 
@@ -111,4 +108,4 @@ const Vacancies = () => {
   );
 };
 
-export default withApollo(withLayout(Vacancies));
+export default withLayout(Vacancies);

@@ -33,7 +33,7 @@ const SectionBlogsList = ({ showImage, id }) => {
   const {
     defaultSettings: { language },
   } = useSettings();
-  const { loading, error, data } = useQuery(BLOG_ARTICLES_QUERY, {
+  const { data, loading, error } = useQuery(BLOG_ARTICLES_QUERY, {
     variables: {
       where: showImage ? {} : { id_nin: [id] },
       sort: "created_at:desc",
@@ -84,17 +84,15 @@ const SectionBlogsList = ({ showImage, id }) => {
                   className={`${classes.imageArticle}`}
                 >
                   <CardHeader image plain>
-                    <a href="#interware" onClick={(e) => e.preventDefault()}>
-                      <img
-                        src={`${apiUrl}${article.seo.shareImage.url}`}
-                        alt={article.seo.shareImage.alternativeText}
-                        style={{
-                          height: "110px",
-                          width: "100%",
-                          display: "block",
-                        }}
-                      />
-                    </a>
+                    <img
+                      src={`${apiUrl}${article.seo.shareImage.url}`}
+                      alt={article.seo.shareImage.alternativeText}
+                      style={{
+                        height: "110px",
+                        width: "100%",
+                        display: "block",
+                      }}
+                    />
                     <div
                       className={classes.coloredShadow}
                       style={{
@@ -115,9 +113,7 @@ const SectionBlogsList = ({ showImage, id }) => {
               <GridItem xs={12} sm={showImage ? 7 : 11} md={showImage ? 7 : 11}>
                 <p className={classes.cardCategory}>{article.tags.name}</p>
                 <h2 className={classes.cardTitle}>
-                  <a href="#interware" onClick={(e) => e.preventDefault()}>
-                    {article.seo[`metaTitle${language}`]}
-                  </a>
+                  {article.seo[`metaTitle${language}`]}
                 </h2>
                 <RenderHTML html={article.seo[`metaDescription${language}`]} />
                 <Link as={`/blog/${article.id}`} href="/blog/[id]">

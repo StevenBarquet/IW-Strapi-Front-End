@@ -1,16 +1,14 @@
-import React from "react";
-// nodejs library to set properties for components
+// Dependencies
 import PropTypes from "prop-types";
-// nodejs library that concatenates classes
 import classNames from "classnames";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
-import styles from "assets/jss/nextjs-material-kit-pro/components/paginationStyle.js";
+import paginationStyle from "assets/jss/components/paginationStyle";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(paginationStyle);
 
 const Pagination = (props) => {
   const { pages, color, className } = props;
@@ -27,23 +25,13 @@ const Pagination = (props) => {
         });
         return (
           <li className={classes.paginationItem} key={key}>
-            {prop.onClick !== undefined ? (
-              <Button
-                onClick={prop.onClick}
-                className={paginationLink}
-                disabled={prop.disabled}
-              >
-                {prop.text}
-              </Button>
-            ) : (
-              <Button
-                onClick={() => alert(`you've clicked ${prop.text}`)}
-                className={paginationLink}
-                disabled={prop.disabled}
-              >
-                {prop.text}
-              </Button>
-            )}
+            <Button
+              onClick={prop.onClick}
+              className={paginationLink}
+              disabled={prop.disabled}
+            >
+              {prop.text}
+            </Button>
           </li>
         );
       })}

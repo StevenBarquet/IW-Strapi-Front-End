@@ -2,6 +2,7 @@
 import getConfig from "next/config";
 import { useQuery } from "@apollo/client";
 import Carousel from "react-slick";
+import PropTypes from "prop-types";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -36,12 +37,11 @@ const Header = () => {
   const sliderSettings = {
     autoplay: true,
     dots: true,
-    lazyLoad: "ondemand",
+    lazyLoad: true,
     infinite: true,
     speed: 1500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: true,
     arrows: false,
   };
 
@@ -66,44 +66,40 @@ const Header = () => {
     home: { header },
   } = data;
 
+  const ImageComponent = ({ image }) => (
+    <div>
+      <img
+        src={`${apiUrl}${image.url}`}
+        alt={image.alternativeText}
+        className="slick-image"
+      />
+    </div>
+  );
+
+  ImageComponent.propTypes = {
+    image: PropTypes.shape({}).isRequired,
+  };
+
   return (
     <header id="header" className={classes.carouselContainer}>
       <Hidden only={["sm", "md", "lg", "xl"]}>
         <Carousel {...sliderSettings}>
-          {header.small_images.map((image) => (
-            <div key={image.id}>
-              <img
-                src={`${apiUrl}${image.url}`}
-                alt={image.alternativeText}
-                className="slick-image"
-              />
-            </div>
+          {header.small_images.map((image, key) => (
+            <ImageComponent key={key} image={image} /> // eslint-disable-line react/no-array-index-key
           ))}
         </Carousel>
       </Hidden>
       <Hidden only={["xs", "md", "lg", "xl"]}>
         <Carousel {...sliderSettings}>
-          {header.medium_images.map((image) => (
-            <div key={image.id}>
-              <img
-                src={`${apiUrl}${image.url}`}
-                alt={image.alternativeText}
-                className="slick-image"
-              />
-            </div>
+          {header.medium_images.map((image, key) => (
+            <ImageComponent key={key} image={image} /> // eslint-disable-line react/no-array-index-key
           ))}
         </Carousel>
       </Hidden>
       <Hidden only={["xs", "sm"]}>
         <Carousel {...sliderSettings}>
-          {header.large_images.map((image) => (
-            <div key={image.id}>
-              <img
-                src={`${apiUrl}${image.url}`}
-                alt={image.alternativeText}
-                className="slick-image"
-              />
-            </div>
+          {header.large_images.map((image, key) => (
+            <ImageComponent key={key} image={image} /> // eslint-disable-line react/no-array-index-key
           ))}
         </Carousel>
       </Hidden>

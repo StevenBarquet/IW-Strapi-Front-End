@@ -1,6 +1,5 @@
 // Dependencies
 import { Formik } from "formik";
-import dynamic from "next/dynamic";
 import { useMutation } from "@apollo/client";
 
 // nodejs library that concatenates classes
@@ -9,27 +8,28 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-// apollo
-import { withApollo } from "libs/apollo";
-
-// gql
-import { FORM_EMAIL_QUERY } from "gql/queries/email";
-
 // layout
 import withLayout from "layouts/main";
 
 // InicialValues & Schema
 import { initialValues, schema } from "page-sections/robot/formConfig";
 
+// apollo
+import { initializeApollo } from "libs/apollo";
+
+// gql
+import { ROBOT_HEADER_QUERY, ROBOT_FUNTIONING_QUERY } from "gql/queries/robot";
+import { FORM_EMAIL_QUERY } from "gql/queries/email";
+
 // styles
 import robotStyles from "assets/jss/robotStyles";
 
 // sections
-const Header = dynamic(import("page-sections/robot/Header"));
-const Functioning = dynamic(import("page-sections/robot/Functioning"));
-const Benefits = dynamic(import("page-sections/robot/Benefits"));
-const Form = dynamic(import("page-sections/robot/Form"));
-const PlansForYou = dynamic(import("page-sections/robot/PlansForYou"));
+import Header from "page-sections/robot/Header";
+import Functioning from "page-sections/robot/Functioning";
+import Benefits from "page-sections/robot/Benefits";
+import Form from "page-sections/robot/Form";
+import PlansForYou from "page-sections/robot/PlansForYou";
 
 const useStyles = makeStyles(robotStyles);
 
@@ -81,4 +81,23 @@ const RobotPage = () => {
   );
 };
 
-export default withApollo(withLayout(RobotPage));
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: ROBOT_HEADER_QUERY,
+  });
+
+  await apolloClient.query({
+    query: ROBOT_FUNTIONING_QUERY,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+    revalidate: 1,
+  };
+}
+
+export default withLayout(RobotPage);

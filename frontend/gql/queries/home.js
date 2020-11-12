@@ -9,16 +9,22 @@ const HOME_HEADER_QUERY = gql`
           id
           url
           alternativeText
+          width
+          height
         }
         medium_images {
           id
           url
           alternativeText
+          width
+          height
         }
         large_images {
           id
           url
           alternativeText
+          width
+          height
         }
         caption
         caption_en
@@ -85,6 +91,8 @@ const HOME_BUSINESS_PARTNERS = gql`
         sectionIcon {
           url
           alternativeText
+          width
+          height
         }
         legend {
           sectionLegendTitle
@@ -144,6 +152,8 @@ const HOME_THEY_TRUST = gql`
         sectionIcon {
           url
           alternativeText
+          width
+          height
         }
         legend {
           sectionLegendTitle
@@ -161,6 +171,8 @@ const HOME_THEY_TRUST = gql`
           id
           url
           alternativeText
+          width
+          height
         }
       }
     }
@@ -190,10 +202,14 @@ const HOME_TECHNOLOGY_IMPLEMENTATION_QUERY = gql`
         scrum {
           url
           alternativeText
+          width
+          height
         }
         devOps {
           url
           alternativeText
+          width
+          height
         }
       }
     }

@@ -1,4 +1,3 @@
-/* eslint-disable prefer-template */
 import {
   grayColor,
   primaryColor,
@@ -42,12 +41,12 @@ const paginationStyle = {
     textDecoration: "none",
     boxSizing: "border-box",
     "&,&:hover,&:focus": {
-      color: "#292828",
+      color: grayColor[0],
     },
     "&:hover,&:focus": {
       zIndex: "3",
       backgroundColor: grayColor[2],
-      borderColor: grayColor[2],
+      borderColor: grayColor[6],
     },
     "&:hover": {
       cursor: "pointer",
@@ -58,14 +57,11 @@ const paginationStyle = {
       backgroundColor: primaryColor[0],
       borderColor: primaryColor[0],
       color: whiteColor,
-      boxShadow:
-        "0 4px 5px 0 rgba(" +
-        hexToRgb(primaryColor[0]) +
-        ", 0.14), 0 1px 10px 0 rgba(" +
-        hexToRgb(primaryColor[0]) +
-        ", 0.12), 0 2px 4px -1px rgba(" +
-        hexToRgb(primaryColor[0]) +
-        ", 0.2)",
+      boxShadow: `0 4px 5px 0 rgba(${hexToRgb(
+        primaryColor[0]
+      )}, 0.14), 0 1px 10px 0 rgba(${hexToRgb(
+        primaryColor[0]
+      )}, 0.12), 0 2px 4px -1px rgba(${hexToRgb(primaryColor[0])}, 0.2)`,
     },
     "&:hover,&:focus": {
       zIndex: "2",
@@ -77,14 +73,11 @@ const paginationStyle = {
       backgroundColor: successColor[0],
       borderColor: successColor[0],
       color: whiteColor,
-      boxShadow:
-        "0 4px 5px 0 rgba(" +
-        hexToRgb(successColor[0]) +
-        ", 0.14), 0 1px 10px 0 rgba(" +
-        hexToRgb(successColor[0]) +
-        ", 0.12), 0 2px 4px -1px rgba(" +
-        hexToRgb(successColor[0]) +
-        ", 0.2)",
+      boxShadow: `0 4px 5px 0 rgba(${hexToRgb(
+        successColor[0]
+      )}, 0.14), 0 1px 10px 0 rgba(${hexToRgb(
+        successColor[0]
+      )}, 0.12), 0 2px 4px -1px rgba(${hexToRgb(successColor[0])}, 0.2)`,
     },
     "&:hover,&:focus": {
       zIndex: "2",
@@ -96,14 +89,11 @@ const paginationStyle = {
       backgroundColor: warningColor[0],
       borderColor: warningColor[0],
       color: whiteColor,
-      boxShadow:
-        "0 4px 5px 0 rgba(" +
-        hexToRgb(warningColor[0]) +
-        ", 0.14), 0 1px 10px 0 rgba(" +
-        hexToRgb(warningColor[0]) +
-        ", 0.12), 0 2px 4px -1px rgba(" +
-        hexToRgb(warningColor[0]) +
-        ", 0.2)",
+      boxShadow: `0 4px 5px 0 rgba(${hexToRgb(
+        warningColor[0]
+      )}, 0.14), 0 1px 10px 0 rgba(${hexToRgb(
+        warningColor[0]
+      )}, 0.12), 0 2px 4px -1px rgba(${hexToRgb(warningColor[0])}, 0.2)`,
     },
     "&:hover,&:focus": {
       zIndex: "2",
@@ -115,14 +105,11 @@ const paginationStyle = {
       backgroundColor: dangerColor[0],
       borderColor: dangerColor[0],
       color: whiteColor,
-      boxShadow:
-        "0 4px 5px 0 rgba(" +
-        hexToRgb(dangerColor[0]) +
-        ", 0.14), 0 1px 10px 0 rgba(" +
-        hexToRgb(dangerColor[0]) +
-        ", 0.12), 0 2px 4px -1px rgba(" +
-        hexToRgb(dangerColor[0]) +
-        ", 0.2)",
+      boxShadow: `0 4px 5px 0 rgba(${hexToRgb(
+        dangerColor[0]
+      )}, 0.14), 0 1px 10px 0 rgba(${hexToRgb(
+        dangerColor[0]
+      )}, 0.12), 0 2px 4px -1px rgba(${hexToRgb(dangerColor[0])}, 0.2)`,
     },
     "&:hover,&:focus": {
       zIndex: "2",
@@ -131,15 +118,11 @@ const paginationStyle = {
   },
   disabled: {
     "&,&:hover,&:focus": {
-      color: grayColor[3],
+      color: grayColor[10],
       cursor: "not-allowed",
       backgroundColor: whiteColor,
-      borderColor: grayColor[2],
+      borderColor: grayColor[6],
     },
-  },
-  text: {
-    fontWeight: "500",
-    fontSize: "1.287rem",
   },
 };
 

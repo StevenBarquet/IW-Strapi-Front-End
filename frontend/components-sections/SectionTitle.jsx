@@ -1,7 +1,6 @@
 // Dependencies
 import getConfig from "next/config";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -12,45 +11,11 @@ import ScrollAnimation from "react-animate-on-scroll";
 // core-components
 import GridItem from "components/Grid/GridItem";
 
-import {
-  legend,
-  title,
-  subTitle,
-  mlAuto,
-  mrAuto,
-  centerImage,
-} from "assets/jss/nextjs-material-kit-pro";
+import sectionTitleStyle from "assets/jss/components/sectionTitleStyle";
 
 const {
   publicRuntimeConfig: { apiUrl },
 } = getConfig();
-
-const sectionTitleStyle = {
-  legend,
-  mlAuto,
-  mrAuto,
-  title: {
-    ...title,
-    "@media (max-width: 830px)": {
-      fontSize: "2.500rem",
-    },
-  },
-  subTitle,
-  subTitleColor: {
-    ...subTitle,
-    color: "#21646D",
-  },
-  animationFlipInX: {
-    animation: "flipInX",
-    animationDuration: "3s",
-  },
-
-  animationSlideInUp: {
-    animation: "slideInUp",
-    animationDuration: "3s",
-  },
-  centerImage,
-};
 
 const useStyles = makeStyles(sectionTitleStyle);
 
@@ -69,17 +34,19 @@ const SectionTitle = ({
   const Icon = () => {
     return (
       <ScrollAnimation animateIn="slideInUp" animateOnce>
-        <img
-          src={`${apiUrl}${icon.url}`}
-          alt={icon.alternativeText}
-          className={classNames(classes.centerImage, "lazyload")}
-        />
+        <div>
+          <img
+            src={`${apiUrl}${icon.url}`}
+            alt={icon.alternativeText}
+            className={classes.centerImage}
+          />
+        </div>
       </ScrollAnimation>
     );
   };
 
   return (
-    <GridItem xs={10} sm={9} md={8} lg={10}>
+    <GridItem xs={12} sm={12} md={8} lg={10}>
       {icon && <Icon />}
       {legend && <p className={classes.legend}>{legend}</p>}
       {title &&

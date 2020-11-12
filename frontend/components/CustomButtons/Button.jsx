@@ -1,14 +1,12 @@
-// nodejs library that concatenates classes
+// Dependencies
 import classNames from "classnames";
-
-// nodejs library to set properties for components
 import PropTypes from "prop-types";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
-import styles from "assets/jss/nextjs-material-kit-pro/components/buttonStyle";
+import styles from "assets/jss/components/buttonStyle";
 
 const useStyles = makeStyles(styles);
 
@@ -51,6 +49,8 @@ const RegularButton = React.forwardRef((props, ref) => {
 });
 
 RegularButton.defaultProps = {
+  color: "primary",
+  size: "",
   className: "",
   children: {},
   fullWidth: false,
@@ -60,20 +60,20 @@ RegularButton.defaultProps = {
   link: false,
   simple: false,
   justIcon: false,
+  fileButton: false,
 };
 
 RegularButton.propTypes = {
   color: PropTypes.oneOf([
     "primary",
     "secondary",
-    "behance",
     "success",
     "warning",
     "danger",
     "white",
     "transparent",
   ]),
-  size: PropTypes.oneOf(["sm", "lg"]),
+  size: PropTypes.oneOf(["", "sm", "lg"]),
   simple: PropTypes.bool,
   round: PropTypes.bool,
   fullWidth: PropTypes.bool,

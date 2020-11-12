@@ -28,7 +28,7 @@ const CarouselHeader = () => {
   const sliderSettings = {
     autoplay: true,
     dots: true,
-    lazyLoad: "ondemand",
+    lazyLoad: true,
     infinite: true,
     speed: 1500,
     slidesToShow: 1,

@@ -1,21 +1,14 @@
 // Dependencies
-import React from "react";
-import dynamic from "next/dynamic";
+import classNames from "classnames";
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-// nodejs library that concatenates classes
-import classNames from "classnames";
-
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+
+// @material-ui/core icon
 import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
-
-import { initializeApollo } from "libs/apollo";
-
-// gql
-import { BLOG_ARTICLES_QUERY, BLOG_ARTICLE_QUERY } from "gql/queries/blog";
 
 // layout
 import withLayout from "layouts/main";
@@ -25,23 +18,25 @@ import GridItem from "components/Grid/GridItem";
 import GridContainer from "components/Grid/GridContainer";
 import Button from "components/CustomButtons/Button";
 
+// sections
+import Header from "page-sections/blog/Header";
+import SectionArticleInfo from "page-sections/blog/SectionArticleInfo";
+import SectionArticleText from "page-sections/blog/SectionArticleText";
+import SectionBlogsList from "page-sections/blog/SectionBlogsList";
+import SectionTags from "page-sections/blog/SectionTags";
+import SectionComments from "page-sections/blog/SectionComments";
+
+// apollo
+import { initializeApollo } from "libs/apollo";
+
+// gql
+import { BLOG_ARTICLES_QUERY, BLOG_ARTICLE_QUERY } from "gql/queries/blog";
+
 // context
 import { useSettings } from "context/Settings";
 
 // jss styles
 import blogStyle from "assets/jss/blogStyle";
-
-// sections
-const Header = dynamic(import("page-sections/blog/Header"));
-const SectionArticleInfo = dynamic(
-  import("page-sections/blog/SectionArticleInfo")
-);
-const SectionArticleText = dynamic(
-  import("page-sections/blog/SectionArticleText")
-);
-const SectionBlogsList = dynamic(import("page-sections/blog/SectionBlogsList"));
-const SectionTags = dynamic(import("page-sections/blog/SectionTags"));
-const SectionComments = dynamic(import("page-sections/blog/SectionComments"));
 
 const useStyles = makeStyles(blogStyle);
 

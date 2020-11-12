@@ -8,7 +8,7 @@ import {
   hexToRgb,
 } from "assets/jss/nextjs-material-kit-pro";
 
-import tooltip from "assets/jss/nextjs-material-kit-pro/tooltipsStyle";
+import tooltip from "assets/jss/components/tooltipsStyle";
 
 const headerLinksStyle = (theme) => ({
   list: {

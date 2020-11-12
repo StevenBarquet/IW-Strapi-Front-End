@@ -1,10 +1,8 @@
 /* eslint-disable no-undef */
 // Dependencies
+import { useState } from "react";
 import { Formik } from "formik";
-import dynamic from "next/dynamic";
 import { useMutation } from "@apollo/client";
-
-// nodejs library that concatenates classes
 import classNames from "classnames";
 
 // @material-ui/core components
@@ -12,6 +10,11 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // layout
 import withLayout from "layouts/main";
+
+// sections
+import Header from "page-sections/vacancies/Header";
+import SearchVacancies from "page-sections/vacancies/SearchVacancies";
+import Form from "page-sections/vacancies/Form";
 
 // gql
 import { FORM_EMAIL_QUERY } from "gql/queries/email";
@@ -21,14 +24,6 @@ import { initialValues, schema } from "page-sections/vacancies/formConfig";
 
 // jss styles
 import joinUsStyle from "assets/jss/joinUsStyle";
-import { useState } from "react";
-
-// sections
-const Header = dynamic(import("page-sections/vacancies/Header"));
-const SearchVacancies = dynamic(
-  import("page-sections/vacancies/SearchVacancies")
-);
-const Form = dynamic(import("page-sections/vacancies/Form"));
 
 const useStyles = makeStyles(joinUsStyle);
 

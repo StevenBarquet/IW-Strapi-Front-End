@@ -1,28 +1,25 @@
 // Dependencies
-import React, { useState } from "react";
+import { useState } from "react";
 import { useQuery } from "@apollo/client";
-import dynamic from "next/dynamic";
-
-// nodejs library that concatenates classes
 import classNames from "classnames";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-// gql
-import { JOIN_US_TAGS_QUERY } from "gql/queries/join-us";
-
 // layout
 import withLayout from "layouts/main";
 
+// sections
+import Header from "page-sections/join-us/Header";
+import JoinTeam from "page-sections/join-us/JoinTeam";
+import SendCV from "page-sections/join-us/SendCV";
+import Vacancies from "page-sections/join-us/Vacancies";
+
+// gql
+import { JOIN_US_TAGS_QUERY } from "gql/queries/join-us";
+
 // jss styles
 import joinUsStyle from "assets/jss/joinUsStyle";
-
-// sections
-const Header = dynamic(import("page-sections/join-us/Header"));
-const JoinTeam = dynamic(import("page-sections/join-us/JoinTeam"));
-const SendCV = dynamic(import("page-sections/join-us/SendCV"));
-const Vacancies = dynamic(import("page-sections/join-us/Vacancies"));
 
 const useStyles = makeStyles(joinUsStyle);
 

@@ -14,7 +14,7 @@ import Popper from "@material-ui/core/Popper";
 // core components
 import Button from "components/CustomButtons/Button";
 
-import styles from "assets/jss/nextjs-material-kit-pro/components/customDropdownStyle";
+import styles from "assets/jss/components/customDropdownStyle";
 
 const useStyles = makeStyles(styles);
 
@@ -176,13 +176,11 @@ CustomDropdown.defaultProps = {
 
 CustomDropdown.propTypes = {
   hoverColor: PropTypes.oneOf([
-    "dark",
     "primary",
     "info",
     "success",
     "warning",
     "danger",
-    "rose",
   ]),
   buttonText: PropTypes.node,
   buttonIcon: PropTypes.object,

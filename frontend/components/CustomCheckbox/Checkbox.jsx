@@ -1,8 +1,7 @@
 /* eslint-disable no-nested-ternary */
+/* eslint-disable react/jsx-wrap-multilines */
 // Dependencies
-import React from "react";
 import PropTypes from "prop-types";
-// nodejs library that concatenates classes
 import classNames from "classnames";
 
 // @material-ui/core components
@@ -16,8 +15,8 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Clear from "@material-ui/icons/Clear";
 import Check from "@material-ui/icons/Check";
 
-import style from "assets/jss/nextjs-material-kit-pro/components/customCheckboxRadioSwitchStyle";
-import basicsStyle from "assets/jss/nextjs-material-kit-pro/components/customInputStyle.js";
+import style from "assets/jss/components/customCheckboxRadioSwitchStyle";
+import basicsStyle from "assets/jss/components/customInputStyle.js";
 
 const useStyles = makeStyles(style);
 const useStylesInput = makeStyles(basicsStyle);

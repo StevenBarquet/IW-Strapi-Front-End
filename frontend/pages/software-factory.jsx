@@ -1,7 +1,4 @@
 // Dependencies
-import dynamic from "next/dynamic";
-
-// nodejs library that concatenates classes
 import classNames from "classnames";
 
 // @material-ui/core components
@@ -10,22 +7,16 @@ import { makeStyles } from "@material-ui/core/styles";
 // layout
 import withLayout from "layouts/main";
 
+// sections
+import Header from "page-sections/software-factory/Header";
+import TimeMarket from "page-sections/software-factory/TimeMarket";
+import FactoryServices from "page-sections/software-factory/FactoryServices";
+import Benefits from "page-sections/software-factory/Benefits";
+import Deliverables from "page-sections/software-factory/Deliverables";
+import DigitalServices from "page-sections/software-factory/DigitalServices";
+
 // styles
 import softwareFactoryStyle from "assets/jss/softwareFactoryStyle";
-
-// sections
-const Header = dynamic(import("page-sections/software-factory/Header"));
-const TimeMarket = dynamic(import("page-sections/software-factory/TimeMarket"));
-const FactoryServices = dynamic(
-  import("page-sections/software-factory/FactoryServices")
-);
-const Benefits = dynamic(import("page-sections/software-factory/Benefits"));
-const Deliverables = dynamic(
-  import("page-sections/software-factory/Deliverables")
-);
-const DigitalServices = dynamic(
-  import("page-sections/software-factory/DigitalServices")
-);
 
 const useStyles = makeStyles(softwareFactoryStyle);
 

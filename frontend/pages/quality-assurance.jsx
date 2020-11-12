@@ -1,7 +1,4 @@
 // Dependencies
-import dynamic from "next/dynamic";
-
-// nodejs library that concatenates classes
 import classNames from "classnames";
 
 // @material-ui/core components
@@ -10,21 +7,15 @@ import { makeStyles } from "@material-ui/core/styles";
 // layout
 import withLayout from "layouts/main";
 
+// sections
+import Header from "page-sections/quality-assurance/Header";
+import QADescription from "page-sections/quality-assurance/QADescription";
+import QAOffer from "page-sections/quality-assurance/QAOffer";
+import QAofferGuarantees from "page-sections/quality-assurance/QAofferGuarantees";
+import QASuccessStories from "page-sections/quality-assurance/QASuccessStories";
+
 // styles
 import qualityAssuranceStyle from "assets/jss/qualityAssuranceStyle";
-
-// sections
-const Header = dynamic(import("page-sections/quality-assurance/Header"));
-const QADescription = dynamic(
-  import("page-sections/quality-assurance/QADescription")
-);
-const QAOffer = dynamic(import("page-sections/quality-assurance/QAOffer"));
-const QAofferGuarantees = dynamic(
-  import("page-sections/quality-assurance/QAofferGuarantees")
-);
-const QASuccessStories = dynamic(
-  import("page-sections/quality-assurance/QASuccessStories")
-);
 
 const useStyles = makeStyles(qualityAssuranceStyle);
 

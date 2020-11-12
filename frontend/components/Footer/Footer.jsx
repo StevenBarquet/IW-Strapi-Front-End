@@ -1,13 +1,11 @@
-// nodejs library to set properties for components
+// Dependencies
 import PropTypes from "prop-types";
-
-// nodejs library that concatenates classes
 import classNames from "classnames";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-import styles from "assets/jss/nextjs-material-kit-pro/components/footerStyle";
+import styles from "assets/jss/components/footerStyle";
 
 const useStyles = makeStyles(styles);
 

@@ -229,7 +229,7 @@ const Form = ({ values, errors, handleChange, setFieldValue }) => {
           <GridContainer>
             <GridItem item xs={12} sm={6} md={6}>
               <CustomFileInput
-                id="archivoCarga-consolidados"
+                id="archivoCarga-vacancies"
                 value={values.archivoCarga ? values.archivoCarga.name : ""}
                 fileInputProps={{
                   id: "archivoCarga",
@@ -251,6 +251,7 @@ const Form = ({ values, errors, handleChange, setFieldValue }) => {
                   },
                   icon: <AttachFile />,
                 }}
+                error={errors && !!errors.archivoCarga}
               />
               <p className={classes.colorText} id="text">
                 {language === "_en"
@@ -290,7 +291,7 @@ const Form = ({ values, errors, handleChange, setFieldValue }) => {
           type="submit"
           className={classes.learnMoreButton}
           round
-          color="behance"
+          color="secondary"
         >
           {form.actionButton[`label${language}`]}
         </Button>

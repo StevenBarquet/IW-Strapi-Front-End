@@ -1,19 +1,23 @@
 // Dependencies
-import { Formik } from "formik";
-import dynamic from "next/dynamic";
-import { useMutation } from "@apollo/client";
-
-// nodejs library that concatenates classes
 import classNames from "classnames";
+import { Formik } from "formik";
+import { useMutation } from "@apollo/client";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-// gql
-import { FORM_EMAIL_QUERY } from "gql/queries/email";
-
 // layout
 import withLayout from "layouts/main";
+
+// sections
+import Header from "page-sections/specialized-services/Header";
+import TalentScout from "page-sections/specialized-services/TalentScout";
+import TalentAttraction from "page-sections/specialized-services/TalentAttraction";
+import RecruitBest from "page-sections/specialized-services/RecruitBest";
+import RequestQuote from "page-sections/specialized-services/RequestQuote";
+
+// gql
+import { FORM_EMAIL_QUERY } from "gql/queries/email";
 
 // InicialValues & Schema
 import {
@@ -22,24 +26,9 @@ import {
 } from "page-sections/specialized-services/formConfig";
 
 // jss styles
-import homeStyle from "assets/jss/homeStyle";
+import specializedServicesStyle from "assets/jss/specializedServicesStyle";
 
-// sections
-const Header = dynamic(import("page-sections/specialized-services/Header"));
-const TalentScout = dynamic(
-  import("page-sections/specialized-services/TalentScout")
-);
-const TalentAttraction = dynamic(
-  import("page-sections/specialized-services/TalentAttraction")
-);
-const RecruitBest = dynamic(
-  import("page-sections/specialized-services/RecruitBest")
-);
-const RequestQuote = dynamic(
-  import("page-sections/specialized-services/RequestQuote")
-);
-
-const useStyles = makeStyles(homeStyle);
+const useStyles = makeStyles(specializedServicesStyle);
 
 const SpecializedServices = () => {
   const classes = useStyles();

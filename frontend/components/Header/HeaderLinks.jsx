@@ -20,7 +20,7 @@ import { useSettings } from "context/Settings";
 import MAIN_HEADER_QUERY from "gql/queries/header";
 
 // jss styles
-import headerLinksStyle from "assets/jss/nextjs-material-kit-pro/components/headerLinksStyle";
+import headerLinksStyle from "assets/jss/components/headerLinksStyle";
 
 const useStyles = makeStyles(headerLinksStyle);
 

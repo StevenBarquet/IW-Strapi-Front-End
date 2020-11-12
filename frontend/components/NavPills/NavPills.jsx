@@ -1,7 +1,5 @@
-import React from "react";
-// nodejs library that concatenates classes
+// Dependencies
 import classNames from "classnames";
-// nodejs library to set properties for components
 import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views";
 
@@ -15,7 +13,7 @@ import Icon from "@material-ui/core/Icon";
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 
-import styles from "assets/jss/nextjs-material-kit-pro/components/navPillsStyle";
+import styles from "assets/jss/components/navPillsStyle";
 
 const useStyles = makeStyles(styles);
 
@@ -48,7 +46,6 @@ export default function NavPills(props) {
       {tabs.map((prop, key) => {
         const icon = {};
         if (prop.tabIcon !== undefined) {
-          // icon.icon = <prop.tabIcon className={classes.tabIcon} />;
           icon.icon = (
             <Icon
               style={{

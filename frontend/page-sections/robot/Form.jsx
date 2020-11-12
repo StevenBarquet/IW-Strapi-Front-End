@@ -80,10 +80,9 @@ const Form = ({ values, errors, handleChange }) => {
                     value={values.nombre}
                     labelText={language === "_en" ? "Name" : "Nombre"}
                     handleChange={handleChange}
-                    errors={errors && !!errors.nombre}
+                    error={errors && !!errors.nombre}
                     inputProps={{
                       name: "nombre",
-                      maxLength: 18,
                       placeholder: language === "_en" ? "Name" : "Nombre",
                     }}
                     formControlProps={{
@@ -100,10 +99,9 @@ const Form = ({ values, errors, handleChange }) => {
                       language === "_en" ? "Email" : "Correo electrónico"
                     }
                     handleChange={handleChange}
-                    errors={errors && !!errors.email}
+                    error={errors && !!errors.email}
                     inputProps={{
                       name: "email",
-                      maxLength: 18,
                       placeholder:
                         language === "_en" ? "Email" : "Correo electrónico",
                     }}
@@ -119,10 +117,9 @@ const Form = ({ values, errors, handleChange }) => {
                     value={values.empresa}
                     labelText={language === "_en" ? "Company" : "Empresa"}
                     handleChange={handleChange}
-                    errors={errors && !!errors.empresa}
+                    error={errors && !!errors.empresa}
                     inputProps={{
                       name: "empresa",
-                      maxLength: 18,
                       placeholder: language === "_en" ? "Company" : "Empresa",
                     }}
                     formControlProps={{
@@ -141,10 +138,9 @@ const Form = ({ values, errors, handleChange }) => {
                         : "Necesidades de Automatización"
                     }
                     handleChange={handleChange}
-                    errors={errors && !!errors.automatizacion}
+                    error={errors && !!errors.automatizacion}
                     inputProps={{
                       name: "automatizacion",
-                      maxLength: 18,
                       placeholder:
                         language === "_en"
                           ? "Automation Needs"

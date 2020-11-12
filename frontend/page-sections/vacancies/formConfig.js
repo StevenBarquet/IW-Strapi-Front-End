@@ -2,17 +2,30 @@
 import * as yup from "yup";
 
 const initialValues = {
-  nombre: "",
-  empresa: "",
+  name: "",
+  apellidos: "",
+  edad: "",
+  perfil: "",
+  celular: "",
   email: "",
-  automatizacion: "",
+  localidad: "",
+  archivoCarga: "",
+  linkPDF: "",
 };
 
 const schema = yup.object().shape({
-  nombre: yup.string().required("Este es un campo requerido"),
-  empresa: yup.string().required("Este es un campo requerido"),
+  name: yup.string().required("Este es un campo requerido"),
+  apellidos: yup.string().required("Este es un campo requerido"),
+  edad: yup.string().required("Este es un campo requerido"),
+  perfil: yup.string().required("Este es un campo requerido"),
+  celular: yup.string().required("Este es un campo requerido"),
   email: yup.string().required("Este es un campo requerido"),
-  automatizacion: yup.string().required("Este es un campo requerido"),
+  localidad: yup.string().required("Este es un campo requerido"),
+  archivoCarga: yup.string().when("linkPDF", {
+    is: "",
+    then: yup.string().required("Es un campo requerido"),
+  }),
+  linkPDF: yup.string().notRequired(),
 });
 
 export { initialValues, schema };

@@ -13,6 +13,7 @@ const initialValues = {
 const schema = yup.object().shape({
   name: yup.string().required("Este es un campo requerido"),
   email: yup.string().required("Este es un campo requerido"),
+  company: yup.string().required("Este es un campo requerido"),
   telephone: yup.string().required("Este es un campo requerido"),
   description: yup.string().required("Este es un campo requerido"),
   validate: yup

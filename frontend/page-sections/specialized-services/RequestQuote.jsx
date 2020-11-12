@@ -85,7 +85,7 @@ const RequestQuote = ({ values, errors, handleChange }) => {
             formControlProps={{
               fullWidth: true,
             }}
-            errors={errors && !!errors.name}
+            error={errors && !!errors.name}
           />
         </GridItem>
         <GridItem xs={12} sm={5} md={6}>
@@ -103,7 +103,7 @@ const RequestQuote = ({ values, errors, handleChange }) => {
             formControlProps={{
               fullWidth: true,
             }}
-            errors={errors && !!errors.email}
+            error={errors && !!errors.email}
           />
         </GridItem>
       </GridContainer>
@@ -122,7 +122,7 @@ const RequestQuote = ({ values, errors, handleChange }) => {
             formControlProps={{
               fullWidth: true,
             }}
-            errors={errors && !!errors.company}
+            error={errors && !!errors.company}
           />
         </GridItem>
         <GridItem xs={12} sm={5} md={4}>
@@ -146,7 +146,7 @@ const RequestQuote = ({ values, errors, handleChange }) => {
             formControlProps={{
               fullWidth: true,
             }}
-            errors={errors && !!errors.telephone}
+            error={errors && !!errors.telephone}
           />
         </GridItem>
         <GridItem xs={12} sm={10} md={10}>
@@ -172,7 +172,7 @@ const RequestQuote = ({ values, errors, handleChange }) => {
             formControlProps={{
               fullWidth: true,
             }}
-            errors={errors && !!errors.description}
+            error={errors && !!errors.description}
           />
         </GridItem>
         <GridItem xs={12} sm={10} md={10}>
@@ -190,7 +190,7 @@ const RequestQuote = ({ values, errors, handleChange }) => {
               name: "validate",
               id: "validate",
             }}
-            errors={errors && !!errors.validate}
+            error={errors && !!errors.validate}
           />
         </GridItem>
       </GridContainer>

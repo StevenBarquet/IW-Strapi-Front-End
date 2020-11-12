@@ -75,8 +75,8 @@ const CustomFileInput = (props) => {
           ...inputProps,
           onClick: onFocus,
           value,
-          endAdornment: buttonEnd,
-          startAdornment: buttonStart,
+          endadornment: buttonEnd,
+          startadornment: buttonStart,
           disabled,
         }}
       />

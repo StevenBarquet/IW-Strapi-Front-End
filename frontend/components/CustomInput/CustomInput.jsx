@@ -115,7 +115,7 @@ CustomInput.propTypes = {
   labelProps: PropTypes.shape({}),
   id: PropTypes.string,
   value: PropTypes.string,
-  handleChange: PropTypes.func.isRequired,
+  handleChange: PropTypes.func,
   inputProps: PropTypes.shape({}),
   formControlProps: PropTypes.shape({
     className: PropTypes.string,

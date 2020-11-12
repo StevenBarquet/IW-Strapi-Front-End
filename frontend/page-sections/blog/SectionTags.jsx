@@ -1,7 +1,7 @@
 // Dependencies
 import * as yup from "yup";
 import { Formik } from "formik";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import Link from "next/link";
 import getConfig from "next/config";
 import PropTypes from "prop-types";
@@ -22,6 +22,7 @@ import { useSettings } from "context/Settings";
 
 // gql
 import { BLOG_TAGS_QUERY } from "gql/queries/blog";
+import { FORM_EMAIL_QUERY } from "gql/queries/email";
 
 // jss styles
 import blogStyle from "assets/jss/blogStyle";
@@ -44,6 +45,28 @@ const SectionTags = ({ articleImg }) => {
   const {
     defaultSettings: { language },
   } = useSettings();
+  const [createRegistry] = useMutation(FORM_EMAIL_QUERY);
+
+  const onSubmitForm = async (values, { resetForm, setSubmitting }) => {
+    const { inscribete } = values;
+
+    try {
+      const { data } = await createRegistry({
+        variables: {
+          input: {
+            to: "cmulato@interware.com.mx",
+            subject: "Boletín Interware",
+            html: `<h1> Boletín Interware </h1><strong>Inscríbete a nuestro boletín: </strong>${inscribete}`,
+          },
+        },
+      });
+      setSubmitting(false);
+      resetForm();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const { loading, error, data } = useQuery(BLOG_TAGS_QUERY);
   const classes = useStyles();
 
@@ -65,12 +88,6 @@ const SectionTags = ({ articleImg }) => {
   }
 
   const { tagsBlogs } = data;
-
-  const onSubmitForm = async (values, { resetForm, setSubmitting }) => {
-    console.log("values", values);
-    resetForm();
-    setSubmitting(false);
-  };
 
   return (
     <GridItem xs={12} sm={10} md={articleImg ? 12 : 3}>

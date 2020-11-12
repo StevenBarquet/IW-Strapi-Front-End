@@ -15,7 +15,6 @@ import { useSettings } from "context/Settings";
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 import TextInputField from "components/CustomInput/CustomInput";
-import DateTime from "components/DateTime/DateTime";
 import Button from "components/CustomButtons/Button";
 import RenderHTML from "components/HTML/RenderHTML";
 import CustomFileInput from "components/CustomFileInput/CustomFileInput";
@@ -27,7 +26,7 @@ import robotStyles from "assets/jss/robotStyles";
 
 const useStyles = makeStyles(robotStyles);
 
-const Form = ({ values, errors, handleChange }) => {
+const Form = ({ values, errors, handleChange, setFieldValue }) => {
   const {
     defaultSettings: { language },
   } = useSettings();
@@ -70,138 +69,72 @@ const Form = ({ values, errors, handleChange }) => {
       </GridContainer>
       <GridContainer justify="center">
         <GridItem xs={12} sm={10} md={10}>
-          <GridContainer>
-            <GridItem item xs={12} sm={6} md={6}>
-              <TextInputField
-                id="nombre1"
-                name="nombre"
-                value={values.nombre}
-                labelText={language === "_en" ? "Name" : "Nombre"}
-                handleChange={handleChange}
-                errors={errors && !!errors.nombre}
-                inputProps={{
-                  name: "nombre",
-                  maxLength: 18,
-                  placeholder: language === "_en" ? "Name" : "Nombre",
-                }}
-                formControlProps={{
-                  fullWidth: true,
-                }}
-              />
-            </GridItem>
-            <GridItem item xs={12} sm={6} md={6}>
-              <TextInputField
-                id="email2"
-                name="email"
-                value={values.email}
-                labelText={language === "_en" ? "Email" : "Correo electrónico"}
-                handleChange={handleChange}
-                errors={errors && !!errors.email}
-                inputProps={{
-                  name: "email",
-                  maxLength: 18,
-                  placeholder:
-                    language === "_en" ? "Email" : "Correo electrónico",
-                }}
-                formControlProps={{
-                  fullWidth: true,
-                }}
-              />
-            </GridItem>
-          </GridContainer>
-        </GridItem>
-      </GridContainer>
-      <GridContainer justify="center">
-        <GridItem xs={12} sm={10} md={10}>
           <h3>
             {language === "_en" ? "Personal information" : "Datos Personales"}
           </h3>
           <GridContainer>
-            <GridItem item xs={12} sm={4} md={4}>
+            <GridItem item xs={12} sm={5} md={5}>
               <TextInputField
-                id="empresa3"
-                name="empresa"
-                value={values.empresa}
-                labelText={language === "_en" ? "Company" : "Empresa"}
+                id="name"
+                name="name"
+                value={values.name}
+                labelText={language === "_en" ? "Name(s)" : "Nombre(s)"}
                 handleChange={handleChange}
-                errors={errors && !!errors.empresa}
+                error={errors && !!errors.name}
                 inputProps={{
-                  name: "empresa",
-                  maxLength: 18,
-                  placeholder: language === "_en" ? "Company" : "Empresa",
+                  name: "name",
+                  placeholder: language === "_en" ? "Name(s)" : "Nombre(s)",
                 }}
                 formControlProps={{
                   fullWidth: true,
                 }}
-              />
-            </GridItem>
-            <GridItem item xs={12} sm={4} md={4}>
-              <TextInputField
-                id="automatizacion4"
-                name="automatizacion"
-                value={values.automatizacion}
-                labelText={
-                  language === "_en" ? "Automation Needs" : "Necesidades"
-                }
-                handleChange={handleChange}
-                errors={errors && !!errors.automatizacion}
-                inputProps={{
-                  name: "automatizacion",
-                  maxLength: 18,
-                  placeholder:
-                    language === "_en" ? "Automation Needs" : "Necesidades",
-                }}
-                formControlProps={{
-                  fullWidth: true,
-                }}
-              />
-            </GridItem>
-            <GridItem xs={12} sm={4} md={4}>
-              <DateTime
-                labelText="Fecha de nacimiento"
-                id="fecha"
-                name="fecha"
-                onChange={() => {}}
-                value=""
               />
             </GridItem>
             <GridItem item xs={12} sm={5} md={5}>
               <TextInputField
-                id="empresa5"
-                name="empresa"
-                value={values.empresa}
-                labelText={language === "_en" ? "Company" : "Empresa"}
+                id="apellidos"
+                name="apellidos"
+                value={values.apellidos}
+                labelText={language === "_en" ? "Last names" : "Apellidos"}
                 handleChange={handleChange}
-                errors={errors && !!errors.empresa}
+                error={errors && !!errors.apellidos}
                 inputProps={{
-                  name: "empresa",
-                  maxLength: 18,
-                  placeholder: language === "_en" ? "Company" : "Empresa",
+                  name: "apellidos",
+                  placeholder: language === "_en" ? "Last names" : "Apellidos",
                 }}
                 formControlProps={{
                   fullWidth: true,
                 }}
               />
             </GridItem>
-            <GridItem item xs={12} sm={7} md={7}>
+            <GridItem xs={12} sm={2} md={2}>
               <TextInputField
-                id="automatizacion6"
-                name="automatizacion"
-                value={values.automatizacion}
-                labelText={
-                  language === "_en"
-                    ? "Automation Needs"
-                    : "Necesidades de Automatización"
-                }
+                id="edad"
+                name="edad"
+                value={values.edad}
+                labelText={language === "_en" ? "Age" : "Edad"}
                 handleChange={handleChange}
-                errors={errors && !!errors.automatizacion}
+                error={errors && !!errors.edad}
                 inputProps={{
-                  name: "automatizacion7",
-                  maxLength: 18,
-                  placeholder:
-                    language === "_en"
-                      ? "Automation Needs"
-                      : "Necesidades de Automatización",
+                  name: "edad",
+                  placeholder: language === "_en" ? "Age" : "Edad",
+                }}
+                formControlProps={{
+                  fullWidth: true,
+                }}
+              />
+            </GridItem>
+            <GridItem item xs={12} sm={12} md={12}>
+              <TextInputField
+                id="perfil"
+                name="perfil"
+                value={values.perfil}
+                labelText={language === "_en" ? "Company" : "Perfil"}
+                handleChange={handleChange}
+                error={errors && !!errors.perfil}
+                inputProps={{
+                  name: "perfil",
+                  placeholder: language === "_en" ? "Profile" : "Perfil",
                 }}
                 formControlProps={{
                   fullWidth: true,
@@ -219,16 +152,22 @@ const Form = ({ values, errors, handleChange }) => {
           <GridContainer>
             <GridItem item xs={12} sm={4} md={4}>
               <TextInputField
-                id="empresa8"
-                name="empresa"
-                value={values.empresa}
-                labelText={language === "_en" ? "Company" : "Empresa"}
+                id="celular"
+                name="celular"
+                value={values.celular}
+                labelText={
+                  language === "_en"
+                    ? "Cell phone and / or home"
+                    : "Teléfono celular y/o casa"
+                }
                 handleChange={handleChange}
-                errors={errors && !!errors.empresa}
+                error={errors && !!errors.celular}
                 inputProps={{
-                  name: "empresa",
-                  maxLength: 18,
-                  placeholder: language === "_en" ? "Company" : "Empresa",
+                  name: "celular",
+                  placeholder:
+                    language === "_en"
+                      ? "Cell phone and / or home"
+                      : "Teléfono celular y/o casa",
                 }}
                 formControlProps={{
                   fullWidth: true,
@@ -237,19 +176,16 @@ const Form = ({ values, errors, handleChange }) => {
             </GridItem>
             <GridItem item xs={12} sm={4} md={4}>
               <TextInputField
-                id="automatizacion9"
-                name="automatizacion"
-                value={values.automatizacion}
-                labelText={
-                  language === "_en" ? "Automation Needs" : "Necesidades"
-                }
+                id="email"
+                name="email"
+                value={values.email}
+                labelText={language === "_en" ? "E mail" : "Correo Electrónico"}
                 handleChange={handleChange}
-                errors={errors && !!errors.automatizacion}
+                error={errors && !!errors.email}
                 inputProps={{
-                  name: "automatizacion",
-                  maxLength: 18,
+                  name: "email",
                   placeholder:
-                    language === "_en" ? "Automation Needs" : "Necesidades",
+                    language === "_en" ? "E mail" : "Correo Electrónico",
                 }}
                 formControlProps={{
                   fullWidth: true,
@@ -258,19 +194,22 @@ const Form = ({ values, errors, handleChange }) => {
             </GridItem>
             <GridItem xs={12} sm={4} md={4}>
               <TextInputField
-                id="automatizacion1"
-                name="automatizacion"
-                value={values.automatizacion}
+                id="localidad"
+                name="localidad"
+                value={values.localidad}
                 labelText={
-                  language === "_en" ? "Automation Needs" : "Necesidades"
+                  language === "_en"
+                    ? "Locality: municipality or mayor's office"
+                    : "Localidad: municipio o alcaldía"
                 }
                 handleChange={handleChange}
-                errors={errors && !!errors.automatizacion}
+                error={errors && !!errors.localidad}
                 inputProps={{
-                  name: "automatizacion",
-                  maxLength: 18,
+                  name: "localidad",
                   placeholder:
-                    language === "_en" ? "Automation Needs" : "Necesidades",
+                    language === "_en"
+                      ? "Locality: municipality or mayor's office"
+                      : "Localidad: municipio o alcaldía",
                 }}
                 formControlProps={{
                   fullWidth: true,
@@ -290,15 +229,12 @@ const Form = ({ values, errors, handleChange }) => {
           <GridContainer>
             <GridItem item xs={12} sm={6} md={6}>
               <CustomFileInput
-                id="archivoCarga1"
-                value=""
-                label="Seleccionar archivo..."
+                id="archivoCarga-consolidados"
+                value={values.archivoCarga ? values.archivoCarga.name : ""}
                 fileInputProps={{
-                  id: "archivoCarga1",
+                  id: "archivoCarga",
                   name: "archivoCarga",
-                  accept:
-                    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel",
-                  onChange: () => {},
+                  onChange: setFieldValue,
                 }}
                 formControlProps={{
                   fullWidth: true,
@@ -324,18 +260,18 @@ const Form = ({ values, errors, handleChange }) => {
             </GridItem>
             <GridItem item xs={12} sm={6} md={6}>
               <TextInputField
-                id="automatizacion2"
-                name="automatizacion"
-                value={values.automatizacion}
+                id="linkPDF"
+                name="linkPDF"
+                value={values.linkPDF}
                 labelText={
                   language === "_en"
                     ? "Link to download"
                     : "Link para descargar"
                 }
                 handleChange={handleChange}
-                errors={errors && !!errors.automatizacion}
+                error={errors && !!errors.linkPDF}
                 inputProps={{
-                  name: "automatizacion",
+                  name: "linkPDF",
                   placeholder:
                     language === "_en"
                       ? "Link to download"
@@ -365,18 +301,29 @@ const Form = ({ values, errors, handleChange }) => {
 
 Form.propTypes = {
   values: PropTypes.shape({
-    nombre: PropTypes.string,
-    empresa: PropTypes.string,
+    name: PropTypes.string,
+    apellidos: PropTypes.string,
+    edad: PropTypes.string,
+    perfil: PropTypes.string,
+    celular: PropTypes.string,
     email: PropTypes.string,
-    automatizacion: PropTypes.string,
+    localidad: PropTypes.string,
+    archivoCarga: PropTypes.any.isRequired,
+    linkPDF: PropTypes.string,
   }),
   errors: PropTypes.shape({
-    nombre: PropTypes.string,
-    empresa: PropTypes.string,
+    name: PropTypes.string,
+    apellidos: PropTypes.string,
+    edad: PropTypes.string,
+    perfil: PropTypes.string,
+    celular: PropTypes.string,
     email: PropTypes.string,
-    automatizacion: PropTypes.string,
+    localidad: PropTypes.string,
+    archivoCarga: PropTypes.string,
+    linkPDF: PropTypes.string,
   }),
   handleChange: PropTypes.func.isRequired,
+  setFieldValue: PropTypes.func.isRequired,
 };
 
 export default Form;

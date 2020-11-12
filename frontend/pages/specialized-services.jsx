@@ -1,12 +1,16 @@
 // Dependencies
 import { Formik } from "formik";
 import dynamic from "next/dynamic";
+import { useMutation } from "@apollo/client";
 
 // nodejs library that concatenates classes
 import classNames from "classnames";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+
+// gql
+import { FORM_EMAIL_QUERY } from "gql/queries/email";
 
 // apollo
 import { withApollo } from "libs/apollo";
@@ -42,11 +46,27 @@ const useStyles = makeStyles(homeStyle);
 
 const SpecializedServices = () => {
   const classes = useStyles();
+  const [createRegistry] = useMutation(FORM_EMAIL_QUERY);
 
   const onSubmitForm = async (values, { resetForm, setSubmitting }) => {
-    console.log("values", values);
-    resetForm();
-    setSubmitting(false);
+    const { name, email, company, telephone, description } = values;
+
+    try {
+      const { data } = await createRegistry({
+        variables: {
+          input: {
+            to: "cmulato@interware.com.mx",
+            subject: "Formulario Solicita una cotización",
+            html: `<h1>Solicita una cotización</h1><strong>Nombre: </strong>${name}<br/> <strong> Correo Electronico: </strong> ${email} <br/> <strong>Empresa: </strong> ${company} <br/> <strong>Telefono: </strong> ${telephone} <br/> <strong>Indica tu necesidad: </strong> ${description}`,
+          },
+        },
+      });
+      setSubmitting(false);
+      resetForm();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

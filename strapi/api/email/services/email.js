@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * Read the documentation (https://strapi.io/documentation/v3.x/concepts/services.html#core-services)
  * to customize this service
@@ -11,12 +10,18 @@
 
 
 module.exports = {
-    sendEmail: async (to, subject, html, filename, content ) => {
-        console.log("filename", filename);
-        console.log("content", content);
-        strapi.log.info("services.email.sendEmail Sending email")
+    sendEmail: async (data, filename, content ) => {
+        const emailTemplate = {
+          subject: 'Iw Robot - Contacto',
+          text: `Prueba interWare Robot!`,
+          html: `<p>Nombre: <%= data.nombre %></p>
+          <p>E-mail: <%= data.email %></p>
+          <p>Empresa: <%= data.empresa %></p>
+          <p>Necesidades de automatización: <%= data.automatizacion %></p>.`,
+        };
+
         if (content) {
-          strapi.plugins['email'].services.email.send({
+          await strapi.plugins.email.services.email.sendTemplatedEmail({
             to,
             from: DEFAULT_FROM,
             replyTo: DEFAULT_REPLY_TO,
@@ -30,16 +35,14 @@ module.exports = {
             ],
           });
         } else {
-          strapi.plugins['email'].services.email.send({
-            to,
-            from: DEFAULT_FROM,
-            replyTo: DEFAULT_REPLY_TO,
-            subject,
-            html,
-          });
+          await strapi.plugins.email.services.email.sendTemplatedEmail({
+            to: "israel.lopez@interware.com.mx"
+          },
+            emailTemplate,
+            { data }
+          );
         }
-        
-          strapi.log.info("services.email.sendEmail Email sent")
-          return {menssage: "Email sent"}
+
+        return {menssage: "Email sent"}
     }
 };

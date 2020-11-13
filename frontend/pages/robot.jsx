@@ -43,9 +43,12 @@ const RobotPage = () => {
       const { data } = await createRegistry({
         variables: {
           input: {
-            to: "cmulato@interware.com.mx",
-            subject: "Formulario de Robot",
-            html: `<h1>¡Integra IW Robot a tu equipo de trabajo!</h1><strong>Nombre: </strong>${nombre}<br/> <strong> Correo Electronico: </strong> ${email} <br/> <strong>Empresa: </strong> ${empresa} <br/> <strong>Necesidades de automatizacion: </strong> ${automatizacion}`,
+            data: {
+              nombre,
+              email,
+              empresa,
+              automatizacion,
+            },
           },
         },
       });

@@ -15,7 +15,9 @@ const { parseMultipartData } = require('strapi-utils');
 // };
 
 module.exports = {
-  send: async (ctx) => { 
+  send: async (ctx) => {
+    const { data } = ctx.request.body
+
     if (ctx.is('multipart')) {
         // parse the multipart data, you will need to send file as files.files key
         // and some random json object in the data key
@@ -25,13 +27,24 @@ module.exports = {
         const content = fs.readFileSync(files.files.path).toString('base64');
         const filename= files.files.name
 
-        const { to, subject, html } = ctx.request.body
-    
-        return await strapi.services.email.sendEmail(to, subject, html, filename, content )
+        try {
+          const response = await strapi.services.email.sendEmail(data, filename, content)
+
+          return response
+        } catch(err) {
+          console.log("Error: ", err)
+          return ctx.badRequest(error.toString());
+        }
 
       } else {
-        return ctx.badRequest('request format incorrect');
+        try {
+          const response = await strapi.services.email.sendEmail(data)
+
+          return response
+        } catch(err) {
+          console.log("Error: ", err)
+          return ctx.badRequest(error.toString());
+        }
       }
     },
   };
-  

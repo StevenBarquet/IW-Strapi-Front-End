@@ -70,7 +70,7 @@ const SendCV = () => {
             md={3}
             className={`${classes.mlAuto} ${classes.mrAuto}`}
           >
-            <Button onClick={(e) => e.preventDefault()} round color="behance">
+            <Button onClick={(e) => e.preventDefault()} round color="secondary">
               {sendCV.actionButton[`label${language}`]}
             </Button>
           </GridItem>

@@ -8,6 +8,7 @@ import {
   warningColor,
   dangerColor,
   blackColor,
+  behanceColor,
   whiteColor,
   hexToRgb,
 } from "assets/jss/nextjs-material-kit-pro";
@@ -119,8 +120,8 @@ const buttonStyle = {
     },
   },
   secondary: {
-    color: "rgba(" + hexToRgb(blackColor) + ",.87)",
-    backgroundColor: secondaryColor[0],
+    color: "rgba(" + hexToRgb(whiteColor) + ",.87)",
+    backgroundColor: behanceColor,
     boxShadow:
       "0 2px 2px 0 rgba(" +
       hexToRgb(secondaryColor[0]) +
@@ -138,7 +139,7 @@ const buttonStyle = {
         ",.12), 0 8px 10px -5px rgba(" +
         hexToRgb(secondaryColor[0]) +
         ",.2)",
-      color: "rgba(" + hexToRgb(blackColor) + ",.87)",
+      color: "rgba(" + hexToRgb(whiteColor) + ",.87)",
       backgroundColor: grayColor[10],
     },
   },

@@ -1,8 +1,6 @@
 // Dependencies
 import { Formik } from "formik";
 import { useMutation } from "@apollo/client";
-
-// nodejs library that concatenates classes
 import classNames from "classnames";
 
 // @material-ui/core components
@@ -10,6 +8,13 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // layout
 import withLayout from "layouts/main";
+
+// sections
+import Header from "page-sections/robot/Header";
+import Functioning from "page-sections/robot/Functioning";
+import Benefits from "page-sections/robot/Benefits";
+import Form from "page-sections/robot/Form";
+import PlansForYou from "page-sections/robot/PlansForYou";
 
 // InicialValues & Schema
 import { initialValues, schema } from "page-sections/robot/formConfig";
@@ -23,13 +28,6 @@ import { FORM_EMAIL_QUERY } from "gql/queries/email";
 
 // styles
 import robotStyles from "assets/jss/robotStyles";
-
-// sections
-import Header from "page-sections/robot/Header";
-import Functioning from "page-sections/robot/Functioning";
-import Benefits from "page-sections/robot/Benefits";
-import Form from "page-sections/robot/Form";
-import PlansForYou from "page-sections/robot/PlansForYou";
 
 const useStyles = makeStyles(robotStyles);
 

@@ -1,8 +1,6 @@
 /* eslint-disable no-nested-ternary */
 // Dependencies
-import React from "react";
 import PropTypes from "prop-types";
-// nodejs library that concatenates classes
 import classNames from "classnames";
 
 // @material-ui/core components
@@ -18,9 +16,9 @@ import Check from "@material-ui/icons/Check";
 // core components
 import InputLabel from "components/InputLabel/InputLabel";
 
-import styles from "assets/jss/nextjs-material-kit-pro/customSelectStyle";
-import stylesInput from "assets/jss/nextjs-material-kit-pro/components/customInputStyle";
-import basicsStyle from "assets/jss/nextjs-material-kit-pro/pages/componentsSections/basicsStyle";
+import styles from "assets/jss/components/customSelectStyle";
+import stylesInput from "assets/jss/components/customInputStyle";
+import basicsStyle from "assets/jss/components/basicsStyle";
 
 const useStylesSelect = makeStyles(styles);
 const useStylesInput = makeStyles(stylesInput);

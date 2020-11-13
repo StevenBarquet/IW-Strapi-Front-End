@@ -159,7 +159,7 @@ const Form = ({ values, errors, handleChange }) => {
               type="submit"
               className={classes.learnMoreButton}
               round
-              color="behance"
+              color="secondary"
             >
               {form.actionButton[`label${language}`]}
             </Button>

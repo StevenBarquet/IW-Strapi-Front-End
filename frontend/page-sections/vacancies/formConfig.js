@@ -22,7 +22,7 @@ const schema = yup.object().shape({
   email: yup.string().required("Este es un campo requerido"),
   localidad: yup.string().required("Este es un campo requerido"),
   archivoCarga: yup.string().when("linkPDF", {
-    is: "",
+    is: (val) => val === undefined,
     then: yup.string().required("Es un campo requerido"),
   }),
   linkPDF: yup.string().notRequired(),

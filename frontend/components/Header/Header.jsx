@@ -1,10 +1,6 @@
 // Dependencies
 import Link from "next/link";
-
-// nodejs library that concatenates classes
 import classNames from "classnames";
-
-// nodejs library to set properties for components
 import PropTypes from "prop-types";
 
 // @material-ui/core components
@@ -21,7 +17,7 @@ import Menu from "@material-ui/icons/Menu";
 import Close from "@material-ui/icons/Close";
 
 // jss styles
-import headerStyle from "assets/jss/nextjs-material-kit-pro/components/headerStyle";
+import headerStyle from "assets/jss/components/headerStyle";
 
 const useStyles = makeStyles(headerStyle);
 

@@ -196,7 +196,7 @@ const RequestQuote = ({ values, errors, handleChange }) => {
       </GridContainer>
       <br />
       <GridContainer justify="center">
-        <Button type="submit" round color="behance">
+        <Button type="submit" round color="secondary">
           {requestQuote.actionButton[`label${language}`]}
         </Button>
       </GridContainer>

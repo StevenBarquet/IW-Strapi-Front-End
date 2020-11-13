@@ -1,5 +1,4 @@
-import React from "react";
-// used for making the prop types of this component
+// Dependencies
 import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -7,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import CustomInput from "components/CustomInput/CustomInput";
 import Button from "components/CustomButtons/Button";
 
-import styles from "assets/jss/nextjs-material-kit-pro/components/customFileInputStyle";
+import styles from "assets/jss/components/customFileInputStyle";
 
 const useStyles = makeStyles(styles);
 
@@ -19,6 +18,7 @@ const CustomFileInput = (props) => {
   const {
     id,
     value,
+    error,
     endButton,
     startButton,
     inputProps,
@@ -79,6 +79,7 @@ const CustomFileInput = (props) => {
           startadornment: buttonStart,
           disabled,
         }}
+        error={error}
       />
     </div>
   );
@@ -87,12 +88,14 @@ const CustomFileInput = (props) => {
 CustomFileInput.defaultProps = {
   multiple: false,
   disabled: false,
+  error: false,
 };
 
 CustomFileInput.propTypes = {
   id: PropTypes.string,
   value: PropTypes.string,
   endButton: PropTypes.object,
+  error: PropTypes.bool,
   startButton: PropTypes.object,
   inputProps: PropTypes.object,
   formControlProps: PropTypes.object,

@@ -73,7 +73,7 @@ const DigitalServices = () => {
             md={3}
             className={`${classes.mlAuto} ${classes.mrAuto}`}
           >
-            <Button onClick={(e) => e.preventDefault()} round color="behance">
+            <Button onClick={(e) => e.preventDefault()} round color="secondary">
               {digitalServices.actionButton[`label${language}`]}
             </Button>
           </GridItem>

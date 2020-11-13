@@ -1,12 +1,11 @@
-import React from "react";
-// nodejs library to set properties for components
+// Dependencies
 import PropTypes from "prop-types";
-// nodejs library that concatenates classes
 import classNames from "classnames";
+
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-import styles from "assets/jss/nextjs-material-kit-pro/components/infoStyle.js";
+import styles from "assets/jss/components/infoStyle.js";
 
 const useStyles = makeStyles(styles);
 

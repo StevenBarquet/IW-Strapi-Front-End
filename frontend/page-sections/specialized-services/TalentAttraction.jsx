@@ -104,7 +104,7 @@ const TalentAttraction = () => {
             <h1>
               {talentAttraction.contactus.title[`sectionTitle${language}`]}
             </h1>
-            <Button type="submit" round color="behance">
+            <Button type="submit" round color="secondary">
               {talentAttraction.contactus.actionButton[`label${language}`]}
             </Button>
           </GridItem>

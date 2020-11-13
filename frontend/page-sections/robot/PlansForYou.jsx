@@ -103,7 +103,7 @@ const PlansForYou = () => {
             </GridContainer>
             <br />
             <GridContainer justify="center">
-              <Button color="behance" round>
+              <Button color="secondary" round>
                 {plansForYou.actionButton[`label${language}`]}
               </Button>
             </GridContainer>

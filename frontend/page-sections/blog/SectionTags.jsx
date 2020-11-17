@@ -54,9 +54,10 @@ const SectionTags = ({ articleImg }) => {
       const { data } = await createRegistry({
         variables: {
           input: {
-            to: "cmulato@interware.com.mx",
-            subject: "Boletín Interware",
-            html: `<h1> Boletín Interware </h1><strong>Inscríbete a nuestro boletín: </strong>${inscribete}`,
+            page: "boletin",
+            data: {
+              inscribete,
+            },
           },
         },
       });

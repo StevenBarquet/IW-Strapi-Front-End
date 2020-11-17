@@ -41,9 +41,14 @@ const SpecializedServices = () => {
       const { data } = await createRegistry({
         variables: {
           input: {
-            to: "cmulato@interware.com.mx",
-            subject: "Formulario Solicita una cotización",
-            html: `<h1>Solicita una cotización</h1><strong>Nombre: </strong>${name}<br/> <strong> Correo Electronico: </strong> ${email} <br/> <strong>Empresa: </strong> ${company} <br/> <strong>Telefono: </strong> ${telephone} <br/> <strong>Indica tu necesidad: </strong> ${description}`,
+            page: "ServiciosEspecializados",
+            data: {
+              name,
+              email,
+              company,
+              telephone,
+              description,
+            },
           },
         },
       });

@@ -1,19 +1,17 @@
 module.exports = {
     definition: `
     type Email {
-      to: String
-      html: String
-      subject: String
+      data: JSON
       content: String
       filename: String
+      page: String
     }
 
     input EmailInput {
-      to: String
-      html: String
-      subject: String
+      data: JSON
       content: String
       filename: String
+      page: String
     }  
    `,
     mutation: `
@@ -25,12 +23,12 @@ module.exports = {
               description: 'send email',
               resolverOf: 'application::email.email.send',
               resolver: (_, {input}) => {
-                const {to, subject, html, filename, content } = input;
+                const {data, filename, content, page } = input;
 
                 if(content){
-                   return strapi.api.email.services.email.sendEmail(to, subject, html, filename, content)    
+                   return strapi.api.email.services.email.sendEmail(page, data, filename, content)    
                 }else {
-                  return strapi.api.email.services.email.sendEmail(to, subject, html)    
+                  return strapi.api.email.services.email.sendEmail(page, data)    
                 }
 
               },

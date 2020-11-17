@@ -59,9 +59,16 @@ const Vacancies = () => {
             input: {
               content: result.replace(/^data:.+;base64,/, ""),
               filename: archivoCarga.name,
-              to: "cmulato@interware.com.mx",
-              subject: `Formulario de Postularse de ${name} ${apellidos}`,
-              html: `<h1>Datos Personales</h1> <strong>Nombre: </strong>${name}<br/> <strong>Apellidos: </strong>${apellidos}<br/> <strong>Edad: </strong>${edad}<br/> <h1>Datos del Contacto</h1><strong>Telefono celular/casa: </strong>${celular}<br/> <strong>Correo Electronico: </strong>${email}<br/><strong>Localidad Municipio o Acaldia: </strong>${localidad}<br/> <h1>Curriculum Viate</h1> <strong>Link para descargar: </strong>${linkPDF}<br/>`,
+              page: "vacantes",
+              data: {
+                name,
+                email,
+                apellidos,
+                edad,
+                celular,
+                localidad,
+                linkPDF,
+              },
             },
           },
         });

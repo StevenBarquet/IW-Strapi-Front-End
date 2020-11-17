@@ -41,6 +41,7 @@ const RobotPage = () => {
       const { data } = await createRegistry({
         variables: {
           input: {
+            page: "robotIW",
             data: {
               nombre,
               email,

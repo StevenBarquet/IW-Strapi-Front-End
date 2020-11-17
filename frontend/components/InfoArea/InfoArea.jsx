@@ -5,7 +5,7 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-import styles from "assets/jss/components/infoStyle.js";
+import styles from "assets/jss/components/infoStyle";
 
 const useStyles = makeStyles(styles);
 
@@ -27,10 +27,13 @@ const InfoArea = (props) => {
   );
 };
 
+InfoArea.defaultProps = {
+  className: "",
+};
+
 InfoArea.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.node.isRequired,
-  vertical: PropTypes.bool,
   className: PropTypes.string,
 };
 

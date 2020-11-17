@@ -12,7 +12,7 @@ import Input from "@material-ui/core/Input";
 import Clear from "@material-ui/icons/Clear";
 import Check from "@material-ui/icons/Check";
 
-import customInputStyle from "assets/jss/components/customInputStyle.js";
+import customInputStyle from "assets/jss/components/customInputStyle";
 
 const useStyles = makeStyles(customInputStyle);
 
@@ -33,8 +33,8 @@ export default function CustomInput(props) {
   } = props;
   const classes = useStyles();
   const labelClasses = classNames({
-    [" " + classes.labelRootError]: error,
-    [" " + classes.labelRootSuccess]: success && !error,
+    [` ${classes.labelRootError}`]: error,
+    [` ${classes.labelRootSuccess}`]: success && !error,
   });
   const underlineClasses = classNames({
     [classes.underlineError]: error,
@@ -62,7 +62,7 @@ export default function CustomInput(props) {
     <FormControl {...formControlProps} className={formControlClasses}>
       {labelText !== undefined ? (
         <InputLabel
-          className={classes.labelRoot + " " + labelClasses}
+          className={`${classes.labelRoot} ${labelClasses}`}
           htmlFor={id}
           {...labelProps}
         >
@@ -84,10 +84,10 @@ export default function CustomInput(props) {
         inputProps={{ ...inputProps }}
       />
       {error ? (
-        <Clear className={classes.feedback + " " + classes.labelRootError} />
+        <Clear className={`${classes.feedback} ${classes.labelRootError}`} />
       ) : null}
       {success ? (
-        <Check className={classes.feedback + " " + classes.labelRootSuccess} />
+        <Check className={`${classes.feedback} ${classes.labelRootSuccess}`} />
       ) : null}
     </FormControl>
   );
@@ -107,6 +107,7 @@ CustomInput.defaultProps = {
   success: false,
   white: false,
   multiline: false,
+  handleChange: () => {},
 };
 
 CustomInput.propTypes = {

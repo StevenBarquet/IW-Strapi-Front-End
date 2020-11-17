@@ -4,7 +4,7 @@ import {
   title,
   mlAuto,
   mrAuto,
-} from "assets/jss/nextjs-material-kit-pro.js";
+} from "assets/jss/nextjs-material-kit-pro";
 import customCheckboxRadioSwitch from "assets/jss/components/customCheckboxRadioSwitchStyle";
 import customSelectStyle from "assets/jss/components/customSelectStyle";
 

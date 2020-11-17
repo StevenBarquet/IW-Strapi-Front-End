@@ -5,7 +5,7 @@ import {
   successColor,
   grayColor,
   title,
-} from "assets/jss/nextjs-material-kit-pro.js";
+} from "assets/jss/nextjs-material-kit-pro";
 
 const infoStyle = {
   infoArea: {

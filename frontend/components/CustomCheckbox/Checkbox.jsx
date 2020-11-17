@@ -16,7 +16,7 @@ import Clear from "@material-ui/icons/Clear";
 import Check from "@material-ui/icons/Check";
 
 import style from "assets/jss/components/customCheckboxRadioSwitchStyle";
-import basicsStyle from "assets/jss/components/customInputStyle.js";
+import basicsStyle from "assets/jss/components/customInputStyle";
 
 const useStyles = makeStyles(style);
 const useStylesInput = makeStyles(basicsStyle);

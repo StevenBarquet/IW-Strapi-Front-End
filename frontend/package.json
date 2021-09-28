@@ -1,6 +1,9 @@
 {
   "name": "interware-cms",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=12.x"
+  },
   "description": "Strapi CMS Dockerized app build with NextJS",
   "main": "next.config.js",
   "author": "Israel López Tiscareño",
@@ -73,6 +76,7 @@
     "yup": "^0.29.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.5",
     "babel-eslint": "^10.1.0",
     "babel-plugin-inline-react-svg": "^1.1.1",
     "babel-plugin-module-resolver": "^4.0.0",

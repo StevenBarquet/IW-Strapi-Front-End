@@ -134,16 +134,14 @@
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-}
+  scroll-behavior: smooth; }
 
 * {
   letter-spacing: normal !important; }
 
 body {
   font-size: 1rem;
-  overflow-x: hidden; 
-}
+  overflow-x: hidden; }
 
 body,
 h1,
@@ -212,12 +210,12 @@ strong {
 html {
   font-family: sans-serif;
   line-height: 1.15;
+  overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: transparent; 
-  scroll-behavior: smooth;
-}
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth; }
 
 body {
   color: #111B2E;
@@ -226,8 +224,7 @@ body {
   border: 0;
   outline: 0;
   font-size: 1rem;
-  text-align: left; 
-}
+  text-align: left; }
 
 legend {
   color: #D9373E;
@@ -242,12 +239,12 @@ legend {
     outline: 0; }
 
 a {
-  color: #2e7b69;
+  color: #111B2E;
   text-decoration: none;
   background-color: transparent; }
   a:hover, a:focus {
-    color: #3DB49E;
-    text-decoration: none; }
+    color: #0a101b;
+    text-decoration: underline; }
 
 p {
   font-size: 16px;
@@ -699,10 +696,10 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   border: 1px solid #333; }
 
 .noUi-target.slider-primary .noUi-connect, .noUi-target.slider-primary.noUi-connect {
-  background-color: #2e7b69; }
+  background-color: #111B2E; }
 
 .noUi-target.slider-primary .noUi-handle {
-  border-color: #2e7b69; }
+  border-color: #111B2E; }
 
 .noUi-target.slider-info .noUi-connect, .noUi-target.slider-info.noUi-connect {
   background-color: #00bcd4; }
@@ -738,9 +735,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 * https://github.com/YouCanBookMe/react-datetime
 */
 .rdt {
-  position: relative;     
-  bottom: 1.1rem;
-}
+  position: relative;
+  bottom: 1.1rem; }
   .rdt .rdtPicker {
     -webkit-transition: all 150ms linear;
     -moz-transition: all 150ms linear;
@@ -856,9 +852,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   padding: 0px;
   border-radius: 50%; }
   .rdtDay.rdtToday.rdtActive, .rdtDay.rdtActive, .rdtDay.rdtActive:hover {
-    background-color: #2e7b69 !important;
+    background-color: #111B2E !important;
     color: #fff;
-    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(156, 39, 176, 0.6); }
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(17, 27, 46, 0.6); }
 
 .rdtDays tr .dow {
   border-bottom: 1px solid #e3e3e3;
@@ -926,10 +922,10 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   color: #495057; }
 
 .rdtPicker .rdtTimeToggle {
-  color: #2e7b69; }
+  color: #111B2E; }
 
 .rdtPicker .rdtTime th.rdtSwitch {
-  color: #2e7b69; }
+  color: #111B2E; }
 
 .rdtPrev span,
 .rdtNext span {
@@ -1005,9 +1001,9 @@ td.rdtYear:hover {
     border: 1px solid transparent; }
 
 .rdtCounters .rdtCounter:last-child .rdtCount {
-  color: #2e7b69;
+  color: #111B2E;
   border-radius: 50%;
-  border: 1px solid #2e7b69; }
+  border: 1px solid #111B2E; }
 
 .rdtCounterSeparator {
   padding: 7px;
@@ -1018,7 +1014,7 @@ td.rdtYear:hover {
   cursor: pointer;
   display: block;
   border-radius: 50%;
-  color: #2e7b69;
+  color: #111B2E;
   -webkit-transition: all 60ms ease-in;
   -moz-transition: all 60ms ease-in;
   -o-transition: all 60ms ease-in;
@@ -1072,12 +1068,12 @@ td.rdtYear:hover {
     .rdtMonths .rdtYear.rdtActive,
     .rdtYears .rdtMonth.rdtActive,
     .rdtYears .rdtYear.rdtActive {
-      background-color: #2e7b69 !important;
+      background-color: #111B2E !important;
       color: #fff; }
 
 .image-gallery-icon {
   color: #fff;
-  transition: all .2s ease-out;
+  transition: all .3s ease-out;
   appearance: none;
   background-color: transparent;
   border: 0;
@@ -1086,7 +1082,7 @@ td.rdtYear:hover {
   position: absolute;
   z-index: 4;
   filter: drop-shadow(0 2px 2px #1a1a1a); }
-  @media (min-width: 768px) {
+  @media (hover: hover) and (pointer: fine) {
     .image-gallery-icon:hover {
       color: #337ab7; }
       .image-gallery-icon:hover .image-gallery-svg {
@@ -1103,8 +1099,8 @@ td.rdtYear:hover {
   padding: 20px; }
   .image-gallery-fullscreen-button .image-gallery-svg,
   .image-gallery-play-button .image-gallery-svg {
-    height: 36px;
-    width: 36px; }
+    height: 28px;
+    width: 28px; }
   @media (max-width: 768px) {
     .image-gallery-fullscreen-button,
     .image-gallery-play-button {
@@ -1252,13 +1248,13 @@ td.rdtYear:hover {
     background-color: transparent;
     border: 1px solid #fff;
     border-radius: 50%;
-    box-shadow: 0 1px 0 #1a1a1a;
+    box-shadow: 0 2px 2px #1a1a1a;
     cursor: pointer;
     display: inline-block;
     margin: 0 5px;
     outline: none;
     padding: 5px;
-    transition: background .2s ease-out; }
+    transition: all .2s ease-out; }
     @media (max-width: 768px) {
       .image-gallery-bullets .image-gallery-bullet {
         margin: 0 3px;
@@ -1266,14 +1262,27 @@ td.rdtYear:hover {
     @media (max-width: 480px) {
       .image-gallery-bullets .image-gallery-bullet {
         padding: 2.7px; } }
-    .image-gallery-bullets .image-gallery-bullet:focus, .image-gallery-bullets .image-gallery-bullet:hover {
+    .image-gallery-bullets .image-gallery-bullet:focus {
+      transform: scale(1.2);
       background: #337ab7;
-      transform: scale(1.1); }
+      border: 1px solid #337ab7; }
     .image-gallery-bullets .image-gallery-bullet.active {
+      transform: scale(1.2);
+      border: 1px solid #fff;
       background: #fff; }
+    @media (hover: hover) and (pointer: fine) {
+      .image-gallery-bullets .image-gallery-bullet:hover {
+        background: #337ab7;
+        border: 1px solid #337ab7; }
+      .image-gallery-bullets .image-gallery-bullet.active:hover {
+        background: #337ab7; } }
 
 .image-gallery-thumbnails-wrapper {
   position: relative; }
+  .image-gallery-thumbnails-wrapper.thumbnails-swipe-horizontal {
+    touch-action: pan-y; }
+  .image-gallery-thumbnails-wrapper.thumbnails-swipe-vertical {
+    touch-action: pan-x; }
   .image-gallery-thumbnails-wrapper.thumbnails-wrapper-rtl {
     direction: rtl; }
   .image-gallery-thumbnails-wrapper.left, .image-gallery-thumbnails-wrapper.right {
@@ -1312,7 +1321,6 @@ td.rdtYear:hover {
   .image-gallery-thumbnails .image-gallery-thumbnails-container {
     cursor: pointer;
     text-align: center;
-    transition: transform .45s ease-out;
     white-space: nowrap; }
 
 .image-gallery-thumbnail {
@@ -1329,17 +1337,25 @@ td.rdtYear:hover {
   .image-gallery-thumbnail + .image-gallery-thumbnail {
     margin-left: 2px; }
   .image-gallery-thumbnail .image-gallery-thumbnail-inner {
+    display: block;
     position: relative; }
   .image-gallery-thumbnail .image-gallery-thumbnail-image {
     vertical-align: middle;
     width: 100%;
     line-height: 0; }
-  .image-gallery-thumbnail.active, .image-gallery-thumbnail:hover, .image-gallery-thumbnail:focus {
+  .image-gallery-thumbnail.active, .image-gallery-thumbnail:focus {
     outline: none;
     border: 4px solid #337ab7; }
     @media (max-width: 768px) {
-      .image-gallery-thumbnail.active, .image-gallery-thumbnail:hover, .image-gallery-thumbnail:focus {
+      .image-gallery-thumbnail.active, .image-gallery-thumbnail:focus {
         border: 3px solid #337ab7; } }
+  @media (hover: hover) and (pointer: fine) {
+    .image-gallery-thumbnail:hover {
+      outline: none;
+      border: 4px solid #337ab7; } }
+  @media (hover: hover) and (pointer: fine) and (max-width: 768px) {
+    .image-gallery-thumbnail:hover {
+      border: 3px solid #337ab7; } }
 
 .image-gallery-thumbnail-label {
   box-sizing: border-box;
@@ -1350,7 +1366,7 @@ td.rdtYear:hover {
   padding: 5%;
   position: absolute;
   top: 50%;
-  text-shadow: 1px 1px 0 black;
+  text-shadow: 0 2px 2px #1a1a1a;
   transform: translateY(-50%);
   white-space: normal;
   width: 100%; }
@@ -1472,7 +1488,12 @@ td.rdtYear:hover {
     .slick-slider .slick-caption {
       display: block !important; }
     .slick-slider .slick-dots {
-      bottom: 4rem; } }
+      bottom: 2.5rem; } }
+  @media (max-width: 768px) {
+    .slick-slider .slick-caption {
+      display: block !important; }
+    .slick-slider .slick-dots {
+      bottom: .500rem; } }
   .slick-slider .slick-caption {
     padding-bottom: 45px;
     position: absolute;
@@ -1573,7 +1594,7 @@ button.slick-arrow.slick-next {
   font-size: 0;
   line-height: 0;
   position: absolute;
-  top: 43% !important;
+  top: 43%;
   display: block;
   height: 100%;
   padding: 0;
@@ -1584,10 +1605,9 @@ button.slick-arrow.slick-next {
   color: transparent;
   outline: none;
   background: transparent;
-  width: 0% !important;
+  width: 0%;
   z-index: 2;
-  opacity: 0.5;
-}
+  opacity: 0.5; }
 
 .slick-prev {
   left: 0; }
@@ -1746,7 +1766,7 @@ button.slick-arrow.slick-next {
       background-color: transparent;
       color: #ffffff; }
   .react-tagsinput .react-tagsinput-tag.primary {
-    background-color: #2e7b69; }
+    background-color: #111B2E; }
   .react-tagsinput .react-tagsinput-tag.info {
     background-color: #00bcd4; }
   .react-tagsinput .react-tagsinput-tag.success {
@@ -1759,55 +1779,3 @@ button.slick-arrow.slick-next {
     background-color: #e91e63; }
   .react-tagsinput .react-tagsinput-tag.default {
     background-color: #999; }
-
-.wrapperCompanySlider {
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-.brandSlider {
-  width: 100%;
-  height: 200px;
-  position: relative;
-  background: white;
-  display: flex;
-  overflow: hidden; }
-
-.logoSlider {
-  height: 200px;
-  display: flex;
-  align-items: center;
-  animation: slideshow 70s linear infinite; 
-}
-
-.logoSlider svg {
-  height: auto;
-  max-width: auto;
-  padding: 0 25px 0 25px; }
-
-@keyframes slideshow {
-  0% {
-    transform: translateX(0); }
-  100% {
-    transform: translateX(-100%); } }
-
-.brandSlider::before, .brandSlider::after {
-  height: 200px;
-  width: 200px;
-  position: absolute;
-  content: "";
-  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
-  z-index: 2; }
-
-.brandSlider::before {
-  left: 0;
-  top: 0; }
-
-.brandSlider::after {
-  right: 0;
-  top: 0;
-  transform: rotateZ(180deg); }
-
-/*# sourceMappingURL=nextjs-material-kit-pro.css.map */
